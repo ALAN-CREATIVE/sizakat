@@ -11,6 +11,11 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.10.4",
+    "apollo-boost": "^0.4.9",
+    "apollo-client": "^2.6.10",
+    "apollo-client-preset": "^1.0.8",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.10.4",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"

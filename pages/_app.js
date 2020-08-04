@@ -32,6 +32,12 @@ class MyApp extends App {
             font-weight: 200;
             src: url('/fonts/muli/Muli-Light.ttf') format('truetype');
           }
+          body {
+           margin: 0px;
+          }
+          h1 {
+            margin: 0px;
+          }
         `}</style>
       </div>
     )

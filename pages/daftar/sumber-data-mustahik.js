@@ -111,6 +111,7 @@ const MainContent = () => {
             filterOptions={['Semua Kategori Sumber Data', 'Warga', 'Pesantren', 'Pekerja']}
             itemList={data.dataSources.map(dataSourcesToCardItem)}
             onCardDetailClicked={(id) => console.log(id)}
+
           />}
         </TableContainer>
       </Main>
@@ -118,9 +119,9 @@ const MainContent = () => {
   );
 }
 
-export default function SumberDataMustahik() {
+export default function SumberDataMustahik({ backend_uri }) {
   const client = new ApolloClient({
-    uri: `http://localhost:8000/graphql/`,
+    uri: backend_uri,
     cache: new InMemoryCache()
   });
   return (
@@ -133,4 +134,12 @@ export default function SumberDataMustahik() {
       </main>
     </ApolloProvider>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      backend_uri: `http://${process.env.GRAPHQL_URL}`
+    }
+  }
 }

@@ -4,7 +4,6 @@ export const SearchStyle = () => (
   <style jsx>{`
     
     form.example input[type=text] {
-      position: absolute;
       width: 100%;
       height: 48px;
 

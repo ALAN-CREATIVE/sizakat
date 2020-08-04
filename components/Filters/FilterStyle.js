@@ -25,6 +25,7 @@ export const FilterStyle = () => (
       transform: translate(-50%, -50%);
       border: 1px solid #393F50;
       box-sizing: border-box;
+      background: #FFFFFF;
     }
 
     .radio {

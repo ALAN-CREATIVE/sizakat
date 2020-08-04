@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FilterStyle } from './FilterStyle';
 
-const Filter = ({label, options, error, onRadioClicked}) => {
+const Filter = ({label, options, onRadioClicked}) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleOnChange = (event) => {
     setIsOpen(false);

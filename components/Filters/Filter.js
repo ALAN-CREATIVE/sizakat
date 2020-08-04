@@ -4,6 +4,7 @@ import { FilterStyle } from './FilterStyle';
 const Filter = ({label, options, error, onRadioClicked}) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleOnChange = (event) => {
+    setIsOpen(false);
     onRadioClicked(event.target.value);
   }
 
@@ -18,7 +19,7 @@ const Filter = ({label, options, error, onRadioClicked}) => {
         <div className={`kotakFilter ${isOpen ? '': 'hide'}`}>
           <div className="radios" onChange={handleOnChange}>
             {options.map(option => (
-              <div className="radio" key={option} >
+              <div className="radio" key={option}>
                 <label style={{display: 'block'}}>
                   <input name="filter" type="radio" value={option} key={`input-${option}`} />
                   { option }

@@ -1,0 +1,3729 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Danger 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+  </style>
+  <button />
+</div>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+  </style>
+  <button />
+</div>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+  </style>
+  <button />
+</div>
+`;
+
+exports[`Storyshots Details/Detail Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    h1 {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+      
+      
+      color: #00239D;
+    }
+
+    h2 {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #393F50;
+
+    }
+
+    .profpic {
+      width: 241px;
+      height: 226px;
+
+
+      background: #00239D;
+    }
+
+    .background {
+      width: 241px;
+      height: 53px;
+      left: 288px;
+      top: 394px;
+
+      background: #F5F6F8;
+    }
+
+    .identity {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 18px;
+      text-align: center;
+      top: 44.44%; bottom: 51.11%;
+      padding-top:8px;
+    }
+
+    p {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+     
+      /* identical to box height */
+
+
+      color: #393F50;
+      margin-top: -2px;
+
+    }
+
+    .spilt {
+      column-count: 2;
+      
+    }
+  
+  </style>
+  <h1>
+    Usia
+  </h1>
+  <h2>
+    67 tahun
+  </h2>
+</div>
+`;
+
+exports[`Storyshots Details/Image Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    h1 {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+      
+      
+      color: #00239D;
+    }
+
+    h2 {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      /* identical to box height */
+
+
+      color: #393F50;
+
+    }
+
+    .profpic {
+      width: 241px;
+      height: 226px;
+
+
+      background: #00239D;
+    }
+
+    .background {
+      width: 241px;
+      height: 53px;
+      left: 288px;
+      top: 394px;
+
+      background: #F5F6F8;
+    }
+
+    .identity {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 18px;
+      text-align: center;
+      top: 44.44%; bottom: 51.11%;
+      padding-top:8px;
+    }
+
+    p {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+     
+      /* identical to box height */
+
+
+      color: #393F50;
+      margin-top: -2px;
+
+    }
+
+    .spilt {
+      column-count: 2;
+      
+    }
+  
+  </style>
+  <div
+    className="profpic"
+  />
+</div>
+`;
+
+exports[`Storyshots Input/Birthdate Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className=""
+  >
+    Tanggal Lahir
+  </label>
+  <div
+    class="row"
+  >
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tanggal
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Bulan
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tahun
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Birthdate Error Date 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className=""
+  >
+    Tanggal Lahir
+  </label>
+  <div
+    class="row"
+  >
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tanggal
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+      <span
+        className="error"
+      >
+        Tanggal lahir tidak boleh kosong
+      </span>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Bulan
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tahun
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Birthdate Error Month 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className=""
+  >
+    Tanggal Lahir
+  </label>
+  <div
+    class="row"
+  >
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tanggal
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Bulan
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+      <span
+        className="error"
+      >
+        Bulan lahir tidak boleh kosong
+      </span>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tahun
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Birthdate Error Year 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className=""
+  >
+    Tanggal Lahir
+  </label>
+  <div
+    class="row"
+  >
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tanggal
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Bulan
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tahun
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+      <span
+        className="error"
+      >
+        Tahun lahir tidak boleh kosong
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Birthdate Required 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className="required"
+  >
+    Tanggal Lahir
+  </label>
+  <div
+    class="row"
+  >
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tanggal
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Bulan
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+    <div
+      class="col s4"
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="header "
+          onClick={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "display": "inline",
+              }
+            }
+          >
+            Tahun
+          </div>
+          <img
+            src="dropdown-arrow.svg"
+          />
+        </div>
+        <style
+          jsx={true}
+        >
+          
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+        </style>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Dropdown Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className=""
+  >
+    Status Mustahik
+  </label>
+  <div
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="header "
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
+      >
+        Pilih Status Mustahik
+      </div>
+      <img
+        src="dropdown-arrow.svg"
+      />
+    </div>
+    <style
+      jsx={true}
+    >
+      
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+    </style>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Dropdown Error 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className=""
+  >
+    Status Mustahik
+  </label>
+  <div
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="header "
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
+      >
+        Pilih Status Mustahik
+      </div>
+      <img
+        src="dropdown-arrow.svg"
+      />
+    </div>
+    <style
+      jsx={true}
+    >
+      
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+    </style>
+  </div>
+  <span
+    className="error"
+  >
+    Error message
+  </span>
+</div>
+`;
+
+exports[`Storyshots Input/Dropdown Required 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className="required"
+  >
+    Status Mustahik
+  </label>
+  <div
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      className="header "
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
+      >
+        Pilih Status Mustahik
+      </div>
+      <img
+        src="dropdown-arrow.svg"
+      />
+    </div>
+    <style
+      jsx={true}
+    >
+      
+  .header {
+    border-bottom: 1px solid #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #C4C4C4;
+  }
+
+  .chosen {
+    color: #393F50;
+  }
+
+  .options {
+    border-radius: 10px 10px 0px 0px;
+    list-style: none;
+    position: absolute;
+    width: -webkit-fill-available;
+    background-color: #F5F6F8;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #393F50;
+    padding: 20px 0px 0px 0px;
+  }
+
+  .options:before {
+    height: 4px;
+    border-radius: 4px;
+    background-color: #E5E5E5;
+    width: 20%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    text-align: center;
+    content: "a";
+    overflow: hidden;
+  }
+
+  .option {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .option:hover {
+    background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  img {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+    </style>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/File Field Default 1`] = `
+<div>
+  <label
+    className=""
+  >
+    Foto Mustahik
+  </label>
+  <label
+    className="desc"
+  >
+    Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg
+  </label>
+  <input
+    className="file-input"
+    onChange={[Function]}
+    type="file"
+  />
+  <style
+    jsx={true}
+  >
+    
+    label {
+      text-rendering: geometricPrecision;
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      display: block;
+      color: #393F50;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    .desc {
+      display: inline;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: #6F6F6F;
+      margin-right: 50px;
+    }
+
+    .file-input {
+      color: transparent;
+    }
+
+    .file-input::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    .file-input::before {
+      content: "Pilih Foto";
+      font-family: Muli;
+      font-size: 16px;
+      font-weight: 700;
+      color: #00239D;
+      cursor: pointer;
+      padding: 10px 41px 11px 40px;
+      border: 1px solid #00239D;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    .error {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 12px;
+      display: block;
+      color: #EB4E2C;
+      text-rendering: optimizeLegibility;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/File Field Error 1`] = `
+<div>
+  <label
+    className=""
+  >
+    Foto Mustahik
+  </label>
+  <label
+    className="desc"
+  >
+    Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg
+  </label>
+  <input
+    className="file-input"
+    onChange={[Function]}
+    type="file"
+  />
+  <style
+    jsx={true}
+  >
+    
+    label {
+      text-rendering: geometricPrecision;
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      display: block;
+      color: #393F50;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    .desc {
+      display: inline;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: #6F6F6F;
+      margin-right: 50px;
+    }
+
+    .file-input {
+      color: transparent;
+    }
+
+    .file-input::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    .file-input::before {
+      content: "Pilih Foto";
+      font-family: Muli;
+      font-size: 16px;
+      font-weight: 700;
+      color: #00239D;
+      cursor: pointer;
+      padding: 10px 41px 11px 40px;
+      border: 1px solid #00239D;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    .error {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 12px;
+      display: block;
+      color: #EB4E2C;
+      text-rendering: optimizeLegibility;
+    }
+  
+  </style>
+  <span
+    className="error"
+  >
+    Ukuran foto yang diunggah tidak sesuai
+  </span>
+</div>
+`;
+
+exports[`Storyshots Input/File Field Required 1`] = `
+<div>
+  <label
+    className="required"
+  >
+    Foto Mustahik
+  </label>
+  <label
+    className="desc"
+  >
+    Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg
+  </label>
+  <input
+    className="file-input"
+    onChange={[Function]}
+    type="file"
+  />
+  <style
+    jsx={true}
+  >
+    
+    label {
+      text-rendering: geometricPrecision;
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      display: block;
+      color: #393F50;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    .desc {
+      display: inline;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: #6F6F6F;
+      margin-right: 50px;
+    }
+
+    .file-input {
+      color: transparent;
+    }
+
+    .file-input::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    .file-input::before {
+      content: "Pilih Foto";
+      font-family: Muli;
+      font-size: 16px;
+      font-weight: 700;
+      color: #00239D;
+      cursor: pointer;
+      padding: 10px 41px 11px 40px;
+      border: 1px solid #00239D;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    .error {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 12px;
+      display: block;
+      color: #EB4E2C;
+      text-rendering: optimizeLegibility;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/Filter Default 1`] = `
+<div
+  className="filter"
+>
+  <style
+    jsx={true}
+  >
+    
+      .filter p{
+        font-family: Muli;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #00239D;
+        text-decoration : none;
+        }
+
+      .kotakFilter{
+        position : absolute;
+        width : 55%;
+        height : 55%;
+        padding : 3%;
+        background:  #E5E5E5;
+        border: 1px solid #393F50;
+        box-sizing: border-box;
+      }
+      
+    
+  </style>
+  <div
+    onClick={[Function]}
+  >
+    <p>
+      SEMUA SUMBER DATA ⯆ 
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Number Field Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nomor KTP
+     
+  </label>
+  <input
+    name="Nomor KTP"
+    onChange={[Function]}
+    placeholder="Terdiri dari 14 karakter angka"
+    required={false}
+    type="number"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Input/Number Field Error 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nomor KTP
+     
+  </label>
+  <input
+    name="Nomor KTP"
+    onChange={[Function]}
+    placeholder="Terdiri dari 14 karakter angka"
+    required={false}
+    type="number"
+    value=""
+  />
+  <span
+    className="error"
+  >
+    Format KTP harus berupa 14 karakter angka
+  </span>
+</div>
+`;
+
+exports[`Storyshots Input/Number Field Required 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className="required"
+  >
+     
+    Nomor KTP
+     
+  </label>
+  <input
+    name="Nomor KTP"
+    onChange={[Function]}
+    placeholder="Terdiri dari 14 karakter angka"
+    required={true}
+    type="number"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Input/Radio Button Default 1`] = `
+<div>
+  <label
+    className="main-label "
+  >
+    Jenis Kelamin
+  </label>
+  <div
+    className="radios"
+    onChange={[Function]}
+  >
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Laki-laki"
+      />
+      <label>
+        Laki-laki
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Perempuan"
+      />
+      <label>
+        Perempuan
+      </label>
+    </div>
+  </div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      color: #393F50;
+    }
+
+    .main-label {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .required:after {
+      content: "*";
+      color: #EB4E2C;
+    }
+
+    .radios {
+      margin: 10px 5px 5px 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio {
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      align-items: center;
+    }
+
+    .radio label {
+      margin-left: 5px;
+    }
+
+    .error {
+      color: #EB4E2C;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Muli;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/Radio Button Error 1`] = `
+<div>
+  <label
+    className="main-label "
+  >
+    Jenis Kelamin
+  </label>
+  <div
+    className="radios"
+    onChange={[Function]}
+  >
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Laki-laki"
+      />
+      <label>
+        Laki-laki
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Perempuan"
+      />
+      <label>
+        Perempuan
+      </label>
+    </div>
+  </div>
+  <span
+    className="error"
+  >
+    Pilih salah satu jenis kelamin
+  </span>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      color: #393F50;
+    }
+
+    .main-label {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .required:after {
+      content: "*";
+      color: #EB4E2C;
+    }
+
+    .radios {
+      margin: 10px 5px 5px 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio {
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      align-items: center;
+    }
+
+    .radio label {
+      margin-left: 5px;
+    }
+
+    .error {
+      color: #EB4E2C;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Muli;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/Radio Button Required 1`] = `
+<div>
+  <label
+    className="main-label required"
+  >
+    Jenis Kelamin
+  </label>
+  <div
+    className="radios"
+    onChange={[Function]}
+  >
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Laki-laki"
+      />
+      <label>
+        Laki-laki
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Perempuan"
+      />
+      <label>
+        Perempuan
+      </label>
+    </div>
+  </div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      color: #393F50;
+    }
+
+    .main-label {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .required:after {
+      content: "*";
+      color: #EB4E2C;
+    }
+
+    .radios {
+      margin: 10px 5px 5px 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio {
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      align-items: center;
+    }
+
+    .radio label {
+      margin-left: 5px;
+    }
+
+    .error {
+      color: #EB4E2C;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Muli;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/Text Field Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nama Lengkap
+     
+  </label>
+  <input
+    name="Nama Lengkap"
+    onChange={[Function]}
+    placeholder="Nama sesuai dengan KTP"
+    required={false}
+    type="text"
+    value={null}
+  />
+</div>
+`;
+
+exports[`Storyshots Input/Text Field Error 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nama Lengkap
+     
+  </label>
+  <input
+    name="Nama Lengkap"
+    onChange={[Function]}
+    placeholder="Nama sesuai dengan KTP"
+    required={false}
+    type="text"
+    value={null}
+  />
+  <span
+    className="error"
+  >
+    Nama lengkap tidak boleh kosong
+  </span>
+</div>
+`;
+
+exports[`Storyshots Input/Text Field Required 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className="required"
+  >
+     
+    Nama Lengkap
+     
+  </label>
+  <input
+    name="Nama Lengkap"
+    onChange={[Function]}
+    placeholder="Nama sesuai dengan KTP"
+    required={true}
+    type="text"
+    value={null}
+  />
+</div>
+`;
+
+exports[`Storyshots Navigation Bar Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    .navigation-bar {
+        background: #FFFFFF;
+        border: 1px solid #DEDEDE;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        width: 250px;
+        height: 100vh;
+
+        margin: 0 25px 0 25px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+        background-color: #00239D;
+        border-radius: 50%;
+
+        margin: 50px auto;
+    }
+
+    .user-name {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: Muli;
+        line-height: 25px;
+        text-align: center;
+
+        color: #393F50;
+    }
+
+    .user-role {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        font-family: Muli;
+
+        color: #898686;
+
+        text-transform: uppercase;
+    }
+
+    .menu-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 10px;
+
+        letter-spacing: 0.1em;
+
+        color: #898686;
+
+        margin: 15% 7.5%;
+
+        font-family: Muli;
+    }
+
+    div.menu-option {
+        font-family: Muli;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 23px;
+
+        /* Black */
+
+        color: #454545;
+
+        margin: 0 0 10% 20%;
+    }
+
+    .submenu-option {
+        font-family: Muli;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+
+        /* Black */
+
+        color: #454545;
+
+        margin: 2.5% 0 2.5% 15%;
+        padding: 20px;
+    }
+
+    .menu:hover {
+        background: linear-gradient(to right, #00239D 0%, #00239D 5%, #F5F6F8 5%, #F5F6F8 100%);
+    }
+
+  
+  </style>
+  <div
+    className="navigation-bar"
+  >
+    <div
+      className="profile-picture"
+    />
+    <h1
+      className="user-name"
+    >
+      Annisaa Fitri Shabrina
+    </h1>
+    <p
+      className="user-role"
+    >
+      Admin
+    </p>
+    <h1
+      className="menu-title"
+    >
+      DATA
+    </h1>
+    <div>
+      <div
+        onClick={[Function]}
+      >
+        <div
+          className="menu-option"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Mustahik
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Search Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    
+    form.example input[type=text] {
+      position: absolute;
+      width: 982px;
+      height: 48px;
+
+      background-image: url('search-icon.png');
+      background-size: 20px;
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+
+      background-color: #FFFFFF;
+      border: 1px solid #393F50;
+      box-sizing: border-box;
+      border-radius: 8px;
+
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 0px 0px 4px 45px;
+
+      color: #C2C2C2;
+    }
+    
+  
+  </style>
+  <form
+    action="#"
+    class="example"
+  >
+    <input
+      name="search"
+      placeholder="Cari berdasarkan nama sumber data"
+      type="text"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Warning Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    .box {
+        width: 385px;
+        height: 374px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    .warningText {
+        font-family: Muli;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+
+        color: #EB4E2C;
+    }
+
+    .desc {
+        font-family: Muli;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    div.redButton {
+        width: 101px;
+        height: 40px;
+
+        background: #EB4E2C;
+        border-radius: 8px;
+    }
+
+    .greyButton {
+        width: 101px;
+        height: 40px;
+
+        background: #C2C2C2;
+        border-radius: 8px;
+    }
+
+    p.text {
+        
+        height: 20px;
+       
+        display: block;
+        margin: auto;
+        padding-top: 10px;
+
+        font-family: Muli;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: #FFFFFF
+    }
+  
+  </style>
+  <div
+    className="box"
+  >
+    <img
+      alt="warning"
+      src="/img/warning.png"
+      style={
+        Object {
+          "display": "block",
+          "margin": "auto",
+          "paddingTop": "57px",
+        }
+      }
+    />
+    <div
+      className="warningText"
+    >
+      Perhatian!
+    </div>
+    <div
+      className="desc"
+      style={
+        Object {
+          "marginLeft": "46px",
+          "marginRight": "46px",
+          "marginTop": "20px",
+        }
+      }
+    >
+      Apakah Anda yakin menghapus "
+      Dewi Kobujer
+      " dari Daftar Mustahik?
+    </div>
+    <div
+      style={
+        Object {
+          "float": "left",
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="redButton"
+        style={
+          Object {
+            "marginLeft": "59px",
+            "marginTop": "49px",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          Ya, Hapus
+        </p>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "float": "right",
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="greyButton"
+        style={
+          Object {
+            "marginLeft": "45px",
+            "marginTop": "49px",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          Batal
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

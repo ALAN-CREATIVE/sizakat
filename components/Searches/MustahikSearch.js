@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SearchStyle } from './SearchStyle';
-import { gql } from '@apollo/client'
+import { gql, useLazyQuery } from '@apollo/client'
 
 export default function MustahikSearch({onKeyPress}) {
-
+    const [value, setValue ] = useState('');
     const onKeyPressed = (event) => {
         console.log(event.key)
         if(event.key == "Enter"){
+            setValue(event.target.value)
             console.log("test")
-            onKeyPress(event.target)
+            onKeyPress(SearchingFunction(value))
+
         }
     }
 
@@ -20,8 +22,7 @@ export default function MustahikSearch({onKeyPress}) {
     );
 }
 
-function SearchingFunction(keyword) {
-    const SEARCH_QUERY = gql`
+const SEARCH_QUERY = gql`
     query mustahiks($nameContains: String) {
         mustahiks(nameContains: $nameContains) {
           id
@@ -45,7 +46,17 @@ function SearchingFunction(keyword) {
             }
           }
         }
-      }
-      
-    `
+      } 
+    `;
+
+function SearchingFunction(keyword) {
+    const { data, loading, error } = useLazyQuery(SEARCH_QUERY, {variables: {nameContains: keyword }})
+    if (loading) return <p>Loading...</p>;
+    if (error) {
+        console.error(error);
+        return  error.message;
+    }
+    
+    return data.mustahiks;
+
 }

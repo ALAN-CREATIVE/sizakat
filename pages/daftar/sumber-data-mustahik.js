@@ -7,6 +7,7 @@ import Navbar from '../../components/NavigationBar/NavigationBar';
 import TitleBar from '../../components/Titles/TitleBar';
 import Table from '../../components/Tables/Table';
 import { toCapitalCase } from '../../Utils/StringUtil';
+import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
 const INITIAL_DATA_SOURCES_QUERY = gql`
   query {
@@ -55,22 +56,11 @@ const TableContainer = styled.div`
 `
 
 const dataSourcesToCardItem = (dataSource) => {
-  let item = {id: dataSource.id, desc: toCapitalCase(dataSource.category)};
-  const dataSourceDetail = { ...dataSource.dataSourceDetail }
-  switch(dataSource.category) {
-    case 'WARGA':
-      item.label = `RT ${dataSourceDetail.rt} RW ${dataSourceDetail.rw} ${dataSourceDetail.village}`;
-      break;
-    case 'INSTITUSI':
-      item.label = `${dataSourceDetail.name} ${dataSourceDetail.village}`;
-      break;
-    case 'PEKERJA':
-      item.label = `${dataSourceDetail.profession} ${dataSourceDetail.location}`;
-      break;
-    default:
-      item.label = 'NOT DEFINE'
-  }
-  return item;
+  return {
+    id: dataSource.id,
+    desc: toCapitalCase(dataSource.category),
+    label: resolveDataSourceName(dataSource)
+  };
 }
 
 const MainContent = () => {

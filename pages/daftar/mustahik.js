@@ -1,12 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apollo/client';
 
 import Navbar from '../../components/NavigationBar/NavigationBar';
 import TitleBar from '../../components/Titles/TitleBar';
-import Table from '../../components/Tables/Table';
+import TableMustahik from '../../components/Tables/TableMustahik';
 import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
 const INITIAL_MUSTAHIK_QUERY = gql`
@@ -67,10 +67,16 @@ const mustahikToCardItem = (mustahik) => {
 
 const MainContent = () => {
   const { loading, error, data } = useQuery(INITIAL_MUSTAHIK_QUERY);
+  const [ NotYetFetched, setNotYetFetched] = useState(true);
+  const [dataMustahik, setDataMustahik] = useState()
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.log(error);
     return <p>error</p>
+  }
+  if(data && data.mustahiks && NotYetFetched){
+    setDataMustahik(data);
+    setNotYetFetched(false);
   }
   return (
     <Container>
@@ -95,14 +101,15 @@ const MainContent = () => {
           />
         </Title>
         <TableContainer>
-          {data && data.mustahiks && <Table
+          {dataMustahik && dataMustahik.mustahiks && <TableMustahik
             title={'Data Mustahik'}
             buttonCaption={'Tambah Mustahik'}
             searchPlaceholder={'Cari berdasarkan nama, nomor KTP'}
             filterCaption={'SEMUA SUMBER DATA'}
             filterOptions={['Semua Sumber Data',]}
-            itemList={data.mustahiks.map(mustahikToCardItem)}
+            itemList={dataMustahik.mustahiks.map(mustahikToCardItem)}
             onCardDetailClicked={(id) => console.log(id)}
+            setMustahikData={(data)=> setDataMustahik(data)}
           />}
         </TableContainer>
       </Main>
@@ -130,7 +137,7 @@ export default function SumberDataMustahik({ backend_uri }) {
 export async function getStaticProps() {
   return {
     props: {
-      backend_uri: `http://${process.env.GRAPHQL_URL}`
+      backend_uri: 'http://localhost:8000/graphql/'
     }
   }
 }

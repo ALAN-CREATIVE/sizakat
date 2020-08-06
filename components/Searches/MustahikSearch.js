@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SearchStyle } from './SearchStyle';
 import { gql, useLazyQuery } from '@apollo/client'
 
@@ -9,6 +9,7 @@ export function MustahikSearch({setMustahikData}) {
           id
           name
           dataSource {
+            category
             dataSourceDetail {
               ... on DataSourceWargaType {
                 village
@@ -16,6 +17,7 @@ export function MustahikSearch({setMustahikData}) {
                 rw
               }
               ... on DataSourceInstitusiType {
+                name
                 village
                 rt
                 rw
@@ -39,11 +41,15 @@ export function MustahikSearch({setMustahikData}) {
         }
     }
 
-    if(data){
+    useEffect(()=>{
+      if(data){
         setMustahikData(data)
         // console.log("hasil set")
         // console.log(setMustahikData)
-    }
+        console.log(data);
+      }
+    });
+    
 
     return (
         <div>

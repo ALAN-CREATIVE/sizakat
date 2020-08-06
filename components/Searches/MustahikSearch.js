@@ -2,27 +2,8 @@ import React, { useState } from 'react';
 import { SearchStyle } from './SearchStyle';
 import { gql, useLazyQuery } from '@apollo/client'
 
-export default function MustahikSearch({onKeyPress}) {
-    const [value, setValue ] = useState('');
-    const onKeyPressed = (event) => {
-        console.log(event.key)
-        if(event.key == "Enter"){
-            setValue(event.target.value)
-            console.log("test")
-            onKeyPress(SearchingFunction(value))
-
-        }
-    }
-
-    return (
-        <div>
-            <SearchStyle />
-            <input type="text" placeholder="Cari berdasarkan nama" name="search" onKeyPress={onKeyPressed}/> 
-        </div>
-    );
-}
-
-const SEARCH_QUERY = gql`
+export function MustahikSearch({setMustahikData}) {
+    const SEARCH_QUERY = gql`
     query mustahiks($nameContains: String) {
         mustahiks(nameContains: $nameContains) {
           id
@@ -48,15 +29,27 @@ const SEARCH_QUERY = gql`
         }
       } 
     `;
-
-function SearchingFunction(keyword) {
-    const { data, loading, error } = useLazyQuery(SEARCH_QUERY, {variables: {nameContains: keyword }})
-    if (loading) return <p>Loading...</p>;
-    if (error) {
-        console.error(error);
-        return  error.message;
+    const [getData, { data, loading, error }] = useLazyQuery(SEARCH_QUERY);
+    const onKeyPressed = (event) => {
+        console.log(event.key)
+        if(event.key == "Enter"){
+            console.log(event.target.value)
+            getData({variables:{nameContains: event.target.value}})
+            // console.log(data)
+        }
     }
-    
-    return data.mustahiks;
 
+    if(data){
+        setMustahikData(data)
+        // console.log("hasil set")
+        // console.log(setMustahikData)
+    }
+
+    return (
+        <div>
+            <SearchStyle />
+            <input type="text" placeholder="Cari berdasarkan nama" name="search" onKeyPress={onKeyPressed}/> 
+        </div>
+    );
 }
+

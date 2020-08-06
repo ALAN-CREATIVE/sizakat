@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SearchStyle } from './SearchStyle';
 
-export default function Search({props: {placeholder}}) {
- 
-    return (
-        <div>
-            <SearchStyle />
-            
-            <form class="example" action="#">
-                <input type="text" placeholder={placeholder} name="search"/>
-            </form>
-      
-        </div>
-    );
-  }
+export default function Search({placeholder, onChange}) {
+  const [value, setValue] = useState('');
+  return (
+    <div>
+      <SearchStyle />
+      <form className="example">
+      <input
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }} 
+        type="text" 
+        placeholder={placeholder} 
+        name="search"
+      />
+      </form>
+    </div>
+  );
+}
   

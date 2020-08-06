@@ -5,11 +5,12 @@ import Filter from './Filter';
 
 export default {
     component: Filter,
-    title: 'Input/Filter',
+    title: 'Filter',
     excludeStories: /.*Data$/,
 }
 
 export const filterData = {
+    label: 'SEMUA KATEGORI SUMBER',
     options : ['Semua Kategori Sumber Data','Warga','Pesantren','Pekerja'],
     required : false,
     error : null,

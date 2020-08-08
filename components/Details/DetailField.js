@@ -1,7 +1,7 @@
 import React from 'react';
 import { DetailStyle } from './DetailStyle';
 
-export default function DetailField({ props: { title, description}}) {
+export default function DetailField({title, description}) {
  
   return (
       <div>

@@ -11,8 +11,11 @@ export const DetailStyle = () =>(
             font-family: Muli; 
         }
         .label{
+            font-family: Muli;
             font-style: normal;
             font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;  
             color: #00239D;
         }
         img {

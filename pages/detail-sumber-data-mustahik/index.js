@@ -1,11 +1,12 @@
 import React from 'react';
 import { ApolloClient } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
-import { DetailInfo } from './detail';
-import { DetailStyle } from './detail-style';
+import { InMemoryCache } from '@apollo/client';
+import { DetailInfo } from '../.././components/detail-sumber-data-mustahik/detail';
+import { DetailStyle } from '../.././components/detail-sumber-data-mustahik/detail-style';
 import NavigationBar from '../.././components/NavigationBar/NavigationBar';
 import Button from '../.././components/Buttons/Button';
-import { InMemoryCache } from '@apollo/client';
+import TitleBar from '../.././components/Titles/TitleBar'
 
 const client = new ApolloClient({
   uri: 'http://192.168.99.100:8000/graphql/', // your GraphQL Server 
@@ -22,13 +23,12 @@ const App = () => (
         <DetailStyle />
         <div className="row">
           <div className="col-3">
-            <NavigationBar  name= 'Annisaa Fitri Shabrina' role= 'Admin' menu= 'Mustahik' submenu= {'Data Mustahik', 'Sumber Data Mustahik'}/>
+            <NavigationBar  name='Annisaa Fitri Shabrina' role='Admin' menu='Mustahik' submenu={['Data Mustahik', 'Sumber Data Mustahik']}/>
           </div>
           <div className="col-9">
             <div className="row justify-content-between">
               <div className="col-5">
-                <h4><b>Detail Sumber Data Mustahik</b></h4>
-                <p className="sub">Mustahik // <span className="active">Detail Sumber Data Mustahik</span></p>
+                <TitleBar title='Detail Sumber Data' path='Mustahik //' current='Detail Sumber Data Mustahik'/>
               </div>
               <div className="col-4 align-self-end">
                 <div className="row">

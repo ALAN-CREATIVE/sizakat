@@ -1,11 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
+import DetailField from '../Details/DetailField';
+import {resolveDataSourceName} from '../../Utils/ParserUtil';
 
 
 const QUERY_USERS = gql`
 query{
-    dataSource(id : 1){
+    dataSource(id : 4){
         id
         category
         dataSourceDetail{
@@ -61,35 +63,20 @@ export function DetailInfo() {
     return [data.dataSource].map(({ id, category, dataSourceDetail }) =>(
         <div className="container">
             <div className="row">
-                <div className="col-md-3">
+                <div>
                     <p><b>Detail Sumber Data</b></p>
-                </div>
-                <div className="col-md-9">
-                    <hr></hr>
                 </div>
             </div>
             <br></br>
             
-            <p className="label">Nama</p>
-            <div>
-                {(()=>{
-                    switch(category){
-                        case 'WARGA':
-                            return <div><p>RT {dataSourceDetail.rt} RW {dataSourceDetail.rw} {dataSourceDetail.village}</p><br></br></div>;
-                        case 'INSTITUSI':
-                            return <div><p>{dataSourceDetail.name} {dataSourceDetail.village}</p><br></br></div>;
-                        case 'PEKERJA':
-                            return <div><p>{dataSourceDetail.profession} {dataSourceDetail.location}</p><br></br></div>;
-                    }
-                })()}
-            </div>
-            <p className="label">Kategori</p>
-            <p>{category}</p><br></br>
+            <DetailField title={'Nama'} description={resolveDataSourceName(data.dataSource)}/><br></br>
+            <DetailField title={'Kategori'} description={category}/><br></br>
+                       
             <div>
                 {(()=>{
                     switch(category){
                         case 'PEKERJA':
-                            return <div><p className="label">Lokasi</p><p>{dataSourceDetail.location}</p><br></br></div>;
+                            return <div><DetailField title={'Lokasi'} description={dataSourceDetail.location}/><br></br></div>;
                         default:
                             return [data.dataSource].map(({ dataSourceDetail }) => (
                                 <div className="row">
@@ -113,23 +100,16 @@ export function DetailInfo() {
             </div>           
 
             <div className="row">
-                <div className="col-md-3">
+                <div>
                     <p><b>Penanggung Jawab</b></p>
-                </div>
-                <div className="col-md-9">
-                    <hr></hr>
-                </div>
+                </div>               
             </div>
             <br></br>
 
-            <p className="label">Nama</p>
-            <p>{dataSourceDetail.picName}</p><br></br>
-            <p className="label">Nomor KTP</p>
-            <p>{dataSourceDetail.picKtp}</p><br></br>
-            <p className="label">Jabatan</p>
-            <p>{dataSourceDetail.picPosition}</p><br></br>
-            <p className="label">Nomor Telepon</p>
-            <p>{dataSourceDetail.picPhone}</p><br></br>            
+            <DetailField title={'Nama'} description={dataSourceDetail.picName}/><br></br>
+            <DetailField title={'Nomor KTP'} description={dataSourceDetail.picKtp}/><br></br>
+            <DetailField title={'Jabatan'} description={dataSourceDetail.picPosition}/><br></br>
+            <DetailField title={'Nomor Telepon'} description={dataSourceDetail.picPhone}/><br></br>            
         </div>
     ));
 }

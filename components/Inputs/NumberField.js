@@ -1,4 +1,4 @@
-import React, { useState } from './node_modules/react';
+import React, { useState } from 'react';
 import { InputStyle } from './InputStyle';
 
 export default function NumberField( {label, placeholder, required, error, onChange }) {

@@ -1,5 +1,5 @@
-import React from './node_modules/react';
-import { action } from './node_modules/@storybook/addon-actions';
+import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 import FileField from './FileField';
 

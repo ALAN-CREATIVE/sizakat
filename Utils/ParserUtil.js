@@ -1,6 +1,5 @@
 export const resolveDataSourceName = (dataSource) => {
     const dataSourceDetail = { ...dataSource.dataSourceDetail }
-    console.log(dataSource.category)
       switch(dataSource.category) {
         case 'WARGA':
             return `RT ${dataSourceDetail.rt} RW ${dataSourceDetail.rw} ${dataSourceDetail.village}`;

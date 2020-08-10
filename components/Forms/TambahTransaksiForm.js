@@ -11,7 +11,7 @@ export default function TambahTransaksiForm() {
                 <TextField label="Nama Lengkap" placeholder="Nama sesuai dengan KTP" required={true} />
                 <TextField label="Nomor Telepon" placeholder="Terdiri dari angka" required={true} />
             </div>
-            <h2 className="subtitle">Data Muzakki</h2>
+            <h2 className="subtitle">Transaksi Zakat</h2>
             <div className="formSection">
                 <div className="container">
                     <div className="row">

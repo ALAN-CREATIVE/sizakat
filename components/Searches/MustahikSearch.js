@@ -37,15 +37,12 @@ export function MustahikSearch({setMustahikData}) {
         if(event.key == "Enter"){
             console.log(event.target.value)
             getData({variables:{nameContains: event.target.value}})
-            // console.log(data)
         }
     }
 
     useEffect(()=>{
       if(data){
         setMustahikData(data)
-        // console.log("hasil set")
-        // console.log(setMustahikData)
         console.log(data);
       }
     });

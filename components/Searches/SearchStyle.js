@@ -3,8 +3,9 @@ import React from 'react';
 export const SearchStyle = () => (
   <style jsx>{`
     
-    form.example input[type=text] {
-      width: 100%;
+    input[type=text] {
+      position: absolute;
+      width: 982px;
       height: 48px;
 
       background-image: url('search-icon.png');

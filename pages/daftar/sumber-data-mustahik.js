@@ -129,7 +129,7 @@ export default function SumberDataMustahik({ backend_uri }) {
 export async function getStaticProps() {
   return {
     props: {
-      backend_uri: 'http://localhost:8000/graphql/'
+      backend_uri: `http://${process.env.GRAPHQL_URL}`
     }
   }
 }

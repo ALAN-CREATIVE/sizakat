@@ -3,11 +3,11 @@ import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
 import DetailField from '../Details/DetailField';
 import {resolveDataSourceName} from '../../Utils/ParserUtil';
-
+import { useRouter } from 'next/router';
 
 const QUERY_USERS = gql`
-query{
-    dataSource(id : 4){
+query dataSource($id: ID!){
+    dataSource(id : $id){
         id
         category
         dataSourceDetail{
@@ -51,16 +51,22 @@ query{
 `;
 
 export function DetailInfo() {
-    const { data, loading, error } = useQuery(QUERY_USERS);
+    const router = useRouter()
+    const {id} = router.query
+    const { data, loading, error } = useQuery(QUERY_USERS, {variables: {id} });
+
     if (loading) return <p>Loading...</p>;
     if (error) {
         console.error(error);
+        console.log(error.networkError);
+        console.log(error.graphQLErrors);
         return  [error].map(({message})=>(
             <p>{message}</p>
         ));
     }
 
     return [data.dataSource].map(({ id, category, dataSourceDetail }) =>(
+        <>
         <div className="container">
             <div className="row">
                 <div>
@@ -111,5 +117,6 @@ export function DetailInfo() {
             <DetailField title={'Jabatan'} description={dataSourceDetail.picPosition}/><br></br>
             <DetailField title={'Nomor Telepon'} description={dataSourceDetail.picPhone}/><br></br>            
         </div>
+        </>
     ));
 }

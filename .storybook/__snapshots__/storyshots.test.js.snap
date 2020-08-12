@@ -31,7 +31,12 @@ exports[`Storyshots Button Danger 1`] = `
         }
     
   </style>
-  <button />
+  <button
+    className="danger"
+    onClick={[Function]}
+  >
+    Danger
+  </button>
 </div>
 `;
 
@@ -66,7 +71,12 @@ exports[`Storyshots Button Primary 1`] = `
         }
     
   </style>
-  <button />
+  <button
+    className="primary"
+    onClick={[Function]}
+  >
+    Primary
+  </button>
 </div>
 `;
 
@@ -101,11 +111,310 @@ exports[`Storyshots Button Secondary 1`] = `
         }
     
   </style>
-  <button />
+  <button
+    className="secondary"
+    onClick={[Function]}
+  >
+    Secondary
+  </button>
 </div>
 `;
 
-exports[`Storyshots Details/Detail Default 1`] = `
+exports[`Storyshots Card Default 1`] = `
+<div
+  className="sc-AxjAm ezwerM"
+>
+  <div>
+    <h1
+      style={
+        Object {
+          "color": "#393F50",
+          "fontSize": "16px",
+          "fontWeight": 600,
+          "margin": 0,
+        }
+      }
+    >
+      Lorem Ipsum Sit Dolor Amet
+    </h1>
+    <p
+      style={
+        Object {
+          "color": "#EB4E2C",
+          "fontSize": "12px",
+          "fontWeight": 600,
+          "margin": 0,
+        }
+      }
+    >
+      warga
+    </p>
+  </div>
+  <div
+    className="sc-AxirZ eIgGJx"
+  >
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+    >
+      Detail
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card/Card List Default 1`] = `
+<div
+  className="sc-AxiKw bvMRsc"
+>
+  <div
+    className="sc-AxhCb jWJnBP"
+  >
+    <div
+      className="sc-AxjAm ezwerM"
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#393F50",
+              "fontSize": "16px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Lorem Ipsum
+        </h1>
+        <p
+          style={
+            Object {
+              "color": "#EB4E2C",
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Warga
+        </p>
+      </div>
+      <div
+        className="sc-AxirZ eIgGJx"
+      >
+        <a
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Detail
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb jWJnBP"
+  >
+    <div
+      className="sc-AxjAm ezwerM"
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#393F50",
+              "fontSize": "16px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Sit Dolor Amet
+        </h1>
+        <p
+          style={
+            Object {
+              "color": "#EB4E2C",
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Warga
+        </p>
+      </div>
+      <div
+        className="sc-AxirZ eIgGJx"
+      >
+        <a
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Detail
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb jWJnBP"
+  >
+    <div
+      className="sc-AxjAm ezwerM"
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#393F50",
+              "fontSize": "16px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Consectetur Adisipicing
+        </h1>
+        <p
+          style={
+            Object {
+              "color": "#EB4E2C",
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Institusi
+        </p>
+      </div>
+      <div
+        className="sc-AxirZ eIgGJx"
+      >
+        <a
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Detail
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb jWJnBP"
+  >
+    <div
+      className="sc-AxjAm ezwerM"
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#393F50",
+              "fontSize": "16px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Elit Sed Do
+        </h1>
+        <p
+          style={
+            Object {
+              "color": "#EB4E2C",
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Pekerja
+        </p>
+      </div>
+      <div
+        className="sc-AxirZ eIgGJx"
+      >
+        <a
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Detail
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-AxhCb jWJnBP"
+  >
+    <div
+      className="sc-AxjAm ezwerM"
+    >
+      <div>
+        <h1
+          style={
+            Object {
+              "color": "#393F50",
+              "fontSize": "16px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Eiusmod Tempor
+        </h1>
+        <p
+          style={
+            Object {
+              "color": "#EB4E2C",
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "margin": 0,
+            }
+          }
+        >
+          Institusi
+        </p>
+      </div>
+      <div
+        className="sc-AxirZ eIgGJx"
+      >
+        <a
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Detail
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Details/Detail Field Default 1`] = `
 <div>
   <style
     jsx={true}
@@ -192,91 +501,7 @@ exports[`Storyshots Details/Detail Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Details/Image Default 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    h1 {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 20px;
-      /* identical to box height */
-      
-      
-      color: #00239D;
-    }
-
-    h2 {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      /* identical to box height */
-
-
-      color: #393F50;
-
-    }
-
-    .profpic {
-      width: 241px;
-      height: 226px;
-
-
-      background: #00239D;
-    }
-
-    .background {
-      width: 241px;
-      height: 53px;
-      left: 288px;
-      top: 394px;
-
-      background: #F5F6F8;
-    }
-
-    .identity {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 18px;
-      text-align: center;
-      top: 44.44%; bottom: 51.11%;
-      padding-top:8px;
-    }
-
-    p {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-     
-      /* identical to box height */
-
-
-      color: #393F50;
-      margin-top: -2px;
-
-    }
-
-    .spilt {
-      column-count: 2;
-      
-    }
-  
-  </style>
-  <div
-    className="profpic"
-  />
-</div>
-`;
-
-exports[`Storyshots Input/Birthdate Default 1`] = `
+exports[`Storyshots Input/Date Field Default 1`] = `
 <div>
   <style
     jsx={true}
@@ -386,6 +611,8 @@ exports[`Storyshots Input/Birthdate Default 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -481,6 +708,8 @@ exports[`Storyshots Input/Birthdate Default 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -576,6 +805,8 @@ exports[`Storyshots Input/Birthdate Default 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -619,7 +850,7 @@ exports[`Storyshots Input/Birthdate Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input/Birthdate Error Date 1`] = `
+exports[`Storyshots Input/Date Field Error Date 1`] = `
 <div>
   <style
     jsx={true}
@@ -729,6 +960,8 @@ exports[`Storyshots Input/Birthdate Error Date 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -829,6 +1062,8 @@ exports[`Storyshots Input/Birthdate Error Date 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -924,6 +1159,8 @@ exports[`Storyshots Input/Birthdate Error Date 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -967,7 +1204,7 @@ exports[`Storyshots Input/Birthdate Error Date 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input/Birthdate Error Month 1`] = `
+exports[`Storyshots Input/Date Field Error Month 1`] = `
 <div>
   <style
     jsx={true}
@@ -1077,6 +1314,8 @@ exports[`Storyshots Input/Birthdate Error Month 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1172,6 +1411,8 @@ exports[`Storyshots Input/Birthdate Error Month 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1272,6 +1513,8 @@ exports[`Storyshots Input/Birthdate Error Month 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1315,7 +1558,7 @@ exports[`Storyshots Input/Birthdate Error Month 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input/Birthdate Error Year 1`] = `
+exports[`Storyshots Input/Date Field Error Year 1`] = `
 <div>
   <style
     jsx={true}
@@ -1425,6 +1668,8 @@ exports[`Storyshots Input/Birthdate Error Year 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1520,6 +1765,8 @@ exports[`Storyshots Input/Birthdate Error Year 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1615,6 +1862,8 @@ exports[`Storyshots Input/Birthdate Error Year 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1663,7 +1912,7 @@ exports[`Storyshots Input/Birthdate Error Year 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input/Birthdate Required 1`] = `
+exports[`Storyshots Input/Date Field Required 1`] = `
 <div>
   <style
     jsx={true}
@@ -1773,6 +2022,8 @@ exports[`Storyshots Input/Birthdate Required 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1868,6 +2119,8 @@ exports[`Storyshots Input/Birthdate Required 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -1963,6 +2216,8 @@ exports[`Storyshots Input/Birthdate Required 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -2110,6 +2365,8 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -2255,6 +2512,8 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -2405,6 +2664,8 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
+    max-height: 400px;
+    overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
   }
@@ -3397,7 +3658,6 @@ exports[`Storyshots Navigation Bar Default 1`] = `
         width: 250px;
         height: 100vh;
 
-        margin: 0 25px 0 25px;
     }
 
     .profile-picture {
@@ -3672,9 +3932,7 @@ exports[`Storyshots Warning Default 1`] = `
         }
       }
     >
-      Apakah Anda yakin menghapus "
-      Dewi Kobujer
-      " dari Daftar Mustahik?
+      Apakah Anda yakin menghapus "Dewi Kobujer" dari Daftar Mustahik?
     </div>
     <div
       style={
@@ -3686,6 +3944,7 @@ exports[`Storyshots Warning Default 1`] = `
     >
       <div
         className="redButton"
+        onClick={[Function]}
         style={
           Object {
             "marginLeft": "59px",
@@ -3710,6 +3969,7 @@ exports[`Storyshots Warning Default 1`] = `
     >
       <div
         className="greyButton"
+        onClick={[Function]}
         style={
           Object {
             "marginLeft": "45px",

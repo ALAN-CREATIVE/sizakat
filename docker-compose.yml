@@ -9,6 +9,8 @@ services:
       - ${FRONTEND_PORT:-3000}:3000
     volumes:
       - ./:/app/frontend/
+      - /app/frontend/node_modules
+      - /app/frontend/.next
     command: yarn dev
 
   storybook:
@@ -19,4 +21,6 @@ services:
       - ${STORYBOOK_PORT:-6000}:6006
     volumes:
       - ./:/app/frontend/
+      - /app/frontend/node_modules
+      - /app/frontend/.next
     command: yarn storybook

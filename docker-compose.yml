@@ -10,3 +10,13 @@ services:
     volumes:
       - ./:/app/frontend/
     command: yarn dev
+
+  storybook:
+    build:
+      context: .
+      target: dev
+    ports:
+      - ${STORYBOOK_PORT:-6000}:6006
+    volumes:
+      - ./:/app/frontend/
+    command: yarn storybook

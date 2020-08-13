@@ -2,14 +2,6 @@ version: '3.7'
 
 services:
   frontend:
+    build: .
     ports:
       - ${FRONTEND_PORT:-3000}:3000
-    build:
-      context: ./
-    volumes:
-      - ./:/app/frontend/
-      - /app/frontend/node_modules
-      - /app/frontend/.next
-    env_file:
-      - .env
-    command: yarn dev

@@ -2,8 +2,8 @@ import React from 'react';
 import { ApolloClient } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import { InMemoryCache } from '@apollo/client';
-import { DetailInfo } from '../.././components/detail-sumber-data-mustahik/detail';
-import { DetailStyle } from '../.././components/detail-sumber-data-mustahik/detail-style';
+import { DetailInfo } from '../.././components/DetailSumberDataMustahik/Detail';
+import { DetailStyle } from '../.././components/DetailSumberDataMustahik/DetailStyle';
 import Navbar from '../.././components/NavigationBar/NavBarWithRouter';
 import Button from '../.././components/Buttons/Button';
 import TitleBar from '../.././components/Titles/TitleBar'

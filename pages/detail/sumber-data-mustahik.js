@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import { InMemoryCache } from '@apollo/client';
 import { DetailInfo } from '../.././components/detail-sumber-data-mustahik/detail';
 import { DetailStyle } from '../.././components/detail-sumber-data-mustahik/detail-style';
-import NavigationBar from '../.././components/NavigationBar/NavigationBar';
+import Navbar from '../.././components/NavigationBar/NavBarWithRouter';
 import Button from '../.././components/Buttons/Button';
 import TitleBar from '../.././components/Titles/TitleBar'
 
@@ -24,7 +24,12 @@ export default function SumberDataMustahik({ backend_uri }) {
           <DetailStyle />
           <div className="row">
             <div className="col-3">
-              <NavigationBar name='Annisaa Fitri Shabrina' role='Admin' menu='Mustahik' submenu={['Data Mustahik', 'Sumber Data Mustahik']}/>
+              <Navbar
+                user={{
+                  name: 'Annisaa Fitri Shabrina',
+                  role: 'ADMIN'
+                }}
+              />
             </div>
             <div className="col-9">
               <div className="row justify-content-between">

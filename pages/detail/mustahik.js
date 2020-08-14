@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import {DetailInfo} from '../../components/DetailMustahik/Detail';
 import {DetailStyle} from '../../components/DetailMustahik/DetailStyle';
-import NavigationBar from '../.././components/NavigationBar/NavigationBar';
+import Navbar from '../.././components/NavigationBar/NavBarWithRouter';
 
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql/',
@@ -21,7 +21,12 @@ const App = () => (
         <DetailStyle />
         <div className="row">
           <div className="col-3">
-            <NavigationBar  name= 'Annisaa Fitri Shabrina' role= 'Admin' menu= 'Mustahik' submenu= {'Data Mustahik', 'Sumber Data Mustahik'}/>
+            <Navbar
+              user={{
+                name: 'Annisaa Fitri Shabrina',
+                role: 'ADMIN'
+              }}
+            />
           </div>
           <div className="col-9">
             <div className="row justify-content-end">

@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apollo/client';
 
-import Navbar from '../../components/NavigationBar/NavigationBar';
+import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 import TableMustahik from '../../components/Tables/TableMustahik';
 import { resolveDataSourceName } from '../../Utils/ParserUtil';
@@ -12,6 +12,7 @@ import { resolveDataSourceName } from '../../Utils/ParserUtil';
 const INITIAL_MUSTAHIK_QUERY = gql`
   query {
     mustahiks {
+      id
       name
       dataSource {
         category
@@ -69,27 +70,28 @@ const MainContent = () => {
   const { loading, error, data } = useQuery(INITIAL_MUSTAHIK_QUERY);
   const [ NotYetFetched, setNotYetFetched] = useState(true);
   const [dataMustahik, setDataMustahik] = useState()
+  const router = useRouter();
+
   if (loading) return <p>Loading...</p>;
+
   if (error) {
     console.log(error);
     return <p>error</p>
   }
+
   if(data && data.mustahiks && NotYetFetched){
     setDataMustahik(data);
     setNotYetFetched(false);
   }
+
   return (
     <Container>
       <Nav>
         <Navbar
-          name={'Annisaa Fitri Shabrina'}
-          role={'Admin'}
-          menu={'Mustahik'}
-          submenu={[
-            'Data Mustahik',
-            'Sumber Data Mustahik'
-          ]}
-          onMenuClicked={(item) => console.log(item)}
+          user={{
+            name: 'Annisaa Fitri Shabrina',
+            role: 'ADMIN'
+          }}
         />
       </Nav>
       <Main>
@@ -108,8 +110,13 @@ const MainContent = () => {
             filterCaption={'SEMUA SUMBER DATA'}
             filterOptions={['Semua Sumber Data',]}
             itemList={dataMustahik.mustahiks.map(mustahikToCardItem)}
-            onCardDetailClicked={(id) => console.log(id)}
-            setMustahikData={(data)=> setDataMustahik(data)}
+            onDetailClicked={(id) => {
+              router.push({
+                pathname: '/detail/mustahik',
+                query: { id: id }
+              })
+            }}
+            setMustahikData={(data) => setDataMustahik(data)}
           />}
         </TableContainer>
       </Main>

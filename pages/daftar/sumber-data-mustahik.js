@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apollo/client';
+import { useRouter } from 'next/router';
 
-import Navbar from '../../components/NavigationBar/NavigationBar';
+import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 import TableDataSource from '../../components/Tables/TableDataSource';
 import { toCapitalCase } from '../../Utils/StringUtil';
@@ -66,9 +67,12 @@ const dataSourcesToCardItem = (dataSource) => {
 
 
 const MainContent = () => {
+
   const { loading, error, data } = useQuery(INITIAL_DATA_SOURCES_QUERY);
   const [ NotYetFetched, setNotYetFetched] = useState(true);
   const [ dataDataSource, setDataDataSource] = useState()
+  const router = useRouter();
+
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.log(error);
@@ -82,14 +86,10 @@ const MainContent = () => {
     <Container>
       <Nav>
         <Navbar
-          name={'Annisaa Fitri Shabrina'}
-          role={'Admin'}
-          menu={'Mustahik'}
-          submenu={[
-            'Data Mustahik',
-            'Sumber Data Mustahik'
-          ]}
-          onMenuClicked={(item) => console.log(item)}
+          user={{
+            name: 'Annisaa Fitri Shabrina',
+            role: 'ADMIN'
+          }}
         />
       </Nav>
       <Main>
@@ -108,7 +108,12 @@ const MainContent = () => {
             filterCaption={'SEMUA KATEGORI DATA'}
             filterOptions={['Semua Kategori Sumber Data', 'Warga', 'Pesantren', 'Pekerja']}
             itemList={dataDataSource.dataSources.map(dataSourcesToCardItem)}
-            onCardDetailClicked={(id) => console.log(id)}
+            onDetailClicked={(id) => {
+              router.push({
+                pathname: '/detail/sumber-data-mustahik',
+                query: { id }
+              })
+            }}
             setDataSourceData={(data)=> setDataDataSource(data)}
 
           />}

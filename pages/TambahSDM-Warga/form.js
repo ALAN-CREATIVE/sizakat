@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { gql, useMutation, useQuery } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
@@ -9,6 +9,17 @@ import Button from '../../components/Buttons/Button';
 // import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
 import { TambahSDMStyle } from './style';
+
+const ADD_SDM=gql`
+    mutation dataSourceMutation($input: DataSourceMutationInput!){
+        dataSourceMutation(input: $input){
+            dataSource{
+                id
+                category
+            }
+        }
+    }
+`;
 
 const ADD_SDM_WARGA=gql`
     mutation dataSourceWargaMutation($input: DataSourceWargaMutationInput!){
@@ -40,6 +51,10 @@ export default function FormTambahSDMWarga({ backend_uri }) {
         uri: backend_uri,
         cache: new InMemoryCache()
       });
+
+    // const [dataSource, setDataSource] = useState({
+    //     category:'WARGA',
+    // });
     
     const [dataSourceWarga, setDataSourceWarga] = useState({
         picName:'',
@@ -54,16 +69,27 @@ export default function FormTambahSDMWarga({ backend_uri }) {
         rw: '',
     });
 
-    const [createSDMWarga, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM_WARGA);
+    const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
+    const [createSDMWarga, { data: createDataWarga, error: errorCreateWarga, loading: loadingWarga }  ] = useMutation(ADD_SDM_WARGA);
+
+    useEffect(() => {
+        if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
+            //   createSDMWarga({ ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id });
+              createSDMWarga({ variables: { input: { ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id }}});
+
+              }
+            }
+            ,[createData]
+        )
     
-    if(errorCreate) {
-        console.log(errorCreate);
-        console.log(errorCreate.networkError.result.errors);
+    if(errorCreateWarga) {
+        console.log(errorCreateWarga);
+        console.log(errorCreateWarga.networkError.result.errors);
         return <p>error</p>
     }
-    if (loading) return <p>loading ...</p>
-    if (createData) {
-        console.log(createData.dataSourceWargaMutation.errors.messages);
+    if (loadingWarga) return <p>loading ...</p>
+    if (createDataWarga) {
+        console.log(createDataWarga.dataSourceWargaMutation.errors.messages);
     }
 
     // const onChangeNumberField = (numberFieldValue) => {
@@ -184,14 +210,21 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                         <Button
                             label= { 'SIMPAN DATA' }
                             type= { 'primary' }
-                            onClick={() => {
-                                createSDMWarga({
-                                variables: {
-                                  input: {
-                                    ...dataSourceWarga
-                                  }
-                                }
-                              })
+                            onClick={() => { 
+                                createSDM({
+                                    variables: {
+                                      input: {
+                                        category:'WARGA'
+                                      }
+                                    }
+                                  })
+                            //     createSDMWarga({
+                            //     variables: {
+                            //       input: {
+                            //         ...dataSourceWarga
+                            //       }
+                            //     }
+                            //   })
                             //   successBox();
                             //   window.location.href='/';
                               console.log(dataSourceWarga);

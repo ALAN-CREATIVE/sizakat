@@ -23,7 +23,7 @@ export default function SumberDataMustahik({ backend_uri }) {
         <div>
           <DetailStyle />
           <div className="row">
-            <div className="col-3">
+            <div className="position-fixed col-3">
               <Navbar
                 user={{
                   name: 'Annisaa Fitri Shabrina',
@@ -31,6 +31,7 @@ export default function SumberDataMustahik({ backend_uri }) {
                 }}
               />
             </div>
+            <div className="col-3"></div>
             <div className="col-9">
               <div className="row justify-content-between">
                 <div className="col-5">

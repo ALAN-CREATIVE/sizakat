@@ -20,7 +20,7 @@ const App = () => (
       <div>
         <DetailStyle />
         <div className="row">
-          <div className="col-3">
+          <div className="position-fixed col-3">
             <Navbar
               user={{
                 name: 'Annisaa Fitri Shabrina',
@@ -28,6 +28,7 @@ const App = () => (
               }}
             />
           </div>
+          <div className="col-3"></div>
           <div className="col-9">
             <div className="row justify-content-end">
                 <div className="col-2">

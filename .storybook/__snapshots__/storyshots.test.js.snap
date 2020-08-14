@@ -3784,6 +3784,640 @@ exports[`Storyshots Navigation Bar Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Receipt/Cash Default 1`] = `
+<div
+  className="sc-Axmtr guLHom"
+>
+  <h1>
+    Transaksi Uang
+  </h1>
+  <div
+    className="container"
+  >
+    <div
+      className="sc-AxhUy chtuzW"
+    >
+      <ul
+        className="name"
+      >
+        <li>
+          Syidniy melborn
+        </li>
+        <li>
+          Dzakiah Aisyah
+        </li>
+        <li
+          className="total"
+        >
+          Total Transaksi uang
+        </li>
+      </ul>
+      <ul
+        className="amount"
+      >
+        <li>
+          Rp 400.000
+        </li>
+        <li>
+          Rp 250.000
+        </li>
+        <li
+          className="total"
+        >
+          Rp 650.000
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div
+      className="sc-AxgMl eDOKol"
+    >
+      <h1>
+        Pengiriman
+        :
+      </h1>
+      <div
+        className="methods"
+      >
+        <div
+          className="method"
+          onClick={[Function]}
+        >
+          <div
+            className="box "
+          />
+          <p>
+            Transfer Bank
+             
+          </p>
+        </div>
+        <div
+          className="method"
+          onClick={[Function]}
+        >
+          <div
+            className="box "
+          />
+          <p>
+            Tunai di Masjid Al-Jabbar
+             
+            <span
+              className="sc-AxheI cZEIln"
+            >
+              Jam Operasional Selasa - Sabtu 08.00 - 17.00
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Receipt/Parts/Payment List Default 1`] = `
+<div
+  className="sc-AxhUy chtuzW"
+>
+  <ul
+    className="name"
+  >
+    <li>
+      Syidniy Melborn
+    </li>
+    <li>
+      Dzakiah Aisyah
+    </li>
+    <li
+      className="total"
+    >
+      Total Transaksi Uang
+    </li>
+  </ul>
+  <ul
+    className="amount"
+  >
+    <li>
+      Rp 400.000
+    </li>
+    <li>
+      Rp 250.000
+    </li>
+    <li
+      className="total"
+    >
+      Rp 650.000
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Receipt/Parts/Payment Option Default 1`] = `
+<div
+  className="sc-AxgMl eDOKol"
+>
+  <h1>
+    Pengiriman
+    :
+  </h1>
+  <div
+    className="methods"
+  >
+    <div
+      className="method"
+      onClick={[Function]}
+    >
+      <div
+        className="box "
+      />
+      <p>
+        Transfer Bank
+         
+      </p>
+    </div>
+    <div
+      className="method"
+      onClick={[Function]}
+    >
+      <div
+        className="box "
+      />
+      <p>
+        Tunai di Masjid Al-Jabbar
+         
+        <span
+          className="sc-AxheI cZEIln"
+        >
+          Jam Operasional Selasa - Sabtu 08:00 - 17:00
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Receipt/Rice Default 1`] = `
+<div
+  className="sc-Axmtr guLHom"
+>
+  <h1>
+    Transaksi Beras
+  </h1>
+  <div
+    className="container"
+  >
+    <div
+      className="sc-AxhUy chtuzW"
+    >
+      <ul
+        className="name"
+      >
+        <li>
+          Syidniy Melborn
+        </li>
+        <li>
+          Bambang Bimbing
+        </li>
+        <li
+          className="total"
+        >
+          Total Transaksi Beras
+        </li>
+      </ul>
+      <ul
+        className="amount"
+      >
+        <li>
+          2,5 kilogram
+        </li>
+        <li>
+          1,0 kilogram
+        </li>
+        <li
+          className="total"
+        >
+          3,5 kilogram
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div
+      className="sc-AxgMl eDOKol"
+    >
+      <h1>
+        Pengiriman
+        :
+      </h1>
+      <div
+        className="methods"
+      >
+        <div
+          className="method"
+          onClick={[Function]}
+        >
+          <div
+            className="box "
+          />
+          <p>
+            Dijemput
+             
+          </p>
+        </div>
+        <div
+          className="method"
+          onClick={[Function]}
+        >
+          <div
+            className="box "
+          />
+          <p>
+            Diantar ke Masjid Al-Jabbar
+             
+            <span
+              className="sc-AxheI cZEIln"
+            >
+              Jam Opersaional Selasa - Sabtu 08.00 - 17.00
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="hidden"
+  >
+    <div>
+      <style
+        jsx={true}
+      >
+        
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+      </style>
+      <label
+        className="required"
+      >
+         
+        Alamat Lengkap
+         
+      </label>
+      <input
+        name="Alamat Lengkap"
+        onChange={[Function]}
+        placeholder="Diisi dengan alamat"
+        required={true}
+        type="text"
+        value={null}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Receipt/Summary Default 1`] = `
+<div
+  className="sc-AxmLO joHQou"
+>
+  <h1>
+    Ringkasan Transaksi
+  </h1>
+  <section
+    className="margined"
+  >
+    <div
+      className="sc-Axmtr guLHom"
+    >
+      <h1>
+        Transaksi Uang
+      </h1>
+      <div
+        className="container"
+      >
+        <div
+          className="sc-AxhUy chtuzW"
+        >
+          <ul
+            className="name"
+          >
+            <li>
+              Sydniy Melbourn
+            </li>
+            <li>
+              Dzakiah Lorem
+            </li>
+            <li>
+              Ipsum Sit
+            </li>
+            <li
+              className="total"
+            >
+              Total Transaksi uang
+            </li>
+          </ul>
+          <ul
+            className="amount"
+          >
+            <li>
+              Rp 400.000
+            </li>
+            <li>
+              Rp 350.000
+            </li>
+            <li>
+              Rp 50.000
+            </li>
+            <li
+              className="total"
+            >
+              Rp 800.000
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
+          className="sc-AxgMl eDOKol"
+        >
+          <h1>
+            Pengiriman
+            :
+          </h1>
+          <div
+            className="methods"
+          >
+            <div
+              className="method"
+              onClick={[Function]}
+            >
+              <div
+                className="box "
+              />
+              <p>
+                Transfer Bank
+                 
+              </p>
+            </div>
+            <div
+              className="method"
+              onClick={[Function]}
+            >
+              <div
+                className="box "
+              />
+              <p>
+                Tunai di Masjid Al-Jabbar
+                 
+                <span
+                  className="sc-AxheI cZEIln"
+                >
+                  Jam Operasional Selasa - Sabtu 08.00 - 17.00
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    className="margined"
+  >
+    <div
+      className="sc-Axmtr guLHom"
+    >
+      <h1>
+        Transaksi Beras
+      </h1>
+      <div
+        className="container"
+      >
+        <div
+          className="sc-AxhUy chtuzW"
+        >
+          <ul
+            className="name"
+          >
+            <li>
+              Sydniy Lorem
+            </li>
+            <li>
+              Dzakiah Lorem
+            </li>
+            <li
+              className="total"
+            >
+              Total Transaksi Beras
+            </li>
+          </ul>
+          <ul
+            className="amount"
+          >
+            <li>
+              2,0 kilogram
+            </li>
+            <li>
+              3,0 kilogram
+            </li>
+            <li
+              className="total"
+            >
+              5,0 kilogram
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div
+          className="sc-AxgMl eDOKol"
+        >
+          <h1>
+            Pengiriman
+            :
+          </h1>
+          <div
+            className="methods"
+          >
+            <div
+              className="method"
+              onClick={[Function]}
+            >
+              <div
+                className="box "
+              />
+              <p>
+                Dijemput
+                 
+              </p>
+            </div>
+            <div
+              className="method"
+              onClick={[Function]}
+            >
+              <div
+                className="box "
+              />
+              <p>
+                Diantar ke Masjid Al-Jabbar
+                 
+                <span
+                  className="sc-AxheI cZEIln"
+                >
+                  Jam Opersaional Selasa - Sabtu 08.00 - 17.00
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="hidden"
+      >
+        <div>
+          <style
+            jsx={true}
+          >
+            
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+          </style>
+          <label
+            className="required"
+          >
+             
+            Alamat Lengkap
+             
+          </label>
+          <input
+            name="Alamat Lengkap"
+            onChange={[Function]}
+            placeholder="Diisi dengan alamat"
+            required={true}
+            type="text"
+            value={null}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    className="margined"
+  >
+    <div>
+      <style
+        jsx={true}
+      >
+        
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+      </style>
+      <button
+        className="primary"
+        onClick={[Function]}
+      >
+        LANJUTKAN KE PENGIRIMAN &gt;&gt;
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Search Default 1`] = `
 <div>
   <style
@@ -3827,6 +4461,59 @@ exports[`Storyshots Search Default 1`] = `
       type="text"
     />
   </form>
+</div>
+`;
+
+exports[`Storyshots Title/Title Flow Default 1`] = `
+<div
+  className="sc-fzozJi jPfVfP"
+  size={4}
+>
+  <div
+    className="sc-fzoLsD beDTFL"
+  >
+    <p
+      className=""
+    >
+      Data
+    </p>
+    <img
+      src="/svg/gt-arrow.svg"
+    />
+  </div>
+  <div
+    className="sc-fzoLsD beDTFL"
+  >
+    <p
+      className="highlight"
+    >
+      Pengiriman
+    </p>
+    <img
+      src="/svg/gt-arrow.svg"
+    />
+  </div>
+  <div
+    className="sc-fzoLsD beDTFL"
+  >
+    <p
+      className=""
+    >
+      Ulasan
+    </p>
+    <img
+      src="/svg/gt-arrow.svg"
+    />
+  </div>
+  <div
+    className="sc-fzoLsD beDTFL"
+  >
+    <p
+      className=""
+    >
+      Kwitansi
+    </p>
+  </div>
 </div>
 `;
 

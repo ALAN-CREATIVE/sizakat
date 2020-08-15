@@ -1,0 +1,569 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Table Default 1`] = `
+.c5 {
+  background: #FFF;
+  border-left: 6px solid #00239D;
+  font-family: Muli;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px 10px 40px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 100%;
+  overflow-y: overlay;
+}
+
+.c6 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #002398;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: tranparent;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  margin: 20px 0px;
+}
+
+.c0 {
+  background-color: #F5F6F8;
+  border-radius: 8px;
+  border: 1px solid #F2EEE7;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.04);
+  padding: 30px 25px;
+}
+
+.c2 {
+  font-family: Muli,sans;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 35px;
+  color: #393F50;
+  width: -webkit-fill-available;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h1
+      className="c2"
+    >
+      Sumber Data Mustahik
+    </h1>
+    <div>
+      <style
+        jsx={true}
+      >
+        
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+      </style>
+      <button
+        className="primary"
+        onClick={[Function]}
+      >
+        + Tambah Sumber Data
+      </button>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "margin": "30px 0px",
+      }
+    }
+  >
+    <div>
+      <style
+        jsx={true}
+      >
+        
+    
+    input[type=text] {
+      position: absolute;
+      width: 982px;
+      height: 48px;
+
+      background-image: url('search-icon.png');
+      background-size: 20px;
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+
+      background-color: #FFFFFF;
+      border: 1px solid #393F50;
+      box-sizing: border-box;
+      border-radius: 8px;
+
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 0px 0px 4px 45px;
+
+      color: #393F50;
+    }
+    form.example input[type=text]::placeholder {
+      color: #C2C2C2;
+    }
+  
+      </style>
+      <form
+        className="example"
+      >
+        <input
+          name="search"
+          onChange={[Function]}
+          placeholder="Cari berdasarkan nama sumber data"
+          type="text"
+          value=""
+        />
+      </form>
+    </div>
+    <div>
+      <div
+        className="filter"
+      >
+        <style
+          jsx={true}
+        >
+          
+    .filter {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: #00239D;
+      text-decoration : none;
+      }
+
+    .kotakFilter {
+      font-weight: 600;
+      font-size: 16px;
+      color: #393F50;
+      position : absolute;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      padding : 40px 10px;
+      width: 500px;
+      transform: translate(-50%, -50%);
+      border: 1px solid #393F50;
+      box-sizing: border-box;
+      background: #FFFFFF;
+    }
+
+    .radio {
+      margin: 20px 10px;
+    }
+
+    .radio input {
+      margin-right: 30px;
+    }
+
+    .hide {
+      display: none;
+    }
+  
+        </style>
+        <div
+          onClick={[Function]}
+        >
+          <div>
+            SEMUA KATEGORI SUMBER
+            <img
+              src="/dropdown-arrow.svg"
+              style={
+                Object {
+                  "verticalAlign": "baseline",
+                }
+              }
+            />
+          </div>
+          <div
+            className="kotakFilter hide"
+          >
+            <div
+              className="radios"
+              onChange={[Function]}
+            >
+              <div
+                className="radio"
+              >
+                <label
+                  style={
+                    Object {
+                      "display": "block",
+                    }
+                  }
+                >
+                  <input
+                    name="filter"
+                    type="radio"
+                    value="Semua Kategori Sumber Data"
+                  />
+                  Semua Kategori Sumber Data
+                </label>
+              </div>
+              <div
+                className="radio"
+              >
+                <label
+                  style={
+                    Object {
+                      "display": "block",
+                    }
+                  }
+                >
+                  <input
+                    name="filter"
+                    type="radio"
+                    value="Warga"
+                  />
+                  Warga
+                </label>
+              </div>
+              <div
+                className="radio"
+              >
+                <label
+                  style={
+                    Object {
+                      "display": "block",
+                    }
+                  }
+                >
+                  <input
+                    name="filter"
+                    type="radio"
+                    value="Pesantren"
+                  />
+                  Pesantren
+                </label>
+              </div>
+              <div
+                className="radio"
+              >
+                <label
+                  style={
+                    Object {
+                      "display": "block",
+                    }
+                  }
+                >
+                  <input
+                    name="filter"
+                    type="radio"
+                    value="Pekerja"
+                  />
+                  Pekerja
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div>
+            <h1
+              style={
+                Object {
+                  "color": "#393F50",
+                  "fontSize": "16px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Lorem Ipsum
+            </h1>
+            <p
+              style={
+                Object {
+                  "color": "#EB4E2C",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Warga
+            </p>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              Detail
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div>
+            <h1
+              style={
+                Object {
+                  "color": "#393F50",
+                  "fontSize": "16px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Sit Dolor Amet
+            </h1>
+            <p
+              style={
+                Object {
+                  "color": "#EB4E2C",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Warga
+            </p>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              Detail
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div>
+            <h1
+              style={
+                Object {
+                  "color": "#393F50",
+                  "fontSize": "16px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Consectetur Adisipicing
+            </h1>
+            <p
+              style={
+                Object {
+                  "color": "#EB4E2C",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Institusi
+            </p>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              Detail
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div>
+            <h1
+              style={
+                Object {
+                  "color": "#393F50",
+                  "fontSize": "16px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Elit Sed Do
+            </h1>
+            <p
+              style={
+                Object {
+                  "color": "#EB4E2C",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Pekerja
+            </p>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              Detail
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <div>
+            <h1
+              style={
+                Object {
+                  "color": "#393F50",
+                  "fontSize": "16px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Eiusmod Tempor
+            </h1>
+            <p
+              style={
+                Object {
+                  "color": "#EB4E2C",
+                  "fontSize": "12px",
+                  "fontWeight": 600,
+                  "margin": 0,
+                }
+              }
+            >
+              Institusi
+            </p>
+          </div>
+          <div
+            className="c6"
+          >
+            <a
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              Detail
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

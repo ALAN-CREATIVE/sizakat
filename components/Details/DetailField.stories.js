@@ -12,4 +12,4 @@ export const detailsData = {
   description: '67 tahun',
 }
 
-export const Default = () => <DetailField props={{ ...detailsData }} />;
+export const Default = () => <DetailField { ...detailsData } />;

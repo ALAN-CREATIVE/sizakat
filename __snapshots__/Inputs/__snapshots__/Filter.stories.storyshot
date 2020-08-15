@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Input/Filter Default 1`] = `
+<div
+  className="filter"
+>
+  <style
+    jsx={true}
+  >
+    
+      .filter p{
+        font-family: Muli;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #00239D;
+        text-decoration : none;
+        }
+
+      .kotakFilter{
+        position : absolute;
+        width : 55%;
+        height : 55%;
+        padding : 3%;
+        background:  #E5E5E5;
+        border: 1px solid #393F50;
+        box-sizing: border-box;
+      }
+      
+    
+  </style>
+  <div
+    onClick={[Function]}
+  >
+    <p>
+      SEMUA SUMBER DATA ⯆ 
+    </p>
+  </div>
+</div>
+`;

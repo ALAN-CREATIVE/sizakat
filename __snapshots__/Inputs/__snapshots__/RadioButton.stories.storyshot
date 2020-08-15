@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Input/Radio Button Default 1`] = `
+<div>
+  <label
+    className="main-label "
+  >
+    Jenis Kelamin
+  </label>
+  <div
+    className="radios"
+    onChange={[Function]}
+  >
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Laki-laki"
+      />
+      <label>
+        Laki-laki
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Perempuan"
+      />
+      <label>
+        Perempuan
+      </label>
+    </div>
+  </div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      color: #393F50;
+    }
+
+    .main-label {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .required:after {
+      content: "*";
+      color: #EB4E2C;
+    }
+
+    .radios {
+      margin: 10px 5px 5px 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio {
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      align-items: center;
+    }
+
+    .radio label {
+      margin-left: 5px;
+    }
+
+    .error {
+      color: #EB4E2C;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Muli;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/Radio Button Error 1`] = `
+<div>
+  <label
+    className="main-label "
+  >
+    Jenis Kelamin
+  </label>
+  <div
+    className="radios"
+    onChange={[Function]}
+  >
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Laki-laki"
+      />
+      <label>
+        Laki-laki
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Perempuan"
+      />
+      <label>
+        Perempuan
+      </label>
+    </div>
+  </div>
+  <span
+    className="error"
+  >
+    Pilih salah satu jenis kelamin
+  </span>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      color: #393F50;
+    }
+
+    .main-label {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .required:after {
+      content: "*";
+      color: #EB4E2C;
+    }
+
+    .radios {
+      margin: 10px 5px 5px 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio {
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      align-items: center;
+    }
+
+    .radio label {
+      margin-left: 5px;
+    }
+
+    .error {
+      color: #EB4E2C;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Muli;
+    }
+  
+  </style>
+</div>
+`;
+
+exports[`Storyshots Input/Radio Button Required 1`] = `
+<div>
+  <label
+    className="main-label required"
+  >
+    Jenis Kelamin
+  </label>
+  <div
+    className="radios"
+    onChange={[Function]}
+  >
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Laki-laki"
+      />
+      <label>
+        Laki-laki
+      </label>
+    </div>
+    <div
+      className="radio"
+    >
+      <input
+        name="Jenis Kelamin"
+        type="radio"
+        value="Perempuan"
+      />
+      <label>
+        Perempuan
+      </label>
+    </div>
+  </div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      color: #393F50;
+    }
+
+    .main-label {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .required:after {
+      content: "*";
+      color: #EB4E2C;
+    }
+
+    .radios {
+      margin: 10px 5px 5px 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .radio {
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      align-items: center;
+    }
+
+    .radio label {
+      margin-left: 5px;
+    }
+
+    .error {
+      color: #EB4E2C;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: Muli;
+    }
+  
+  </style>
+</div>
+`;

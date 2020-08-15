@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Receipt/Cash Default 1`] = `
+.c1 {
+  font-family: Muli,sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 ul {
+  padding: 0px;
+}
+
+.c1 li {
+  font-size: 16px;
+  list-style-type: none;
+  margin: 10px 0px 20px 0px;
+  line-height: 20px;
+}
+
+.c1 .total {
+  font-weight: 800;
+  color: #00239D;
+  margin-bottom: 10px;
+}
+
+.c1 .amount .total {
+  font-size: 20px;
+}
+
+.c2 {
+  font-family: Muli,sans-serif;
+}
+
+.c2 .methods {
+  padding: 0px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c2 .method {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c2 h1 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #393F50;
+}
+
+.c2 .box {
+  margin: 0px 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #393F50;
+}
+
+.c2 .choosen {
+  background: #00239D;
+}
+
+.c2 p {
+  margin: 0;
+  color: #393F50;
+  line-height: 20px;
+}
+
+.c3 {
+  display: block;
+  color: #EB4E2C;
+  font-size: 12px;
+}
+
+.c3:before {
+  content: "*";
+}
+
+.c0 {
+  font-family: Muli,sans-serif;
+  background: #FFFFFF;
+  border: 2px solid #393F50;
+  padding: 20px 35px;
+}
+
+.c0 > h1 {
+  margin: 0px;
+  font-weight: 800;
+  font-size: 20px;
+  color: #00239D;
+}
+
+.c0 .container {
+  margin: 15px 20px 10px 20px;
+}
+
+.c0 .hidden {
+  display: none;
+}
+
+<div
+  className="c0"
+>
+  <h1>
+    Transaksi Uang
+  </h1>
+  <div
+    className="container"
+  >
+    <div
+      className="c1"
+    >
+      <ul
+        className="name"
+      >
+        <li>
+          Syidniy melborn
+        </li>
+        <li>
+          Dzakiah Aisyah
+        </li>
+        <li
+          className="total"
+        >
+          Total Transaksi uang
+        </li>
+      </ul>
+      <ul
+        className="amount"
+      >
+        <li>
+          Rp 400.000
+        </li>
+        <li>
+          Rp 250.000
+        </li>
+        <li
+          className="total"
+        >
+          Rp 650.000
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div
+      className="c2"
+    >
+      <h1>
+        Pengiriman
+        :
+      </h1>
+      <div
+        className="methods"
+      >
+        <div
+          className="method"
+          onClick={[Function]}
+        >
+          <div
+            className="box "
+          />
+          <p>
+            Transfer Bank
+             
+          </p>
+        </div>
+        <div
+          className="method"
+          onClick={[Function]}
+        >
+          <div
+            className="box "
+          />
+          <p>
+            Tunai di Masjid Al-Jabbar
+             
+            <span
+              className="c3"
+            >
+              Jam Operasional Selasa - Sabtu 08.00 - 17.00
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

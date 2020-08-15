@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Receipt/Parts/Payment List Default 1`] = `
+.c0 {
+  font-family: Muli,sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 ul {
+  padding: 0px;
+}
+
+.c0 li {
+  font-size: 16px;
+  list-style-type: none;
+  margin: 10px 0px 20px 0px;
+  line-height: 20px;
+}
+
+.c0 .total {
+  font-weight: 800;
+  color: #00239D;
+  margin-bottom: 10px;
+}
+
+.c0 .amount .total {
+  font-size: 20px;
+}
+
+<div
+  className="c0"
+>
+  <ul
+    className="name"
+  >
+    <li>
+      Syidniy Melborn
+    </li>
+    <li>
+      Dzakiah Aisyah
+    </li>
+    <li
+      className="total"
+    >
+      Total Transaksi Uang
+    </li>
+  </ul>
+  <ul
+    className="amount"
+  >
+    <li>
+      Rp 400.000
+    </li>
+    <li>
+      Rp 250.000
+    </li>
+    <li
+      className="total"
+    >
+      Rp 650.000
+    </li>
+  </ul>
+</div>
+`;

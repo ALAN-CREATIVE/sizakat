@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Card Default 1`] = `
+.c0 {
+  background: #FFF;
+  border-left: 6px solid #00239D;
+  font-family: Muli;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px 10px 40px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  color: #002398;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <h1
+      style={
+        Object {
+          "color": "#393F50",
+          "fontSize": "16px",
+          "fontWeight": 600,
+          "margin": 0,
+        }
+      }
+    >
+      Lorem Ipsum Sit Dolor Amet
+    </h1>
+    <p
+      style={
+        Object {
+          "color": "#EB4E2C",
+          "fontSize": "12px",
+          "fontWeight": 600,
+          "margin": 0,
+        }
+      }
+    >
+      warga
+    </p>
+  </div>
+  <div
+    className="c1"
+  >
+    <a
+      onClick={[Function]}
+      style={
+        Object {
+          "cursor": "pointer",
+        }
+      }
+    >
+      Detail
+    </a>
+  </div>
+</div>
+`;

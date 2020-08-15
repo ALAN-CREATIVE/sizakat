@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Title/Title Flow Default 1`] = `
+.c0 {
+  font-family: Muli,sans-serif;
+  font-weight: 600;
+  color: #393F50;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  justify-self: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+.c1 p {
+  margin: 0px;
+  margin-bottom: 0.3em;
+  font-size: 24px;
+}
+
+.c1 .highlight {
+  color: #00239D;
+}
+
+<div
+  className="c0"
+  size={4}
+>
+  <div
+    className="c1"
+  >
+    <p
+      className=""
+    >
+      Data
+    </p>
+    <img
+      src="/svg/gt-arrow.svg"
+    />
+  </div>
+  <div
+    className="c1"
+  >
+    <p
+      className="highlight"
+    >
+      Pengiriman
+    </p>
+    <img
+      src="/svg/gt-arrow.svg"
+    />
+  </div>
+  <div
+    className="c1"
+  >
+    <p
+      className=""
+    >
+      Ulasan
+    </p>
+    <img
+      src="/svg/gt-arrow.svg"
+    />
+  </div>
+  <div
+    className="c1"
+  >
+    <p
+      className=""
+    >
+      Kwitansi
+    </p>
+  </div>
+</div>
+`;

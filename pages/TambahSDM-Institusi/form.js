@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { gql, useMutation, useQuery } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
@@ -8,6 +8,17 @@ import Button from '../../components/Buttons/Button';
 
 import { TambahSDMStyle } from './style';
 
+const ADD_SDM=gql`
+    mutation dataSourceMutation($input: DataSourceMutationInput!){
+        dataSourceMutation(input: $input){
+            dataSource{
+                id
+                category
+            }
+        }
+    }
+`;
+
 const ADD_SDM_INSTITUSI=gql`
     mutation dataSourceInstitusiMutation($input: DataSourceInstitusiMutationInput!){
         dataSourceInstitusiMutation(input: $input){
@@ -16,7 +27,17 @@ const ADD_SDM_INSTITUSI=gql`
                 picKtp
                 picPhone
                 picPosition
+                name
+                province
+                regency
+                subDistrict
+                village
+                rt
+                rw
+                address
+                dataSource{id}
             }
+            errors { messages }
         }
     }
     `;
@@ -48,13 +69,25 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         // id: '',
     });
 
-    const [createSDMInstitusi, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM_INSTITUSI);
+    const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
+    const [createSDMInstitusi, { data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI);
     
-    if(errorCreate) {
-        console.log(errorCreate);
+    useEffect(() => {
+        if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
+            //   createSDMWarga({ ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id });
+              createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});
+
+              }
+            }
+        ,[createData]
+    )
+
+    if(errorCreateInstitusi) {
+        console.log(errorCreateInstitusi);
+        console.log(errorCreateInstitusi.networkError.result.errors);
         return <p>error</p>
     }
-    if (loading) return <p>loading ...</p>
+    if (loadingInstitusi) return <p>loading ...</p>
 
     return (
         <ApolloProvider client={client}>
@@ -182,15 +215,15 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                             label= { 'SIMPAN DATA' }
                             type= { 'primary' }
                             onClick={() => {
-                                createSDMInstitusi({
+                                createSDM({
                                 variables: {
-                                input: {
-                                    ...dataSourceInstitusi
-                                }
+                                    input: {
+                                        category:'INSTITUSI'
+                                    }
                                 }
                             })
-                            successBox();
-                            window.location.href='/';
+                            // successBox();
+                            // window.location.href='/';
                             console.log(dataSourceInstitusi);
                             }}
                         />

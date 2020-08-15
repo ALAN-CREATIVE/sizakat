@@ -79,8 +79,8 @@ export default function FormTambahSDMWarga({ backend_uri }) {
 
               }
             }
-            ,[createData]
-        )
+        ,[createData]
+    )
     
     if(errorCreateWarga) {
         console.log(errorCreateWarga);

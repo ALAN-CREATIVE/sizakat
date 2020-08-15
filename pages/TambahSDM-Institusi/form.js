@@ -65,12 +65,90 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         rt: '',
         rw: '',
         address:'',
-        // dataSource: '',
-        // id: '',
     });
+
+    const [error, setError] = useState({
+        picName:'',
+        picKtp: '',
+        picPhone: '',
+        // picPosition: '',
+        // name:'',
+        province: '',
+        regency: '',
+        subDistrict: '',
+        village: '',
+        rt: '',
+        rw: '',
+        // address:'',
+    }); 
 
     const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
     const [createSDMInstitusi, { data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI);
+    
+    const submitForm = () => {
+        console.log(handleSubmit());
+        if (handleSubmit()) {
+            createSDM({
+                variables: {
+                    input: {
+                        category:'INSTITUSI'
+                    }
+                }
+            });
+          console.log(dataSourceInstitusi);
+          alert("Submit berhasil");
+        } else {
+          console.log(dataSourceInstitusi);
+          alert("Submit gagal");
+        }
+    }
+
+    const handleSubmit = () => {
+        let formIsValid = true;
+        let temporaryError = {};
+    
+        if (dataSourceInstitusi.picName.length == 0) {
+            formIsValid = false;
+            temporaryError.picName='Nama penanggung jawab tidak boleh kosong';
+        } if (dataSourceInstitusi.picKtp.length < 14 || dataSourceInstitusi.picKtp.length > 14) {
+            formIsValid = false;
+            temporaryError.picKtp='Format KTP harus berupa 14 karakter angka';
+        } if (dataSourceInstitusi.picPhone.length == 0) {
+            formIsValid = false;
+            temporaryError.picPhone='Nomor telepon tidak boleh kosong';
+        // } if (dataSourceInstitusi.picPosition.length == 0) {
+        //     formIsValid = false;
+        //     temporaryError.picPosition='Jabatan penanggung jawab tidak boleh kosong';
+        // } if (mustahik.name.length == 0) {
+        //     formIsValid = false;
+        //     temporaryError.gender='Nama institusi tidak boleh kosong';
+        } if (dataSourceInstitusi.province.length == 0) {
+            formIsValid = false;
+            temporaryError.province='Nama provinsi tidak boleh kosong';
+        } if (dataSourceInstitusi.regency.length == 0) {
+            formIsValid = false;
+            temporaryError.regency='Nama kota/kabupaten tidak boleh kosong';
+        } if (dataSourceInstitusi.subDistrict.length == 0) {
+            formIsValid = false;
+            temporaryError.subDistrict='Nama kecamatan tidak boleh kosong';
+        } if (dataSourceInstitusi.village.length == 0) {
+            formIsValid = false;
+            temporaryError.village='Nama kelurahan tidak boleh kosong';
+        } if (dataSourceInstitusi.rw.length == 0) {
+            formIsValid = false;
+            temporaryError.rw='Nomor RW tidak boleh kosong';
+        } if (dataSourceInstitusi.rt.length == 0) {
+            formIsValid = false;
+            temporaryError.rt='Nomor RT tidak boleh kosong';
+        // } if (mustahik.address.length == 0) {
+        //     formIsValid = false;
+        //     temporaryError.gender='Pilih salah satu dari jenis kelamin';
+        }
+    
+        setError(temporaryError);
+        return formIsValid;
+      }
+    
     
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
@@ -87,7 +165,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         console.log(errorCreateInstitusi.networkError.result.errors);
         return <p>error</p>
     }
+    
     if (loadingInstitusi) return <p>loading ...</p>
+
+    // if (createDataInstitusi) {
+    //     console.log(createDataInstitusi.dataSourceMutation.errors.messages);
+    // }
 
     return (
         <ApolloProvider client={client}>
@@ -117,7 +200,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                             label={ 'Provinsi' }
                             placeholder={ 'Nama Provinsi' }
                             required={ true }
-                            onChange={provinsi => setDataSourceInstitusi({...dataSourceInstitusi, province: provinsi})}
+                            onChange={provinsi => {
+                                setDataSourceInstitusi({...dataSourceInstitusi, province: provinsi});
+                                setError({...error,
+                                    province: provinsi = provinsi.length < 1 ? 'Nama provinsi tidak boleh kosong' : ''});
+                            }}
+                            error={error.province}
                         />
                     </div>
                     <div className="form" id="alamat">
@@ -127,7 +215,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                     label={ 'Kota/Kabupaten' }
                                     placeholder={ 'Nama Kota/Kabupaten' }
                                     required={ true }
-                                    onChange={kota => setDataSourceInstitusi({...dataSourceInstitusi, regency: kota})}
+                                    onChange={kota => {
+                                        setDataSourceInstitusi({...dataSourceInstitusi, regency: kota});
+                                        setError({...error,
+                                            regency: kota = kota.length < 1 ? 'Nama kota tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.regency}
                                     />
                             </div>
                             <div class="col" id="kecamatan">
@@ -135,7 +228,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                     label={ 'Kecamatan' }
                                     placeholder={ 'Nama Kecamatan' }
                                     required={ true }
-                                    onChange={kecamatan => setDataSourceInstitusi({...dataSourceInstitusi, subDistrict: kecamatan})}
+                                    onChange={kecamatan => {
+                                        setDataSourceInstitusi({...dataSourceInstitusi, subDistrict: kecamatan});
+                                        setError({...error,
+                                            subDistrict: kecamatan = kecamatan.length < 1 ? 'Nama kecamatan tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.subDistrict}
                                     />
                             </div>
                             <div class="col" id="kelurahan">
@@ -143,7 +241,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                     label={ 'Kelurahan' }
                                     placeholder={ 'Nama Kelurahan' }
                                     required={ true }
-                                    onChange={kelurahan => setDataSourceInstitusi({...dataSourceInstitusi, village: kelurahan})}
+                                    onChange={kelurahan => {
+                                        setDataSourceInstitusi({...dataSourceInstitusi, village: kelurahan});
+                                        setError({...error,
+                                            village: kelurahan = kelurahan.length < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.village}
                                     />
                             </div>
                         </div>
@@ -151,19 +254,29 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                     <div className="form" id="alamat-detail">
                         <div class="row">
                             <div class="col" id="rw">
-                                <TextField
+                                <NumberField
                                     label={ 'RW' }
                                     placeholder={ 'Nomor RW' }
                                     required={ true }
-                                    onChange={rw => setDataSourceInstitusi({...dataSourceInstitusi, rw: rw})}
+                                    onChange={rw => {
+                                        setDataSourceInstitusi({...dataSourceInstitusi, rw: rw});
+                                        setError({...error,
+                                            rw: rw = rw < 1 ? 'Nomor RW tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.rw}
                                     />
                             </div>
                             <div class="col" id="rt">
-                                <TextField
+                                <NumberField
                                     label={ 'RT' }
                                     placeholder={ 'Nomor RT' }
                                     required={ true }
-                                    onChange={rt => setDataSourceInstitusi({...dataSourceInstitusi, rt: rt})}
+                                    onChange={rt => {
+                                        setDataSourceInstitusi({...dataSourceInstitusi, rt: rt});
+                                        setError({...error,
+                                            rt: rt = rt < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.rt}
                                     />
                             </div>
                             <div class="col"></div>
@@ -183,7 +296,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                             label={ 'Nama' }
                             placeholder={ 'Nama Penanggung Jawab sesuai dengan KTP' }
                             required={ true }
-                            onChange={nama => setDataSourceInstitusi({...dataSourceInstitusi, picName: nama})}
+                            onChange={nama => {
+                                setDataSourceInstitusi({...dataSourceInstitusi, picName: nama});
+                                setError({...error,
+                                    picName: nama = nama.length < 1 ? 'Nama penanggung jawab tidak boleh kosong' : ''});
+                            }}
+                            error={error.picName}
                         />
                     </div>
                     <div className="form" id="no-ktp">
@@ -191,14 +309,19 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                             label={ 'No. KTP' }
                             placeholder={ 'Terdiri dari 14 karakter angka' }
                             required={ true }
-                            onChange={noKTP => setDataSourceInstitusi({...dataSourceInstitusi, picKtp: noKTP})}
+                            onChange={noKTP => {
+                                setDataSourceInstitusi({...dataSourceInstitusi, picKtp: noKTP});
+                                setError({...error,
+                                    picKtp: noKTP = noKTP.length < 14 || noKTP.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''});
+                            }}
+                            error={error.picKtp}
                         />
                     </div>
                     <div className="form" id="jabatan">
                         <TextField
                             label={ 'Jabatan' }
                             placeholder={ 'Nama Jabatan Penanggung Jawab' }
-                            required={ true }
+                            required={ false }
                             onChange={jabatan => setDataSourceInstitusi({...dataSourceInstitusi, picPosition: jabatan})}
                         />
                     </div>
@@ -207,25 +330,29 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                             label={ 'No. Telepon' }
                             placeholder={ 'Terdiri dari angka' }
                             required={ true }
-                            onChange={noHp => setDataSourceInstitusi({...dataSourceInstitusi, picPhone: noHp})}
+                            onChange={noHp => {
+                                setDataSourceInstitusi({...dataSourceInstitusi, picPhone: noHp});
+                                try {
+                                    parseInt(noHp,10);
+                                  } catch(error) {
+                                    setError ({...error,
+                                      picPhone:'Format HP harus berupa angka'});
+                                  }
+                            }} 
+                            error={error.picPhone}                 
                         />
                     </div>
                     <div className="form button-lanjutkan">
                         <Button
                             label= { 'SIMPAN DATA' }
                             type= { 'primary' }
-                            onClick={() => {
-                                createSDM({
-                                variables: {
-                                    input: {
-                                        category:'INSTITUSI'
-                                    }
-                                }
-                            })
+                            onClick={() =>
+                                submitForm()
+                            }             
                             // successBox();
                             // window.location.href='/';
-                            console.log(dataSourceInstitusi);
-                            }}
+                            // console.log(dataSourceInstitusi);
+                            
                         />
                     </div>
                 </div>

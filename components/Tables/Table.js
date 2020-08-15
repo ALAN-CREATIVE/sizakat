@@ -15,21 +15,21 @@ const Table = ({
   onButtonClicked,
   onFilterPicked,
   onDetailClicked,
-  onSearchChanged,
+  onSearchChanged
 }) => {
   return (
     <Container>
       <Header>
         <Title>{ title }</Title>
         <Button 
-          type={'primary'} 
-          label={`+ ${buttonCaption}`} 
-          onClick={onButtonClicked} 
+          type={'primary'}
+          label={`+ ${buttonCaption}`}
+          onClick={onButtonClicked}
         />
       </Header>
       <div style={{ margin: '30px 0px' }}>
         <Search
-          placeholder={searchPlaceholder} 
+          placeholder={searchPlaceholder}
           onChange={onSearchChanged}
         />
         <div>

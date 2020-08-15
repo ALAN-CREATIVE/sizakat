@@ -1,6 +1,6 @@
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 import initStoryshots, {
-  Stories2SnapsConverter,
+  Stories2SnapsConverter
 } from '@storybook/addon-storyshots';
 import renderer from 'react-test-renderer';
 

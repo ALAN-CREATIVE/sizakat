@@ -16,7 +16,7 @@ const Table = ({
   onFilterPicked,
   onDetailClicked,
   onSearchChanged,
-  setMustahikData,
+  setMustahikData
 }) => {
   return (
     <Container>

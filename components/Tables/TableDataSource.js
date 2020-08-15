@@ -16,16 +16,16 @@ const Table = ({
   onFilterPicked,
   onDetailClicked,
   onSearchChanged,
-  setDataSourceData,
+  setDataSourceData
 }) => {
   return (
     <Container>
       <Header>
         <Title>{ title }</Title>
-        <Button 
-          type={'primary'} 
-          label={`+ ${buttonCaption}`} 
-          onClick={onButtonClicked} 
+        <Button
+          type={'primary'}
+          label={`+ ${buttonCaption}`}
+          onClick={onButtonClicked}
         />
       </Header>
       <div style={{ margin: '30px 0px' }}>

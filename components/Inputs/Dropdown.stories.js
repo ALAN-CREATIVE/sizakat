@@ -12,7 +12,10 @@ export default {
 export const dropdownData = {
   label: 'Status Mustahik',
   placeholder: 'Pilih Status Mustahik',
-  options: ['Miskin', 'Janda'],
+  options: [
+    { display: 'Miskin', value: 'MISKIN'},
+    { display: 'Janda', value: 'JANDA'}
+  ],
   required: false,
   error: null,
 }

@@ -114,6 +114,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -125,7 +126,6 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -211,6 +211,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -222,7 +223,6 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -308,6 +308,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -319,7 +320,6 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -463,6 +463,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -474,7 +475,6 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -565,6 +565,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -576,7 +577,6 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -662,6 +662,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -673,7 +674,6 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -817,6 +817,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -828,7 +829,6 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -914,6 +914,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -925,7 +926,6 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1016,6 +1016,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1027,7 +1028,6 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1171,6 +1171,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1182,7 +1183,6 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1268,6 +1268,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1279,7 +1280,6 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1365,6 +1365,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1376,7 +1377,6 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1525,6 +1525,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1536,7 +1537,6 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1622,6 +1622,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1633,7 +1634,6 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;
@@ -1719,6 +1719,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -1730,7 +1731,6 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;

@@ -16,11 +16,11 @@ export const Select = ({ placeholder, options, onSelect }) => {
       {isOpen && <ul className="options">
         {options.map(option => (
           <li className="option" key={option} onClick={() => {
-            setSelectValue(option);
+            setSelectValue(option.display);
             setHaveChosen(true);
             setIsOpen(false);
-            onSelect(option);
-          }}>{ option }</li>
+            onSelect(option.value);
+          }}>{ option.display }</li>
         ))}
       </ul>}
       <SelectStyle />

@@ -20,10 +20,22 @@ const ButtonStyle = () => (
             background: #C2C2C2;
             border:1px solid #C2C2C2;
         }
+        .tertiary{
+            background: white;
+            border-radius: 4px;
+            border:1px solid #00239D;
+            color: #00239D;
+        }
         .danger{
             background: #EB4E2C;
             border-radius: 4px;
             border:1px solid #EB4E2C;
+        }
+        .round{
+            background: #00239D;
+            border-radius: 50%;
+            border:1px solid #00239D;
+            font-size: 20px;
         }
     `}</style>
 )

@@ -69,8 +69,79 @@ export default function FormTambahSDMWarga({ backend_uri }) {
         rw: '',
     });
 
+    const [error, setError] = useState({
+        picName:'',
+        picKtp: '',
+        picPhone: '',
+        picPosition: '',
+        province: '',
+        regency: '',
+        subDistrict: '',
+        village: '',
+        rt: '',
+        rw: '',
+    });
+
     const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
     const [createSDMWarga, { data: createDataWarga, error: errorCreateWarga, loading: loadingWarga }  ] = useMutation(ADD_SDM_WARGA);
+
+    const submitForm = () => {
+        console.log(handleSubmit());
+        if (handleSubmit()) {
+            createSDM({
+                variables: {
+                    input: {
+                        category:'WARGA'
+                    }
+                }
+            });
+          console.log(dataSourceWarga);
+          alert("Submit berhasil");
+        } else {
+          console.log(dataSourceWarga);
+          alert("Submit gagal");
+        }
+    }
+
+    const handleSubmit = () => {
+        let formIsValid = true;
+        let temporaryError = {};
+    
+        if (dataSourceWarga.picName.length == 0) {
+            formIsValid = false;
+            temporaryError.picName='Nama penanggung jawab tidak boleh kosong';
+        } if (dataSourceWarga.picKtp.length < 14 || dataSourceWarga.picKtp.length > 14) {
+            formIsValid = false;
+            temporaryError.picKtp='Format KTP harus berupa 14 karakter angka';
+        } if (dataSourceWarga.picPhone.length == 0) {
+            formIsValid = false;
+            temporaryError.picPhone='Nomor telepon tidak boleh kosong';
+        } if (dataSourceWarga.picPosition.length == 0) {
+            formIsValid = false;
+            temporaryError.picPosition='Nama jabatan tidak boleh kosong';
+        } if (dataSourceWarga.province.length == 0) {
+            formIsValid = false;
+            temporaryError.province='Nama provinsi tidak boleh kosong';
+        } if (dataSourceWarga.regency.length == 0) {
+            formIsValid = false;
+            temporaryError.regency='Nama kota/kabupaten tidak boleh kosong';
+        } if (dataSourceWarga.subDistrict.length == 0) {
+            formIsValid = false;
+            temporaryError.subDistrict='Nama kecamatan tidak boleh kosong';
+        } if (dataSourceWarga.village.length == 0) {
+            formIsValid = false;
+            temporaryError.village='Nama kelurahan tidak boleh kosong';
+        } if (dataSourceWarga.rw.length == 0) {
+            formIsValid = false;
+            temporaryError.rw='Nomor RW tidak boleh kosong';
+        } if (dataSourceWarga.rt.length == 0) {
+            formIsValid = false;
+            temporaryError.rt='Nomor RT tidak boleh kosong';
+        }
+
+        setError(temporaryError);
+        return formIsValid;
+      }
 
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
@@ -122,7 +193,12 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                             label={ 'Provinsi' }
                             placeholder={ 'Nama Provinsi' }
                             required={ true }
-                            onChange={provinsi => setDataSourceWarga({...dataSourceWarga, province: provinsi})}
+                            onChange={provinsi => {
+                                setDataSourceWarga({...dataSourceWarga, province: provinsi});
+                                setError({...error,
+                                    province: provinsi = provinsi.length < 1 ? 'Nama provinsi tidak boleh kosong' : ''});
+                            }}
+                            error={error.province}
                         />
                     </div>
                     <div className="form" id="alamat">
@@ -132,7 +208,12 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                                     label={ 'Kota/Kabupaten' }
                                     placeholder={ 'Nama Kota/Kabupaten' }
                                     required={ true }
-                                    onChange={kota => setDataSourceWarga({...dataSourceWarga, regency: kota})}
+                                    onChange={kota => {
+                                        setDataSourceWarga({...dataSourceWarga, regency: kota});
+                                        setError({...error,
+                                            regency: kota = kota.length < 1 ? 'Nama kota tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.regency}
                                 />
                             </div>
                             <div class="col" id="kecamatan">
@@ -140,7 +221,12 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                                     label={ 'Kecamatan' }
                                     placeholder={ 'Nama Kecamatan' }
                                     required={ true }
-                                    onChange={kecamatan => setDataSourceWarga({...dataSourceWarga, subDistrict: kecamatan})}
+                                    onChange={kecamatan => {
+                                        setDataSourceWarga({...dataSourceWarga, subDistrict: kecamatan});
+                                        setError({...error,
+                                            subDistrict: kecamatan = kecamatan.length < 1 ? 'Nama kecamatan tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.subDistrict}
                                 />
                             </div>
                             <div class="col" id="kelurahan">
@@ -148,7 +234,12 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                                     label={ 'Kelurahan' }
                                     placeholder={ 'Nama Kelurahan' }
                                     required={ true }
-                                    onChange={kelurahan => setDataSourceWarga({...dataSourceWarga, village: kelurahan})}
+                                    onChange={kelurahan => {
+                                        setDataSourceWarga({...dataSourceWarga, village: kelurahan});
+                                        setError({...error,
+                                            village: kelurahan = kelurahan.length < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.village}
                                 />
                             </div>
                         </div>
@@ -156,19 +247,29 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                     <div className="form" id="alamat-detail">
                         <div class="row">
                             <div class="col" id="rw">
-                                <TextField
+                                <NumberField
                                     label={ 'RW' }
                                     placeholder={ 'Nomor RW' }
                                     required={ true }
-                                    onChange={rw => setDataSourceWarga({...dataSourceWarga, rw: rw})}
+                                    onChange={rw => {
+                                        setDataSourceWarga({...dataSourceWarga, rw: rw});
+                                        setError({...error,
+                                            rw: rw = rw < 1 ? 'Nomor RW tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.rw}
                                 />
                             </div>
                             <div class="col" id="rt">
-                                <TextField
+                                <NumberField
                                     label={ 'RT' }
                                     placeholder={ 'Nomor RT' }
                                     required={ true }
-                                    onChange={rt => setDataSourceWarga({...dataSourceWarga, rt: rt})}
+                                    onChange={rt => {
+                                        setDataSourceWarga({...dataSourceWarga, rt: rt});
+                                        setError({...error,
+                                            rt: rt = rt < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
+                                    }}
+                                    error={error.rt}
                                 />
                             </div>
                             <div class="col"></div>
@@ -180,22 +281,38 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                             label={ 'Nama' }
                             placeholder={ 'Nama Penanggung Jawab sesuai dengan KTP' }
                             required={ true }
-                            onChange={penanggungjawab => setDataSourceWarga({...dataSourceWarga, picName: penanggungjawab})}
-                            />
+                            onChange={penanggungjawab => {
+                                setDataSourceWarga({...dataSourceWarga, picName: penanggungjawab});
+                                setError({...error,
+                                    picName: penanggungjawab = penanggungjawab.length < 1 ? 'Nama penanggung jawab tidak boleh kosong' : ''});
+                            }}
+                            error={error.picName}
+                        />
                     </div>
                     <div className="form" id="no-ktp">
                         <NumberField
                             label={ 'No. KTP' }
                             placeholder={ 'Terdiri dari 14 karakter angka' }
                             required={ true }
-                            onChange={noKTP => setDataSourceWarga({...dataSourceWarga, picKtp: noKTP})}                        />
+                            onChange={noKTP => {
+                                setDataSourceWarga({...dataSourceWarga, picKtp: noKTP});
+                                setError({...error,
+                                    picKtp: noKTP = noKTP.length < 14 || noKTP.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''});
+                            }}
+                            error={error.picKtp}
+                        />
                     </div>
                     <div className="form" id="jabatan">
                         <TextField
                             label={ 'Jabatan' }
                             placeholder={ 'Nama Jabatan Penanggung Jawab' }
                             required={ true }
-                            onChange={jabatan => setDataSourceWarga({...dataSourceWarga, picPosition: jabatan})}
+                            onChange={jabatan => {
+                                setDataSourceWarga({...dataSourceWarga, picPosition: jabatan});
+                                setError({...error,
+                                    picPosition: jabatan = jabatan.length < 1 ? 'Nama jabatan tidak boleh kosong' : ''});
+                            }}
+                            error={error.picPosition}
                         />
                     </div>
                     <div className="form" id="no-tlp">
@@ -203,33 +320,25 @@ export default function FormTambahSDMWarga({ backend_uri }) {
                             label={ 'No. Telepon' }
                             placeholder={ 'Terdiri dari angka' }
                             required={ true }
-                            onChange={noHp => setDataSourceWarga({...dataSourceWarga, picPhone: noHp})}
+                            onChange={noHp => {
+                                setDataSourceWarga({...dataSourceWarga, picPhone: noHp});
+                                try {
+                                    parseInt(noHp,10);
+                                  } catch(error) {
+                                    setError ({...error,
+                                      picPhone:'Format HP harus berupa angka'});
+                                  }
+                            }} 
+                            error={error.picPhone}
                         />
                     </div>
                     <div className="form button-lanjutkan">
                         <Button
                             label= { 'SIMPAN DATA' }
                             type= { 'primary' }
-                            onClick={() => { 
-                                createSDM({
-                                    variables: {
-                                      input: {
-                                        category:'WARGA'
-                                      }
-                                    }
-                                  })
-                            //     createSDMWarga({
-                            //     variables: {
-                            //       input: {
-                            //         ...dataSourceWarga
-                            //       }
-                            //     }
-                            //   })
-                            //   successBox();
-                            //   window.location.href='/';
-                              console.log(dataSourceWarga);
-                              
-                            }}
+                            onClick={() =>
+                                submitForm()
+                            }
                         />
                     </div>
                 </div>

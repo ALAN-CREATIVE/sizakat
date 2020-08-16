@@ -116,12 +116,6 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         } if (dataSourceInstitusi.picPhone.length == 0) {
             formIsValid = false;
             temporaryError.picPhone='Nomor telepon tidak boleh kosong';
-        // } if (dataSourceInstitusi.picPosition.length == 0) {
-        //     formIsValid = false;
-        //     temporaryError.picPosition='Jabatan penanggung jawab tidak boleh kosong';
-        // } if (mustahik.name.length == 0) {
-        //     formIsValid = false;
-        //     temporaryError.gender='Nama institusi tidak boleh kosong';
         } if (dataSourceInstitusi.province.length == 0) {
             formIsValid = false;
             temporaryError.province='Nama provinsi tidak boleh kosong';
@@ -140,9 +134,6 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         } if (dataSourceInstitusi.rt.length == 0) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh kosong';
-        // } if (mustahik.address.length == 0) {
-        //     formIsValid = false;
-        //     temporaryError.gender='Pilih salah satu dari jenis kelamin';
         }
     
         setError(temporaryError);

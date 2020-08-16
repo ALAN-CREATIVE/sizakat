@@ -18,9 +18,9 @@ export default function Content() {
     console.log(handleSubmit());
     if (handleSubmit()) {
         if (dataCategory.category == 'WARGA' ) {
-          window.location.href='/';
+          window.location.href='/TambahSDM-Warga';
         } if (dataCategory.category == 'INSTITUSI' ) {
-          window.location.href='/';
+          window.location.href='/TambahSDM-Institusi';
         } if (dataCategory.category == 'PEKERJA' ) {
           window.location.href='/TambahSDM-Pekerja';
         }
@@ -36,10 +36,11 @@ export default function Content() {
     let formIsValid = true;
     let temporaryError = {};
 
-    if (dataCategory.category == null) {
-        formIsValid = false;
-        temporaryError.category='Kategori sumber data tidak boleh kosong';
-    } 
+    if (dataCategory.category.length == 0) {
+      formIsValid = false;
+      temporaryError.category='Pilih salah satu dari kategori sumber data';
+  }
+
     setError(temporaryError);
     return formIsValid;
   }
@@ -56,8 +57,8 @@ export default function Content() {
               required={ false }
               onRadioClicked={ kategori => {
                 setdataCategory({ category: kategori.toUpperCase() });
-                setError({...error,
-                    category: kategori = kategori == null ? 'Kategori sumber data tidak boleh kosong' : ''});
+                setError({...error, 
+                    category: kategori = kategori.length < 1 ? 'Pilih salah satu dari kategori sumber data' : ''});
               }}
               error={error.category}
               

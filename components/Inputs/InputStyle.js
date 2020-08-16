@@ -73,6 +73,7 @@ export const SelectStyle = () => <style jsx>{`
     overflow-y: overlay;
     color: #393F50;
     padding: 20px 0px 0px 0px;
+    z-index: 2;
   }
 
   .options:before {
@@ -84,7 +85,6 @@ export const SelectStyle = () => <style jsx>{`
     top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 2;
     text-align: center;
     content: "a";
     overflow: hidden;

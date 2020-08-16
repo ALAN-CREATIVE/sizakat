@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { gql, useMutation, useQuery } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import NumberField from '../../components/Inputs/NumberField';
 import TextField from '../../components/Inputs/TextField';
 import Button from '../../components/Buttons/Button';
-
-// import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
 import { TambahSDMStyle } from './style';
 
@@ -41,20 +39,12 @@ const ADD_SDM_WARGA=gql`
         }
     }
 `;
-
-function successBox() {
-    alert("Success")
-  }
   
 export default function FormTambahSDMWarga({ backend_uri }) {
     const client = new ApolloClient({
         uri: backend_uri,
         cache: new InMemoryCache()
       });
-
-    // const [dataSource, setDataSource] = useState({
-    //     category:'WARGA',
-    // });
     
     const [dataSourceWarga, setDataSourceWarga] = useState({
         picName:'',
@@ -145,11 +135,9 @@ export default function FormTambahSDMWarga({ backend_uri }) {
 
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
-            //   createSDMWarga({ ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id });
-              createSDMWarga({ variables: { input: { ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id }}});
-
-              }
+            createSDMWarga({ variables: { input: { ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id }}});
             }
+        }
         ,[createData]
     )
     
@@ -158,20 +146,12 @@ export default function FormTambahSDMWarga({ backend_uri }) {
         console.log(errorCreateWarga.networkError.result.errors);
         return <p>error</p>
     }
+
     if (loadingWarga) return <p>loading ...</p>
+
     if (createDataWarga) {
-        console.log(createDataWarga.dataSourceWargaMutation.errors.messages);
+        console.log(createDataWarga.dataSourceWargaMutation.errors);
     }
-
-    // const onChangeNumberField = (numberFieldValue) => {
-    //     console.log(numberFieldValue);
-    //     setState(numberFieldValue);
-    // }
-
-    // const onChangeTextField = (textFieldValue) => {
-    //     console.log(textFieldValue);
-    //     setState(textFieldValue);
-    // }
 
     return (
         <ApolloProvider client={client}>

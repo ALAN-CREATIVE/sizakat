@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { gql, useMutation, useQuery } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import NumberField from '../../components/Inputs/NumberField';
@@ -40,11 +40,7 @@ const ADD_SDM_INSTITUSI=gql`
             errors { messages }
         }
     }
-    `;
-
-function successBox() {
-    alert("Success")
-    }
+`;
     
 export default function FormTambahSDMInstitusi({ backend_uri }) {
     const client = new ApolloClient({
@@ -71,15 +67,12 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         picName:'',
         picKtp: '',
         picPhone: '',
-        // picPosition: '',
-        // name:'',
         province: '',
         regency: '',
         subDistrict: '',
         village: '',
         rt: '',
         rw: '',
-        // address:'',
     }); 
 
     const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
@@ -143,11 +136,9 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
     
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
-            //   createSDMWarga({ ...dataSourceWarga, dataSource: createData.dataSourceMutation.dataSource.id });
-              createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});
-
-              }
+            createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});
             }
+        }
         ,[createData]
     )
 
@@ -159,9 +150,9 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
     
     if (loadingInstitusi) return <p>loading ...</p>
 
-    // if (createDataInstitusi) {
-    //     console.log(createDataInstitusi.dataSourceMutation.errors.messages);
-    // }
+    if (createDataInstitusi) {
+        console.log(createDataInstitusi.dataSourceInstitusiMutation.errors);
+    }
 
     return (
         <ApolloProvider client={client}>
@@ -212,7 +203,7 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                             regency: kota = kota.length < 1 ? 'Nama kota tidak boleh kosong' : ''});
                                     }}
                                     error={error.regency}
-                                    />
+                                />
                             </div>
                             <div class="col" id="kecamatan">
                                 <TextField
@@ -225,7 +216,7 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                             subDistrict: kecamatan = kecamatan.length < 1 ? 'Nama kecamatan tidak boleh kosong' : ''});
                                     }}
                                     error={error.subDistrict}
-                                    />
+                                />
                             </div>
                             <div class="col" id="kelurahan">
                                 <TextField
@@ -238,7 +229,7 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                             village: kelurahan = kelurahan.length < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
                                     }}
                                     error={error.village}
-                                    />
+                                />
                             </div>
                         </div>
                     </div>
@@ -255,7 +246,7 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                             rw: rw = rw < 1 ? 'Nomor RW tidak boleh kosong' : ''});
                                     }}
                                     error={error.rw}
-                                    />
+                                />
                             </div>
                             <div class="col" id="rt">
                                 <NumberField
@@ -268,7 +259,7 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                                             rt: rt = rt < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
                                     }}
                                     error={error.rt}
-                                    />
+                                />
                             </div>
                             <div class="col"></div>
                         </div>
@@ -340,14 +331,9 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                             onClick={() =>
                                 submitForm()
                             }             
-                            // successBox();
-                            // window.location.href='/';
-                            // console.log(dataSourceInstitusi);
-                            
                         />
                     </div>
                 </div>
-
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

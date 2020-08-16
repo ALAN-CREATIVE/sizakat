@@ -67,6 +67,7 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         picName:'',
         picKtp: '',
         picPhone: '',
+        name:'',
         province: '',
         regency: '',
         subDistrict: '',
@@ -109,6 +110,9 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
         } if (dataSourceInstitusi.picPhone.length == 0) {
             formIsValid = false;
             temporaryError.picPhone='Nomor telepon tidak boleh kosong';
+        } if (dataSourceInstitusi.name.length == 0) {
+            formIsValid = false;
+            temporaryError.name='Nama institusi tidak boleh kosong';
         } if (dataSourceInstitusi.province.length == 0) {
             formIsValid = false;
             temporaryError.province='Nama provinsi tidak boleh kosong';
@@ -173,8 +177,13 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                         <TextField
                             label={ 'Nama Institusi' }
                             placeholder={ 'Al-Hikmah' }
-                            required={ false }
-                            onChange={institusi => setDataSourceInstitusi({...dataSourceInstitusi, name: institusi})}
+                            required={ true }
+                            onChange={institusi => {
+                                setDataSourceInstitusi({...dataSourceInstitusi, name: institusi});
+                                setError({...error,
+                                    name: institusi = institusi.length < 1 ? 'Nama institusi tidak boleh kosong' : ''});
+                            }}
+                            error={error.name}
                         />
                     </div>
                     <div className="form" id="provinsi">

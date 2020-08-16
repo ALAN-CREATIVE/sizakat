@@ -11,6 +11,8 @@ export default {
 
 export const textFieldData = {
   label: 'Nama Lengkap',
+  disabled: false,
+  initialValue: '',
   placeholder: 'Nama sesuai dengan KTP',
   required: false,
   error: null,
@@ -21,6 +23,8 @@ export const actionsData = {
 }
 
 export const Default = () => <TextField { ...textFieldData } { ...actionsData } />;
+
+export const Disabled = () => <TextField { ...{ ...textFieldData, disabled: true }} { ...actionsData } />;
 
 export const Required = () => <TextField { ...{ ...textFieldData, required: true }} { ...actionsData } />;
 

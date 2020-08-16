@@ -1,37 +1,49 @@
 import React, { useState } from 'react';
-import { gql, useMutation, useQuery } from '@apollo/client';
-
 import RadioButton from '../../components/Inputs/RadioButton';
 import Button from '../../components/Buttons/Button';
 
 import { PilihKategoriSumber } from './style';
 
-const SELECT_KATEGORI = gql`
-  mutation dataSourceMutation($input: DataSourceMutationInput!){
-    dataSourceMutation(input: $input){
-        dataSource{
-            category
-        }
-    }
-}
-`
 
 export default function Content() {
-
-  const [dataSource, setDataSource] = useState({    
-    category: ''
+  const [dataCategory, setdataCategory] = useState({
+    category:'',
   });
-  const [selectKategori, { data: createData, error: errorSelect, loading: loading }  ] = useMutation(SELECT_KATEGORI);
 
-  if(errorSelect) {
-    console.log(errorSelect.networkError.result.errors); 
-    console.log(errorSelect.GraphQLErrors);
-    return <p>error</p>
+  const [error, setError] = useState({
+    category:'',
+  });
+
+  const submitForm = () => {
+    console.log(handleSubmit());
+    if (handleSubmit()) {
+        if (dataCategory.category == 'WARGA' ) {
+          window.location.href='/';
+        } if (dataCategory.category == 'INSTITUSI' ) {
+          window.location.href='/';
+        } if (dataCategory.category == 'PEKERJA' ) {
+          window.location.href='/TambahSDM-Pekerja';
+        }
+      console.log(dataCategory);
+      alert("Submit berhasil");
+    } else {
+      console.log(dataCategory);
+      alert("Submit gagal");
+    }
   }
-  if (loading) return <p>loading ...</p>
-  if (createData && createData.dataSourceMutation) {
-      console.log(createData.dataSourceMutation.errors)
+
+  const handleSubmit = () => {
+    let formIsValid = true;
+    let temporaryError = {};
+
+    if (dataCategory.category == null) {
+        formIsValid = false;
+        temporaryError.category='Kategori sumber data tidak boleh kosong';
+    } 
+    setError(temporaryError);
+    return formIsValid;
   }
+
   return (
     <div className="PilihKategoriSumber">
       <main>
@@ -42,26 +54,23 @@ export default function Content() {
               label=''
               options={ ['Warga', 'Institusi', 'Pekerja'] }
               required={ false }
-              onRadioClicked={ attribut => {
-                setDataSource({ ...dataSource, category: attribut.toUpperCase() });
+              onRadioClicked={ kategori => {
+                setdataCategory({ category: kategori.toUpperCase() });
+                setError({...error,
+                    category: kategori = kategori == null ? 'Kategori sumber data tidak boleh kosong' : ''});
               }}
+              error={error.category}
+              
             />
           </div>
           <div class='col-9'>
             <div className="button-lanjutkan">
               <Button
-                  type={'primary'}
                   label={'SIMPAN DATA'}
-                  onClick={() => {
-                      selectKategori({
-                      variables: {
-                        input: {
-                          ...dataSource
-                        }
-                      }
-                    })
-                    console.log(dataSource);
-                  }}
+                  type={'primary'}
+                  onClick={() =>
+                    submitForm()
+                }
               />
             </div>
           </div>
@@ -75,3 +84,11 @@ export default function Content() {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {
+      backend_uri: `http://${process.env.GRAPHQL_URL}`
+    }
+  }
+}

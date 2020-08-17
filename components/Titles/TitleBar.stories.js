@@ -9,7 +9,7 @@ export default {
 const titleData = {
     title: 'Lorem Ipsum',
     path: 'Sit // Dolor //',
-    current: 'Amet',
+    current: 'Amet'
 }
 
 export const Default = () => <TitleBar { ...titleData } />

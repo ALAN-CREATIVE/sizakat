@@ -6,7 +6,7 @@ import Filter from './Filter';
 export default {
     component: Filter,
     title: 'Filter',
-    excludeStories: /.*Data$/,
+    excludeStories: /.*Data$/
 }
 
 export const filterData = {

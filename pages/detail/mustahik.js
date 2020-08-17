@@ -24,7 +24,7 @@ const App = ({ backend_uri }) => {
         <div>
           <DetailStyle />
           <div className="row">
-            <div className="position-fixed col-3">
+            <div className="position-fixed col-3" style={{zIndex: 1}}>
               <Navbar
                 user={{
                   name: 'Annisaa Fitri Shabrina',

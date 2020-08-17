@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Danger 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+  </style>
+  <button
+    className="danger"
+    onClick={[Function]}
+  >
+    Danger
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+  </style>
+  <button
+    className="primary"
+    onClick={[Function]}
+  >
+    Primary
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+        button{
+            font-family: Muli;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            color : white;
+        }
+        .primary{
+            background: #00239D;
+            border-radius: 4px;
+            border:1px solid #00239D;
+        }
+        .secondary{
+            border-radius: 4px;
+            background: #C2C2C2;
+            border:1px solid #C2C2C2;
+        }
+        .danger{
+            background: #EB4E2C;
+            border-radius: 4px;
+            border:1px solid #EB4E2C;
+        }
+    
+  </style>
+  <button
+    className="secondary"
+    onClick={[Function]}
+  >
+    Secondary
+  </button>
+</div>
+`;

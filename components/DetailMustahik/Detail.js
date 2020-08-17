@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { useQuery, gql } from '@apollo/client';
 import Button from '../Buttons/Button';
 import DetailField from '../Details/DetailField';
-import TitleBar from '../Titles/TitleBar';
 
 const QUERY_USERS = gql`
 query mustahikQuery($id: ID!) {

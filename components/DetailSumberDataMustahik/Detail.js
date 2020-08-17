@@ -74,10 +74,10 @@ export function DetailInfo() {
                 </div>
             </div>
             <br></br>
-            
+
             <DetailField title={'Nama'} description={resolveDataSourceName(data.dataSource)}/><br></br>
             <DetailField title={'Kategori'} description={category}/><br></br>
-                       
+
             <div>
                 {(()=>{
                     switch(category){
@@ -103,19 +103,19 @@ export function DetailInfo() {
                             ));
                     }
                 })()}
-            </div>           
+            </div>
 
             <div className="row">
                 <div>
                     <p><b>Penanggung Jawab</b></p>
-                </div>               
+                </div>
             </div>
             <br></br>
 
             <DetailField title={'Nama'} description={dataSourceDetail.picName}/><br></br>
             <DetailField title={'Nomor KTP'} description={dataSourceDetail.picKtp}/><br></br>
             <DetailField title={'Jabatan'} description={dataSourceDetail.picPosition}/><br></br>
-            <DetailField title={'Nomor Telepon'} description={dataSourceDetail.picPhone}/><br></br>            
+            <DetailField title={'Nomor Telepon'} description={dataSourceDetail.picPhone}/><br></br>
         </div>
         </>
     ));

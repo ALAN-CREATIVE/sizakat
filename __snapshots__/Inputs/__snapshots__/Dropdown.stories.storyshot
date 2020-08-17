@@ -105,7 +105,7 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
     font-weight: 600;
     line-height: 18px;
     max-height: 400px;
-    overflow-y: overlay;
+    overflow-y: auto;
     color: #393F50;
     padding: 20px 0px 0px 0px;
     z-index: 2;
@@ -252,7 +252,7 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
     font-weight: 600;
     line-height: 18px;
     max-height: 400px;
-    overflow-y: overlay;
+    overflow-y: auto;
     color: #393F50;
     padding: 20px 0px 0px 0px;
     z-index: 2;
@@ -404,7 +404,7 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
     font-weight: 600;
     line-height: 18px;
     max-height: 400px;
-    overflow-y: overlay;
+    overflow-y: auto;
     color: #393F50;
     padding: 20px 0px 0px 0px;
     z-index: 2;

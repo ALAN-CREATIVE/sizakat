@@ -70,7 +70,7 @@ export const SelectStyle = () => <style jsx>{`
     font-weight: 600;
     line-height: 18px;
     max-height: 400px;
-    overflow-y: overlay;
+    overflow-y: auto;
     color: #393F50;
     padding: 20px 0px 0px 0px;
     z-index: 2;

@@ -14,23 +14,40 @@ const client = new ApolloClient({
   });
 
 const Main = styled.main`
-  font-family: Muli, sans-serif;
-  padding: 60px 100px;
-  background: #F5F6F8;
-  min-height: 80vh;
+    font-family: Muli, sans-serif;
+    padding: 60px 100px;
+    background: #F5F6F8;
+    min-height: 80vh;
 
-  h1 {
-    font-size: 44px;
-    line-height: 55px;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 50px;
-    color: #393F50;
-  }
-
-  section {
-    margin: 20px 10px;
-  }
+    h1 {
+        font-size: 44px;
+        line-height: 55px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #393F50;
+    }
+    section {
+        margin: 20px 10px;
+    }
+    .primary, .tertiary{
+        width : 100%;
+        font-weight: bold;
+    }
+    .formContainer{
+        font-family: Muli, sans-serif;
+        padding: 20px 50px;
+        background: white;
+        min-height: 80vh;
+    }
+    .subtitle{
+        color : #00239D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .formSection {
+        margin-left: 40px;
+    }
 `
 
 function App () {

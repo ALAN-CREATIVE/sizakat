@@ -16,7 +16,7 @@ exports[`Storyshots Card Default 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   height: 100%;
-  overflow-y: overlay;
+  overflow-y: auto;
 }
 
 .c1 {

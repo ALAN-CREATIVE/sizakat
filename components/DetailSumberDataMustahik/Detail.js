@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
 import DetailField from '../Details/DetailField';
@@ -67,6 +68,9 @@ export function DetailInfo() {
 
     return [data.dataSource].map(({ id, category, dataSourceDetail }) =>(
         <>
+        <Head>
+          <title>Sumber Data: {resolveDataSourceName(data.dataSource)}</title>
+        </Head>
         <div className="container">
             <div className="row">
                 <div>

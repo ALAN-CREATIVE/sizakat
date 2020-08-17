@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { ApolloClient } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import { InMemoryCache } from '@apollo/client';
@@ -10,15 +11,16 @@ import TitleBar from '../.././components/Titles/TitleBar'
 
 export default function SumberDataMustahik({ backend_uri }) {
   const client = new ApolloClient({
-    uri: backend_uri, // your GraphQL Server 
+    uri: backend_uri,
     cache: new InMemoryCache()
   });
   return (
     <ApolloProvider client={client}>
-      <head>
+      <Head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossOrigin="anonymous"></link>
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,800" rel="stylesheet" />
-      </head>
+        <title>Detail Mustahik</title>
+      </Head>
       <main>
         <div>
           <DetailStyle />

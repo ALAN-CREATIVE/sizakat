@@ -132,7 +132,7 @@ export default function SumberDataMustahik({ backend_uri }) {
   return (
     <ApolloProvider client={client}>
       <Head>
-        <title>Daftar Sumber Data Mustahik</title>
+        <title>Daftar Mustahik</title>
       </Head>
       <main>
         <MainContent />

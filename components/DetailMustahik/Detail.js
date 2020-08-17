@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import Head from 'next/head';
 import { useQuery, gql } from '@apollo/client';
 import Button from '../Buttons/Button';
 import DetailField from '../Details/DetailField';
@@ -54,7 +55,9 @@ export function DetailInfo() {
     const { data, loading, error } = useQuery(QUERY_USERS, {variables: {id} });
     if (loading) return <p>Loading...</p>;
     if (error) {
-        console.error(error);
+        console.log(error);
+        console.log(error.graphQLErrors);
+        if (error.networkError && error.networkError.result) console.log(error.networkError.result.errors);
         return  [error].map(({message})=>(
             <p>{message}</p>
         ));
@@ -62,6 +65,9 @@ export function DetailInfo() {
 
     return [data.mustahik].map(({ name, noKtp, phone, address, gender, status, photo, age, dataSource }) =>(
         <>
+          <Head>
+            <title>Mustahik: {name}</title>
+          </Head>
         <div className="container">
             <div className="row justify-content-between">
               <div className="col-4">

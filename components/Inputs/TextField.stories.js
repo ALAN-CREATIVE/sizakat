@@ -24,7 +24,7 @@ export const actionsData = {
 
 export const Default = () => <TextField { ...textFieldData } { ...actionsData } />;
 
-export const Disabled = () => <TextField { ...{ ...textFieldData, disabled: true }} { ...actionsData } />;
+export const Disabled = () => <TextField { ...{ ...textFieldData, disabled: true, initialValue: "Pekerja" }} { ...actionsData } />;
 
 export const Required = () => <TextField { ...{ ...textFieldData, required: true }} { ...actionsData } />;
 

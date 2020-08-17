@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PilihKategoriSumber = () =>(
+export const PilihKategoriStyle = () =>(
     <style jsx>{`
         h1 {
             font-family: Muli;

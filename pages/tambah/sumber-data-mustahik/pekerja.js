@@ -3,10 +3,11 @@ import React from 'react';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 
-import FormTambahSDMPekerja from './content';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import FormTambahSDMPekerja from '../../../components/TambahSumberDataMustahik/TambahSDMPekerja';
+import NavigationBar from '../../../components/NavigationBar/NavigationBar';
 
-import { TambahSDMPekerjaStyle } from './style';
+
+import { TambahSDMPekerjaStyle } from '../../../components/TambahSumberDataMustahik/TambahSDMPekerjaStyle';
 
 const client = new ApolloClient({
     uri: 'http://localhost:8000/graphql/',

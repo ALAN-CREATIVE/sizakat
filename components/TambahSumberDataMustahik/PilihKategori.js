@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import RadioButton from '../../components/Inputs/RadioButton';
-import Button from '../../components/Buttons/Button';
+import { useRouter } from 'next/router';
+import RadioButton from '../Inputs/RadioButton';
+import Button from '../Buttons/Button';
 
-import { PilihKategoriSumber } from './style';
+import { PilihKategoriStyle } from './PilihKategoriStyle';
 
-
-export default function Content() {
+export default function PilihKategori() {
   const [dataCategory, setdataCategory] = useState({
     category:'',
   });
@@ -14,15 +14,17 @@ export default function Content() {
     category:'',
   });
 
+  const router = useRouter();
+
   const submitForm = () => {
     console.log(handleSubmit());
     if (handleSubmit()) {
         if (dataCategory.category == 'WARGA' ) {
-          window.location.href='/TambahSDM-Warga';
+          router.push('//tambah/sumber-data-mustahik/warga');
         } if (dataCategory.category == 'INSTITUSI' ) {
-          window.location.href='/TambahSDM-Institusi';
+          router.push('/tambah/sumber-data-mustahik/institusi');
         } if (dataCategory.category == 'PEKERJA' ) {
-          window.location.href='/TambahSDM-Pekerja';
+          router.push('/tambah/sumber-data-mustahik/pekerja');
         }
       console.log(dataCategory);
       alert("Submit berhasil");
@@ -79,7 +81,7 @@ export default function Content() {
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <PilihKategoriSumber />
+        <PilihKategoriStyle />
 
       </main>
     </div>

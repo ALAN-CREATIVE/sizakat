@@ -3,10 +3,10 @@ import React from 'react';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 
-import Content from './content';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import PilihKategori from '../../../components/TambahSumberDataMustahik/PilihKategori';
+import NavigationBar from '../../../components/NavigationBar/NavigationBar';
 
-import { PilihKategoriSumber } from './style';
+import { PilihKategoriStyle } from '../../../components/TambahSumberDataMustahik/PilihKategoriStyle';
 
 const client = new ApolloClient({
     uri: 'http://localhost:8000/graphql/',
@@ -46,7 +46,7 @@ function App() {
                         </div>
                         <p id="page-title">Tambah Sumber Data Mustahik</p>
                         <p id="breadcrumb">Mustahik {'//'} <span id="blue">Tambah Sumber</span></p>
-                        <Content />
+                        <PilihKategori />
 
                     </div>
                 </div>
@@ -54,7 +54,7 @@ function App() {
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
             </main>
-            <PilihKategoriSumber />
+            <PilihKategoriStyle />
         </div>
     </ApolloProvider>
 );

@@ -25,3 +25,5 @@ export const Default = () => <TextField { ...textFieldData } { ...actionsData } 
 export const Required = () => <TextField { ...{ ...textFieldData, required: true }} { ...actionsData } />;
 
 export const Error = () => <TextField { ...{ ...textFieldData, error: "Nama lengkap tidak boleh kosong" }} { ...actionsData } />;
+
+export const Disabled = () => <TextField { ... {...textFieldData, disabled: true }} { ...actionsData } />;

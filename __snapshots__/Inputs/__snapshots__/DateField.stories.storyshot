@@ -78,7 +78,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
             Tanggal
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -175,7 +175,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
             Bulan
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -272,7 +272,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
             Tahun
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -427,7 +427,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
             Tanggal
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -529,7 +529,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
             Bulan
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -626,7 +626,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
             Tahun
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -781,7 +781,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
             Tanggal
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -878,7 +878,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
             Bulan
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -980,7 +980,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
             Tahun
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -1135,7 +1135,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
             Tanggal
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -1232,7 +1232,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
             Bulan
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -1329,7 +1329,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
             Tahun
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -1489,7 +1489,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
             Tanggal
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -1586,7 +1586,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
             Bulan
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style
@@ -1683,7 +1683,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
             Tahun
           </div>
           <img
-            src="dropdown-arrow.svg"
+            src="/dropdown-arrow.svg"
           />
         </div>
         <style

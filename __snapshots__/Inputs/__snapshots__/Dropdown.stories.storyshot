@@ -72,7 +72,7 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
         Pilih Status Mustahik
       </div>
       <img
-        src="dropdown-arrow.svg"
+        src="/dropdown-arrow.svg"
       />
     </div>
     <style
@@ -219,7 +219,7 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
         Pilih Status Mustahik
       </div>
       <img
-        src="dropdown-arrow.svg"
+        src="/dropdown-arrow.svg"
       />
     </div>
     <style
@@ -371,7 +371,7 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
         Pilih Status Mustahik
       </div>
       <img
-        src="dropdown-arrow.svg"
+        src="/dropdown-arrow.svg"
       />
     </div>
     <style

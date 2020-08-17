@@ -11,7 +11,7 @@ export const Select = ({ placeholder, options, onSelect }) => {
     <div style={{position: 'relative'}}>
       <div className={"header " + (haveChosen ? 'chosen' : '')} onClick={() => setIsOpen( isOpen ? false : true )}>
         <div style={{display: 'inline'}}>{ selectValue }</div>
-        <img src="dropdown-arrow.svg" />
+        <img src="/dropdown-arrow.svg" />
       </div>
       {isOpen && <ul className="options">
         {options.map(option => (

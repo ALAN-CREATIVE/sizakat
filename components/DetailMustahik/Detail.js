@@ -114,7 +114,10 @@ export function DetailInfo() {
                 />
               </div>
               <div className="col-2">
-              <Button label='Edit' type='primary' />
+                <Button
+                  label='Ubah'
+                  type='primary'
+                />
               </div>
             </div>
           </div>

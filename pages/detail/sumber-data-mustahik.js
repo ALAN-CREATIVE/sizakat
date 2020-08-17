@@ -34,10 +34,14 @@ export default function SumberDataMustahik({ backend_uri }) {
               />
             </div>
             <div className="col-3"></div>
-            <div className="col-9">
+            <div className="col-9" style={{marginTop: '15px'}}>
               <div className="row justify-content-between">
                 <div className="col-5">
-                  <TitleBar title='Detail Sumber Data' path='Mustahik //' current='Detail Sumber Data Mustahik'/>
+                  <TitleBar
+                    title='Detail Sumber Data'
+                    path='Mustahik //'
+                    current='Detail Sumber Data Mustahik'
+                  />
                 </div>
                 <div className="col-4 align-self-end">
                   <div className="row">

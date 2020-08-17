@@ -18,7 +18,7 @@ export const DetailStyle = () =>(
       line-height: 20px;  
       color: #00239D;
     }
-    img {
+    #photo {
       width: 250px;
       height: 250px;
       background-color: #00239D;

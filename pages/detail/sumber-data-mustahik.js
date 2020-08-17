@@ -1,19 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ApolloClient } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider, gql } from '@apollo/client';
 import { InMemoryCache } from '@apollo/client';
 import { DetailInfo } from '../.././components/DetailSumberDataMustahik/Detail';
 import { DetailStyle } from '../.././components/DetailSumberDataMustahik/DetailStyle';
 import Navbar from '../.././components/NavigationBar/NavBarWithRouter';
 import Button from '../.././components/Buttons/Button';
 import TitleBar from '../.././components/Titles/TitleBar'
+import DeleteWarning from '../../components/Popups/Warning';
 
 export default function SumberDataMustahik({ backend_uri }) {
+
   const client = new ApolloClient({
     uri: backend_uri,
     cache: new InMemoryCache()
   });
+
+  const router = useRouter();
+  const { id } = router.query;
+  const [warning, setWarning] = useState(false);
+  const deleteDataSource = () => {
+    client.mutate({
+      mutation: gql`
+        mutation DeleteDataSource {
+          deleteDataSource(id: ${id}) {
+            deleted
+          }
+        }
+      `
+    })
+    .then(result => {
+      if (result.data.deleteDataSource.deleted) {
+        alert('sumber data telah dihapus');
+        router.push('/daftar/sumber-data-mustahik');
+      }
+    })
+  }
+
   return (
     <ApolloProvider client={client}>
       <Head>
@@ -23,6 +48,13 @@ export default function SumberDataMustahik({ backend_uri }) {
       </Head>
       <main>
         <div>
+          {warning && (
+            <DeleteWarning
+              message={'Apakah anda yakin ingin menghapus sumber data ini?'}
+              onReject={() => setWarning(false)}
+              onConfirm={deleteDataSource}
+            />
+          )}
           <DetailStyle />
           <div className="row">
             <div className="position-fixed col-3" style={{zIndex: 1}}>
@@ -46,7 +78,11 @@ export default function SumberDataMustahik({ backend_uri }) {
                 <div className="col-4 align-self-end">
                   <div className="row">
                     <div className="col-3">
-                      <Button label='Hapus' type='danger' />
+                      <Button
+                        label='Hapus'
+                        type='danger'
+                        onClick={() => setWarning(true)}
+                      />
                     </div>
                     <div className="col-2">
                       <Button label='Ubah' type='primary' />

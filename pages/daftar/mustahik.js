@@ -116,6 +116,7 @@ const MainContent = () => {
                 query: { id: id }
               })
             }}
+            onButtonClicked={() => router.push('/tambah/mustahik')}
             setMustahikData={(data) => setDataMustahik(data)}
           />}
         </TableContainer>

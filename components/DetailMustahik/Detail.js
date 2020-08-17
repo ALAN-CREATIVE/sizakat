@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery, useMutation, gql } from '@apollo/client';
 import Button from '../Buttons/Button';
 import DetailField from '../Details/DetailField';
+import DeleteWarning from '../Popups/Warning';
 
 const QUERY_USERS = gql`
 query mustahikQuery($id: ID!) {
@@ -48,11 +49,30 @@ query mustahikQuery($id: ID!) {
 }
 `;
 
+const DELETE_MUSTAHIK = gql`
+mutation DeleteMustahik($id: ID!) {
+  deleteMustahik(id: $id) {
+    deleted
+  }
+}
+`
+
 export function DetailInfo() {
-  const router = useRouter()
-  const {id} = router.query
+  const router = useRouter();
+  const {id} = router.query;
+  const [warning, setWarning] = useState(false);
 
   const { data, loading, error } = useQuery(QUERY_USERS, {variables: {id} });
+  const [deleteMustahikMutation, { data: deleteData }] = useMutation(DELETE_MUSTAHIK);
+
+  useEffect(() => {
+    console.log(deleteData)
+    if (deleteData && deleteData.deleteMustahik.deleted) {
+      alert('Mustahik berhasil dihapus');
+      router.push('/daftar/mustahik')
+    }
+  }, [deleteData])
+
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.log(error);
@@ -68,6 +88,16 @@ export function DetailInfo() {
       <Head>
         <title>Mustahik: {name}</title>
       </Head>
+      {warning && (
+        <DeleteWarning
+          message={`Apakah anda yakin ingin menghapus ingin menghapus "${name}" dari Daftar Mustahik`}
+          onConfirm={() => {
+            deleteMustahikMutation({variables: {id: id}});
+            setWarning(false);
+          }}
+          onReject={() => setWarning(false)}
+        />
+      )}
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-4">
@@ -77,7 +107,11 @@ export function DetailInfo() {
           <div className="col-4 align-self-end">
             <div className="row">
               <div className="col-3">
-              <Button label='Hapus' type='danger' />
+                <Button
+                  label='Hapus'
+                  type='danger'
+                  onClick={() => setWarning(true)}
+                />
               </div>
               <div className="col-2">
               <Button label='Edit' type='primary' />
@@ -97,7 +131,7 @@ export function DetailInfo() {
         <br></br>
         <div className="row">
           <div className="col-md-4">
-            <img src="{photo}"></img>
+            <img id="photo" src="{photo}"></img>
           </div>
           <div className="col-md-8">
             <DetailField title='Nama Mustahik' description={name} /><br></br>

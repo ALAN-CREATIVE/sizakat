@@ -8,6 +8,11 @@ export const WarningStyle = () => (
         background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
+        position: fixed;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .warningText {

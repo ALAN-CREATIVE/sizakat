@@ -4,8 +4,7 @@ export const SearchStyle = () => (
   <style jsx>{`
     
     input[type=text] {
-      position: absolute;
-      width: 982px;
+      width: 100%;
       height: 48px;
 
       background-image: url('search-icon.png');

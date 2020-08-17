@@ -25,12 +25,12 @@ export function DataSourceSearch({setDataSourceData}) {
             }
           }
         }
-      }      
+      }
     `;
     const [getData, { data, loading, error }] = useLazyQuery(SEARCH_QUERY);
     const onKeyPressed = (event) => {
         console.log(event.key)
-        if(event.key == "Enter"){
+        if(event.key === "Enter"){
             console.log(event.target.value)
             getData({variables:{nameContains: event.target.value}})
         }
@@ -42,7 +42,6 @@ export function DataSourceSearch({setDataSourceData}) {
         console.log(data);
       }
     });
-    
 
     return (
         <div>

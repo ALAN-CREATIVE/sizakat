@@ -17,7 +17,7 @@ export const DetailStyle = () =>(
 
             color: #393F50;
         }
-        
+
         h4 {
             margin : 2px;
             font-family: Muli; 
@@ -29,8 +29,8 @@ export const DetailStyle = () =>(
             font-size: 16px;
             line-height: 20px;
             /* identical to box height */
-            
-            
+
+
             color: #00239D;
         }
         img {

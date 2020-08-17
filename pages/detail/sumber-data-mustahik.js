@@ -66,7 +66,7 @@ export default function SumberDataMustahik({ backend_uri }) {
               />
             </div>
             <div className="col-3"></div>
-            <div className="col-9" style={{marginTop: '15px'}}>
+            <div className="col-9" style={{marginTop: '20px'}}>
               <div className="row justify-content-between">
                 <div className="col-5">
                   <TitleBar

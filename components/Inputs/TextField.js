@@ -11,7 +11,15 @@ export default function TextField({ label, placeholder, required, error, onChang
     <div>
       <InputStyle />
       <label className={required ? 'required' : null}> { label } </label>
-      <input type="text" name={label} value={value} placeholder={placeholder} required={required} onChange={onInputChange} disabled={disabled}/>
+      <input
+        type="text"
+        name={label}
+        value={value}
+        placeholder={placeholder}
+        required={required}
+        onChange={onInputChange}
+        disabled={disabled}
+      />
       { error && <span className="error">{ error }</span> }
     </div>
   );

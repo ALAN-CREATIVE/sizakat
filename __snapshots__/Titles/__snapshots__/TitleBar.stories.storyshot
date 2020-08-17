@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Title Bar Default 1`] = `
+.c0 {
+  font-family: Muli;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1:after {
+  content: "";
+  border: 1px solid #C2C2C2;
+  height: 0px;
+  width: 95%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c2 {
+  font-weight: 800;
+  font-size: 24px;
+  color: #393F50;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  padding-right: 20px;
+  margin: 0px;
+}
+
+.c3 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #C2C2C2;
+}
+
+.c4 {
+  color: #00239D;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h1
+      className="c2"
+    >
+      Lorem Ipsum
+    </h1>
+  </div>
+  <div
+    className="c3"
+  >
+    Sit // Dolor // 
+    <span
+      className="c4"
+    >
+      Amet
+    </span>
+  </div>
+</div>
+`;

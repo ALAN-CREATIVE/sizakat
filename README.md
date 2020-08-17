@@ -1,3 +1,6 @@
+[![pipeline status](https://gitlab.cs.ui.ac.id/sizakat/5.0/sizakat-frontend/badges/master/pipeline.svg)](https://gitlab.cs.ui.ac.id/sizakat/5.0/sizakat-frontend/-/commits/master)
+[![coverage report](https://gitlab.cs.ui.ac.id/sizakat/5.0/sizakat-frontend/badges/master/coverage.svg)](https://gitlab.cs.ui.ac.id/sizakat/5.0/sizakat-frontend/-/commits/master)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

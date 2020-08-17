@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apollo/client';
+import { useRouter } from 'next/router';
 
-import Navbar from '../../components/NavigationBar/NavigationBar';
+import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
-import Table from '../../components/Tables/Table';
+import TableDataSource from '../../components/Tables/TableDataSource';
 import { toCapitalCase } from '../../Utils/StringUtil';
 import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
@@ -63,25 +64,32 @@ const dataSourcesToCardItem = (dataSource) => {
   };
 }
 
+
+
 const MainContent = () => {
+
   const { loading, error, data } = useQuery(INITIAL_DATA_SOURCES_QUERY);
+  const [ NotYetFetched, setNotYetFetched] = useState(true);
+  const [ dataDataSource, setDataDataSource] = useState()
+  const router = useRouter();
+
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.log(error);
     return <p>error</p>
   }
+  if(data && data.dataSources && NotYetFetched){
+    setDataDataSource(data);
+    setNotYetFetched(false);
+  }
   return (
     <Container>
       <Nav>
         <Navbar
-          name={'Annisaa Fitri Shabrina'}
-          role={'Admin'}
-          menu={'Mustahik'}
-          submenu={[
-            'Data Mustahik',
-            'Sumber Data Mustahik'
-          ]}
-          onMenuClicked={(item) => console.log(item)}
+          user={{
+            name: 'Annisaa Fitri Shabrina',
+            role: 'ADMIN'
+          }}
         />
       </Nav>
       <Main>
@@ -93,14 +101,20 @@ const MainContent = () => {
           />
         </Title>
         <TableContainer>
-          {data && data.dataSources && <Table
+          {dataDataSource && dataDataSource.dataSources && <TableDataSource
             title={'Sumber Data Mustahik'}
             buttonCaption={'Tambah Sumber Data'}
             searchPlaceholder={'Cari berdasarkan nama sumber data'}
             filterCaption={'SEMUA KATEGORI DATA'}
             filterOptions={['Semua Kategori Sumber Data', 'Warga', 'Pesantren', 'Pekerja']}
-            itemList={data.dataSources.map(dataSourcesToCardItem)}
-            onCardDetailClicked={(id) => console.log(id)}
+            itemList={dataDataSource.dataSources.map(dataSourcesToCardItem)}
+            onDetailClicked={(id) => {
+              router.push({
+                pathname: '/detail/sumber-data-mustahik',
+                query: { id }
+              })
+            }}
+            setDataSourceData={(data)=> setDataDataSource(data)}
 
           />}
         </TableContainer>

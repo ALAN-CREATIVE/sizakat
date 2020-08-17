@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Input/Number Field Default 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nomor KTP
+     
+  </label>
+  <input
+    name="Nomor KTP"
+    onChange={[Function]}
+    placeholder="Terdiri dari 14 karakter angka"
+    required={false}
+    type="number"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Input/Number Field Error 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nomor KTP
+     
+  </label>
+  <input
+    name="Nomor KTP"
+    onChange={[Function]}
+    placeholder="Terdiri dari 14 karakter angka"
+    required={false}
+    type="number"
+    value=""
+  />
+  <span
+    className="error"
+  >
+    Format KTP harus berupa 14 karakter angka
+  </span>
+</div>
+`;
+
+exports[`Storyshots Input/Number Field Required 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className="required"
+  >
+     
+    Nomor KTP
+     
+  </label>
+  <input
+    name="Nomor KTP"
+    onChange={[Function]}
+    placeholder="Terdiri dari 14 karakter angka"
+    required={true}
+    type="number"
+    value=""
+  />
+</div>
+`;

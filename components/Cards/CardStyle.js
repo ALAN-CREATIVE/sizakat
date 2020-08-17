@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding: 10px 20px 10px 40px;
   justify-content: space-between;
   height: 100%;
-  overflow-y: overlay;
+  overflow-y: auto;
 `;
 
 export const DetailButton = styled.div`

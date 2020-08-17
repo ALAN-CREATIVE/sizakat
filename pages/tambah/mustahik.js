@@ -26,7 +26,8 @@ function App({ backend_uri }) {
 
         <main>
           <div className="row">
-            <div className="col-3">
+            <div className="col-3" />
+            <div className="col-3 position-fixed">
               <Navbar
                 user={{
                   name: 'Annisaa Fitri Shabrina',

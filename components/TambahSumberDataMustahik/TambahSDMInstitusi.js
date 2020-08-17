@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { gql, useMutation } from '@apollo/client';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
-import NumberField from '../../components/Inputs/NumberField';
-import TextField from '../../components/Inputs/TextField';
-import Button from '../../components/Buttons/Button';
+import NumberField from '../Inputs/NumberField';
+import TextField from '../Inputs/TextField';
+import Button from '..//Buttons/Button';
 
-import { TambahSDMStyle } from './style';
+import { TambahSDMStyle } from './TambahSDMStyle';
 
 const ADD_SDM=gql`
     mutation dataSourceMutation($input: DataSourceMutationInput!){
@@ -42,12 +40,7 @@ const ADD_SDM_INSTITUSI=gql`
     }
 `;
     
-export default function FormTambahSDMInstitusi({ backend_uri }) {
-    const client = new ApolloClient({
-        uri: backend_uri,
-        cache: new InMemoryCache()
-        });
-    
+export default function FormTambahSDMInstitusi() {   
     const [dataSourceInstitusi, setDataSourceInstitusi] = useState({
         picName:'',
         picKtp: '',
@@ -159,7 +152,6 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
     }
 
     return (
-        <ApolloProvider client={client}>
         <div className="TambahMustahikPage">
             <main>
                 <div className="form-section">
@@ -349,7 +341,6 @@ export default function FormTambahSDMInstitusi({ backend_uri }) {
                 <TambahSDMStyle />
       </main>
     </div>
-    </ApolloProvider>
   );
 };
 

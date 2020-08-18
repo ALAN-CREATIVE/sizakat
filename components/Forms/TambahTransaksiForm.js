@@ -34,6 +34,12 @@ export default function TambahTransaksiForm() {
         phone: '',
     });
 
+    const [error, setError] = useState({
+        noKtp: '',
+        name: '',
+        phone: '',
+    });
+
     console.log(transaksi);
     console.log(muzakki)
     return(
@@ -47,7 +53,9 @@ export default function TambahTransaksiForm() {
                         required={true}
                         onChange={ktp => {
                             setMuzakki({...muzakki, noKtp:ktp})
-                        }} 
+                            setError({...error, noKtp:ktp = ktp.length < 14 || ktp.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''})
+                        }}
+                        error={error.noKtp} 
                     /> <br></br>
                     <TextField 
                         label="Nama Lengkap" 
@@ -55,7 +63,9 @@ export default function TambahTransaksiForm() {
                         required={true} 
                         onChange={name => {
                             setMuzakki({...muzakki, name:name})
+                            setError({...error, name: name = name.length === 0 ? 'Nama lengkap tidak boleh kosong' : ''})
                         }} 
+                        error={error.name}
                     /> <br></br>
                     <NumberField 
                         label="Nomor Telepon" 
@@ -63,7 +73,9 @@ export default function TambahTransaksiForm() {
                         required={true} 
                         onChange={phone => {
                             setMuzakki({...muzakki, phone:phone})
+                            setError({...error, phone: phone = phone.length === 0 ? 'Nomor Telepon tidak boleh kosong' : '' })
                         }} 
+                        error = {error.phone}
                     /> <br></br>
                 </div><br></br>
 

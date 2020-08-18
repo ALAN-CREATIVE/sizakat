@@ -1,7 +1,7 @@
 import React from "react"
 import Dropdown from '../Inputs/Dropdown'
-import TextField from '../Inputs/TextField'
 import Button from '../Buttons/Button'
+import NumberField from '../Inputs/NumberField'
 
 const TransaksiInput = (props) => {
   return (
@@ -21,7 +21,7 @@ const TransaksiInput = (props) => {
                         />
                     </div>
                     <div className="col-4">
-                    <TextField 
+                    <NumberField 
                       label="Nominal" 
                       placeholder="isi dengan angka" 
                       required={true} 

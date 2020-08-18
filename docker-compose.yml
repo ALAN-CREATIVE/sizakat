@@ -2,14 +2,25 @@ version: '3.7'
 
 services:
   frontend:
-    ports:
-      - 3000:3000
     build:
-      context: ./
+      context: .
+      target: dev
+    ports:
+      - ${FRONTEND_PORT:-3000}:3000
     volumes:
       - ./:/app/frontend/
       - /app/frontend/node_modules
       - /app/frontend/.next
-    env_file:
-      - .env
     command: yarn dev
+
+  storybook:
+    build:
+      context: .
+      target: dev
+    ports:
+      - ${STORYBOOK_PORT:-6000}:6006
+    volumes:
+      - ./:/app/frontend/
+      - /app/frontend/node_modules
+      - /app/frontend/.next
+    command: yarn storybook

@@ -3,7 +3,7 @@ import React from 'react';
 export const SearchStyle = () => (
   <style jsx>{`
     
-    form.example input[type=text] {
+    input[type=text] {
       position: absolute;
       width: 982px;
       height: 48px;
@@ -24,8 +24,10 @@ export const SearchStyle = () => (
       font-size: 14px;
       padding: 0px 0px 4px 45px;
 
+      color: #393F50;
+    }
+    form.example input[type=text]::placeholder {
       color: #C2C2C2;
     }
-    
   `}</style>
 );

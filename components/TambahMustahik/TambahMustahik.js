@@ -102,6 +102,8 @@ export default function FormTambahMustahik() {
   const handleSubmit = () => {
     let formIsValid = true;
     let temporaryError = {};
+    var pattern = new RegExp(/^[0-9]+$/);
+    var alphabet = new RegExp(/^[a-zA-Z]+$/);
 
     if (mustahik.name.length == 0) {
         formIsValid = false;
@@ -130,6 +132,9 @@ export default function FormTambahMustahik() {
     } if (mustahik.dataSource === null || mustahik.dataSource === undefined) {
         formIsValid = false;
         temporaryError.dataSource='Pilihan sumber data tidak boleh kosong';
+    } if (mustahik.phone.match(alphabet)) {
+        formIsValid = false;
+        temporaryError.phone='Format HP harus berupa angka';
     }
 
     setError(temporaryError);
@@ -251,14 +256,22 @@ export default function FormTambahMustahik() {
           <div className="form" id="nomor-hp">
             <NumberField
               label={'Nomor HP'}
-              placeholder={'Diisi dengan angka'}
+              placeholder={'Diisi dengan angka (Contoh: 0811111111)'}
               onChange={noHp => {
                 setMustahik({...mustahik, phone: noHp});
-                try {
-                  parseInt(noHp,10);
-                } catch(error) {
+                var pattern = new RegExp(/^[0-9]+$/);
+                var alphabet = new RegExp(/^[a-zA-Z]+$/);
+                if (mustahik.phone.match(alphabet)) {
                   setError ({...error,
                     phone:'Format HP harus berupa angka'});
+                }
+                if(mustahik.phone.match(pattern)) {
+                  setError ({...error,
+                    phone:''});
+                }
+                if (mustahik.phone.length < 1) {
+                setError ({...error,
+                  phone:'Format HP harus berupa angka'});
                 }
               }}
               error={error.phone}

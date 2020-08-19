@@ -14,6 +14,7 @@ export const textFieldData = {
   placeholder: 'Nama sesuai dengan KTP',
   required: false,
   error: null,
+  defaultValue: 'Test',
 }
 
 export const actionsData = {

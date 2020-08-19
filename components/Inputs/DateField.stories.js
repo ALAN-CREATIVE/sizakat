@@ -14,7 +14,8 @@ export const dateFieldData = {
   required: false,
   errorDate: null,
   errorMonth: null,
-  errorYear: null
+  errorYear: null,
+  defaultValue: 10,
 }
 
 const actionsData = {

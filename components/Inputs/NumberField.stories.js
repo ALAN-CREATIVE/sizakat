@@ -14,6 +14,7 @@ export const numberFieldData = {
   placeholder: 'Terdiri dari 14 karakter angka',
   required: false,
   error: null,
+  defaultValue: 1,
 }
 
 export const Default = () => <NumberField { ...numberFieldData } { ...actionsData } />;

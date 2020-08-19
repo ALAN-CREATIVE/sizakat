@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { InputStyle } from './InputStyle';
 
-export default function TextField({ label, placeholder, required, error, onChange, disabled }) {
+export default function TextField({ label, placeholder, required, error, onChange, disabled, defaultValue }) {
   const [value, setValue ] = useState(null);
   const onInputChange = (e) => {
     setValue(e.target.value);
@@ -19,6 +19,7 @@ export default function TextField({ label, placeholder, required, error, onChang
         required={required}
         onChange={onInputChange}
         disabled={disabled}
+        defaultValue={defaultValue}
       />
       { error && <span className="error">{ error }</span> }
     </div>

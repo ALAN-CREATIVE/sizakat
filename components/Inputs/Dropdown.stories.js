@@ -18,6 +18,7 @@ export const dropdownData = {
   ],
   required: false,
   error: null,
+  defaultValue: 'MISKIN',
 }
 
 export const Default = () => <Dropdown { ...dropdownData } { ...actionsData } />;

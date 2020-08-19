@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { InputStyle, SelectStyle } from './InputStyle';
 
 
-export const Select = ({ placeholder, options, onSelect }) => {
-  const [selectValue, setSelectValue] = useState(placeholder);
+export const Select = ({ placeholder, options, onSelect, defaultValue }) => {
+  const [selectValue, setSelectValue] = useState(defaultValue ? defaultValue : placeholder);
   const [haveChosen, setHaveChosen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -28,13 +28,13 @@ export const Select = ({ placeholder, options, onSelect }) => {
   )
 }
 
-const Dropdown = ({ label, placeholder, options, required, error, onChange, isOpen }) => {
+const Dropdown = ({ label, placeholder, options, required, error, onChange, isOpen, defaultValue }) => {
 
   return (
     <div>
       <InputStyle />
       <label className={required ? 'required': ''}>{ label }</label>
-      <Select placeholder={ placeholder } options={ options } onSelect={ onChange } isOpen={isOpen} />
+      <Select placeholder={ placeholder } options={ options } onSelect={ onChange } isOpen={isOpen} defaultValue={defaultValue} />
       { error && <span className="error">{ error }</span> }
     </div>
   )

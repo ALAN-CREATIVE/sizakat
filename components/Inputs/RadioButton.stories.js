@@ -11,9 +11,13 @@ export default {
 
 export const radioButtonData = {
   label: 'Jenis Kelamin',
-  options: ['Laki-laki', 'Perempuan'],
+  options: [
+    {value: 'L', name: 'Laki-laki'},
+    {value: 'P', name: 'Perempuan'}
+  ],
   required: false,
   error: null,
+  defaultChecked: 'L',
 }
 
 export const actionsData = {

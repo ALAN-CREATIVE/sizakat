@@ -14,7 +14,8 @@ const DateField = ({
     errorDate,
     errorMonth,
     errorYear,
-    isOpen
+    isOpen,
+    defaultValue
 }) => {
   const YEARS = Array(new Date().getFullYear() - 1940).fill().map((value, index) => index + 1940).reverse();
   return (
@@ -28,6 +29,7 @@ const DateField = ({
             options={DATE.map(date => ({ display: date, value: String(date).padStart(2, "0") }))}
             onSelect={onDatePicked}
             isOpen={isOpen}
+            defaultValue={defaultValue ? defaultValue.slice(8,10) : null}
           />
           { errorDate && <span className="error">{ errorDate }</span> }
         </div>
@@ -37,6 +39,7 @@ const DateField = ({
             options={MONTHS.map((month, index) => ({ display: month, value: String(index+1).padStart(2, "0") }))}
             onSelect={onMonthPicked}
             isOpen={isOpen}
+            defaultValue={defaultValue ? defaultValue.slice(5,7) : null}
           />
           { errorMonth && <span className="error">{ errorMonth }</span> }
         </div>
@@ -46,6 +49,7 @@ const DateField = ({
             options={YEARS.map(year => ({ display: year, value: String(year) }))}
             onSelect={onYearPicked}
             isOpen={isOpen}
+            defaultValue={defaultValue ? defaultValue.slice(0,4) : null}
           />
           { errorYear && <span className="error">{ errorYear }</span> }
         </div>

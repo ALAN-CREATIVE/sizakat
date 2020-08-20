@@ -1,6 +1,6 @@
-import css from 'styled-jsx/css';
+import styled from 'styled-components';
 
-export const NavigationBarStyle = css`
+export const NavigationBarContainer = styled.div`
     .navigation-bar {
         background: #FFFFFF;
         border: 1px solid #DEDEDE;

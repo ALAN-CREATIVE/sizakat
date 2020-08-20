@@ -4,7 +4,7 @@ import NumberField from '../Inputs/NumberField';
 import TextField from '../Inputs/TextField';
 import Button from '..//Buttons/Button';
 
-import { TambahSDMStyle } from './TambahSDMStyle';
+import { TambahSDMContainer } from './TambahSDMStyle';
 
 const ADD_SDM=gql`
     mutation dataSourceMutation($input: DataSourceMutationInput!){
@@ -152,7 +152,7 @@ export default function FormTambahSDMInstitusi() {
     }
 
     return (
-        <div className="TambahMustahikPage">
+        <TambahSDMContainer className="TambahMustahikPage">
             <main>
                 <div className="form-section">
                     <h1 id="form-title">KATEGORI SUMBER DATA</h1>
@@ -192,8 +192,8 @@ export default function FormTambahSDMInstitusi() {
                         />
                     </div>
                     <div className="form" id="alamat">
-                        <div class="row">
-                            <div class="col" id="kota">
+                        <div className="row">
+                            <div className="col" id="kota">
                                 <TextField
                                     label={ 'Kota/Kabupaten' }
                                     placeholder={ 'Nama Kota/Kabupaten' }
@@ -206,7 +206,7 @@ export default function FormTambahSDMInstitusi() {
                                     error={error.regency}
                                 />
                             </div>
-                            <div class="col" id="kecamatan">
+                            <div className="col" id="kecamatan">
                                 <TextField
                                     label={ 'Kecamatan' }
                                     placeholder={ 'Nama Kecamatan' }
@@ -219,7 +219,7 @@ export default function FormTambahSDMInstitusi() {
                                     error={error.subDistrict}
                                 />
                             </div>
-                            <div class="col" id="kelurahan">
+                            <div className="col" id="kelurahan">
                                 <TextField
                                     label={ 'Kelurahan' }
                                     placeholder={ 'Nama Kelurahan' }
@@ -235,8 +235,8 @@ export default function FormTambahSDMInstitusi() {
                         </div>
                     </div>
                     <div className="form" id="alamat-detail">
-                        <div class="row">
-                            <div class="col" id="rw">
+                        <div className="row">
+                            <div className="col" id="rw">
                                 <NumberField
                                     label={ 'RW' }
                                     placeholder={ 'Nomor RW' }
@@ -249,7 +249,7 @@ export default function FormTambahSDMInstitusi() {
                                     error={error.rw}
                                 />
                             </div>
-                            <div class="col" id="rt">
+                            <div className="col" id="rt">
                                 <NumberField
                                     label={ 'RT' }
                                     placeholder={ 'Nomor RT' }
@@ -262,7 +262,7 @@ export default function FormTambahSDMInstitusi() {
                                     error={error.rt}
                                 />
                             </div>
-                            <div class="col"></div>
+                            <div className="col"></div>
                         </div>
                     </div>
                     <div className="form" id="alamat-lengkap">
@@ -335,12 +335,11 @@ export default function FormTambahSDMInstitusi() {
                         />
                     </div>
                 </div>
-                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-                <TambahSDMStyle />
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossOrigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossOrigin="anonymous"></script>
       </main>
-    </div>
+    </TambahSDMContainer>
   );
 };
 

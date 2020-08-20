@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { SearchStyle } from './SearchStyle';
+import { SearchContainer } from './SearchStyle';
 
 export default function Search({placeholder, onChange}) {
   const [value, setValue] = useState('');
   return (
-    <div>
-      <SearchStyle />
+    <SearchContainer>
       <form className="example">
       <input
         value={value}
@@ -18,7 +17,7 @@ export default function Search({placeholder, onChange}) {
         name="search"
       />
       </form>
-    </div>
+    </SearchContainer>
   );
 }
   

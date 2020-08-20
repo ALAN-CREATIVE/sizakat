@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const DetailStyle = () =>(
-  <style jsx>{`
+export const Container = styled.div`
     div{
       padding : 0;
       margin : 0;
@@ -33,5 +32,4 @@ export const DetailStyle = () =>(
     #lurah{
       margin-top: 26px;
     }
-  `}</style>
-);
+  `;

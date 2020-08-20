@@ -1,13 +1,12 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const SearchStyle = () => (
-  <style jsx>{`
+export const SearchContainer = styled.div`
     
     input[type=text] {
       width: 100%;
       height: 48px;
 
-      background-image: url('search-icon.png');
+      background-image: url('/search-icon.png');
       background-size: 20px;
       background-position: 14px 12px;
       background-repeat: no-repeat;
@@ -28,5 +27,4 @@ export const SearchStyle = () => (
     form.example input[type=text]::placeholder {
       color: #C2C2C2;
     }
-  `}</style>
-);
+  `;

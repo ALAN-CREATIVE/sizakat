@@ -5,7 +5,7 @@ import { ApolloClient } from '@apollo/client';
 import { ApolloProvider, gql } from '@apollo/client';
 import { InMemoryCache } from '@apollo/client';
 import { DetailInfo } from '../.././components/DetailSumberDataMustahik/Detail';
-import { DetailStyle } from '../.././components/DetailSumberDataMustahik/DetailStyle';
+import { Container } from '../.././components/DetailSumberDataMustahik/DetailStyle';
 import Navbar from '../.././components/NavigationBar/NavBarWithRouter';
 import Button from '../.././components/Buttons/Button';
 import TitleBar from '../.././components/Titles/TitleBar'
@@ -47,7 +47,7 @@ export default function SumberDataMustahik({ backend_uri }) {
         <title>Detail Mustahik</title>
       </Head>
       <main>
-        <div>
+        <Container>
           {warning && (
             <DeleteWarning
               message={'Apakah anda yakin ingin menghapus sumber data ini?'}
@@ -55,7 +55,6 @@ export default function SumberDataMustahik({ backend_uri }) {
               onConfirm={deleteDataSource}
             />
           )}
-          <DetailStyle />
           <div className="row">
             <div className="position-fixed col-3" style={{zIndex: 1}}>
               <Navbar
@@ -94,7 +93,7 @@ export default function SumberDataMustahik({ backend_uri }) {
               <DetailInfo/>
             </div>
           </div>
-        </div>
+        </Container>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossOrigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossOrigin="anonymous"></script>

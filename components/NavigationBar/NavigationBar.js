@@ -7,13 +7,14 @@ export const Menu = ({ menu, submenu, options, onMenuClicked }) => {
 
     return (
         <div>
+            <style jsx>{ NavigationBarStyle }</style>
             <div
             onClick={() => setIsOpen( isOpen ? false : true )}>
                 <div style={{cursor: 'pointer'}} className="menu-option">{ menu }</div>
             </div>
             {isOpen && <div>
                 {options.map(submenu => (
-                    <div className={"menu"}>
+                    <div key={submenu} className={"menu"}>
                         <div style={{cursor: 'pointer'}} className="submenu-option" key={submenu} onClick={() => {
                             setHaveChosen(true);
                             setIsOpen(true);
@@ -30,7 +31,7 @@ const NavigationBar = ({ name, role, menu, submenu, isOpen, onMenuClicked }) => 
 
     return (
       <div>
-        <NavigationBarStyle />
+        <style jsx>{ NavigationBarStyle }</style>
         <div className="navigation-bar">
                 <div className="profile-picture"></div>
                 <h1 className="user-name">{ name }</h1>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SearchStyle } from './SearchStyle';
+import { SearchContainer } from './SearchStyle';
 import { gql, useLazyQuery } from '@apollo/client'
 
 export function MustahikSearch({setMustahikData}) {
@@ -49,10 +49,9 @@ export function MustahikSearch({setMustahikData}) {
 
 
     return (
-        <div>
-            <SearchStyle />
+        <SearchContainer>
             <input type="text" placeholder="Cari berdasarkan nama" name="search" onKeyPress={onKeyPressed}/> 
-        </div>
+        </SearchContainer>
     );
 }
 

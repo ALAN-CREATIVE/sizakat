@@ -1,7 +1,6 @@
-import React from 'react';
+import css from 'styled-jsx/css';
 
-export const NavigationBarStyle = () => (
-  <style jsx>{`
+export const NavigationBarStyle = css`
     .navigation-bar {
         background: #FFFFFF;
         border: 1px solid #DEDEDE;
@@ -94,5 +93,4 @@ export const NavigationBarStyle = () => (
         background: linear-gradient(to right, #00239D 0%, #00239D 5%, #F5F6F8 5%, #F5F6F8 100%);
     }
 
-  `}</style>
-);
+  `

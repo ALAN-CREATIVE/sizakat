@@ -103,16 +103,27 @@ export default function FormTambahMustahik() {
     let formIsValid = true;
     let temporaryError = {};
     var alphabet = new RegExp(/^[a-zA-Z]+$/);
+    var plus = new RegExp(/^\+?[0-9]+$/);
+    var space = new RegExp(/\s/g);
 
     if (mustahik.name.length == 0) {
         formIsValid = false;
         temporaryError.name='Nama lengkap tidak boleh kosong';
+    } if (mustahik.name.match(space)) {
+        formIsValid = false;
+        temporaryError.name='Nama lengkap tidak boleh diisi dengan spasi';
     } if (mustahik.noKtp.length < 14 || mustahik.noKtp.length > 14) {
         formIsValid = false;
         temporaryError.noKtp='Format KTP harus berupa 14 karakter angka';
+    } if (mustahik.noKtp.match(space)) {
+        formIsValid = false;
+        temporaryError.noKtp='No KTP tidak boleh diisi dengan spasi';
     } if (mustahik.address.length == 0) {
         formIsValid = false;
         temporaryError.address='Alamat tidak boleh kosong';
+    } if (mustahik.address.match(space)) {
+        formIsValid = false;
+        temporaryError.address='Alamat tidak boleh diisi dengan spasi';
     } if (mustahik.birthdate.slice(8) == "xx") {
         formIsValid = false;
         temporaryError.errorDate= 'Tanggal lahir tidak boleh kosong';
@@ -134,6 +145,12 @@ export default function FormTambahMustahik() {
     } if (mustahik.phone.match(alphabet)) {
         formIsValid = false;
         temporaryError.phone='Format HP harus berupa angka';
+    } if (mustahik.phone.match(plus)) {
+        formIsValid = false;
+        temporaryError.phone='Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
+    } if (mustahik.phone.match(space)) {
+        formIsValid = false;
+        temporaryError.phone='No HP tidak boleh diisi dengan spasi';
     }
 
     setError(temporaryError);
@@ -181,8 +198,20 @@ export default function FormTambahMustahik() {
               required={true}
               onChange={ktp => {
                 setMustahik({...mustahik, noKtp: ktp});
-                setError({...error,
-                  noKtp:ktp = ktp.length < 14 || ktp.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''})
+                var space = new RegExp(/\s/g);
+                if (noKtp.match(space)) {
+                  setError({...error,
+                    noKtp: 'Nomor KTP tidak boleh diisi dengan spasi'
+                  });
+                }
+                else if (ktp.length < 14 || ktp.length > 14) {
+                  setError({...error,
+                    noKtp: 'Format KTP harus berupa 14 karakter angka'
+                  });
+                } else {
+                  setError({...error,
+                    noKtp:''});
+                }
               }}
               error={error.noKtp}
             />
@@ -194,8 +223,20 @@ export default function FormTambahMustahik() {
               required={ true }
               onChange={name => {
                 setMustahik({...mustahik, name: name});
-                setError({...error,
-                  name: name = name.length < 1 ? 'Nama lengkap tidak boleh kosong' : ''});
+                var space = new RegExp(/\s/g);
+                if (name.match(space)) {
+                  setError({...error,
+                    name: 'Nama lengkap tidak boleh diisi dengan spasi'
+                  });
+                }
+                else if (name.length < 1) {
+                  setError({...error,
+                    name: 'Nama lengkap tidak boleh kosong'
+                  });
+                } else {
+                  setError({...error,
+                    name:''});
+                }
               }}
               error={error.name}
             />
@@ -260,17 +301,27 @@ export default function FormTambahMustahik() {
                 setMustahik({...mustahik, phone: noHp});
                 var pattern = new RegExp(/^[0-9]+$/);
                 var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                if (mustahik.phone.match(alphabet)) {
+                var plus = new RegExp(/^\+?[0-9]+$/);
+                var space = new RegExp(/\s/g);
+                if (noHp.match(alphabet)) {
                   setError ({...error,
                     phone:'Format HP harus berupa angka'});
                 }
-                if(mustahik.phone.match(pattern)) {
+                else if(noHp.match(pattern)) {
                   setError ({...error,
                     phone:''});
                 }
-                if (mustahik.phone.length < 1) {
-                setError ({...error,
-                  phone:'Format HP harus berupa angka'});
+                else if(noHp.match(plus)) {
+                  setError ({...error,
+                    phone:'Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)'});
+                }
+                else if (noHp.match(space)) {
+                  setError ({...error,
+                    phone:'No HP tidak boleh diisi dengan spasi'});
+                }
+                else {
+                  setError ({...error,
+                    phone:''});
                 }
               }}
               error={error.phone}
@@ -283,8 +334,20 @@ export default function FormTambahMustahik() {
               required
               onChange={alamatLengkap => {
                 setMustahik ({...mustahik, address: alamatLengkap});
-                setError ({...error,
-                  address:alamatLengkap = alamatLengkap.length < 1 ? 'Alamat tidak boleh kosong' : ''});
+                var space = new RegExp(/\s/g);
+                if (alamatLengkap.match(space)) {
+                  setError({...error,
+                    address: 'Alamat tidak boleh diisi dengan spasi'
+                  });
+                }
+                else if (alamatLengkap.length < 1) {
+                  setError({...error,
+                    address: 'Alamat tidak boleh kosong'
+                  });
+                } else {
+                  setError({...error,
+                    address:''});
+                }
               }}
               error={error.address}
             />

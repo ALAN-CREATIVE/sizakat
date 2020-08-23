@@ -26,8 +26,8 @@ function App({ backend_uri }) {
 
         <main>
           <div className="row">
-            <div className="col-3" />
-            <div className="col-3 position-fixed">
+            <div className="col-12 col-md-3" />
+            <div className="col-12 col-md-3 position-fixed">
               <Navbar
                 user={{
                   name: 'Annisaa Fitri Shabrina',
@@ -35,19 +35,20 @@ function App({ backend_uri }) {
                   }}
               />
             </div>
-            <div class="col-9">
-              <div className="row">
-                <div className="col">
-                  <h1 id="logout">Keluar</h1>
+            <div class="col-12 col-md-9">
+              <div className="header-tambah-mustahik" style={{paddingLeft: "5%", paddingRight:"5%"}}>
+                <div className="row">
+                  <div className="col">
+                    <h1 id="logout">Keluar</h1>
+                  </div>
                 </div>
+                <TitleBar
+                  title={'Tambah Mustahik'}
+                  path={'Mustahik //'}
+                  current={'Tambah Mustahik'}
+                />
               </div>
-              <TitleBar
-                title={'Tambah Mustahik'}
-                path={'Mustahik //'}
-                current={'Tambah Mustahik'}
-              />
               <FormTambahMustahik />
-
             </div>
           </div>
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

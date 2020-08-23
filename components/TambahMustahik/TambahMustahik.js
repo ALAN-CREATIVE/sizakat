@@ -102,7 +102,6 @@ export default function FormTambahMustahik() {
   const handleSubmit = () => {
     let formIsValid = true;
     let temporaryError = {};
-    var pattern = new RegExp(/^[0-9]+$/);
     var alphabet = new RegExp(/^[a-zA-Z]+$/);
 
     if (mustahik.name.length == 0) {
@@ -294,7 +293,7 @@ export default function FormTambahMustahik() {
             <FileField
               label={ 'Foto Mustahik' }
               buttonLabel={ 'Pilih Foto' }
-              description={ 'Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg' }
+              description={ 'Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg atau .png' }
               onFileSelected={ foto => setMustahik (
                 {...mustahik,
                 photo: foto })
@@ -304,7 +303,7 @@ export default function FormTambahMustahik() {
           <div className="form button-lanjutkan">
             <Button
                 type={'primary'}
-                label={'Lanjutkan >>'}
+                label={'Simpan'}
                 onClick={() =>
                   submitForm()
                 }

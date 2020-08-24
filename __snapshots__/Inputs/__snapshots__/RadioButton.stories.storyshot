@@ -15,9 +15,10 @@ exports[`Storyshots Input/Radio Button Default 1`] = `
       className="radio"
     >
       <input
+        checked={true}
         name="Jenis Kelamin"
         type="radio"
-        value="Laki-laki"
+        value="L"
       />
       <label>
         Laki-laki
@@ -27,9 +28,10 @@ exports[`Storyshots Input/Radio Button Default 1`] = `
       className="radio"
     >
       <input
+        checked={false}
         name="Jenis Kelamin"
         type="radio"
-        value="Perempuan"
+        value="P"
       />
       <label>
         Perempuan
@@ -101,9 +103,10 @@ exports[`Storyshots Input/Radio Button Error 1`] = `
       className="radio"
     >
       <input
+        checked={true}
         name="Jenis Kelamin"
         type="radio"
-        value="Laki-laki"
+        value="L"
       />
       <label>
         Laki-laki
@@ -113,9 +116,10 @@ exports[`Storyshots Input/Radio Button Error 1`] = `
       className="radio"
     >
       <input
+        checked={false}
         name="Jenis Kelamin"
         type="radio"
-        value="Perempuan"
+        value="P"
       />
       <label>
         Perempuan
@@ -192,9 +196,10 @@ exports[`Storyshots Input/Radio Button Required 1`] = `
       className="radio"
     >
       <input
+        checked={true}
         name="Jenis Kelamin"
         type="radio"
-        value="Laki-laki"
+        value="L"
       />
       <label>
         Laki-laki
@@ -204,9 +209,10 @@ exports[`Storyshots Input/Radio Button Required 1`] = `
       className="radio"
     >
       <input
+        checked={false}
         name="Jenis Kelamin"
         type="radio"
-        value="Perempuan"
+        value="P"
       />
       <label>
         Perempuan

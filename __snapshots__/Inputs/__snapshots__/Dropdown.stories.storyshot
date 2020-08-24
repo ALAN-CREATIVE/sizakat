@@ -69,7 +69,7 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
           }
         }
       >
-        Pilih Status Mustahik
+        MISKIN
       </div>
       <img
         src="/dropdown-arrow.svg"
@@ -216,7 +216,7 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
           }
         }
       >
-        Pilih Status Mustahik
+        MISKIN
       </div>
       <img
         src="/dropdown-arrow.svg"
@@ -368,7 +368,7 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
           }
         }
       >
-        Pilih Status Mustahik
+        MISKIN
       </div>
       <img
         src="/dropdown-arrow.svg"

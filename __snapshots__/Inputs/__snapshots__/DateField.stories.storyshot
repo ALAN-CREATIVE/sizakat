@@ -269,7 +269,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
               }
             }
           >
-            Tahun
+            10
           </div>
           <img
             src="/dropdown-arrow.svg"
@@ -623,7 +623,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
               }
             }
           >
-            Tahun
+            10
           </div>
           <img
             src="/dropdown-arrow.svg"
@@ -977,7 +977,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
               }
             }
           >
-            Tahun
+            10
           </div>
           <img
             src="/dropdown-arrow.svg"
@@ -1326,7 +1326,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
               }
             }
           >
-            Tahun
+            10
           </div>
           <img
             src="/dropdown-arrow.svg"
@@ -1680,7 +1680,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
               }
             }
           >
-            Tahun
+            10
           </div>
           <img
             src="/dropdown-arrow.svg"

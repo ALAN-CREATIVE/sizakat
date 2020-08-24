@@ -54,6 +54,7 @@ exports[`Storyshots Input/Text Field Default 1`] = `
      
   </label>
   <input
+    defaultValue="Test"
     name="Nama Lengkap"
     onChange={[Function]}
     placeholder="Nama sesuai dengan KTP"
@@ -118,6 +119,7 @@ exports[`Storyshots Input/Text Field Disabled 1`] = `
      
   </label>
   <input
+    defaultValue="Test"
     disabled={true}
     name="Nama Lengkap"
     onChange={[Function]}
@@ -183,6 +185,7 @@ exports[`Storyshots Input/Text Field Error 1`] = `
      
   </label>
   <input
+    defaultValue="Test"
     name="Nama Lengkap"
     onChange={[Function]}
     placeholder="Nama sesuai dengan KTP"
@@ -252,6 +255,7 @@ exports[`Storyshots Input/Text Field Required 1`] = `
      
   </label>
   <input
+    defaultValue="Test"
     name="Nama Lengkap"
     onChange={[Function]}
     placeholder="Nama sesuai dengan KTP"

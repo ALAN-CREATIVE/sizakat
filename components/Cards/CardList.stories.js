@@ -16,11 +16,8 @@ export const cardListData = {
         {id: 3, desc: 'Institusi', label: 'Consectetur Adisipicing'},
         {id: 4, desc: 'Pekerja', label: 'Elit Sed Do'},
         {id: 5, desc: 'Institusi', label: 'Eiusmod Tempor'},
-    ]
+    ],
+  path: '/somewhere'
 }
 
-const actionsData = {
-    onCardDetailClicked: action('onCardDetailClicked')
-}
-
-export const Default = () => <CardList { ...cardListData } { ...actionsData } />
+export const Default = () => <CardList { ...cardListData } />

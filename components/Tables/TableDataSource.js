@@ -14,7 +14,7 @@ const Table = ({
   itemList,
   onButtonClicked,
   onFilterPicked,
-  onDetailClicked,
+  detailPath,
   onSearchChanged,
   setDataSourceData
 }) => {
@@ -44,7 +44,7 @@ const Table = ({
       <div>
         <CardList
           list={itemList}
-          onCardDetailClicked={onDetailClicked}
+          path={detailPath}
         />
       </div>
     </Container>

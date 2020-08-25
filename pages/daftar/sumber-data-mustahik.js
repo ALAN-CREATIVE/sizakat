@@ -111,12 +111,7 @@ const MainContent = () => {
             filterCaption={'SEMUA KATEGORI DATA'}
             filterOptions={['Semua Kategori Sumber Data', 'Warga', 'Pesantren', 'Pekerja']}
             itemList={dataDataSource.dataSources.map(dataSourcesToCardItem)}
-            onDetailClicked={(id) => {
-              router.push({
-                pathname: '/detail/sumber-data-mustahik',
-                query: { id }
-              })
-            }}
+            detailPath={'/detail/sumber-data-mustahik'}
             setDataSourceData={(data)=> setDataDataSource(data)}
 
           />}

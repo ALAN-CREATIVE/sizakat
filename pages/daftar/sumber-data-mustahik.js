@@ -7,8 +7,8 @@ import { useRouter } from 'next/router';
 import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 import TableDataSource from '../../components/Tables/TableDataSource';
-import { toCapitalCase } from '../../Utils/StringUtil';
-import { resolveDataSourceName } from '../../Utils/ParserUtil';
+import { toCapitalCase } from '../../utils/string-util';
+import { resolveDataSourceName } from '../../utils/parser-util';
 
 const INITIAL_DATA_SOURCES_QUERY = gql`
   query {
@@ -17,15 +17,18 @@ const INITIAL_DATA_SOURCES_QUERY = gql`
       category
       dataSourceDetail {
         ... on DataSourceWargaType {
+          picName
           rt
           rw
           village
         }
         ... on DataSourceInstitusiType {
+          picName
           name
           village
         }
         ... on DataSourcePekerjaType {
+          picName
           profession
           location
         }
@@ -59,8 +62,8 @@ const TableContainer = styled.div`
 const dataSourcesToCardItem = (dataSource) => {
   return {
     id: dataSource.id,
-    desc: toCapitalCase(dataSource.category),
-    label: resolveDataSourceName(dataSource)
+    desc: resolveDataSourceName(dataSource),
+    label: dataSource.dataSourceDetail.picName
   };
 }
 

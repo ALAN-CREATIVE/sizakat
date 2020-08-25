@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
 import DetailField from '../Details/DetailField';
-import {resolveDataSourceName} from '../../Utils/ParserUtil';
+import {resolveDataSourceName} from '../../utils/parser-util';
 import { useRouter } from 'next/router';
 
 const QUERY_USERS = gql`

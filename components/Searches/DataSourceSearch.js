@@ -11,14 +11,17 @@ export function DataSourceSearch({setDataSourceData}) {
           dataSourceDetail {
             __typename
             ... on DataSourceInstitusiType {
+              picName
               name
               village
             }
             ... on DataSourcePekerjaType {
+              picName
               profession
               location
             }
             ... on DataSourceWargaType {
+              picName
               rt
               rw
               village

@@ -312,16 +312,16 @@ export default function FormTambahMustahik() {
               placeholder={'Diisi dengan angka (Contoh: 0811111111)'}
               onChange={noHp => {
                 setMustahik({...mustahik, phone: noHp});
-                var number = new RegExp(/^[0-9]+$/);
+                var numberValid = new RegExp(/^[0][0-9]+$/);
                 var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                var onlyPlus = new RegExp(/^[\+]+$/);
-                var plus = new RegExp(/^\+?[0-9]+$/);
+                var onlyPlus = new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/);
+                var plus = new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/);
                 var space = new RegExp(/\s/g);
                 if (noHp.match(alphabet)) {
                   setError ({...error,
                     phone:'Format HP harus berupa angka'});
                 }
-                else if(noHp.match(number)) {
+                else if(noHp.match(numberValid)) {
                   setError ({...error,
                     phone:''});
                 }

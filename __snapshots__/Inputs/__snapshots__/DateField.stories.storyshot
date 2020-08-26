@@ -55,7 +55,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     class="row"
   >
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -152,7 +152,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -249,7 +249,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -404,7 +404,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     class="row"
   >
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -506,7 +506,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       </span>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -603,7 +603,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -758,7 +758,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     class="row"
   >
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -855,7 +855,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -957,7 +957,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       </span>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -1112,7 +1112,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     class="row"
   >
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -1209,7 +1209,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -1306,7 +1306,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -1466,7 +1466,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     class="row"
   >
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -1563,7 +1563,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={
@@ -1660,7 +1660,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
       </div>
     </div>
     <div
-      class="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         style={

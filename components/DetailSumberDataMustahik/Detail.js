@@ -78,10 +78,7 @@ export function DetailInfo() {
         </div>
       </div>
       <br></br>
-
-      <DetailField title={'Nama'} description={resolveDataSourceName(data.dataSource)}/><br></br>
       <DetailField title={'Kategori'} description={category}/><br></br>
-
       <div>
         {(()=>{
           switch(category){

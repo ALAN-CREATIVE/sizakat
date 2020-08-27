@@ -2,22 +2,37 @@ import Head from 'next/head'
 import React from 'react';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
+import styled from 'styled-components';
 
 import PilihKategori from '../../../components/TambahSumberDataMustahik/PilihKategori';
-import NavigationBar from '../../../components/NavigationBar/NavigationBar';
+import Navbar from '../../../components/NavigationBar/NavBarWithRouter';
+import TitleBar from '../../../components/Titles/TitleBar';
 
 import { PilihKategoriStyle } from '../../../components/TambahSumberDataMustahik/PilihKategoriStyle';
 
-const client = new ApolloClient({
-    uri: 'http://localhost:8000/graphql/',
-    cache: new InMemoryCache()
-  });
+const Logout = styled.p`
+  float: right;
+  font-family: Muli, sans-serif;
 
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
 
-function App() {
+  margin: 3% 2% 2% 0;
+
+  color: #EB4E2C;
+`
+
+function App({ backend_uri }) {
+    const client = new ApolloClient({
+        uri: backend_uri,
+        cache: new InMemoryCache()
+    });
+
     return (
     <ApolloProvider client={client}>
-        <div className="TambahMustahikPage">
+        <div className="PilihKategoriSumber">
             <Head>
                 <title>Pilih Kategori Sumber</title>
                 <meta charset="utf-8" />
@@ -30,23 +45,27 @@ function App() {
             <main>
                 <div className="row">
                     <div className="col-3">
-                        <NavigationBar
-                            name={ 'Annisaa Fitri Shabrina' }
-                            role={ 'Admin' }
-                            menu={ 'Mustahik' }
-                            submenu={ ['Data Mustahik', 'Sumber Data Mustahik'] }
-                            onMenuClicked={(item) => console.log(item)}
+                        <Navbar
+                            user={{
+                                name: 'Annisaa Fitri Shabrina',
+                                role: 'ADMIN'
+                            }}
                         />
                     </div>
                     <div class="col-9">
                         <div className="row">
                             <div className="col">
-                                <p id="logout">Keluar</p>
+                                <Logout>Keluar</Logout>
                             </div>
                         </div>
-                        <p id="page-title">Tambah Sumber Data Mustahik</p>
-                        <p id="breadcrumb">Mustahik {'//'} <span id="blue">Tambah Sumber</span></p>
+                        <TitleBar
+                            title={'Tambah Sumber Data Mustahik'}
+                            path={'Mustahik // '}
+                            current={'Tambah Sumber'}
+                        />
+                        <div style={{ marginTop: '30px' }}>
                         <PilihKategori />
+                        </div>
 
                     </div>
                 </div>

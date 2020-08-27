@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const PilihKategoriStyle = () =>(
-    <style jsx>{`
+export const PilihKategoriStyle = styled.div`
         h1 {
             font-family: Muli;
             font-style: normal;
@@ -43,7 +42,7 @@ export const PilihKategoriStyle = () =>(
             font-size: 20px;
             line-height: 25px;
 
-            margin: 1% 2% 2% 0;
+            margin: 3% 2% 2% 0;
 
             color: #EB4E2C;
         }
@@ -69,5 +68,4 @@ export const PilihKategoriStyle = () =>(
             font-family: Muli;
             
         }
-    `}</style>
-);
+    `

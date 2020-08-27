@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { gql, useMutation } from '@apollo/client';
+import { gql, useMutation, useQuery } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import NumberField from '../Inputs/NumberField';
 import TextField from '../Inputs/TextField';
 import Button from '../Buttons/Button';
+import { useRouter } from 'next/router';
 
-import { TambahSDMPekerjaStyle } from './TambahSDMPekerjaStyle';
+import { TambahSDMContainer } from './TambahSDMStyle';
 
 const ADD_SDM = gql`
   mutation dataSourceMutation($input: DataSourceMutationInput!){
@@ -111,12 +112,21 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     return formIsValid;
   }
 
+  const router = useRouter();
+
   useEffect(() => {
     if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
         createSDMPekerja({ variables: { input: { ...dataSourcePekerja, dataSource: createData.dataSourceMutation.dataSource.id }}});
+    } if (createDataPekerja && createDataPekerja.dataSourcePekerjaMutation && createDataPekerja.dataSourcePekerjaMutation.dataSourcePekerja) {
+      router.push({
+        pathname: '/detail/sumber-data-mustahik',
+        query: {
+          id: createData.dataSourceMutation.dataSource.id
         }
+      })
     }
-    ,[createData]
+    }
+    ,[createData, createDataPekerja]
   )
 
   if(errorCreatePekerja) {
@@ -132,8 +142,7 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
   }
   
   return (
-    <ApolloProvider client={client}>
-    <div className="TambahMustahikPage">
+    <TambahSDMContainer className="TambahMustahikPage">
       <main>
         <div className="form-section">
             <h1 id="form-title">KATEGORI SUMBER DATA</h1>
@@ -239,13 +248,8 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
               />
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <TambahSDMPekerjaStyle />
       </main>
-    </div>
-    </ApolloProvider>
+    </TambahSDMContainer>
   );
 };
 

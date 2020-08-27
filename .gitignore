@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/yarn,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=yarn,node
 
@@ -127,3 +126,7 @@ dist
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/yarn,node
+
+# Storybook static build default directory
+storybook-static/
+

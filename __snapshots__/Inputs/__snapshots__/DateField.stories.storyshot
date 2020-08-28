@@ -259,7 +259,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
         }
       >
         <div
-          className="header "
+          className="header chosen"
           onClick={[Function]}
         >
           <div
@@ -613,7 +613,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
         }
       >
         <div
-          className="header "
+          className="header chosen"
           onClick={[Function]}
         >
           <div
@@ -967,7 +967,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
         }
       >
         <div
-          className="header "
+          className="header chosen"
           onClick={[Function]}
         >
           <div
@@ -1316,7 +1316,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
         }
       >
         <div
-          className="header "
+          className="header chosen"
           onClick={[Function]}
         >
           <div
@@ -1670,7 +1670,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
         }
       >
         <div
-          className="header "
+          className="header chosen"
           onClick={[Function]}
         >
           <div

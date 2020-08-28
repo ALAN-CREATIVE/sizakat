@@ -59,7 +59,7 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
     }
   >
     <div
-      className="header "
+      className="header chosen"
       onClick={[Function]}
     >
       <div
@@ -206,7 +206,7 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
     }
   >
     <div
-      className="header "
+      className="header chosen"
       onClick={[Function]}
     >
       <div
@@ -358,7 +358,7 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
     }
   >
     <div
-      className="header "
+      className="header chosen"
       onClick={[Function]}
     >
       <div

@@ -66,7 +66,8 @@ export function DetailInfo() {
     ));
   }
 
-  return [data.dataSource].map(({ id, category, dataSourceDetail }) =>(
+  const {idDataSource, category, dataSourceDetail: detail} = data.dataSource
+  return (
     <>
     <Head>
       <title>Sumber Data: {resolveDataSourceName(data.dataSource)}</title>
@@ -83,25 +84,25 @@ export function DetailInfo() {
         {(()=>{
           switch(category){
             case 'PEKERJA':
-              return <div><DetailField title={'Lokasi'} description={dataSourceDetail.location}/><br></br></div>;
+              return <div><DetailField title={'Lokasi'} description={detail.location}/><br></br></div>;
             default:
-              return [data.dataSource].map(({ dataSourceDetail }) => (
+              return (
                 <div className="row">
                   <div className="col-md-4">
                     <p className="label">Lokasi</p>
                     <p><b>RT / RW</b></p>
-                    <p>{dataSourceDetail.rt} / {dataSourceDetail.rw}</p><br></br>
+                    <p>{detail.rt} / {detail.rw}</p><br></br>
                     <p><b>Kota</b></p>
-                    <p>{dataSourceDetail.regency}</p><br></br>
+                    <p>{detail.regency}</p><br></br>
                   </div>
                   <div className="col-md-8" id="lurah">
                     <p><b>Kelurahan / Kecamatan</b></p>
-                    <p>{dataSourceDetail.village} / {dataSourceDetail.subDistrict}</p><br></br>
+                    <p>{detail.village} / {detail.subDistrict}</p><br></br>
                     <p><b>Provinsi</b></p>
-                    <p>{dataSourceDetail.province}</p><br></br>
+                    <p>{detail.province}</p><br></br>
                   </div>
                 </div>
-              ));
+              );
           }
         })()}
       </div>
@@ -113,11 +114,11 @@ export function DetailInfo() {
       </div>
       <br></br>
 
-      <DetailField title={'Nama'} description={dataSourceDetail.picName}/><br></br>
-      <DetailField title={'Nomor KTP'} description={dataSourceDetail.picKtp}/><br></br>
-      <DetailField title={'Jabatan'} description={dataSourceDetail.picPosition}/><br></br>
-      <DetailField title={'Nomor Telepon'} description={dataSourceDetail.picPhone}/><br></br>
+      <DetailField title={'Nama'} description={detail.picName}/><br></br>
+      <DetailField title={'Nomor KTP'} description={detail.picKtp}/><br></br>
+      <DetailField title={'Jabatan'} description={detail.picPosition}/><br></br>
+      <DetailField title={'Nomor Telepon'} description={detail.picPhone}/><br></br>
     </div>
     </>
-  ));
+  );
 }

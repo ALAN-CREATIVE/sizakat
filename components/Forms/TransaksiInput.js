@@ -17,7 +17,9 @@ const TransaksiInput = (props) => {
                           placeholder="Jenis zakat" 
                           options={["Zakat Mal", "Zakat Fitrah-Uang", "Zakat Fitrah-Beras"]} 
                           required={true} 
-                          onChange = {(option) => props.onTransaksiChanges(option, idx, "jenis")}
+                          onChange = {(option) => {
+                            props.onTransaksiChanges(option, idx, "jenis")
+                          }}
                         />
                     </div>
                     <div className="col-4">
@@ -25,7 +27,9 @@ const TransaksiInput = (props) => {
                       label="Nominal" 
                       placeholder="isi dengan angka" 
                       required={true} 
-                      onChange = {(option) => props.onTransaksiChanges(option, idx, "nominal")}
+                      onChange = {(option) => {
+                        props.onTransaksiChanges(option, idx, "nominal")
+                      }}
                     />
                     </div>
                     <div className="col-3">

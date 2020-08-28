@@ -1,10 +1,27 @@
 import React, {useState} from 'react';
+import { gql, useMutation, useQuery } from '@apollo/client';
 import TextField from '../Inputs/TextField'
 import NumberField from '../Inputs/NumberField'
 import TransaksiInput from './TransaksiInput'
 import Button from '../Buttons/Button'
-import styled from 'styled-components';
 
+
+const ADD_MUZAKKI = gql`
+    mutation muzakkiMutation($input: MuzakkiMutationInput!){
+        muzakkiMutation(input:$input) {
+            muzakki {
+                id
+                noKtp
+                name
+                phone
+            }
+            errors {
+                field
+                messages
+            }
+        }
+    }
+`;
 export default function TambahTransaksiForm() {
     const [transaksi, setTransaksi] = useState([{jenis:"", nominal:0, satuan:""}])
 
@@ -28,11 +45,6 @@ export default function TambahTransaksiForm() {
     const deleteTransaksi = (idx) => {
         setTransaksi([...transaksi.slice(0, idx), ...transaksi.slice(idx+1)])
     }
-    const [muzakki, setMuzakki] = useState({
-        noKtp: '',
-        name: '',
-        phone: '',
-    });
 
     const [error, setError] = useState({
         noKtp: '',
@@ -40,8 +52,81 @@ export default function TambahTransaksiForm() {
         phone: '',
     });
 
-    console.log(transaksi);
-    console.log(muzakki)
+    const [muzakki, setMuzakki] = useState({
+        noKtp: '',
+        name: '',
+        phone: '',
+    });
+
+
+    const [createMuzakki, {data: muzakkiData, error: errorMuzakki}] = useMutation(ADD_MUZAKKI, {
+        onCompleted: (muzakkiData) => {
+            console.log(muzakkiData)
+            if(muzakkiData.muzakkiMutation.errors.length != 0){
+                alert("Submit gagal");
+                console.log(muzakkiData.muzakkiMutation.errors[0].messages[0]);
+            } else{
+                alert("Submit berhasil");
+                console.log(muzakkiData.muzakkiMutation.muzakki);
+            }   
+
+        }
+    });
+
+    const submitForm= ()=> {
+        if (submitCheck()){
+            createMuzakki({
+                variables: {
+                    input: {
+                        ...muzakki
+                    }
+                }
+            })
+        } else {
+            alert("Submit gagal");
+        }
+        
+    }
+
+    const submitCheck = () => {
+        let formIsValid = true;
+        let temporaryError = {};
+        var alphabet = new RegExp(/^[a-zA-Z]+$/);
+        var plus = new RegExp(/^[\+][0-9]+$/);
+        var onlyPlus = new RegExp(/^[\+]+$/);
+        var onlySpace = new RegExp(/\s/g);
+        var namaLengkapValid = new RegExp(/^[a-zA-Z]+?([\s]+)/);
+        var phoneValid = new RegExp(/^[0][0-9]+$/g)
+
+
+        if (muzakki.name.length == 0) {
+            formIsValid = false;
+            temporaryError.name='Nama lengkap tidak boleh kosong';
+        } if (muzakki.name.match(onlySpace)) {
+            formIsValid = false;
+            temporaryError.name='Nama lengkap tidak boleh diisi dengan spasi saja';
+        } if (muzakki.name.match(namaLengkapValid)) {
+            formIsValid = true;
+            temporaryError.name='';
+        } if (muzakki.noKtp.length < 14 || muzakki.noKtp.length > 14) {
+            formIsValid = false;
+            temporaryError.noKtp='Format KTP harus berupa 14 karakter angka';
+        } if (muzakki.noKtp.match(onlySpace)) {
+            formIsValid = false;
+            temporaryError.noKtp='No KTP tidak boleh diisi dengan spasi';
+        } if (muzakki.phone.match(onlySpace)) {
+            formIsValid = false;
+            temporaryError.phone='No HP tidak boleh diisi dengan spasi';
+        } if (muzakki.phone.match(plus) || muzakki.phone.match(onlyPlus) || !(muzakki.phone.match(phoneValid))) {
+            formIsValid = false;
+            temporaryError.phone='Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
+        } if (muzakki.phone.match(onlySpace)) {
+            formIsValid = false;
+            temporaryError.phone='No HP tidak boleh diisi dengan spasi';
+        } 
+        setError(temporaryError);
+        return formIsValid;
+    }
     return(
         <main>
             <div className="formContainer">
@@ -90,7 +175,7 @@ export default function TambahTransaksiForm() {
                         <Button label='+' type="round" onClick={addTransaksi} /> 
                     </div>
                 </div><br></br>
-                <Button label="+ SIMPAN DAN TAMBAH MUZAKKI BARU" type="tertiary"/> <br></br>
+                <Button label="+ SIMPAN DAN TAMBAH MUZAKKI BARU" type="tertiary" onClick={submitForm}/> <br></br>
                 <Button label="LANJUT KE PEMBAYARAN >>" type="primary"/> <br></br>
             </div>
         </main>

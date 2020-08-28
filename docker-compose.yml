@@ -11,7 +11,7 @@ services:
       - ./:/app/frontend/
       - /app/frontend/node_modules
       - /app/frontend/.next
-    command: yarn dev
+    command: ["/bin/sh", "-c", "yarn build && yarn start"]
 
   storybook:
     build:

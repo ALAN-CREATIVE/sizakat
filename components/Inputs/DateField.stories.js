@@ -15,7 +15,6 @@ export const dateFieldData = {
   errorDate: null,
   errorMonth: null,
   errorYear: null,
-  defaultValue: 10,
 }
 
 const actionsData = {
@@ -33,3 +32,5 @@ export const ErrorDate = () => <DateField { ...{ ...dateFieldData, errorDate: "T
 export const ErrorMonth = () => <DateField { ...{ ...dateFieldData, errorMonth: "Bulan lahir tidak boleh kosong" }} { ...actionsData } />;
 
 export const ErrorYear = () => <DateField { ...{ ...dateFieldData, errorYear: "Tahun lahir tidak boleh kosong" }} { ...actionsData } />;
+
+export const DefaultValue = () => <DateField { ...{ ...dateFieldData, defaultValue: 10 }} { ...actionsData } />;

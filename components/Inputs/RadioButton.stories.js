@@ -29,3 +29,5 @@ export const Default = () => <RadioButton { ...radioButtonData } { ...actionsDat
 export const Required = () => <RadioButton { ...{ ...radioButtonData, required: true }} { ...actionsData } />;
 
 export const Error = () => <RadioButton { ...{ ...radioButtonData, error: "Pilih salah satu jenis kelamin" }} { ...actionsData } />
+
+export const DefaultChecked = () => <RadioButton { ...{ ...radioButtonData, defaultChecked: 'L' }} { ...actionsData } />;

@@ -54,6 +54,70 @@ exports[`Storyshots Input/Text Field Default 1`] = `
      
   </label>
   <input
+    name="Nama Lengkap"
+    onChange={[Function]}
+    placeholder="Nama sesuai dengan KTP"
+    required={false}
+    type="text"
+    value={null}
+  />
+</div>
+`;
+
+exports[`Storyshots Input/Text Field Default Value 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    label {
+      font-family: Muli;
+      font-weight: 700;
+      font-size: 16px;
+      color: #393F50;
+      line-height: 20px;
+    }
+
+    .required:after {
+      color: #EB4E2C;
+      content: "*";
+    }
+
+    input, select {
+      border-width: 0px 0px 1px 0px;
+      border-color: #00239D;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #393F50;
+      background-color: #FFFFFF;
+    }
+
+    input::placeholder {
+      color: #C4C4C4;
+    }
+
+    .error {
+     font-family: Muli;
+     font-style: normal;
+     font-weight: 700;
+     font-size: 12px;
+     line-height: 15px;
+     color: #EB4E2C;
+    }
+  
+  </style>
+  <label
+    className={null}
+  >
+     
+    Nama Lengkap
+     
+  </label>
+  <input
     defaultValue="Test"
     name="Nama Lengkap"
     onChange={[Function]}
@@ -119,7 +183,6 @@ exports[`Storyshots Input/Text Field Disabled 1`] = `
      
   </label>
   <input
-    defaultValue="Test"
     disabled={true}
     name="Nama Lengkap"
     onChange={[Function]}
@@ -185,7 +248,6 @@ exports[`Storyshots Input/Text Field Error 1`] = `
      
   </label>
   <input
-    defaultValue="Test"
     name="Nama Lengkap"
     onChange={[Function]}
     placeholder="Nama sesuai dengan KTP"
@@ -255,7 +317,6 @@ exports[`Storyshots Input/Text Field Required 1`] = `
      
   </label>
   <input
-    defaultValue="Test"
     name="Nama Lengkap"
     onChange={[Function]}
     placeholder="Nama sesuai dengan KTP"

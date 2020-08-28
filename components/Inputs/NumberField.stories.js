@@ -14,7 +14,6 @@ export const numberFieldData = {
   placeholder: 'Terdiri dari 14 karakter angka',
   required: false,
   error: null,
-  defaultValue: 1,
 }
 
 export const Default = () => <NumberField { ...numberFieldData } { ...actionsData } />;
@@ -22,3 +21,5 @@ export const Default = () => <NumberField { ...numberFieldData } { ...actionsDat
 export const Required = () => <NumberField { ...{ ...numberFieldData, required: true }} { ...actionsData } />;
 
 export const Error = () => <NumberField { ...{ ...numberFieldData, error: 'Format KTP harus berupa 14 karakter angka' }} { ...actionsData } />;
+
+export const DefaultValue = () => <NumberField { ...{ ...numberFieldData, defaultValue: 1 }} { ...actionsData } />;

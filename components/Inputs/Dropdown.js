@@ -4,7 +4,7 @@ import { InputStyle, SelectStyle } from './InputStyle';
 
 export const Select = ({ placeholder, options, onSelect, defaultValue }) => {
   const [selectValue, setSelectValue] = useState(defaultValue ? defaultValue : placeholder);
-  const [haveChosen, setHaveChosen] = useState(false);
+  const [haveChosen, setHaveChosen] = useState(defaultValue ? true : false);
   const [isOpen, setIsOpen] = useState(false);
 
   return (

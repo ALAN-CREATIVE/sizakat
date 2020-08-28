@@ -30,7 +30,6 @@
     "babel-loader": "^8.1.0",
     "eslint": "^7.7.0",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0",
     "husky": "^4.2.5",
     "jest": "~25.5.0",
     "lint-staged": "^10.2.11",
@@ -44,6 +43,9 @@
     }
   },
   "lint-staged": {
-    "*.js": ["yarn lint:fix", "git add"]
+    "*.js": [
+      "yarn lint:fix",
+      "git add"
+    ]
   }
 }

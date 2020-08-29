@@ -37,11 +37,11 @@ export default function PilihKategori() {
   const handleSubmit = () => {
     let formIsValid = true;
     let temporaryError = {};
-
+    
     if (dataCategory.category.length == 0) {
       formIsValid = false;
       temporaryError.category='Pilih salah satu dari kategori sumber data';
-  }
+    }
 
     setError(temporaryError);
     return formIsValid;
@@ -54,7 +54,7 @@ export default function PilihKategori() {
           <h1>KATEGORI SUMBER DATA</h1>
           <div class="col-3">
             <RadioButton
-              label=''
+              label={' '}
               options={ ['Warga', 'Institusi', 'Pekerja'] }
               required={ false }
               onRadioClicked={ kategori => {

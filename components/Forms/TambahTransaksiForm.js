@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { gql, useMutation, useQuery } from '@apollo/client';
 import TextField from '../Inputs/TextField'
 import NumberField from '../Inputs/NumberField'
 import TransaksiInput from './TransaksiInput'
 import Button from '../Buttons/Button'
+import { useRouter } from 'next/router';
 
 
 const ADD_MUZAKKI = gql`
@@ -22,7 +23,56 @@ const ADD_MUZAKKI = gql`
         }
     }
 `;
+
+const ADD_TRANSAKSI = gql`
+    mutation transactionMutation($input: TransactionMutationInput!){
+        transactionMutation(input:$input) {
+            transaction {
+                id
+                paymentType
+                goodsDeliveryType
+                pickUpAddress
+                transferReceipt
+                paymentConfirmation
+                goodsConfirmation
+            }
+            errors {
+                field
+                messages
+            }
+        }
+    }
+  
+`
+
+const ADD_TRANSAKSI_ZAKAT = gql`
+    mutation zakatTransactionMutation($input: ZakatTransactionMutationInput!){
+        zakatTransactionMutation(input:$input) {
+            zakatTransaction {
+                id
+                value
+                muzakki{
+                    id
+                }
+                transaction{
+                    id
+                }
+                zakatType{
+                    id
+                }
+            }
+            errors {
+                field
+                messages
+            }
+        }
+    }
+  
+  
+`
+
 export default function TambahTransaksiForm() {
+    const router = useRouter();
     const [transaksi, setTransaksi] = useState([{jenis:"", nominal:0, satuan:""}])
 
     const addTransaksi = () => {
@@ -58,18 +108,42 @@ export default function TambahTransaksiForm() {
         phone: '',
     });
 
+    function zakatTypeId(jenis)
+    {
+        switch(jenis){
+            case "Zakat Fitrah-Uang": return 1;
+            case "Zakat Mal": return 2;
+            case "Zakat Fitrah-Beras": return 3;
+        }
+    };
 
+    const [isSubmited, setIsSubmited] = useState(false);
     const [createMuzakki, {data: muzakkiData, error: errorMuzakki}] = useMutation(ADD_MUZAKKI, {
         onCompleted: (muzakkiData) => {
             console.log(muzakkiData)
             if(muzakkiData.muzakkiMutation.errors.length != 0){
                 alert("Submit gagal");
                 console.log(muzakkiData.muzakkiMutation.errors[0].messages[0]);
-            } else{
-                alert("Submit berhasil");
-                console.log(muzakkiData.muzakkiMutation.muzakki);
-            }   
+            }  
+        }
+    });
 
+    const [createTransaksi, {data: transaksiData, error: errorTransaksi}] = useMutation(ADD_TRANSAKSI, {
+        onCompleted: (transaksiData) => {
+            console.log(transaksiData)
+        }
+    });
+
+    const [createZakat, {data: zakatData, error: errorZakat}] = useMutation(ADD_TRANSAKSI_ZAKAT, {
+        onCompleted: (zakatData) => {
+            console.log(zakatData)
+            if(zakatData.zakatTransactionMutation.errors.length != 0){
+                alert("Submit gagal");
+                console.log(muzakkiData.muzakkiMutation.errors[0].messages[0]);
+            }  
+            else{
+                setIsSubmited(true);
+            }
         }
     });
 
@@ -82,11 +156,52 @@ export default function TambahTransaksiForm() {
                     }
                 }
             })
+            createTransaksi({
+                variables:{
+                    input: { 
+
+                    }
+                }
+            })
         } else {
             alert("Submit gagal");
         }
+    }
+
+
+    const nextPage= () => {
+        submitForm()
+        if (isSubmited) {
+            alert("Submit berhasil");
+            router.push('/buat/transaksi?page=1', undefined, { shallow: true })
+        }
         
     }
+
+    const [isExecuted, setIsExecuted] = useState(true)
+    useEffect(() => {
+        if (isExecuted && muzakkiData && 
+            muzakkiData.muzakkiMutation && 
+            muzakkiData.muzakkiMutation.muzakki && 
+            transaksiData && 
+            transaksiData.transactionMutation && 
+            transaksiData.transactionMutation.transaction){
+                console.log ("MASUK")
+                transaksi.map((trans) => 
+                    createZakat({
+                        variables : {
+                            input : {
+                                value : trans.nominal,
+                                zakatType : zakatTypeId(trans.jenis),
+                                muzakki : muzakkiData.muzakkiMutation.muzakki.id,
+                                transaction : transaksiData.transactionMutation.transaction.id
+                            }
+                        }
+                    })
+                )
+            setIsExecuted(false);
+        }
+    })
 
     const submitCheck = () => {
         let formIsValid = true;
@@ -127,6 +242,11 @@ export default function TambahTransaksiForm() {
         setError(temporaryError);
         return formIsValid;
     }
+
+
+    console.log(transaksi)
+    console.log(muzakkiData)
+    //console.log(zakatData)
     return(
         <main>
             <div className="formContainer">
@@ -176,7 +296,7 @@ export default function TambahTransaksiForm() {
                     </div>
                 </div><br></br>
                 <Button label="+ SIMPAN DAN TAMBAH MUZAKKI BARU" type="tertiary" onClick={submitForm}/> <br></br>
-                <Button label="LANJUT KE PEMBAYARAN >>" type="primary"/> <br></br>
+                <Button label="LANJUT KE PEMBAYARAN >>" type="primary" onClick={nextPage}/> <br></br>
             </div>
         </main>
         

@@ -131,7 +131,7 @@ export default function FormTambahMustahik() {
         formIsValid = false;
         temporaryError.address='Alamat tidak boleh diisi dengan spasi saja';
     } if (mustahik.address.match(alamatValid)) {
-        formIsValid = false;
+        formIsValid = true;
         temporaryError.address='';
     } if (mustahik.birthdate.slice(8) == "xx") {
         formIsValid = false;

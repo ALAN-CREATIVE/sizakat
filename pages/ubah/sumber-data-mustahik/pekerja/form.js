@@ -13,7 +13,7 @@ import { TambahSDMContainer } from '../../../../components/TambahSumberDataMusta
 
 
 const client = new ApolloClient({
-    uri: backend_uri,
+    uri: 'http://${process.env.GRAPHQL_URL}',
     cache: new InMemoryCache()
   });
   

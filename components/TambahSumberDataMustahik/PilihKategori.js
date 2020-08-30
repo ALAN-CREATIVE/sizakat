@@ -79,7 +79,7 @@ export default function PilihKategori() {
       </main>
     </PilihKategoriStyle>
   );
-};
+}; 
 
 export async function getStaticProps() {
   return {

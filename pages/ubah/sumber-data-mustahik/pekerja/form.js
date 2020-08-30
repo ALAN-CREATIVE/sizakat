@@ -6,10 +6,11 @@ import { useRouter } from 'next/router';
 import NumberField from '../../../../components/Inputs/NumberField';
 import TextField from '../../../../components/Inputs/TextField';
 import Button from '../../../../components/Buttons/Button';
+import { TambahSDMContainer } from '../../../../components/TambahSumberDataMustahik/TambahSDMStyle';
 
 // import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
-import { TambahSDMStyle } from './style';
+
 
 const client = new ApolloClient({
     uri: 'http://192.168.99.100:8000/graphql/',
@@ -234,7 +235,7 @@ function UpdatePage(){
 
 export default function update(){
     return (
-        <>
+        <TambahSDMContainer className="EditSDMPage">
       <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossOrigin="anonymous"></link>
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,800" rel="stylesheet" />
@@ -253,9 +254,10 @@ export default function update(){
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossOrigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossOrigin="anonymous"></script>
-        <TambahSDMStyle />
+       
       </main>
-    </>
+        
+    </TambahSDMContainer>
     )
 
 }
@@ -263,7 +265,8 @@ export default function update(){
 export async function getStaticProps() {
     return {
       props: {
-        backend_uri: `http://${process.env.GRAPHQL_URL}`
+       backend_uri: `http://${process.env.GRAPHQL_URL}`
+       
       }
     }
   }

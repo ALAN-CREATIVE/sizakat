@@ -20,17 +20,15 @@ export default function PilihKategori() {
     console.log(handleSubmit());
     if (handleSubmit()) {
         if (dataCategory.category == 'WARGA' ) {
-          router.push('//tambah/sumber-data-mustahik/warga');
+          router.push('/tambah/sumber-data-mustahik/warga');
         } if (dataCategory.category == 'INSTITUSI' ) {
           router.push('/tambah/sumber-data-mustahik/institusi');
         } if (dataCategory.category == 'PEKERJA' ) {
           router.push('/tambah/sumber-data-mustahik/pekerja');
         }
       console.log(dataCategory);
-      alert("Submit berhasil");
     } else {
       console.log(dataCategory);
-      alert("Submit gagal");
     }
   }
 

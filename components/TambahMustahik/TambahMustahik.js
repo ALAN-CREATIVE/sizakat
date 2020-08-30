@@ -79,7 +79,18 @@ export default function FormTambahMustahik() {
     photo: ''
   });
 
-  const [createMustahik, { data: createData, error: errorCreate }  ] = useMutation(ADD_MUSTAHIK);
+  const [createMustahik, { data: createData, error: errorCreate }  ] = useMutation(ADD_MUSTAHIK, {
+    onCompleted: (createData) => {
+      console.log(createData)
+      if(createData.mustahikMutation.errors.length != 0) {
+        alert("Submit gagal");
+        console.log(createData.mustahikMutation.errors[0].messages[0]);
+      } else {
+        alert("Submit berhasil");
+        console.log(createData.mustahikMutation.mustahik);
+      }
+    }
+  });
   const { data: dataSource, error: errorDataSource, loading: loadingDataSource } = useQuery(GET_DATA_SOURCE);
 
   const submitForm = () => {
@@ -91,8 +102,6 @@ export default function FormTambahMustahik() {
             ...mustahik
           }
         }});
-      console.log(mustahik);
-      alert("Submit berhasil");
     } else {
       console.log(mustahik);
       alert("Submit gagal");

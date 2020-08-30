@@ -3,7 +3,6 @@ import { gql, useMutation, useQuery } from '@apollo/client';
 
 import Dropdown from '../Inputs/Dropdown';
 import FileField from '../Inputs/FileField';
-import NumberField from '../Inputs/NumberField';
 import RadioButton from '../Inputs/RadioButton';
 import TextField from '../Inputs/TextField';
 import DateField from '../Inputs/DateField';
@@ -108,38 +107,49 @@ export default function FormTambahMustahik() {
     }
   }
 
+  const symbol = {
+    number: new RegExp(/^[0-9]+$/),
+    alphabet: new RegExp(/^[a-zA-Z]+$/),
+    onlySpace: new RegExp(/\s/g),
+    namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+    alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+    numberValid: new RegExp(/^[0][0-9]+$/),
+    onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+    phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/)
+  }
+
   const handleSubmit = () => {
     let formIsValid = true;
     let temporaryError = {};
-    var alphabet = new RegExp(/^[a-zA-Z]+$/);
-    var plus = new RegExp(/^\+?[0-9]+$/);
-    var onlyPlus = new RegExp(/^[\+]+$/);
-    var onlySpace = new RegExp(/\s/g);
-    var namaLengkapValid = new RegExp(/^[a-zA-Z]+?([\s]+)/);
-    var alamatValid = new RegExp(/^[a-zA-Z0-9]+?([\s]+)/);
 
     if (mustahik.name.length == 0) {
         formIsValid = false;
         temporaryError.name='Nama lengkap tidak boleh kosong';
-    } if (mustahik.name.match(onlySpace)) {
+    } if (mustahik.name.match(symbol.onlySpace)) {
         formIsValid = false;
         temporaryError.name='Nama lengkap tidak boleh diisi dengan spasi saja';
-    } if (mustahik.name.match(namaLengkapValid)) {
+    } if (mustahik.name.match(symbol.namaLengkapValid)) {
         formIsValid = true;
         temporaryError.name='';
     } if (mustahik.noKtp.length < 14 || mustahik.noKtp.length > 14) {
         formIsValid = false;
         temporaryError.noKtp='Format KTP harus berupa 14 karakter angka';
-    } if (mustahik.noKtp.match(onlySpace)) {
+    } if (mustahik.noKtp.match(symbol.onlySpace)) {
         formIsValid = false;
-        temporaryError.noKtp='No KTP tidak boleh diisi dengan spasi';
+        temporaryError.noKtp='No KTP tidak boleh diisi dengan spasi saja';
+    } if (mustahik.noKtp.match(symbol.alphabet)) {
+        formIsValid = false;
+        temporaryError.noKtp='No KTP harus diisi dengan 14 karakter angka'
+    } if (mustahik.noKtp.match(symbol.number)) {
+        formIsValid = true;
+        temporaryError.noKtp='';
     } if (mustahik.address.length == 0) {
         formIsValid = false;
         temporaryError.address='Alamat tidak boleh kosong';
-    } if (mustahik.address.match(onlySpace)) {
+    } if (mustahik.address.match(symbol.onlySpace)) {
         formIsValid = false;
         temporaryError.address='Alamat tidak boleh diisi dengan spasi saja';
-    } if (mustahik.address.match(alamatValid)) {
+    } if (mustahik.address.match(symbol.alamatValid)) {
         formIsValid = true;
         temporaryError.address='';
     } if (mustahik.birthdate.slice(8) == "xx") {
@@ -160,15 +170,15 @@ export default function FormTambahMustahik() {
     } if (mustahik.dataSource === null || mustahik.dataSource === undefined) {
         formIsValid = false;
         temporaryError.dataSource='Pilihan sumber data tidak boleh kosong';
-    } if (mustahik.phone.match(alphabet)) {
+    } if (mustahik.phone.match(symbol.alphabet)) {
         formIsValid = false;
         temporaryError.phone='Format HP harus berupa angka';
-    } if (mustahik.phone.match(plus) || mustahik.phone.match(onlyPlus)) {
+    } if (mustahik.phone.match(symbol.phoneNumberWithSymbol) || mustahik.phone.match(symbol.onlySymbol)) {
         formIsValid = false;
         temporaryError.phone='Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
-    } if (mustahik.phone.match(onlySpace)) {
+    } if (mustahik.phone.match(symbol.onlySpace)) {
         formIsValid = false;
-        temporaryError.phone='No HP tidak boleh diisi dengan spasi';
+        temporaryError.phone='No HP tidak boleh diisi dengan spasi saja';
     }
 
     setError(temporaryError);
@@ -210,19 +220,17 @@ export default function FormTambahMustahik() {
             />
           </div>
           <div className="form" id="nomor-ktp">
-            <NumberField
+            <TextField
               label={'Nomor KTP'}
               placeholder={'Terdiri dari 14 karakter angka'}
               required={true}
               onChange={ktp => {
                 setMustahik({...mustahik, noKtp: ktp});
-                var space = new RegExp(/\s/g);
-                if (ktp.match(space)) {
+                if (ktp.match(symbol.onlySpace)) {
                   setError({...error,
-                    noKtp: 'Nomor KTP tidak boleh diisi dengan spasi'
+                    noKtp: 'Nomor KTP tidak boleh diisi dengan spasi saja'
                   });
-                }
-                else if (ktp.length < 14 || ktp.length > 14) {
+                } else if (ktp.length < 14 || ktp.length > 14) {
                   setError({...error,
                     noKtp: 'Format KTP harus berupa 14 karakter angka'
                   });
@@ -241,13 +249,11 @@ export default function FormTambahMustahik() {
               required={ true }
               onChange={name => {
                 setMustahik({...mustahik, name: name});
-                var onlySpace = new RegExp(/\s/g);
-                var namaLengkapValid = new RegExp(/^[a-zA-Z]+?([\s]+)/);
-                if (name.match(namaLengkapValid)) {
+                if (name.match(symbol.namaLengkapValid)) {
                   setError({...error,
                     name: ''
                   });
-                } else if (name.match(onlySpace)) {
+                } else if (name.match(symbol.onlySpace)) {
                   setError({...error,
                     name: 'Nama lengkap tidak boleh diisi dengan spasi saja'
                   })
@@ -316,31 +322,26 @@ export default function FormTambahMustahik() {
             />
           </div>
           <div className="form" id="nomor-hp">
-            <NumberField
+            <TextField
               label={'Nomor HP'}
               placeholder={'Diisi dengan angka (Contoh: 0811111111)'}
               onChange={noHp => {
                 setMustahik({...mustahik, phone: noHp});
-                var numberValid = new RegExp(/^[0][0-9]+$/);
-                var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                var onlyPlus = new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/);
-                var plus = new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/);
-                var space = new RegExp(/\s/g);
-                if (noHp.match(alphabet)) {
+                if (noHp.match(symbol.alphabet)) {
                   setError ({...error,
                     phone:'Format HP harus berupa angka'});
                 }
-                else if(noHp.match(numberValid)) {
+                else if(noHp.match(symbol.numberValid)) {
                   setError ({...error,
                     phone:''});
                 }
-                else if(noHp.match(plus) || noHp.match(onlyPlus)) {
+                else if(noHp.match(symbol.phoneNumberWithSymbol) || noHp.match(symbol.onlySymbol)) {
                   setError ({...error,
                     phone:'Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)'});
                 }
-                else if (noHp.match(space)) {
+                else if (noHp.match(symbol.onlySpace)) {
                   setError ({...error,
-                    phone:'No HP tidak boleh diisi dengan spasi'});
+                    phone:'No HP tidak boleh diisi dengan spasi saja'});
                 }
                 else {
                   setError ({...error,
@@ -357,13 +358,11 @@ export default function FormTambahMustahik() {
               required
               onChange={alamatLengkap => {
                 setMustahik ({...mustahik, address: alamatLengkap});
-                var onlySpace = new RegExp(/\s/g);
-                var alamatValid = new RegExp(/^[a-zA-Z0-9]+?([\s]+)/);
-                if (alamatLengkap.match(alamatValid)) {
+                if (alamatLengkap.match(symbol.alamatValid)) {
                   setError({...error,
                     address: ''
                   });
-                } else if (alamatLengkap.match(onlySpace)) {
+                } else if (alamatLengkap.match(symbol.onlySpace)) {
                   setError({...error,
                     address: 'Alamat tidak boleh diisi dengan spasi saja'
                   });

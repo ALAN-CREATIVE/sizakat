@@ -11,7 +11,7 @@ export default function NumberField( {label, placeholder, required, error, onCha
     <div>
       <InputStyle />
       <label className={required ? 'required' : null}> { label } </label>
-      <input type="text" name={label} value={value} placeholder={placeholder} required={required} onChange={onInputChange}/>
+      <input type="number" name={label} value={value} placeholder={placeholder} required={required} onChange={onInputChange}/>
       { error && <span className="error">{ error }</span> }
     </div>
   );

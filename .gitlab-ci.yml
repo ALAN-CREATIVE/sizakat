@@ -48,7 +48,9 @@ deploy-development:
     - git config remote.development.url >&- || git remote add development $GIT_URL
     - git checkout $CI_COMMIT_TAG
     - git push --force development $CI_COMMIT_TAG 2>&1 | tee git-push.log
-    - "$(grep -E 'remote: Return with exit [0-9]+' git-push.log | grep -oE 'exit [0-9]+')"
+    - >-
+      grep 'Everything up-to-date' git-push.log ||
+      "$(grep -E 'remote: Return with exit [0-9]+' git-push.log | grep -oE 'exit [0-9]+')"
   rules:
     - if: '$CI_COMMIT_TAG =~ /^development-\d+$/'
 
@@ -68,7 +70,7 @@ deploy-testing:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - git config remote.testing.url >&- || git remote add testing $GIT_URL
-    - git checkout $CI_COMMIT_BRANCH
+    - git checkout $CI_COMMIT_BRANCH && git merge
     - git push testing $CI_COMMIT_BRANCH 2>&1 | tee git-push.log
     - "$(grep -E 'remote: Return with exit [0-9]+' git-push.log | grep -oE 'exit [0-9]+')"
   rules:

@@ -110,12 +110,7 @@ const MainContent = () => {
             filterCaption={'SEMUA SUMBER DATA'}
             filterOptions={['Semua Sumber Data',]}
             itemList={dataMustahik.mustahiks.map(mustahikToCardItem)}
-            onDetailClicked={(id) => {
-              router.push({
-                pathname: '/detail/mustahik',
-                query: { id: id }
-              })
-            }}
+            detailPath={'/detail/mustahik'}
             onButtonClicked={() => router.push('/tambah/mustahik')}
             setMustahikData={(data) => setDataMustahik(data)}
           />}

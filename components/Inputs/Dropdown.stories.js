@@ -25,3 +25,5 @@ export const Default = () => <Dropdown { ...dropdownData } { ...actionsData } />
 export const Required = () => <Dropdown { ...{ ...dropdownData, required: true  }} { ...actionsData } />;
 
 export const Error = () => <Dropdown { ...{ ...dropdownData, error: "Error message" }} { ...actionsData } />;
+
+export const DefaultValue = () => <Dropdown { ...{ ...dropdownData, defaultValue: 'MISKIN' }} { ...actionsData } />;

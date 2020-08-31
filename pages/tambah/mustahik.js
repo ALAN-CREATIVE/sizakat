@@ -54,7 +54,7 @@ function App({ backend_uri }) {
               <div className="header-tambah-mustahik" style={{paddingLeft: "5%", paddingRight:"5%"}}>
                 <div className="row">
                   <div className="col">
-                    <h1 id="logout">Keluar</h1>
+                    <Logout>Keluar</Logout>
                   </div>
                 </div>
                 <TitleBar

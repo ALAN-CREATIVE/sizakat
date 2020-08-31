@@ -1,63 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Input/Date Field Default 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
 
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
 
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
 
-    input::placeholder {
-      color: #C4C4C4;
-    }
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
 
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
   <label
     className=""
   >
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -81,80 +159,13 @@ exports[`Storyshots Input/Date Field Default 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -178,80 +189,13 @@ exports[`Storyshots Input/Date Field Default 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -275,74 +219,6 @@ exports[`Storyshots Input/Date Field Default 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
   </div>
@@ -699,63 +575,141 @@ exports[`Storyshots Input/Date Field Default Value 1`] = `
 `;
 
 exports[`Storyshots Input/Date Field Error Date 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
 
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
 
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
 
-    input::placeholder {
-      color: #C4C4C4;
-    }
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
 
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
   <label
     className=""
   >
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -779,74 +733,6 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
       <span
         className="error"
@@ -855,9 +741,10 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       </span>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -881,80 +768,13 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -978,74 +798,6 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
   </div>
@@ -1053,63 +805,141 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
 `;
 
 exports[`Storyshots Input/Date Field Error Month 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
 
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
 
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
 
-    input::placeholder {
-      color: #C4C4C4;
-    }
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
 
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
   <label
     className=""
   >
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1133,80 +963,13 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1230,74 +993,6 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
       <span
         className="error"
@@ -1306,9 +1001,10 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       </span>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1332,74 +1028,6 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
   </div>
@@ -1407,63 +1035,141 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
 `;
 
 exports[`Storyshots Input/Date Field Error Year 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
 
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
 
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
 
-    input::placeholder {
-      color: #C4C4C4;
-    }
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
 
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
   <label
     className=""
   >
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1487,80 +1193,13 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1584,80 +1223,13 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1681,74 +1253,6 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
       <span
         className="error"
@@ -1761,63 +1265,141 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
 `;
 
 exports[`Storyshots Input/Date Field Required 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
 
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
 
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
 
-    input::placeholder {
-      color: #C4C4C4;
-    }
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
 
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
   <label
     className="required"
   >
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1841,80 +1423,13 @@ exports[`Storyshots Input/Date Field Required 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -1938,80 +1453,13 @@ exports[`Storyshots Input/Date Field Required 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
+        className="c1"
         style={
           Object {
             "position": "relative",
@@ -2035,74 +1483,6 @@ exports[`Storyshots Input/Date Field Required 1`] = `
             src="/dropdown-arrow.svg"
           />
         </div>
-        <style
-          jsx={true}
-        >
-          
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
-
-  .chosen {
-    color: #393F50;
-  }
-
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: auto;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-    z-index: 2;
-  }
-
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
-
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
-
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-        </style>
       </div>
     </div>
   </div>

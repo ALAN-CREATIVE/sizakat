@@ -7,7 +7,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apo
 import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 import TableMustahik from '../../components/Tables/TableMustahik';
-import { resolveDataSourceName } from '../../Utils/ParserUtil';
+import { resolveDataSourceName } from '../../utils/parser-util';
 
 const INITIAL_MUSTAHIK_QUERY = gql`
   query {

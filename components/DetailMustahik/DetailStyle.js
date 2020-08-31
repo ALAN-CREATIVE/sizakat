@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const DetailStyle = () =>(
-  <style jsx>{`
+export const DetailContainer = styled.div`
     div {
       padding : 0;
       margin : 0;
@@ -51,5 +50,4 @@ export const DetailStyle = () =>(
     a {
       color : #EB4E2C;
     }
-  `}</style>
-);
+  `

@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const TambahMustahikStyle = () =>(
-    <style jsx>{`
+export const TambahMustahikContainer = styled.div`
         .form-section {
             background: #FFFFFF;
             border: 2px solid #DEDEDE;
@@ -72,5 +71,4 @@ export const TambahMustahikStyle = () =>(
 
             font-family: Muli;
         }
-    `}</style>
-);
+    `;

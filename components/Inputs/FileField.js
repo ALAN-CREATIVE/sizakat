@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const FileFieldStyle = ({ content }) => (
-  <style jsx>{`
+const FileFieldContainer = styled.div`
     label {
       text-rendering: geometricPrecision;
       font-family: Muli;
@@ -34,7 +34,7 @@ const FileFieldStyle = ({ content }) => (
     }
 
     .file-input::before {
-      content: "${content}";
+      content: "${props => props.buttonLabel}";
       font-family: Muli;
       font-size: 16px;
       font-weight: 700;
@@ -54,8 +54,7 @@ const FileFieldStyle = ({ content }) => (
       color: #EB4E2C;
       text-rendering: optimizeLegibility;
     }
-  `}</style>
-)
+  `;
 
 const FileField = ({ label, buttonLabel, description, required, error, onFileSelected }) => {
   const handleChange = (event) => {
@@ -64,13 +63,12 @@ const FileField = ({ label, buttonLabel, description, required, error, onFileSel
   }
 
   return (
-    <div>
+    <FileFieldContainer buttonLabel={buttonLabel}>
       <label className={required ? 'required' : ''}>{ label }</label>
       <label className="desc">{ description }</label>
       <input className="file-input" type="file" onChange={handleChange} />
-      <FileFieldStyle content={buttonLabel} />
       { error && <span className="error">{ error }</span> }
-    </div>
+    </FileFieldContainer>
   );
 }
 

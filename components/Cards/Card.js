@@ -1,7 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 import { Container, DetailButton } from './CardStyle';
 
-const Card = ({ label, desc, id, onDetailClicked }) => {
+const Card = ({ label, desc, path, query }) => {
   return (
     <Container>
       <div>
@@ -9,7 +10,9 @@ const Card = ({ label, desc, id, onDetailClicked }) => {
         <p style={{margin: 0, fontSize: '12px', fontWeight: 600, color: '#EB4E2C'}}>{ desc }</p>
       </div>
       <DetailButton>
-        <a style={{cursor: 'pointer'}} onClick={() => onDetailClicked(id)}>Detail</a>
+        <Link href={`${path}?${query}`}>
+          <a style={{cursor: 'pointer'}}>Detail</a>
+        </Link>
       </DetailButton>
     </Container>
   )

@@ -1,16 +1,13 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const FilterStyle = () => (
-  <style jsx>{`
-    .filter {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 18px;
-      color: #00239D;
-      text-decoration : none;
-      }
+export const FilterContainer = styled.div`
+    font-family: Muli;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #00239D;
+    text-decoration : none;
 
     .kotakFilter {
       font-weight: 600;
@@ -39,5 +36,4 @@ export const FilterStyle = () => (
     .hide {
       display: none;
     }
-  `}</style>
-);
+  `

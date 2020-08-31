@@ -59,7 +59,9 @@ exports[`Storyshots Card Default 1`] = `
     className="c1"
   >
     <a
+      href="/somewhere?undefined"
       onClick={[Function]}
+      onMouseEnter={[Function]}
       style={
         Object {
           "cursor": "pointer",

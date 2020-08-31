@@ -8,7 +8,7 @@ import TextField from '../Inputs/TextField';
 import DateField from '../Inputs/DateField';
 import Button from '../Buttons/Button';
 
-import { resolveDataSourceName } from '../../Utils/parser-util';
+import { resolveDataSourceName } from '../../utils/parser-util';
 
 import { TambahMustahikContainer } from './TambahMustahikStyle';
 

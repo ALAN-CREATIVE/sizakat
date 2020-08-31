@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 
 import FormUbahMustahik from '../../components/UbahMustahik/UbahMustahik';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 
 import { UbahMustahikStyle } from '../../components/UbahMustahik/UbahMustahikStyle';
@@ -28,22 +28,25 @@ function App({ backend_uri }) {
             </Head>
             <main>
                 <div className="row">
-                    <div className="col-3">
-                        <NavigationBar
-                            name={ 'Annisaa Fitri Shabrina' }
-                            role={ 'Admin' }
-                            menu={ 'Mustahik' }
-                            submenu={ ['Data Mustahik', 'Sumber Data Mustahik'] }
-                            onMenuClicked={(item) => console.log(item)}
+                    <div className="position-fixed col-3" style={{zIndex: 1}}>
+                        <Navbar
+                            user={{
+                            name: 'Annisaa Fitri Shabrina',
+                            role: 'ADMIN'
+                            }}
                         />
                     </div>
-                    <div className="col-9">
-                        <div className="row">
-                            <div className="col">
-                                <h1 id="logout">Keluar</h1>
+                    <div className="col-3"></div>
+                    <div className="col-9" style={{marginTop: '20px'}}>
+                        <div className="row justify-content-between">
+                            <div className="col-5">
+                                <TitleBar
+                                    title='Ubah Mustahik'
+                                    path='Mustahik //'
+                                    current='Ubah Mustahik'
+                                />
                             </div>
                         </div>
-                        <TitleBar title='Ubah Mustahik' path='Mustahik >>' current='Tambah Mustahik'/>
                         <FormUbahMustahik />
                     </div>
                 </div>

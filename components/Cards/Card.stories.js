@@ -13,6 +13,7 @@ const cardData = {
   id: '1',
   label: 'Lorem Ipsum Sit Dolor Amet',
   desc: 'warga',
+  path: '/somewhere'
 }
 
 const actionsData = {

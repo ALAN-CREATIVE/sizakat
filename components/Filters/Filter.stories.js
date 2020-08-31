@@ -13,7 +13,7 @@ export const filterData = {
     label: 'SEMUA KATEGORI SUMBER',
     options : ['Semua Kategori Sumber Data','Warga','Pesantren','Pekerja'],
     required : false,
-    error : null,
+    error : null
 }
 
 export const actionsData={

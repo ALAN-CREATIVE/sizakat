@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FilterStyle } from './FilterStyle';
+import { FilterContainer } from './FilterStyle';
 
 const Filter = ({label, options, onRadioClicked}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,8 +9,7 @@ const Filter = ({label, options, onRadioClicked}) => {
   }
 
   return (
-    <div className='filter'>
-      <FilterStyle />
+    <FilterContainer>
       <div onClick={() => setIsOpen(isOpen ? false : true)}>
         <div>
           { label }
@@ -29,7 +28,7 @@ const Filter = ({label, options, onRadioClicked}) => {
           </div>
         </div>
       </div>
-    </div>
+    </FilterContainer>
   );
 }
 

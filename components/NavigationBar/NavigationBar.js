@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { NavigationBarStyle } from './NavigationBarStyle';
+import { NavigationBarContainer } from './NavigationBarStyle';
 
 export const Menu = ({ menu, submenu, options, onMenuClicked }) => {
     const [haveChosen, setHaveChosen] = useState(false);
@@ -13,7 +13,7 @@ export const Menu = ({ menu, submenu, options, onMenuClicked }) => {
             </div>
             {isOpen && <div>
                 {options.map(submenu => (
-                    <div className={"menu"}>
+                    <div key={submenu} className={"menu"}>
                         <div style={{cursor: 'pointer'}} className="submenu-option" key={submenu} onClick={() => {
                             setHaveChosen(true);
                             setIsOpen(true);
@@ -29,8 +29,7 @@ export const Menu = ({ menu, submenu, options, onMenuClicked }) => {
 const NavigationBar = ({ name, role, menu, submenu, isOpen, onMenuClicked }) => {
 
     return (
-      <div>
-        <NavigationBarStyle />
+      <NavigationBarContainer>
         <div className="navigation-bar">
                 <div className="profile-picture"></div>
                 <h1 className="user-name">{ name }</h1>
@@ -38,7 +37,7 @@ const NavigationBar = ({ name, role, menu, submenu, isOpen, onMenuClicked }) => 
                 <h1 className="menu-title">DATA</h1>
                 <Menu menu={ menu } options = { submenu } onMenuClicked={onMenuClicked} isOpen={isOpen} />
             </div>
-      </div>
+      </NavigationBarContainer>
     )
   }
 

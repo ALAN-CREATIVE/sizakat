@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SearchStyle } from './SearchStyle';
+import { SearchContainer } from './SearchStyle';
 import { gql, useLazyQuery } from '@apollo/client'
 
 export function DataSourceSearch({setDataSourceData}) {
@@ -11,14 +11,17 @@ export function DataSourceSearch({setDataSourceData}) {
           dataSourceDetail {
             __typename
             ... on DataSourceInstitusiType {
+              picName
               name
               village
             }
             ... on DataSourcePekerjaType {
+              picName
               profession
               location
             }
             ... on DataSourceWargaType {
+              picName
               rt
               rw
               village
@@ -44,10 +47,9 @@ export function DataSourceSearch({setDataSourceData}) {
     });
 
     return (
-        <div>
-            <SearchStyle />
+        <SearchContainer>
             <input type="text" placeholder="Cari berdasarkan nama" name="search" onKeyPress={onKeyPressed}/> 
-        </div>
+        </SearchContainer>
     );
 }
 

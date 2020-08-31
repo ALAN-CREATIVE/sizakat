@@ -1,7 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Input/Radio Button Default 1`] = `
-<div>
+.c0 label {
+  font-family: Muli;
+  color: #393F50;
+}
+
+.c0 .main-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0 .required:after {
+  content: "*";
+  color: #EB4E2C;
+}
+
+.c0 .radios {
+  margin: 10px 5px 5px 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .radio {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  width: 150px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .radio label {
+  margin-left: 5px;
+}
+
+.c0 .error {
+  color: #EB4E2C;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Muli;
+}
+
+<div
+  className="c0"
+>
   <label
     className="main-label "
   >
@@ -36,58 +94,69 @@ exports[`Storyshots Input/Radio Button Default 1`] = `
       </label>
     </div>
   </div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      color: #393F50;
-    }
-
-    .main-label {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .required:after {
-      content: "*";
-      color: #EB4E2C;
-    }
-
-    .radios {
-      margin: 10px 5px 5px 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .radio {
-      display: flex;
-      font-size: 14px;
-      font-weight: 600;
-      width: 150px;
-      align-items: center;
-    }
-
-    .radio label {
-      margin-left: 5px;
-    }
-
-    .error {
-      color: #EB4E2C;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Muli;
-    }
-  
-  </style>
 </div>
 `;
 
 exports[`Storyshots Input/Radio Button Error 1`] = `
-<div>
+.c0 label {
+  font-family: Muli;
+  color: #393F50;
+}
+
+.c0 .main-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0 .required:after {
+  content: "*";
+  color: #EB4E2C;
+}
+
+.c0 .radios {
+  margin: 10px 5px 5px 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .radio {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  width: 150px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .radio label {
+  margin-left: 5px;
+}
+
+.c0 .error {
+  color: #EB4E2C;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Muli;
+}
+
+<div
+  className="c0"
+>
   <label
     className="main-label "
   >
@@ -127,58 +196,69 @@ exports[`Storyshots Input/Radio Button Error 1`] = `
   >
     Pilih salah satu jenis kelamin
   </span>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      color: #393F50;
-    }
-
-    .main-label {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .required:after {
-      content: "*";
-      color: #EB4E2C;
-    }
-
-    .radios {
-      margin: 10px 5px 5px 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .radio {
-      display: flex;
-      font-size: 14px;
-      font-weight: 600;
-      width: 150px;
-      align-items: center;
-    }
-
-    .radio label {
-      margin-left: 5px;
-    }
-
-    .error {
-      color: #EB4E2C;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Muli;
-    }
-  
-  </style>
 </div>
 `;
 
 exports[`Storyshots Input/Radio Button Required 1`] = `
-<div>
+.c0 label {
+  font-family: Muli;
+  color: #393F50;
+}
+
+.c0 .main-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0 .required:after {
+  content: "*";
+  color: #EB4E2C;
+}
+
+.c0 .radios {
+  margin: 10px 5px 5px 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .radio {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  width: 150px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .radio label {
+  margin-left: 5px;
+}
+
+.c0 .error {
+  color: #EB4E2C;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Muli;
+}
+
+<div
+  className="c0"
+>
   <label
     className="main-label required"
   >
@@ -213,52 +293,5 @@ exports[`Storyshots Input/Radio Button Required 1`] = `
       </label>
     </div>
   </div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      color: #393F50;
-    }
-
-    .main-label {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .required:after {
-      content: "*";
-      color: #EB4E2C;
-    }
-
-    .radios {
-      margin: 10px 5px 5px 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .radio {
-      display: flex;
-      font-size: 14px;
-      font-weight: 600;
-      width: 150px;
-      align-items: center;
-    }
-
-    .radio label {
-      margin-left: 5px;
-    }
-
-    .error {
-      color: #EB4E2C;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Muli;
-    }
-  
-  </style>
 </div>
 `;

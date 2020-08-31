@@ -1,49 +1,47 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const InputStyle = () => (
-  <style jsx>{`
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
+export const InputContainer = styled.div`
+  label {
+    font-family: Muli;
+    font-weight: 700;
+    font-size: 16px;
+    color: #393F50;
+    line-height: 20px;
+  }
 
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
+  .required:after {
+    color: #EB4E2C;
+    content: "*";
+  }
 
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
+  input, select {
+    border-width: 0px 0px 1px 0px;
+    border-color: #00239D;
+    display: block;
+    width: 99%;
+    padding: 12px 5px 12px 5px;
+    font-size: 14px;
+    font-family: Muli;
+    line-height: 16px;
+    color: #393F50;
+    background-color: #FFFFFF;
+  }
 
-    input::placeholder {
-      color: #C4C4C4;
-    }
+  input::placeholder {
+    color: #C4C4C4;
+  }
 
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  `}</style>
-);
+  .error {
+   font-family: Muli;
+   font-style: normal;
+   font-weight: 700;
+   font-size: 12px;
+   line-height: 15px;
+   color: #EB4E2C;
+  }
+`;
 
-export const SelectStyle = () => <style jsx>{`
+export const SelectContainer = styled.div`
   .header {
     border-bottom: 1px solid #00239D;
     display: block;
@@ -70,7 +68,7 @@ export const SelectStyle = () => <style jsx>{`
     font-weight: 600;
     line-height: 18px;
     max-height: 400px;
-    overflow-y: overlay;
+    overflow-y: auto;
     color: #393F50;
     padding: 20px 0px 0px 0px;
     z-index: 2;
@@ -106,10 +104,9 @@ export const SelectStyle = () => <style jsx>{`
     top: 50%;
     transform: translateY(-50%);
   }
-`}</style>;
+`;
 
-export const RadioButtonStyle = () => (
-  <style jsx>{`
+export const RadioButtonContainer = styled.div`
     label {
       font-family: Muli;
       color: #393F50;
@@ -151,5 +148,4 @@ export const RadioButtonStyle = () => (
       font-weight: 700;
       font-family: Muli;
     }
-  `}</style>
-);
+  `

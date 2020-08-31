@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputStyle } from './InputStyle';
+import { InputContainer } from './InputStyle';
 import { Select } from './Dropdown';
 
 const DATE = Array(31).fill().map((value, index) => index + 1);
@@ -18,11 +18,10 @@ const DateField = ({
 }) => {
   const YEARS = Array(new Date().getFullYear() - 1940).fill().map((value, index) => index + 1940).reverse();
   return (
-    <div>
-      <InputStyle />
+    <InputContainer>
       <label className={required ? 'required': ''}>{ label }</label>
-      <div class="row">
-        <div class="col s4">
+      <div className="row">
+        <div className="col s4">
           <Select
             placeholder={'Tanggal'}
             options={DATE.map(date => ({ display: date, value: String(date).padStart(2, "0") }))}
@@ -31,7 +30,7 @@ const DateField = ({
           />
           { errorDate && <span className="error">{ errorDate }</span> }
         </div>
-        <div class="col s4">
+        <div className="col s4">
           <Select
             placeholder={'Bulan'}
             options={MONTHS.map((month, index) => ({ display: month, value: String(index+1).padStart(2, "0") }))}
@@ -40,7 +39,7 @@ const DateField = ({
           />
           { errorMonth && <span className="error">{ errorMonth }</span> }
         </div>
-        <div class="col s4">
+        <div className="col s4">
           <Select
             placeholder={'Tahun'}
             options={YEARS.map(year => ({ display: year, value: String(year) }))}
@@ -50,7 +49,7 @@ const DateField = ({
           { errorYear && <span className="error">{ errorYear }</span> }
         </div>
       </div>
-    </div>
+    </InputContainer>
   )
 }
 

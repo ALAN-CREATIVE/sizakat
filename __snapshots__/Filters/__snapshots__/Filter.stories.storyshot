@@ -1,52 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Filter Default 1`] = `
+.c0 {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #00239D;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 .kotakFilter {
+  font-weight: 600;
+  font-size: 16px;
+  color: #393F50;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  padding: 40px 10px;
+  width: 500px;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  border: 1px solid #393F50;
+  box-sizing: border-box;
+  background: #FFFFFF;
+}
+
+.c0 .radio {
+  margin: 20px 10px;
+}
+
+.c0 .radio input {
+  margin-right: 30px;
+}
+
+.c0 .hide {
+  display: none;
+}
+
 <div
-  className="filter"
+  className="c0"
 >
-  <style
-    jsx={true}
-  >
-    
-    .filter {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 18px;
-      color: #00239D;
-      text-decoration : none;
-      }
-
-    .kotakFilter {
-      font-weight: 600;
-      font-size: 16px;
-      color: #393F50;
-      position : absolute;
-      top: 50%;
-      left: 50%;
-      width: 500px;
-      padding : 40px 10px;
-      width: 500px;
-      transform: translate(-50%, -50%);
-      border: 1px solid #393F50;
-      box-sizing: border-box;
-      background: #FFFFFF;
-    }
-
-    .radio {
-      margin: 20px 10px;
-    }
-
-    .radio input {
-      margin-right: 30px;
-    }
-
-    .hide {
-      display: none;
-    }
-  
-  </style>
   <div
     onClick={[Function]}
   >

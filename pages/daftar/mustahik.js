@@ -7,7 +7,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apo
 import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 import TableMustahik from '../../components/Tables/TableMustahik';
-import { resolveDataSourceName } from '../../Utils/ParserUtil';
+import { resolveDataSourceName } from '../../utils/parser-util';
 
 const INITIAL_MUSTAHIK_QUERY = gql`
   query {
@@ -116,6 +116,7 @@ const MainContent = () => {
                 query: { id: id }
               })
             }}
+            onButtonClicked={() => router.push('/tambah/mustahik')}
             setMustahikData={(data) => setDataMustahik(data)}
           />}
         </TableContainer>
@@ -132,7 +133,7 @@ export default function SumberDataMustahik({ backend_uri }) {
   return (
     <ApolloProvider client={client}>
       <Head>
-        <title>Daftar Sumber Data Mustahik</title>
+        <title>Daftar Mustahik</title>
       </Head>
       <main>
         <MainContent />

@@ -179,6 +179,9 @@ export default function FormTambahMustahik() {
     } if (mustahik.phone.match(symbol.onlySpace)) {
         formIsValid = false;
         temporaryError.phone='No HP tidak boleh diisi dengan spasi saja';
+    } if (mustahik.phone.match(symbol.number)) {
+        formIsValid = true;
+        temporaryError.phone='';
     }
 
     setError(temporaryError);

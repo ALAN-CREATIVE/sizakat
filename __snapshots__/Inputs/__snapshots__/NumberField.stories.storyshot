@@ -69,7 +69,6 @@ exports[`Storyshots Input/Number Field Default 1`] = `
     placeholder="Terdiri dari 14 karakter angka"
     required={false}
     type="number"
-    value=""
   />
 </div>
 `;
@@ -143,7 +142,6 @@ exports[`Storyshots Input/Number Field Error 1`] = `
     placeholder="Terdiri dari 14 karakter angka"
     required={false}
     type="number"
-    value=""
   />
   <span
     className="error"
@@ -222,7 +220,6 @@ exports[`Storyshots Input/Number Field Required 1`] = `
     placeholder="Terdiri dari 14 karakter angka"
     required={true}
     type="number"
-    value=""
   />
 </div>
 `;

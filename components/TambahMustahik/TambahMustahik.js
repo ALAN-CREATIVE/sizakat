@@ -109,7 +109,7 @@ export default function FormTambahMustahik() {
 
   const symbol = {
     number: new RegExp(/^[0-9]+$/),
-    alphabet: new RegExp(/^[a-zA-Z]+$/),
+    alphabet: new RegExp(/[a-zA-Z]+/),
     onlySpace: new RegExp(/\s/g),
     namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
     alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),

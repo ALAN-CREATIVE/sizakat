@@ -50,19 +50,12 @@ function App({ backend_uri }) {
                   }}
               />
             </div>
-<<<<<<< HEAD
             <div class="col-12 col-md-9">
               <div className="header-tambah-mustahik" style={{paddingLeft: "5%", paddingRight:"5%"}}>
                 <div className="row">
                   <div className="col">
                     <h1 id="logout">Keluar</h1>
                   </div>
-=======
-            <div className="col-9">
-              <div className="row">
-                <div className="col">
-                  <Logout>Keluar</Logout>
->>>>>>> 7b62179ffd89468330bf02f61eede95023b77248
                 </div>
                 <TitleBar
                   title={'Tambah Mustahik'}

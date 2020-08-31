@@ -20,8 +20,8 @@ const DateField = ({
   return (
     <InputContainer>
       <label className={required ? 'required': ''}>{ label }</label>
-      <div className="row">
-        <div className="col s4">
+      <div class="row">
+        <div class="col-12 col-sm-4">
           <Select
             placeholder={'Tanggal'}
             options={DATE.map(date => ({ display: date, value: String(date).padStart(2, "0") }))}
@@ -30,7 +30,7 @@ const DateField = ({
           />
           { errorDate && <span className="error">{ errorDate }</span> }
         </div>
-        <div className="col s4">
+        <div class="col-12 col-sm-4">
           <Select
             placeholder={'Bulan'}
             options={MONTHS.map((month, index) => ({ display: month, value: String(index+1).padStart(2, "0") }))}
@@ -39,7 +39,7 @@ const DateField = ({
           />
           { errorMonth && <span className="error">{ errorMonth }</span> }
         </div>
-        <div className="col s4">
+        <div class="col-12 col-sm-4">
           <Select
             placeholder={'Tahun'}
             options={YEARS.map(year => ({ display: year, value: String(year) }))}

@@ -129,10 +129,10 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     Tanggal Lahir
   </label>
   <div
-    className="row"
+    class="row"
   >
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -162,7 +162,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -192,7 +192,7 @@ exports[`Storyshots Input/Date Field Default 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -354,10 +354,10 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     Tanggal Lahir
   </label>
   <div
-    className="row"
+    class="row"
   >
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -392,7 +392,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       </span>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -422,7 +422,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -584,10 +584,10 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     Tanggal Lahir
   </label>
   <div
-    className="row"
+    class="row"
   >
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -617,7 +617,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -652,7 +652,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       </span>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -814,10 +814,10 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     Tanggal Lahir
   </label>
   <div
-    className="row"
+    class="row"
   >
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -847,7 +847,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -877,7 +877,7 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -1044,10 +1044,10 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     Tanggal Lahir
   </label>
   <div
-    className="row"
+    class="row"
   >
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -1077,7 +1077,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"
@@ -1107,7 +1107,7 @@ exports[`Storyshots Input/Date Field Required 1`] = `
       </div>
     </div>
     <div
-      className="col s4"
+      class="col-12 col-sm-4"
     >
       <div
         className="c1"

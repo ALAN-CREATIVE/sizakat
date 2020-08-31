@@ -3,13 +3,12 @@ import { gql, useMutation, useQuery } from '@apollo/client';
 
 import Dropdown from '../Inputs/Dropdown';
 import FileField from '../Inputs/FileField';
-import NumberField from '../Inputs/NumberField';
 import RadioButton from '../Inputs/RadioButton';
 import TextField from '../Inputs/TextField';
 import DateField from '../Inputs/DateField';
 import Button from '../Buttons/Button';
 
-import { resolveDataSourceName } from '../../Utils/ParserUtil';
+import { resolveDataSourceName } from '../../utils/parser-util';
 
 import { TambahMustahikContainer } from './TambahMustahikStyle';
 
@@ -79,7 +78,18 @@ export default function FormTambahMustahik() {
     photo: ''
   });
 
-  const [createMustahik, { data: createData, error: errorCreate }  ] = useMutation(ADD_MUSTAHIK);
+  const [createMustahik, { data: createData, error: errorCreate }  ] = useMutation(ADD_MUSTAHIK, {
+    onCompleted: (createData) => {
+      console.log(createData)
+      if(createData.mustahikMutation.errors.length != 0) {
+        alert("Submit gagal");
+        console.log(createData.mustahikMutation.errors[0].messages[0]);
+      } else {
+        alert("Submit berhasil");
+        console.log(createData.mustahikMutation.mustahik);
+      }
+    }
+  });
   const { data: dataSource, error: errorDataSource, loading: loadingDataSource } = useQuery(GET_DATA_SOURCE);
 
   const submitForm = () => {
@@ -91,12 +101,21 @@ export default function FormTambahMustahik() {
             ...mustahik
           }
         }});
-      console.log(mustahik);
-      alert("Submit berhasil");
     } else {
       console.log(mustahik);
       alert("Submit gagal");
     }
+  }
+
+  const symbol = {
+    number: new RegExp(/^[0-9]+$/),
+    alphabet: new RegExp(/[a-zA-Z]+/),
+    onlySpace: new RegExp(/\s/g),
+    namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+    alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+    numberValid: new RegExp(/^[0][0-9]+$/),
+    onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+    phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/)
   }
 
   const handleSubmit = () => {
@@ -106,12 +125,33 @@ export default function FormTambahMustahik() {
     if (mustahik.name.length == 0) {
         formIsValid = false;
         temporaryError.name='Nama lengkap tidak boleh kosong';
+    } if (mustahik.name.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.name='Nama lengkap tidak boleh diisi dengan spasi saja';
+    } if (mustahik.name.match(symbol.namaLengkapValid)) {
+        formIsValid = true;
+        temporaryError.name='';
     } if (mustahik.noKtp.length < 14 || mustahik.noKtp.length > 14) {
         formIsValid = false;
         temporaryError.noKtp='Format KTP harus berupa 14 karakter angka';
+    } if (mustahik.noKtp.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.noKtp='No KTP tidak boleh diisi dengan spasi saja';
+    } if (mustahik.noKtp.match(symbol.alphabet)) {
+        formIsValid = false;
+        temporaryError.noKtp='No KTP harus diisi dengan 14 karakter angka'
+    } if (mustahik.noKtp.match(symbol.number)) {
+        formIsValid = true;
+        temporaryError.noKtp='';
     } if (mustahik.address.length == 0) {
         formIsValid = false;
         temporaryError.address='Alamat tidak boleh kosong';
+    } if (mustahik.address.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.address='Alamat tidak boleh diisi dengan spasi saja';
+    } if (mustahik.address.match(symbol.alamatValid)) {
+        formIsValid = true;
+        temporaryError.address='';
     } if (mustahik.birthdate.slice(8) == "xx") {
         formIsValid = false;
         temporaryError.errorDate= 'Tanggal lahir tidak boleh kosong';
@@ -130,6 +170,18 @@ export default function FormTambahMustahik() {
     } if (mustahik.dataSource === null || mustahik.dataSource === undefined) {
         formIsValid = false;
         temporaryError.dataSource='Pilihan sumber data tidak boleh kosong';
+    } if (mustahik.phone.match(symbol.alphabet)) {
+        formIsValid = false;
+        temporaryError.phone='Format HP harus berupa angka';
+    } if (mustahik.phone.match(symbol.phoneNumberWithSymbol) || mustahik.phone.match(symbol.onlySymbol)) {
+        formIsValid = false;
+        temporaryError.phone='Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
+    } if (mustahik.phone.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.phone='No HP tidak boleh diisi dengan spasi saja';
+    } if (mustahik.phone.match(symbol.number)) {
+        formIsValid = true;
+        temporaryError.phone='';
     }
 
     setError(temporaryError);
@@ -171,14 +223,24 @@ export default function FormTambahMustahik() {
             />
           </div>
           <div className="form" id="nomor-ktp">
-            <NumberField
+            <TextField
               label={'Nomor KTP'}
               placeholder={'Terdiri dari 14 karakter angka'}
               required={true}
               onChange={ktp => {
                 setMustahik({...mustahik, noKtp: ktp});
-                setError({...error,
-                  noKtp:ktp = ktp.length < 14 || ktp.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''})
+                if (ktp.match(symbol.onlySpace)) {
+                  setError({...error,
+                    noKtp: 'Nomor KTP tidak boleh diisi dengan spasi saja'
+                  });
+                } else if (ktp.length < 14 || ktp.length > 14) {
+                  setError({...error,
+                    noKtp: 'Format KTP harus berupa 14 karakter angka'
+                  });
+                } else {
+                  setError({...error,
+                    noKtp:''});
+                }
               }}
               error={error.noKtp}
             />
@@ -190,8 +252,22 @@ export default function FormTambahMustahik() {
               required={ true }
               onChange={name => {
                 setMustahik({...mustahik, name: name});
-                setError({...error,
-                  name: name = name.length < 1 ? 'Nama lengkap tidak boleh kosong' : ''});
+                if (name.match(symbol.namaLengkapValid)) {
+                  setError({...error,
+                    name: ''
+                  });
+                } else if (name.match(symbol.onlySpace)) {
+                  setError({...error,
+                    name: 'Nama lengkap tidak boleh diisi dengan spasi saja'
+                  })
+                } else if (name.length < 1) {
+                  setError({...error,
+                    name: 'Nama lengkap tidak boleh kosong'
+                  });
+                } else {
+                  setError({...error,
+                    name:''});
+                }
               }}
               error={error.name}
             />
@@ -249,16 +325,30 @@ export default function FormTambahMustahik() {
             />
           </div>
           <div className="form" id="nomor-hp">
-            <NumberField
+            <TextField
               label={'Nomor HP'}
-              placeholder={'Diisi dengan angka'}
+              placeholder={'Diisi dengan angka (Contoh: 0811111111)'}
               onChange={noHp => {
                 setMustahik({...mustahik, phone: noHp});
-                try {
-                  parseInt(noHp,10);
-                } catch(error) {
+                if (noHp.match(symbol.alphabet)) {
                   setError ({...error,
                     phone:'Format HP harus berupa angka'});
+                }
+                else if(noHp.match(symbol.numberValid)) {
+                  setError ({...error,
+                    phone:''});
+                }
+                else if(noHp.match(symbol.phoneNumberWithSymbol) || noHp.match(symbol.onlySymbol)) {
+                  setError ({...error,
+                    phone:'Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)'});
+                }
+                else if (noHp.match(symbol.onlySpace)) {
+                  setError ({...error,
+                    phone:'No HP tidak boleh diisi dengan spasi saja'});
+                }
+                else {
+                  setError ({...error,
+                    phone:''});
                 }
               }}
               error={error.phone}
@@ -271,8 +361,22 @@ export default function FormTambahMustahik() {
               required
               onChange={alamatLengkap => {
                 setMustahik ({...mustahik, address: alamatLengkap});
-                setError ({...error,
-                  address:alamatLengkap = alamatLengkap.length < 1 ? 'Alamat tidak boleh kosong' : ''});
+                if (alamatLengkap.match(symbol.alamatValid)) {
+                  setError({...error,
+                    address: ''
+                  });
+                } else if (alamatLengkap.match(symbol.onlySpace)) {
+                  setError({...error,
+                    address: 'Alamat tidak boleh diisi dengan spasi saja'
+                  });
+                } else if (alamatLengkap.length < 1) {
+                  setError({...error,
+                    address: 'Alamat tidak boleh kosong'
+                  });
+                } else {
+                  setError({...error,
+                    address:''});
+                }
               }}
               error={error.address}
             />
@@ -281,7 +385,7 @@ export default function FormTambahMustahik() {
             <FileField
               label={ 'Foto Mustahik' }
               buttonLabel={ 'Pilih Foto' }
-              description={ 'Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg' }
+              description={ 'Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg atau .png' }
               onFileSelected={ foto => setMustahik (
                 {...mustahik,
                 photo: foto })
@@ -291,7 +395,7 @@ export default function FormTambahMustahik() {
           <div className="form button-lanjutkan">
             <Button
                 type={'primary'}
-                label={'Lanjutkan >>'}
+                label={'Simpan'}
                 onClick={() =>
                   submitForm()
                 }

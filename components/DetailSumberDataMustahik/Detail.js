@@ -16,7 +16,7 @@ query dataSource($id: ID!){
         picName
         picKtp
         picPhone
-        picPosition
+        picWargaPosition: picPosition
         province
         regency
         subDistrict
@@ -28,7 +28,7 @@ query dataSource($id: ID!){
         picName
         picKtp
         picPhone
-        picPosition
+        picPekerjaPosition: picPosition
         profession
         location
       }
@@ -36,7 +36,7 @@ query dataSource($id: ID!){
         picName
         picKtp
         picPhone
-        picPosition
+        picInstitusiPosition: picPosition
         name
         province
         regency
@@ -59,7 +59,7 @@ export function DetailInfo() {
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.error(error);
-    console.log(error.networkError);
+    console.log(error.networkError.result.errors);
     console.log(error.graphQLErrors);
     return  [error].map(({message})=>(
       <p>{message}</p>
@@ -116,7 +116,19 @@ export function DetailInfo() {
 
       <DetailField title={'Nama'} description={detail.picName}/><br></br>
       <DetailField title={'Nomor KTP'} description={detail.picKtp}/><br></br>
-      <DetailField title={'Jabatan'} description={detail.picPosition}/><br></br>
+      {(category === 'WARGA') ? (
+        <>
+          <DetailField title={'Jabatan'} description={detail.picWargaPosition}/><br></br>
+        </>
+      ) : (category === 'PEKERJA') ? (
+        <>
+          <DetailField title={'Jabatan'} description={detail.picPekerjaPosition}/><br></br>
+        </>
+      ) : (
+        <>
+          <DetailField title={'Jabatan'} description={detail.picInstitusiPosition}/><br></br>
+        </>
+      )}
       <DetailField title={'Nomor Telepon'} description={detail.picPhone}/><br></br>
     </div>
     </>

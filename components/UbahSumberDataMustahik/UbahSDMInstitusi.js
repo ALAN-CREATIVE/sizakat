@@ -1,78 +1,73 @@
 import React, { useState } from 'react';
 import { gql, useMutation, useQuery } from '@apollo/client';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
 import { useRouter } from 'next/router';
-import NumberField from '../../../../components/Inputs/NumberField';
-import TextField from '../../../../components/Inputs/TextField';
-import Button from '../../../../components/Buttons/Button';
-import { TambahSDMContainer } from '../../../../components/TambahSumberDataMustahik/TambahSDMStyle';
+
+import Dropdown from '../Inputs/Dropdown';
+import FileField from '../Inputs/FileField';
+import NumberField from '../Inputs/NumberField';
+import RadioButton from '../Inputs/RadioButton';
+import TextField from '../Inputs/TextField';
+import DateField from '../Inputs/DateField';
+import Button from '../Buttons/Button';
+import { UbahSDMStyle } from './UbahSDMStyle';
+
 
 // import { resolveDataSourceName } from '../../Utils/ParserUtil';
 
 
-const client = new ApolloClient({
-    uri: 'http://${process.env.GRAPHQL_URL}',
-    cache: new InMemoryCache()
-  });
+
+
   
 
-const UPDATE_SDM_WARGA=gql`
-    mutation dataSourceWargaMutation($input: DataSourceWargaMutationInput!){
-        dataSourceWargaMutation(input: $input){
-            dataSourceWarga{
+const UPDATE_SDM_INSTITUSI=gql`
+    mutation dataSourceInstitusiMutation($input: DataSourceInstitusiMutationInput!){
+        dataSourceInstitusiMutation(input: $input){
+            dataSourceInstitusi{
                 picName
-                picKtp
-                picPhone
-                picPosition
-                province
-                regency
-                subDistrict
-                village
-                rt
-                rw
                 id
-                dataSource{id}
             }
-            errors { messages }
+            errors{messages}
         }
     }
 `;
 
+//TODO: Jangan lupa nambahin regency dibackend
 const INITIAL_DATA_SOURCES_QUERY=gql`
 query dataSourceQuery($id: ID!){
     dataSource(id:$id ) {
+        id
+        category
+        dataSourceDetail{
+          __typename
+          ... on DataSourceInstitusiType{
+            picName
+            picKtp
+            picPhone
+            picPosition
+            name
+            province
+            subDistrict
+            regency
+            village
+            rt
+            rw
+            address
+            dataSource{id}
             id
-            category
-            dataSourceDetail{
-              __typename
-              ... on DataSourceWargaType {
-                 picName
-                  picKtp
-                  picPhone
-                  picPosition
-                  province
-                  regency
-                  subDistrict
-                  village
-                  rt
-                  rw
-                  id
-                  dataSource{id}
-            }                    	  
-            }
-                            
+          }
         }
+                        
     }
+}
 `;
 
 function successBox() {
     alert("Success")
   }
   
-export function FormUpdateSDMWarga({ data }) {
+export function FormUpdateSDMInstitusi({ data }) {
     const [SDM, setSDM] = useState(data.dataSource.dataSourceDetail)
-    const [updateSDM, {error}] = useMutation(UPDATE_SDM_WARGA)
+    const [updateSDM, {error}] = useMutation(UPDATE_SDM_INSTITUSI)
 
     const handleOnChangePicName = value =>{
         console.log(SDM)
@@ -103,6 +98,14 @@ export function FormUpdateSDMWarga({ data }) {
         setSDM({
             ...SDM,
             picPosition: value
+        })
+    }
+
+    const handleOnChangeName= value =>{
+        console.log(SDM)
+        setSDM({
+            ...SDM,
+            name: value
         })
     }
 
@@ -154,11 +157,17 @@ export function FormUpdateSDMWarga({ data }) {
         })
     }
 
+    const handleOnChangeAddress= value =>{
+        console.log(SDM)
+        setSDM({
+            ...SDM,
+            address : value
+        })
+    }
+
     const handleOnSubmit = e => {
         e.preventDefault()
         const {__typename, dataSource, ...dataSourceDetail } = SDM
-        
-        
         updateSDM({
           variables: {
             input: {
@@ -174,72 +183,88 @@ export function FormUpdateSDMWarga({ data }) {
     return (
                 <form onSubmit={e => handleOnSubmit(e)}>
                     <h1 id="form-title">KATEGORI SUMBER DATA</h1>
-                    <div className="form" id="sumber-data">      
+                    <div className="form" id="sumber-data">
                         <TextField
                             label={ 'Nama Kategori' }
-                            placeholder={ 'Warga' }
+                            placeholder={ 'Institusi' }
                             required={ false }
                             disabled={ true }
                             defaultValue="WARGA"
                         />
                     </div>
                     <h1 id="form-title">DETAIL SUMBER DATA</h1>
+                    <div className="form" id="institusi">
+                        <TextField
+                            label={ 'Nama Institusi' }
+                            defaultValue={SDM.name}
+                            required={ false }
+                            onChange={handleOnChangeName}
+                        />
+                    </div>
                     <div className="form" id="provinsi">
                         <TextField
-                            defaultValue={SDM.province}
                             label={ 'Provinsi' }
+                            defaultValue={SDM.province}
                             required={ true }
                             onChange={handleOnChangeProvince}
                         />
                     </div>
                     <div className="form" id="alamat">
                         <div class="row">
-                            <div class="col" id="kota">                                
+                            <div class="col" id="kota">
                                 <TextField
                                     label={ 'Kota/Kabupaten' }
                                     defaultValue={SDM.regency}
                                     required={ true }
                                     onChange={handleOnChangeRegency}
-                                />
+                                    />
                             </div>
-                            <div class="col" id="kecamatan">                               
+                            <div class="col" id="kecamatan">
                                 <TextField
                                     label={ 'Kecamatan' }
                                     defaultValue={SDM.subDistrict}
                                     required={ true }
-                                    onChange={ handleOnChangeSubDistrict } 
-                                />
+                                    onChange={handleOnChangeSubDistrict}
+                                    />
                             </div>
-                            <div class="col" id="kelurahan">                                
+                            <div class="col" id="kelurahan">
                                 <TextField
                                     label={ 'Kelurahan' }
                                     defaultValue={SDM.village}
                                     required={ true }
-                                    onChange={ handleOnChangeVillage }
-                                />
+                                    onChange={handleOnChangeVillage}
+                                    />
                             </div>
                         </div>
                     </div>
                     <div className="form" id="alamat-detail">
                         <div class="row">
-                            <div class="col" id="rw">                                
+                            <div class="col" id="rw">
                                 <TextField
                                     label={ 'RW' }
                                     defaultValue={SDM.rw}
                                     required={ true }
-                                    onChange={ handleOnChangeRw }
-                                />
+                                    onChange={handleOnChangeRw}
+                                    />
                             </div>
-                            <div class="col" id="rt">                        
+                            <div class="col" id="rt">
                                 <TextField
                                     label={ 'RT' }
                                     defaultValue={SDM.rt}
                                     required={ true }
-                                    onChange={ handleOnChangeRt }
-                                />
+                                    onChange={handleOnChangeRt}
+                                    />
                             </div>
                             <div class="col"></div>
                         </div>
+                    </div>
+                    <div className="form" id="alamat-lengkap">
+                        <TextField
+                            label={ 'Alamat Lengkap' }
+                            defaultValue={SDM.address}
+                            required={ false }
+                            onChange={handleOnChangeAddress}
+                        />
                     </div>
                     <h1 id="form-title">PENANGGUNG JAWAB</h1>
                     <div className="form" id="nama">                        
@@ -277,8 +302,7 @@ export function FormUpdateSDMWarga({ data }) {
                         />
                     </div>
                     <div className="form button-lanjutkan">
-                        
-                        <Button
+                    <Button
                             label= { 'SIMPAN DATA' }
                             type= { 'primary' }
                             onClick={() => {
@@ -309,44 +333,37 @@ function UpdatePage(){
     }
     return (
         <div>
-          <FormUpdateSDMWarga data={data} />
+          <FormUpdateSDMInstitusi data={data} />
         </div>
       )
 }
 
 export default function update(){
     return (
-        <TambahSDMContainer className="EditSDMPage">
+    <>
       <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossOrigin="anonymous"></link>
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,800" rel="stylesheet" />
       </head>
       <main>
-        <ApolloProvider client={client}>
-          <div className="UpdateSDMWarga">
+        
+          <div className="UpdateSDMInstitusi">
             <main>
               <div className="form-section">
-                <h1 id="form-title">Edit SDM Warga</h1>
+                <h1 id="form-title">Edit SDM Institusi</h1>
                 <UpdatePage />
               </div>
             </main>
           </div>
-        </ApolloProvider>
+     
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossOrigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossOrigin="anonymous"></script>
-       
+        
       </main>
-      </TambahSDMContainer>
+      <UbahSDMStyle />
+    </>
     )
+
 }
 
-export async function getStaticProps() {
-    return {
-      props: {
-        backend_uri: `http://${process.env.GRAPHQL_URL}`
-     
-      }
-    }
-  }
-  

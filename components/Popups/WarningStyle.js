@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const WarningStyle = () => (
-  <style jsx>{`
+export const WarningContainer = styled.div`
     .box {
         width: 385px;
         height: 374px;
@@ -72,5 +71,4 @@ export const WarningStyle = () => (
 
         color: #FFFFFF
     }
-  `}</style>
-);
+  `;

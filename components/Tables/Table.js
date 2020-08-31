@@ -12,9 +12,9 @@ const Table = ({
   filterOptions,
   searchPlaceholder,
   itemList,
+  detailPath,
   onButtonClicked,
   onFilterPicked,
-  onDetailClicked,
   onSearchChanged
 }) => {
   return (
@@ -43,7 +43,7 @@ const Table = ({
       <div>
         <CardList
           list={itemList}
-          onCardDetailClicked={onDetailClicked}
+          path={detailPath}
         />
       </div>
     </Container>

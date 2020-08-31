@@ -1,36 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Button Danger 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-  </style>
+.c0 button {
+  font-family: Muli;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+}
+
+.c0 .primary {
+  background: #00239D;
+  border-radius: 4px;
+  border: 1px solid #00239D;
+}
+
+.c0 .secondary {
+  border-radius: 4px;
+  background: #C2C2C2;
+  border: 1px solid #C2C2C2;
+}
+
+.c0 .danger {
+  background: #EB4E2C;
+  border-radius: 4px;
+  border: 1px solid #EB4E2C;
+}
+
+<div
+  className="c0"
+>
   <button
     className="danger"
     onClick={[Function]}
@@ -41,36 +42,37 @@ exports[`Storyshots Button Danger 1`] = `
 `;
 
 exports[`Storyshots Button Primary 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-  </style>
+.c0 button {
+  font-family: Muli;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+}
+
+.c0 .primary {
+  background: #00239D;
+  border-radius: 4px;
+  border: 1px solid #00239D;
+}
+
+.c0 .secondary {
+  border-radius: 4px;
+  background: #C2C2C2;
+  border: 1px solid #C2C2C2;
+}
+
+.c0 .danger {
+  background: #EB4E2C;
+  border-radius: 4px;
+  border: 1px solid #EB4E2C;
+}
+
+<div
+  className="c0"
+>
   <button
     className="primary"
     onClick={[Function]}
@@ -81,36 +83,37 @@ exports[`Storyshots Button Primary 1`] = `
 `;
 
 exports[`Storyshots Button Secondary 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-  </style>
+.c0 button {
+  font-family: Muli;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+}
+
+.c0 .primary {
+  background: #00239D;
+  border-radius: 4px;
+  border: 1px solid #00239D;
+}
+
+.c0 .secondary {
+  border-radius: 4px;
+  background: #C2C2C2;
+  border: 1px solid #C2C2C2;
+}
+
+.c0 .danger {
+  background: #EB4E2C;
+  border-radius: 4px;
+  border: 1px solid #EB4E2C;
+}
+
+<div
+  className="c0"
+>
   <button
     className="secondary"
     onClick={[Function]}

@@ -1,16 +1,15 @@
 import React from 'react';
-import { DetailStyle } from './DetailStyle';
+import { DetailContainer } from './DetailStyle';
 
 export default function DetailField({title, description}) {
   return (
-    <div>
-      <DetailStyle />
+    <DetailContainer>
       <h1>
         { title }
       </h1>
       <h2>
         { description }
       </h2>
-    </div>
+    </DetailContainer>
   );
 }

@@ -1,25 +1,12 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import styled from 'styled-components';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
-import FormTambahSDMWarga from '../../../components/TambahSumberDataMustahik/TambahSDMWarga';
-import Navbar from '../../../components/NavigationBar/NavBarWithRouter';
-import TitleBar from '../../../components/Titles/TitleBar';
+import FormTambahSDM from './form';
+import NavigationBar from '../../../../components/NavigationBar/NavigationBar';
+import { TambahSDMContainer } from '../../../../components/TambahSumberDataMustahik/TambahSDMStyle';
 
-const Logout = styled.p`
-  float: right;
-  font-family: Muli, sans-serif;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 25px;
-
-  margin: 3% 2% 2% 0;
-
-  color: #EB4E2C;
-`
 
 function App({ backend_uri }) {
     const client = new ApolloClient({
@@ -31,43 +18,41 @@ function App({ backend_uri }) {
     <ApolloProvider client={client}>
         <div className="TambahMustahikPage">
             <Head>
-                <title>Tambah SDM</title>
+                <title>Edit SDM</title>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,800" rel="stylesheet" />
             </Head>
-
+            <TambahSDMContainer className="EditSDMPage">
             <main>
-                <div className="row">
-                    <div className="col-3" />
-                    <div className="col-3 position-fixed">
-                        <Navbar
-                            user={{
-                                name: 'Annisaa Fitri Shabrina',
-                                role: 'ADMIN'
-                            }}
+                <div class="row">
+                    <div class="col-3">
+                        <NavigationBar
+                            name= { 'Annisaa Fitri Shabrina' }
+                            role= { 'Admin' }
+                            menu= { 'Mustahik' }
+                            submenu=  { ['Data Mustahik', 'Sumber Data Mustahik'] }
                         />
                     </div>
-                    <div className="col-9">
+                    <div class="col-9">
                         <div className="row">
                             <div className="col">
-                                <Logout>Keluar</Logout>
+                                <h1 id="logout">Keluar</h1>
                             </div>
                         </div>
-                        <TitleBar
-                            title={'Tambah Sumber Data Mustahik'}
-                            path={'Mustahik // Tambah Sumber //'}
-                            current={'Warga'}
-                        />
-                        <FormTambahSDMWarga />
+                        <h1 id="page-title">Edit Sumber Data Mustahik</h1>
+                        <p id="breadcrumb">Mustahik {'//'} <span>Edit Sumber {'//'}</span><span style={{ color: "#00239D" }}><b>Warga</b></span></p>
+                        <FormTambahSDM />
+
                     </div>
                 </div>
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossOrigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossOrigin="anonymous"></script>
             </main>
+            </TambahSDMContainer>
         </div>
     </ApolloProvider>
 );

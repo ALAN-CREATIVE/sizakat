@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputStyle } from './InputStyle';
+import { InputContainer } from './InputStyle';
 import { Select } from './Dropdown';
 
 const DATE = Array(31).fill().map((value, index) => index + 1);
@@ -18,8 +18,7 @@ const DateField = ({
 }) => {
   const YEARS = Array(new Date().getFullYear() - 1940).fill().map((value, index) => index + 1940).reverse();
   return (
-    <div>
-      <InputStyle />
+    <InputContainer>
       <label className={required ? 'required': ''}>{ label }</label>
       <div class="row">
         <div class="col-12 col-sm-4">
@@ -50,7 +49,7 @@ const DateField = ({
           { errorYear && <span className="error">{ errorYear }</span> }
         </div>
       </div>
-    </div>
+    </InputContainer>
   )
 }
 

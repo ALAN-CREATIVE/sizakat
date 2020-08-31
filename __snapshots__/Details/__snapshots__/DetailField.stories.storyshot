@@ -1,83 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Details/Detail Field Default 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    h1 {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 20px;
-      /* identical to box height */
-      
-      
-      color: #00239D;
-    }
+.c0 h1 {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #00239D;
+}
 
-    h2 {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      /* identical to box height */
+.c0 h2 {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #393F50;
+}
 
+.c0 .profpic {
+  width: 241px;
+  height: 226px;
+  background: #00239D;
+}
 
-      color: #393F50;
+.c0 .background {
+  width: 241px;
+  height: 53px;
+  left: 288px;
+  top: 394px;
+  background: #F5F6F8;
+}
 
-    }
+.c0 .identity {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  text-align: center;
+  top: 44.44%;
+  bottom: 51.11%;
+  padding-top: 8px;
+}
 
-    .profpic {
-      width: 241px;
-      height: 226px;
+.c0 p {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #393F50;
+  margin-top: -2px;
+}
 
+.c0 .spilt {
+  -webkit-column-count: 2;
+  column-count: 2;
+}
 
-      background: #00239D;
-    }
-
-    .background {
-      width: 241px;
-      height: 53px;
-      left: 288px;
-      top: 394px;
-
-      background: #F5F6F8;
-    }
-
-    .identity {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 18px;
-      text-align: center;
-      top: 44.44%; bottom: 51.11%;
-      padding-top:8px;
-    }
-
-    p {
-      font-family: Muli;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-     
-      /* identical to box height */
-
-
-      color: #393F50;
-      margin-top: -2px;
-
-    }
-
-    .spilt {
-      column-count: 2;
-      
-    }
-  
-  </style>
+<div
+  className="c0"
+>
   <h1>
     Usia
   </h1>

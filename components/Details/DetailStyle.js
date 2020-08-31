@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const DetailStyle = () => (
-  <style jsx>{`
+export const DetailContainer = styled.div`
     h1 {
       font-family: Muli;
       font-style: normal;
@@ -72,5 +71,4 @@ export const DetailStyle = () => (
       column-count: 2;
       
     }
-  `}</style>
-);
+  `;

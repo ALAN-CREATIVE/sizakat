@@ -1,11 +1,10 @@
 import React from 'react';
-import { WarningStyle } from './WarningStyle';
+import { WarningContainer } from './WarningStyle';
 
 const Warning = ({ message, confirmButton='Ya', rejectButton='Batal', onConfirm, onReject }) => {
 
   return (
-    <div>
-      <WarningStyle />
+    <WarningContainer>
       <div className="box">
           <img src="/img/warning.png" alt="warning" style={{ display: "block", margin:"auto", paddingTop: "57px" }} ></img>
           <div className="warningText">Perhatian!</div>
@@ -21,7 +20,7 @@ const Warning = ({ message, confirmButton='Ya', rejectButton='Batal', onConfirm,
             </div>
           </div>
       </div>
-    </div>
+    </WarningContainer>
   )
 }
 

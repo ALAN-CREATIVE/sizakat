@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-export const TambahSDMStyle = () =>(
-    <style jsx>{`
+export const TambahSDMContainer = styled.div`
         .navigation-bar {
             background: #FFFFFF;
             border: 1px solid #DEDEDE;
@@ -137,5 +136,4 @@ export const TambahSDMStyle = () =>(
 
             font-family: Muli;
         }
-    `}</style>
-);
+    `

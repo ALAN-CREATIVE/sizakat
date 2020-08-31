@@ -58,7 +58,7 @@ exports[`Storyshots Input/Number Field Default 1`] = `
     onChange={[Function]}
     placeholder="Terdiri dari 14 karakter angka"
     required={false}
-    type="text"
+    type="number"
     value=""
   />
 </div>
@@ -122,7 +122,7 @@ exports[`Storyshots Input/Number Field Error 1`] = `
     onChange={[Function]}
     placeholder="Terdiri dari 14 karakter angka"
     required={false}
-    type="text"
+    type="number"
     value=""
   />
   <span
@@ -191,7 +191,7 @@ exports[`Storyshots Input/Number Field Required 1`] = `
     onChange={[Function]}
     placeholder="Terdiri dari 14 karakter angka"
     required={true}
-    type="text"
+    type="number"
     value=""
   />
 </div>

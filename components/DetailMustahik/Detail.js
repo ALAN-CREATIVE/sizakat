@@ -145,10 +145,10 @@ export function DetailInfo() {
         </div>
         <br></br>
         <div className="row">
-          <div className="col-md-4">
-            <img id="photo" src={photo}></img>
+          <div className="col-md-5">
+            <img id="photo" src={`http://localhost:8000/img/${photo}`}></img>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-7">
             <DetailField title='Nama Mustahik' description={name} /><br></br>
             <DetailField title='Kategori' description={dataSource.category} /><br></br>
             <p className="label">Sumber Data</p>

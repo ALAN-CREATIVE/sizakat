@@ -155,7 +155,7 @@ export function FormUpdateSDMPekerja({ data }) {
                     <div className="form" id="profession">
                         <TextField
                             defaultValue={SDM.profession}
-                            label={ 'Professi' }
+                            label={ 'Profesi' }
                             required={ true }
                             onChange={handleOnChangeProfession}
                         />

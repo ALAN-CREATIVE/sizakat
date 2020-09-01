@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { gql, useMutation, useQuery } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
+import axios from 'axios';
 
 import Dropdown from '../Inputs/Dropdown';
 import FileField from '../Inputs/FileField';
@@ -12,7 +13,7 @@ import { resolveDataSourceName } from '../../utils/parser-util';
 
 import { TambahMustahikContainer } from './TambahMustahikStyle';
 
-const ADD_MUSTAHIK = gql`
+const ADD_MUSTAHIK = `
   mutation mustahikMutation($input: MustahikMutationInput!) {
     mustahikMutation(input: $input) {
       mustahik {
@@ -51,7 +52,7 @@ const GET_DATA_SOURCE = gql`
   }
 `
 
-export default function FormTambahMustahik() {
+export default function FormTambahMustahik({ backend_uri }) {
   const [mustahik, setMustahik] = useState({
     name: '',
     noKtp: '',
@@ -63,6 +64,8 @@ export default function FormTambahMustahik() {
     dataSource: null,
     photo: '',
   });
+
+  const [photo, setPhoto] = useState({});
 
   const [error, setError] = useState({
     name: '',
@@ -78,29 +81,34 @@ export default function FormTambahMustahik() {
     photo: ''
   });
 
-  const [createMustahik, { data: createData, error: errorCreate }  ] = useMutation(ADD_MUSTAHIK, {
-    onCompleted: (createData) => {
-      console.log(createData)
-      if(createData.mustahikMutation.errors.length != 0) {
-        alert("Submit gagal");
-        console.log(createData.mustahikMutation.errors[0].messages[0]);
-      } else {
-        alert("Submit berhasil");
-        console.log(createData.mustahikMutation.mustahik);
-      }
-    }
-  });
   const { data: dataSource, error: errorDataSource, loading: loadingDataSource } = useQuery(GET_DATA_SOURCE);
 
   const submitForm = () => {
-    console.log(handleSubmit());
     if (handleSubmit()) {
-      createMustahik({
-        variables: {
-          input: {
-            ...mustahik
+      const data = new FormData();
+      data.append('photo', photo);
+      data.append('query', ADD_MUSTAHIK);
+      data.append('variables', JSON.stringify({input: mustahik}));
+      axios({
+        method: 'post',
+        url: backend_uri,
+        data: data,
+        config: {
+          headers: {
+            'Content-Tranfer-Encoding': 'multipart/form-data',
+            'Content-type': 'application/grapql',
+            'Access-Control-Allow-Credentials': 'true'
           }
-        }});
+        }
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((response) => {
+        console.log(response);
+        console.log(response.networkErrors);
+        console.log(response.grapQLErrors)
+      })
     } else {
       console.log(mustahik);
       alert("Submit gagal");
@@ -188,17 +196,13 @@ export default function FormTambahMustahik() {
     return formIsValid;
   }
 
-  if(errorCreate || errorDataSource) {
+  if(errorDataSource) {
     console.log(errorDataSource);
-    console.log(errorCreate.networkError.result.errors);
     return <p>error</p>
   }
 
   if (loadingDataSource) return <p>loading ...</p>
 
-  if (createData) {
-    console.log(createData.mustahikMutation.errors.messages);
-  }
 
   return (
     <TambahMustahikContainer className="TambahMustahikPage">
@@ -386,10 +390,10 @@ export default function FormTambahMustahik() {
               label={ 'Foto Mustahik' }
               buttonLabel={ 'Pilih Foto' }
               description={ 'Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg atau .png' }
-              onFileSelected={ foto => setMustahik (
-                {...mustahik,
-                photo: foto })
-              }
+              onFileSelected={(files) => {
+                console.log(files[0]);
+                setPhoto(files[0]);
+              }}
             />
           </div>
           <div className="form button-lanjutkan">

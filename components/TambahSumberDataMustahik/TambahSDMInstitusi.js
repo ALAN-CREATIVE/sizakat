@@ -70,33 +70,8 @@ export default function FormTambahSDMInstitusi() {
         rw: '',
     }); 
 
-    const [createSDM, { 
-        data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM, {
-            onCompleted: (createData) => {
-              console.log(createData);
-              if (createData.dataSourceMutation.errors.length != 0) {
-                alert("Submit gagal");
-                console.log(createData.dataSourceMutation.errors[0].messages[0]);
-              } else {
-                alert("Submit berhasil");
-                console.log(createData.dataSourceMutation.dataSource);
-              }
-            },
-        });
-
-    const [createSDMInstitusi, { 
-        data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI, {
-            onCompleted: (createDataInstitusi) => {
-              console.log(createDataInstitusi);
-              if (createDataInstitusi.dataSourceInstitusiMutation.errors.length != 0) {
-                alert("Submit gagal");
-                console.log(createDataInstitusi.dataSourceInstitusiMutation.errors[0].messages[0]);
-              } else {
-                alert("Submit berhasil");
-                console.log(createDataInstitusi.dataSourceInstitusiMutation.dataSourceInstitusi);
-              }
-            },
-        });
+    const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
+    const [createSDMInstitusi, { data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI);
     
     const submitForm = () => {
         console.log(handleSubmit());
@@ -108,8 +83,8 @@ export default function FormTambahSDMInstitusi() {
                     }
                 }
             });
-        //   console.log(dataSourceInstitusi);
-        //   alert("Submit berhasil");
+          console.log(dataSourceInstitusi);
+          alert("Submit berhasil");
         } else {
           console.log(dataSourceInstitusi);
           alert("Submit gagal");
@@ -129,9 +104,6 @@ export default function FormTambahSDMInstitusi() {
     const handleSubmit = () => {
         let formIsValid = true;
         let temporaryError = {};
-        // var alphabet = new RegExp(/^[a-zA-Z]+$/);
-        // var plus = new RegExp(/^\+?[0-9]+$/);
-        // var space = new RegExp(/\s/g);
     
         if (dataSourceInstitusi.picName.length == 0) {
             formIsValid = false;
@@ -233,7 +205,7 @@ export default function FormTambahSDMInstitusi() {
         } if (dataSourceInstitusi.rw.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.rw='Nomor RW tidak boleh diisi spasi saja';
-        } if (dataSourceInstitusi.rw.match(symbol.number)) {
+        } if (dataSourceInstitusi.rw.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.rt = 'Format nomor RW diisi dengan angka';
         } if (dataSourceInstitusi.rw.match(symbol.numberValid)) {
@@ -247,13 +219,14 @@ export default function FormTambahSDMInstitusi() {
         } if (dataSourceInstitusi.rt.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh diisi spasi saja';
-        } if (dataSourceInstitusi.rt.match(symbol.number)) {
+        } if (dataSourceInstitusi.rt.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.rt = 'Format nomor RT diisi dengan angka';
         } if (dataSourceInstitusi.rt.match(symbol.numberValid)) {
             formIsValid = true;
             temporaryError.rt = "";
-        }     
+        } 
+
         setError(temporaryError);
         return formIsValid;
       }
@@ -262,8 +235,7 @@ export default function FormTambahSDMInstitusi() {
 
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
-            createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});
-            
+            createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});    
         } if (createDataInstitusi && createDataInstitusi.dataSourceInstitusiMutation && createDataInstitusi.dataSourceInstitusiMutation.dataSourceInstitusi) {
             router.push({
               pathname: '/detail/sumber-data-mustahik',
@@ -272,8 +244,7 @@ export default function FormTambahSDMInstitusi() {
               }
             })
           }
-          }
-      
+        }
         ,[createData, createDataInstitusi]
     )
 
@@ -464,7 +435,7 @@ export default function FormTambahSDMInstitusi() {
                                             setError({...error,
                                                 rw: 'Nomor RW tidak boleh diisi dengan spasi saja'
                                             });    
-                                        } else if (rw.match(symbol.number)) {
+                                        } else if (rw.match(symbol.alphabet)) {
                                             setError({...error,
                                                 rw: 'Format nomor RW diisi dengan angka'
                                             });    
@@ -496,7 +467,7 @@ export default function FormTambahSDMInstitusi() {
                                             setError({...error,
                                                 rt: 'Nomor RT tidak boleh diisi dengan spasi saja'
                                             });    
-                                        } else if (rt.match(symbol.number)) {
+                                        } else if (rt.match(symbol.alphabet)) {
                                             setError({...error,
                                                 rt: 'Format nomor RT diisi dengan angka'
                                             });    
@@ -548,7 +519,7 @@ export default function FormTambahSDMInstitusi() {
                                     setError({...error,
                                         picName:''
                                     });
-                        }
+                                }
                             }}
                             error={error.picName}
                         />

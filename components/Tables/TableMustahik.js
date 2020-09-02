@@ -10,11 +10,11 @@ const Table = ({
   buttonCaption,
   filterCaption,
   filterOptions,
+  detailPath,
   searchPlaceholder,
   itemList,
   onButtonClicked,
   onFilterPicked,
-  onDetailClicked,
   onSearchChanged,
   setMustahikData
 }) => {
@@ -44,7 +44,7 @@ const Table = ({
       <div>
         <CardList
           list={itemList}
-          onCardDetailClicked={onDetailClicked}
+          path={detailPath}
         />
       </div>
     </Container>

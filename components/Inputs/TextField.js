@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { InputContainer } from './InputStyle';
 
-export default function TextField({ label, placeholder, required, error, onChange, disabled }) {
-  const [value, setValue ] = useState(null);
+export default function TextField({ label, placeholder, required, error, onChange, disabled, defaultValue }) {
+  const [value, setValue] = useState(null);
   const onInputChange = (e) => {
     setValue(e.target.value);
     onChange(e.target.value);
   }
   return (
     <InputContainer>
-      <label className={required ? 'required' : null}> { label } </label>
+      <label className={required ? 'required' : null}> {label} </label>
       <input
         type="text"
         name={label}
@@ -18,8 +18,9 @@ export default function TextField({ label, placeholder, required, error, onChang
         required={required}
         onChange={onInputChange}
         disabled={disabled}
+        defaultValue={defaultValue}
       />
-      { error && <span className="error">{ error }</span> }
+      {error && <span className="error">{error}</span>}
     </InputContainer>
   );
 }

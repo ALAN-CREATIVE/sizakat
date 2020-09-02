@@ -80,7 +80,9 @@ exports[`Storyshots Card/Card List Default 1`] = `
         className="c3"
       >
         <a
+          href="/somewhere?id=1"
           onClick={[Function]}
+          onMouseEnter={[Function]}
           style={
             Object {
               "cursor": "pointer",
@@ -128,7 +130,9 @@ exports[`Storyshots Card/Card List Default 1`] = `
         className="c3"
       >
         <a
+          href="/somewhere?id=2"
           onClick={[Function]}
+          onMouseEnter={[Function]}
           style={
             Object {
               "cursor": "pointer",
@@ -176,7 +180,9 @@ exports[`Storyshots Card/Card List Default 1`] = `
         className="c3"
       >
         <a
+          href="/somewhere?id=3"
           onClick={[Function]}
+          onMouseEnter={[Function]}
           style={
             Object {
               "cursor": "pointer",
@@ -224,7 +230,9 @@ exports[`Storyshots Card/Card List Default 1`] = `
         className="c3"
       >
         <a
+          href="/somewhere?id=4"
           onClick={[Function]}
+          onMouseEnter={[Function]}
           style={
             Object {
               "cursor": "pointer",
@@ -272,7 +280,9 @@ exports[`Storyshots Card/Card List Default 1`] = `
         className="c3"
       >
         <a
+          href="/somewhere?id=5"
           onClick={[Function]}
+          onMouseEnter={[Function]}
           style={
             Object {
               "cursor": "pointer",

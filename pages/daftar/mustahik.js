@@ -7,7 +7,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apo
 import Navbar from '../../components/NavigationBar/NavBarWithRouter';
 import TitleBar from '../../components/Titles/TitleBar';
 import TableMustahik from '../../components/Tables/TableMustahik';
-import { resolveDataSourceName } from '../../Utils/ParserUtil';
+import { resolveDataSourceName } from '../../utils/parser-util';
 
 const INITIAL_MUSTAHIK_QUERY = gql`
   query {
@@ -110,12 +110,7 @@ const MainContent = () => {
             filterCaption={'SEMUA SUMBER DATA'}
             filterOptions={['Semua Sumber Data',]}
             itemList={dataMustahik.mustahiks.map(mustahikToCardItem)}
-            onDetailClicked={(id) => {
-              router.push({
-                pathname: '/detail/mustahik',
-                query: { id: id }
-              })
-            }}
+            detailPath={'/detail/mustahik'}
             onButtonClicked={() => router.push('/tambah/mustahik')}
             setMustahikData={(data) => setDataMustahik(data)}
           />}

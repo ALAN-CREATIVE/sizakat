@@ -19,6 +19,7 @@ const tableData = {
     'Pesantren',
     'Pekerja'
   ],
+  detailPath: '/somewhere',
   itemList: [
     {id: 1, desc: 'Warga', label: 'Lorem Ipsum'},
     {id: 2, desc: 'Warga', label: 'Sit Dolor Amet'},
@@ -31,8 +32,7 @@ const tableData = {
 const actionsData = {
   onFilterPicked: action('onFilterPicked'),
   onButtonClicked: action('onButtonClicked'),
-  onSearchChanged: action('onSearchChanged'),
-  onDetailClicked: action('onDetailClicked')
+  onSearchChanged: action('onSearchChanged')
 }
 
 export const Default = () => <Table { ...tableData } { ...actionsData } />

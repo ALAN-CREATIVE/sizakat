@@ -13,12 +13,12 @@ const CardContainer = styled.div`
   margin: 20px 0px;
 `
 
-const CardList = ({ list, onCardDetailClicked }) => {
+const CardList = ({ list, path }) => {
   return (
     <Container>
       {list.map(item => (
         <CardContainer key={item.id}>
-          <Card { ...item } onDetailClicked={onCardDetailClicked} />
+          <Card { ...item } path={path} query={`id=${item.id}`}/>
         </CardContainer>
       ))}
     </Container>

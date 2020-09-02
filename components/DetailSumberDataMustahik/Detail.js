@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useQuery } from '@apollo/client';
 import { gql } from '@apollo/client';
 import DetailField from '../Details/DetailField';
-import {resolveDataSourceName} from '../../Utils/ParserUtil';
+import {resolveDataSourceName} from '../../utils/parser-util';
 import { useRouter } from 'next/router';
 
 const QUERY_USERS = gql`
@@ -16,7 +16,7 @@ query dataSource($id: ID!){
         picName
         picKtp
         picPhone
-        picPosition
+        picWargaPosition: picPosition
         province
         regency
         subDistrict
@@ -28,7 +28,7 @@ query dataSource($id: ID!){
         picName
         picKtp
         picPhone
-        picPosition
+        picPekerjaPosition: picPosition
         profession
         location
       }
@@ -36,7 +36,7 @@ query dataSource($id: ID!){
         picName
         picKtp
         picPhone
-        picPosition
+        picInstitusiPosition: picPosition
         name
         province
         regency
@@ -59,14 +59,15 @@ export function DetailInfo() {
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.error(error);
-    console.log(error.networkError);
+    console.log(error.networkError.result.errors);
     console.log(error.graphQLErrors);
     return  [error].map(({message})=>(
       <p>{message}</p>
     ));
   }
 
-  return [data.dataSource].map(({ id, category, dataSourceDetail }) =>(
+  const {idDataSource, category, dataSourceDetail: detail} = data.dataSource
+  return (
     <>
     <Head>
       <title>Sumber Data: {resolveDataSourceName(data.dataSource)}</title>
@@ -78,33 +79,30 @@ export function DetailInfo() {
         </div>
       </div>
       <br></br>
-
-      <DetailField title={'Nama'} description={resolveDataSourceName(data.dataSource)}/><br></br>
       <DetailField title={'Kategori'} description={category}/><br></br>
-
       <div>
         {(()=>{
           switch(category){
             case 'PEKERJA':
-              return <div><DetailField title={'Lokasi'} description={dataSourceDetail.location}/><br></br></div>;
+              return <div><DetailField title={'Lokasi'} description={detail.location}/><br></br></div>;
             default:
-              return [data.dataSource].map(({ dataSourceDetail }) => (
+              return (
                 <div className="row">
                   <div className="col-md-4">
                     <p className="label">Lokasi</p>
                     <p><b>RT / RW</b></p>
-                    <p>{dataSourceDetail.rt} / {dataSourceDetail.rw}</p><br></br>
+                    <p>{detail.rt} / {detail.rw}</p><br></br>
                     <p><b>Kota</b></p>
-                    <p>{dataSourceDetail.regency}</p><br></br>
+                    <p>{detail.regency}</p><br></br>
                   </div>
                   <div className="col-md-8" id="lurah">
                     <p><b>Kelurahan / Kecamatan</b></p>
-                    <p>{dataSourceDetail.village} / {dataSourceDetail.subDistrict}</p><br></br>
+                    <p>{detail.village} / {detail.subDistrict}</p><br></br>
                     <p><b>Provinsi</b></p>
-                    <p>{dataSourceDetail.province}</p><br></br>
+                    <p>{detail.province}</p><br></br>
                   </div>
                 </div>
-              ));
+              );
           }
         })()}
       </div>
@@ -116,11 +114,23 @@ export function DetailInfo() {
       </div>
       <br></br>
 
-      <DetailField title={'Nama'} description={dataSourceDetail.picName}/><br></br>
-      <DetailField title={'Nomor KTP'} description={dataSourceDetail.picKtp}/><br></br>
-      <DetailField title={'Jabatan'} description={dataSourceDetail.picPosition}/><br></br>
-      <DetailField title={'Nomor Telepon'} description={dataSourceDetail.picPhone}/><br></br>
+      <DetailField title={'Nama'} description={detail.picName}/><br></br>
+      <DetailField title={'Nomor KTP'} description={detail.picKtp}/><br></br>
+      {(category === 'WARGA') ? (
+        <>
+          <DetailField title={'Jabatan'} description={detail.picWargaPosition}/><br></br>
+        </>
+      ) : (category === 'PEKERJA') ? (
+        <>
+          <DetailField title={'Jabatan'} description={detail.picPekerjaPosition}/><br></br>
+        </>
+      ) : (
+        <>
+          <DetailField title={'Jabatan'} description={detail.picInstitusiPosition}/><br></br>
+        </>
+      )}
+      <DetailField title={'Nomor Telepon'} description={detail.picPhone}/><br></br>
     </div>
     </>
-  ));
+  );
 }

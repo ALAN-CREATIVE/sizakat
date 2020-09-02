@@ -5,6 +5,7 @@ import NumberField from '../Inputs/NumberField'
 import TransaksiInput from './TransaksiInput'
 import Button from '../Buttons/Button'
 import { useRouter } from 'next/router';
+import Review from './Review';
 
 
 const ADD_MUZAKKI = gql`
@@ -24,26 +25,6 @@ const ADD_MUZAKKI = gql`
     }
 `;
 
-const ADD_TRANSAKSI = gql`
-    mutation transactionMutation($input: TransactionMutationInput!){
-        transactionMutation(input:$input) {
-            transaction {
-                id
-                paymentType
-                goodsDeliveryType
-                pickUpAddress
-                transferReceipt
-                paymentConfirmation
-                goodsConfirmation
-            }
-            errors {
-                field
-                messages
-            }
-        }
-    }
-  
-`
 
 const ADD_TRANSAKSI_ZAKAT = gql`
     mutation zakatTransactionMutation($input: ZakatTransactionMutationInput!){
@@ -71,7 +52,7 @@ const ADD_TRANSAKSI_ZAKAT = gql`
   
 `
 
-export default function TambahTransaksiForm() {
+export default function TambahMuzakki({ transactionId }) {
     const router = useRouter();
     const [transaksi, setTransaksi] = useState([{jenis:"", nominal:0, satuan:""}])
 
@@ -128,12 +109,6 @@ export default function TambahTransaksiForm() {
         }
     });
 
-    const [createTransaksi, {data: transaksiData, error: errorTransaksi}] = useMutation(ADD_TRANSAKSI, {
-        onCompleted: (transaksiData) => {
-            console.log(transaksiData)
-        }
-    });
-
     const [createZakat, {data: zakatData, error: errorZakat}] = useMutation(ADD_TRANSAKSI_ZAKAT, {
         onCompleted: (zakatData) => {
             console.log(zakatData)
@@ -147,6 +122,33 @@ export default function TambahTransaksiForm() {
         }
     });
 
+    const [isAddMuzakki, setIsAddMuzakki] = useState(false)
+    const addMuzakki = () => {
+        submitForm()
+        setIsAddMuzakki(true)
+    }
+
+    useEffect(() => {
+        if (isSubmited && isAddMuzakki ) {
+            alert("Submit berhasil");
+            //router.push(`/buat/transaksi?page=0&transaction=${transactionId}`, undefined, { shallow: true })
+        }
+    })
+
+    const [isNextPage, setIsNextPage] = useState(false)
+    const nextPage= () => {
+        submitForm()
+        setIsNextPage(true);
+    }
+
+    useEffect(() => {
+        console.log(isSubmited)
+        if (isSubmited && isNextPage ) {
+            alert("Submit berhasil");
+            router.push(`/buat/transaksi?page=1&transaction=${transactionId}`, undefined, { shallow: true })
+        }
+    })
+
     const submitForm= ()=> {
         if (submitCheck()){
             createMuzakki({
@@ -156,36 +158,15 @@ export default function TambahTransaksiForm() {
                     }
                 }
             })
-            createTransaksi({
-                variables:{
-                    input: { 
-
-                    }
-                }
-            })
         } else {
             alert("Submit gagal");
         }
     }
-
-
-    const nextPage= () => {
-        submitForm()
-        if (isSubmited) {
-            alert("Submit berhasil");
-            router.push('/buat/transaksi?page=1', undefined, { shallow: true })
-        }
-        
-    }
-
     const [isExecuted, setIsExecuted] = useState(true)
     useEffect(() => {
         if (isExecuted && muzakkiData && 
             muzakkiData.muzakkiMutation && 
-            muzakkiData.muzakkiMutation.muzakki && 
-            transaksiData && 
-            transaksiData.transactionMutation && 
-            transaksiData.transactionMutation.transaction){
+            muzakkiData.muzakkiMutation.muzakki){
                 console.log ("MASUK")
                 transaksi.map((trans) => 
                     createZakat({
@@ -194,7 +175,7 @@ export default function TambahTransaksiForm() {
                                 value : trans.nominal,
                                 zakatType : zakatTypeId(trans.jenis),
                                 muzakki : muzakkiData.muzakkiMutation.muzakki.id,
-                                transaction : transaksiData.transactionMutation.transaction.id
+                                transaction :router.query.transaction
                             }
                         }
                     })
@@ -244,11 +225,13 @@ export default function TambahTransaksiForm() {
     }
 
 
-    console.log(transaksi)
+    console.log(zakatData)
+    console.log(errorZakat)
     console.log(muzakkiData)
-    //console.log(zakatData)
+    console.log(transactionId)
     return(
         <main>
+            <Review transactionId = {transactionId} />
             <div className="formContainer">
                 <h2 className="subtitle">Data Muzakki</h2><br></br>
                 <div className="formSection">
@@ -295,7 +278,7 @@ export default function TambahTransaksiForm() {
                         <Button label='+' type="round" onClick={addTransaksi} /> 
                     </div>
                 </div><br></br>
-                <Button label="+ SIMPAN DAN TAMBAH MUZAKKI BARU" type="tertiary" onClick={submitForm}/> <br></br>
+                <Button label="+ SIMPAN DAN TAMBAH MUZAKKI BARU" type="tertiary" onClick={addMuzakki}/> <br></br>
                 <Button label="LANJUT KE PEMBAYARAN >>" type="primary" onClick={nextPage}/> <br></br>
             </div>
         </main>

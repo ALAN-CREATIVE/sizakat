@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import NavigationBar from '../.././components/NavigationBar/NavigationBar';
-import TambahTransaksiForm from '../.././components/Forms/TambahTransaksiForm';
+import TambahTransaksiForm from '../.././components/TambahTransaksi/TambahTransaksiForm';
 import TitleFlow from '../../components/Titles/TitleFlow';
 import styled from 'styled-components';
 

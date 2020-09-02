@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { gql, useMutation } from '@apollo/client';
-import NumberField from '../Inputs/NumberField';
 import TextField from '../Inputs/TextField';
 import Button from '../Buttons/Button';
+import { useRouter } from 'next/router';
 
 import { TambahSDMContainer } from './TambahSDMStyle';
 
@@ -13,6 +13,7 @@ const ADD_SDM=gql`
                 id
                 category
             }
+            errors { field. messages }
         }
     }
 `;
@@ -33,7 +34,7 @@ const ADD_SDM_WARGA=gql`
                 rw
                 dataSource{id}
             }
-            errors { messages }
+            errors { field, messages }
         }
     }
 `;
@@ -89,39 +90,56 @@ export default function FormTambahSDMWarga() {
     const handleSubmit = () => {
         let formIsValid = true;
         let temporaryError = {};
+        var alphabet = new RegExp(/^[a-zA-Z]+$/);
+        var plus = new RegExp(/^\+?[0-9]+$/);
+        var space = new RegExp(/\s/g);
     
-        if (dataSourceWarga.picName.length == 0) {
+        if (dataSourceWarga.picName.length == 0 || dataSourceWarga.picName.match(space)) {
             formIsValid = false;
             temporaryError.picName='Nama penanggung jawab tidak boleh kosong';
-        } if (dataSourceWarga.picKtp.length < 14 || dataSourceWarga.picKtp.length > 14) {
+        } if (dataSourceWarga.picKtp.length < 14 || dataSourceWarga.picKtp.length > 14 || dataSourceWarga.picKtp.match(space)) {
             formIsValid = false;
             temporaryError.picKtp='Format KTP harus berupa 14 karakter angka';
-        } if (dataSourceWarga.picPhone.length == 0) {
+        } if (dataSourceWarga.picKtp.match(alphabet)) {
+            formIsValid = false;
+            temporaryError.picKtp='Format KTP harus berupa angka';
+        } if (dataSourceWarga.picPhone.length == 0 || dataSourceWarga.picPhone.match(space)) {
             formIsValid = false;
             temporaryError.picPhone='Nomor telepon tidak boleh kosong';
-        } if (dataSourceWarga.picPosition.length == 0) {
+        } if (dataSourceWarga.picPhone.match(alphabet)) {
+            formIsValid = false;
+            temporaryError.picPhone='Format nomor telepon harus berupa angka';
+        } if (dataSourceWarga.picPhone.match(plus)) {
+            formIsValid = false;
+            temporaryError.phone='Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
+        } if (dataSourceWarga.picPosition.length == 0 || dataSourceWarga.picPosition.match(space)) {
             formIsValid = false;
             temporaryError.picPosition='Nama jabatan tidak boleh kosong';
-        } if (dataSourceWarga.province.length == 0) {
+        } if (dataSourceWarga.province.length == 0 || dataSourceWarga.province.match(space)) {
             formIsValid = false;
             temporaryError.province='Nama provinsi tidak boleh kosong';
-        } if (dataSourceWarga.regency.length == 0) {
+        } if (dataSourceWarga.regency.length == 0 || dataSourceWarga.regency.match(space)) {
             formIsValid = false;
             temporaryError.regency='Nama kota/kabupaten tidak boleh kosong';
-        } if (dataSourceWarga.subDistrict.length == 0) {
+        } if (dataSourceWarga.subDistrict.length == 0 || dataSourceWarga.subDistrict.match(space)) {
             formIsValid = false;
             temporaryError.subDistrict='Nama kecamatan tidak boleh kosong';
-        } if (dataSourceWarga.village.length == 0) {
+        } if (dataSourceWarga.village.length == 0 || dataSourceWarga.village.match(space)) {
             formIsValid = false;
             temporaryError.village='Nama kelurahan tidak boleh kosong';
-        } if (dataSourceWarga.rw.length == 0) {
+        } if (dataSourceWarga.rw.length == 0 || dataSourceWarga.rw.match(space)) {
             formIsValid = false;
             temporaryError.rw='Nomor RW tidak boleh kosong';
-        } if (dataSourceWarga.rt.length == 0) {
+        } if (dataSourceWarga.rw.match(alphabet)) {
+            formIsValid = false;
+            temporaryError.rw='Format nomor RW harus berupa angka';
+        } if (dataSourceWarga.rt.length == 0 || dataSourceWarga.rt.match(space)) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh kosong';
+        } if (dataSourceWarga.rt.match(alphabet)) {
+            formIsValid = false;
+            temporaryError.rt='Format nomor RT harus berupa angka';
         }
-
         setError(temporaryError);
         return formIsValid;
       }
@@ -167,49 +185,81 @@ export default function FormTambahSDMWarga() {
                             required={ true }
                             onChange={provinsi => {
                                 setDataSourceWarga({...dataSourceWarga, province: provinsi});
-                                setError({...error,
-                                    province: provinsi = provinsi.length < 1 ? 'Nama provinsi tidak boleh kosong' : ''});
+                                var space = new RegExp(/\s/g);
+                                if (provinsi.length < 1 || provinsi.match(space)){
+                                    setError({...error,
+                                        province: 'Nama provinsi tidak boleh kosong'
+                                    });
+                                } else {
+                                    setError({...error,
+                                        province:''
+                                    });
+                                }
                             }}
                             error={error.province}
                         />
                     </div>
                     <div className="form" id="alamat">
                         <div className="row">
-                            <div className="col" id="kota">
+                            <div className="col col-12 col-sm-4" id="kota">
                                 <TextField
                                     label={ 'Kota/Kabupaten' }
                                     placeholder={ 'Nama Kota/Kabupaten' }
                                     required={ true }
                                     onChange={kota => {
                                         setDataSourceWarga({...dataSourceWarga, regency: kota});
-                                        setError({...error,
-                                            regency: kota = kota.length < 1 ? 'Nama kota tidak boleh kosong' : ''});
+                                        var space = new RegExp(/\s/g);
+                                        if (kota.length < 1 || kota.match(space)){
+                                            setError({...error,
+                                                regency: 'Nama kota tidak boleh kosong'
+                                            });
+                                        } else {
+                                            setError({...error,
+                                                regency:''
+                                            });
+                                        }
                                     }}
                                     error={error.regency}
                                 />
                             </div>
-                            <div className="col" id="kecamatan">
+                            <div className="col col-12 col-sm-4" id="kecamatan">
                                 <TextField
                                     label={ 'Kecamatan' }
                                     placeholder={ 'Nama Kecamatan' }
                                     required={ true }
                                     onChange={kecamatan => {
                                         setDataSourceWarga({...dataSourceWarga, subDistrict: kecamatan});
-                                        setError({...error,
-                                            subDistrict: kecamatan = kecamatan.length < 1 ? 'Nama kecamatan tidak boleh kosong' : ''});
+                                        var space = new RegExp(/\s/g);
+                                        if (kecamatan.length < 1 || kecamatan.match(space)){
+                                            setError({...error,
+                                                subDistrict: 'Nama kecamatan tidak boleh kosong'
+                                            });
+                                        } else {
+                                            setError({...error,
+                                                subDistrict:''
+                                            });
+                                        }
                                     }}
                                     error={error.subDistrict}
                                 />
                             </div>
-                            <div className="col" id="kelurahan">
+                            <div className="col col-12 col-sm-4" id="kelurahan">
                                 <TextField
                                     label={ 'Kelurahan' }
                                     placeholder={ 'Nama Kelurahan' }
                                     required={ true }
                                     onChange={kelurahan => {
                                         setDataSourceWarga({...dataSourceWarga, village: kelurahan});
-                                        setError({...error,
-                                            village: kelurahan = kelurahan.length < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
+                                        var space = new RegExp(/\s/g);
+                                        if (kelurahan.length < 1 || kelurahan.match(space)){
+                                            setError({...error,
+                                                village: 'Nama kelurahan tidak boleh kosong'
+                                            });
+                                        } else {
+                                            setError({...error,
+                                                village:''
+                                            });
+                                        }
                                     }}
                                     error={error.village}
                                 />
@@ -218,28 +268,56 @@ export default function FormTambahSDMWarga() {
                     </div>
                     <div className="form" id="alamat-detail">
                         <div className="row">
-                            <div className="col" id="rw">
-                                <NumberField
+                            <div className="col col-12 col-sm-4" id="rw">
+                                <TextField
                                     label={ 'RW' }
                                     placeholder={ 'Nomor RW' }
                                     required={ true }
                                     onChange={rw => {
                                         setDataSourceWarga({...dataSourceWarga, rw: rw});
-                                        setError({...error,
-                                            rw: rw = rw < 1 ? 'Nomor RW tidak boleh kosong' : ''});
+                                        var alphabet = new RegExp(/^[a-zA-Z]+$/);
+                                        var space = new RegExp(/\s/g);
+                                        if (rw < 1 || rw.match(space)){
+                                            setError({...error,
+                                                rw: 'Nomor RW tidak boleh kosong'
+                                            });
+                                        } else if (rw.match(alphabet)){
+                                            setError({...error,
+                                                rw: 'Format nomor RW harus berupa angka'
+                                            });
+                                        } else {
+                                            setError({...error,
+                                                rw:''
+                                            });
+                                        }
                                     }}
                                     error={error.rw}
                                 />
                             </div>
-                            <div className="col" id="rt">
-                                <NumberField
+                            <div className="col col-12 col-sm-4" id="rt">
+                                <TextField
                                     label={ 'RT' }
                                     placeholder={ 'Nomor RT' }
                                     required={ true }
                                     onChange={rt => {
                                         setDataSourceWarga({...dataSourceWarga, rt: rt});
-                                        setError({...error,
-                                            rt: rt = rt < 1 ? 'Nama kelurahan tidak boleh kosong' : ''});
+                                        var alphabet = new RegExp(/^[a-zA-Z]+$/);
+                                        var space = new RegExp(/\s/g);
+                                        var alphabet = new RegExp(/^[a-zA-Z]+$/);
+                                        var space = new RegExp(/\s/g);
+                                        if (rt < 1 || rt.match(space)){
+                                            setError({...error,
+                                                rt: 'Nomor RT tidak boleh kosong'
+                                            });
+                                        } else if (rt.match(alphabet)){
+                                            setError({...error,
+                                                rt: 'Format nomor RT harus berupa angka'
+                                            });
+                                        } else {
+                                            setError({...error,
+                                                rt:''
+                                            });
+                                        }                                    
                                     }}
                                     error={error.rt}
                                 />
@@ -255,21 +333,42 @@ export default function FormTambahSDMWarga() {
                             required={ true }
                             onChange={penanggungjawab => {
                                 setDataSourceWarga({...dataSourceWarga, picName: penanggungjawab});
-                                setError({...error,
-                                    picName: penanggungjawab = penanggungjawab.length < 1 ? 'Nama penanggung jawab tidak boleh kosong' : ''});
+                                var space = new RegExp(/\s/g);
+                                if (penanggungjawab.length < 1 || penanggungjawab.match(space)){
+                                    setError({...error,
+                                        picName: 'Nama penanggung jawab tidak boleh kosong'
+                                    });
+                                } else {
+                                    setError({...error,
+                                        picName:''
+                                    });
+                                }
                             }}
                             error={error.picName}
                         />
                     </div>
                     <div className="form" id="no-ktp">
-                        <NumberField
+                        <TextField
                             label={ 'No. KTP' }
                             placeholder={ 'Terdiri dari 14 karakter angka' }
                             required={ true }
                             onChange={noKTP => {
                                 setDataSourceWarga({...dataSourceWarga, picKtp: noKTP});
-                                setError({...error,
-                                    picKtp: noKTP = noKTP.length < 14 || noKTP.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''});
+                                var alphabet = new RegExp(/^[a-zA-Z]+$/);
+                                var space = new RegExp(/\s/g);
+                                if (noKTP.length < 14 || noKTP.length > 14 || noKTP.match(space)){
+                                    setError({...error,
+                                        picKtp: 'Format KTP harus berupa 14 karakter angka'
+                                    });
+                                } else if (noKTP.match(alphabet)){
+                                    setError({...error,
+                                        picKtp: 'Format KTP harus berupa angka'
+                                    });
+                                } else {
+                                    setError({...error,
+                                        picKtp:''
+                                    });
+                                }
                             }}
                             error={error.picKtp}
                         />
@@ -281,25 +380,53 @@ export default function FormTambahSDMWarga() {
                             required={ true }
                             onChange={jabatan => {
                                 setDataSourceWarga({...dataSourceWarga, picPosition: jabatan});
-                                setError({...error,
-                                    picPosition: jabatan = jabatan.length < 1 ? 'Nama jabatan tidak boleh kosong' : ''});
+                                var space = new RegExp(/\s/g);
+                                if (jabatan.length < 1 || jabatan.match(space)){
+                                    setError({...error,
+                                        picPosition: 'Nama jabatan tidak boleh kosong'
+                                    });
+                                } else {
+                                    setError({...error,
+                                        picPosition:''
+                                    });
+                                }
                             }}
                             error={error.picPosition}
                         />
                     </div>
                     <div className="form" id="no-tlp">
-                        <NumberField
+                        <TextField
                             label={ 'No. Telepon' }
                             placeholder={ 'Terdiri dari angka' }
                             required={ true }
                             onChange={noHp => {
                                 setDataSourceWarga({...dataSourceWarga, picPhone: noHp});
-                                try {
-                                    parseInt(noHp,10);
-                                  } catch(error) {
+                                var pattern = new RegExp(/^[0-9]+$/);
+                                var alphabet = new RegExp(/^[a-zA-Z]+$/);
+                                var plus = new RegExp(/^\+?[0-9]+$/);
+                                var space = new RegExp(/\s/g);
+                                if (noHp.match(alphabet)) {
                                     setError ({...error,
-                                      picPhone:'Format HP harus berupa angka'});
-                                  }
+                                        picPhone:'Format nomor telepon harus berupa angka'
+                                    });
+                                } else if(noHp.match(pattern)) {
+                                    setError ({...error,
+                                        phone:''
+                                    });
+                                } else if(noHp.match(plus)) {
+                                    setError ({...error,
+                                        picPhone:'Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)'
+                                    });
+                                } else if (noHp.match(space)) {
+                                    setError ({...error,
+                                        picPhone:'Nomor telepon tidak boleh kosong'
+                                    });
+                                }
+                                else {
+                                    setError ({...error,
+                                        phone:''
+                                    });
+                                }
                             }} 
                             error={error.picPhone}
                         />

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { gql, useMutation } from '@apollo/client';
-import NumberField from '../Inputs/NumberField';
 import TextField from '../Inputs/TextField';
 import Button from '..//Buttons/Button';
+import { useRouter } from 'next/router';
 
 import { TambahSDMContainer } from './TambahSDMStyle';
 
@@ -13,6 +13,7 @@ const ADD_SDM=gql`
                 id
                 category
             }
+            errors { field, messages }
         }
     }
 `;
@@ -35,7 +36,7 @@ const ADD_SDM_INSTITUSI=gql`
                 address
                 dataSource{id}
             }
-            errors { messages }
+            errors { field, messages }
         }
     }
 `;
@@ -69,8 +70,33 @@ export default function FormTambahSDMInstitusi() {
         rw: '',
     }); 
 
-    const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
-    const [createSDMInstitusi, { data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI);
+    const [createSDM, { 
+        data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM, {
+            onCompleted: (createData) => {
+              console.log(createData);
+              if (createData.dataSourceMutation.errors.length != 0) {
+                alert("Submit gagal");
+                console.log(createData.dataSourceMutation.errors[0].messages[0]);
+              } else {
+                alert("Submit berhasil");
+                console.log(createData.dataSourceMutation.dataSource);
+              }
+            },
+        });
+
+    const [createSDMInstitusi, { 
+        data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI, {
+            onCompleted: (createDataInstitusi) => {
+              console.log(createDataInstitusi);
+              if (createDataInstitusi.dataSourceInstitusiMutation.errors.length != 0) {
+                alert("Submit gagal");
+                console.log(createDataInstitusi.dataSourceInstitusiMutation.errors[0].messages[0]);
+              } else {
+                alert("Submit berhasil");
+                console.log(createDataInstitusi.dataSourceInstitusiMutation.dataSourceInstitusi);
+              }
+            },
+        });
     
     const submitForm = () => {
         console.log(handleSubmit());
@@ -82,79 +108,173 @@ export default function FormTambahSDMInstitusi() {
                     }
                 }
             });
-          console.log(dataSourceInstitusi);
-          alert("Submit berhasil");
+        //   console.log(dataSourceInstitusi);
+        //   alert("Submit berhasil");
         } else {
           console.log(dataSourceInstitusi);
           alert("Submit gagal");
         }
     }
-
+    const symbol = {
+        number: new RegExp(/^[0-9]+$/),
+        alphabet: new RegExp(/[a-zA-Z]+/),
+        onlySpace: new RegExp(/\s/g),
+        namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+        stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+        numberValid: new RegExp(/^[0][0-9]+$/),
+        onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+        phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/),
+    };
+    
     const handleSubmit = () => {
         let formIsValid = true;
         let temporaryError = {};
-        var alphabet = new RegExp(/^[a-zA-Z]+$/);
-        var plus = new RegExp(/^\+?[0-9]+$/);
-        var space = new RegExp(/\s/g);
+        // var alphabet = new RegExp(/^[a-zA-Z]+$/);
+        // var plus = new RegExp(/^\+?[0-9]+$/);
+        // var space = new RegExp(/\s/g);
     
-        if (dataSourceInstitusi.picName.length == 0 || dataSourceInstitusi.picName.match(space)) {
+        if (dataSourceInstitusi.picName.length == 0) {
             formIsValid = false;
             temporaryError.picName='Nama penanggung jawab tidak boleh kosong';
-        } if (dataSourceInstitusi.picKtp.length < 14 || dataSourceInstitusi.picKtp.length > 14 || dataSourceInstitusi.picKtp.match(space)) {
+        } if (dataSourceInstitusi.picName.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.picName='Nama penanggung jawab tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.picName.match(symbol.namaLengkapValid)) {
+            formIsValid = true;
+            temporaryError.picName = "";
+        } 
+        
+        if (dataSourceInstitusi.picKtp.length < 14 || dataSourceInstitusi.picKtp.length > 14) {
             formIsValid = false;
             temporaryError.picKtp='Format KTP harus berupa 14 karakter angka';
-        } if (dataSourceInstitusi.picKtp.match(alphabet)) {
+        } if (dataSourceInstitusi.picKtp.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.picKtp='Nomor KTP tidak boleh diisi dengan spasi saja';
+        } if (dataSourceInstitusi.picKtp.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.picKtp='Format KTP harus berupa angka';
-        } if (dataSourceInstitusi.picPhone.length == 0 || dataSourceInstitusi.picPhone.match(space)) {
-            formIsValid = false;
-            temporaryError.picPhone='Nomor telepon tidak boleh kosong';
-        } if (dataSourceInstitusi.picPhone.match(alphabet)) {
+        } if (dataSourceInstitusi.picKtp.match(symbol.number)) {
+            formIsValid = true;
+            temporaryError.picKtp='';
+        } 
+        
+        if (dataSourceInstitusi.picPhone.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.picPhone='Format nomor telepon harus berupa angka';
-        } if (dataSourceInstitusi.picPhone.match(plus)) {
+        } if (dataSourceInstitusi.picPhone.match(symbol.phoneNumberWithSymbol) || dataSourceInstitusi.picPhone.match(symbol.onlySymbol)) {
             formIsValid = false;
-            temporaryError.phone='Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
-        } if (dataSourceInstitusi.name.length == 0 || dataSourceInstitusi.name.match(space)) {
+            temporaryError.picPhone = 'Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
+        } if (dataSourceInstitusi.picPhone.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.phone = 'No HP tidak boleh diisi dengan spasi saja';
+        } if (dataSourceInstitusi.picPhone.match(symbol.number)) {
+            formIsValid = true;
+            temporaryError.picPhone = "";
+        }
+
+        if (dataSourceInstitusi.name.length == 0) {
             formIsValid = false;
             temporaryError.name='Nama institusi tidak boleh kosong';
-        } if (dataSourceInstitusi.province.length == 0 || dataSourceInstitusi.province.match(space)) {
+        } if (dataSourceInstitusi.name.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.name='Nama institusi tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.name.match(symbol.namaLengkapValid)) {
+            formIsValid = true;
+            temporaryError.name = "";
+        } 
+
+        if (dataSourceInstitusi.province.length == 0) {
             formIsValid = false;
             temporaryError.province='Nama provinsi tidak boleh kosong';
-        } if (dataSourceInstitusi.regency.length == 0 || dataSourceInstitusi.regency.match(space)) {
+        } if (dataSourceInstitusi.province.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.province='Nama provinsi tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.province.match(symbol.stringnumberValid)) {
+            formIsValid = true;
+            temporaryError.province = "";
+        } 
+
+        if (dataSourceInstitusi.regency.length == 0) {
             formIsValid = false;
             temporaryError.regency='Nama kota/kabupaten tidak boleh kosong';
-        } if (dataSourceInstitusi.subDistrict.length == 0 || dataSourceInstitusi.subDistrict.match(space)) {
+        } if (dataSourceInstitusi.regency.match(symbol.onlySpace)) {
             formIsValid = false;
-            temporaryError.subDistrict='Nama kecamatan tidak boleh kosong';
-        } if (dataSourceInstitusi.village.length == 0 || dataSourceInstitusi.village.match(space)) {
+            temporaryError.regency='Nama kota/kabupaten tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.regency.match(symbol.stringnumberValid)) {
+            formIsValid = true;
+            temporaryError.regency = "";
+        } 
+
+        if (dataSourceInstitusi.subDistrict.length == 0) {
+            formIsValid = false;
+            temporaryError.subDistrict='Nama kecamatann tidak boleh kosong';
+        } if (dataSourceInstitusi.subDistrict.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.subDistrict='Nama kecamatan tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.subDistrict.match(symbol.stringnumberValid)) {
+            formIsValid = true;
+            temporaryError.subDistrict = "";
+        } 
+
+        if (dataSourceInstitusi.village.length == 0) {
             formIsValid = false;
             temporaryError.village='Nama kelurahan tidak boleh kosong';
-        } if (dataSourceInstitusi.rw.length == 0 || dataSourceInstitusi.rw.match(space)) {
+        } if (dataSourceInstitusi.village.match(symbol.onlySpace)) {
+            formIsValid = false;
+            temporaryError.village='Nama kelurahan tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.village.match(symbol.stringnumberValid)) {
+            formIsValid = true;
+            temporaryError.village = "";
+        } 
+
+        if (dataSourceInstitusi.rw.length == 0) {
             formIsValid = false;
             temporaryError.rw='Nomor RW tidak boleh kosong';
-        } if (dataSourceInstitusi.rw.match(alphabet)) {
+        } if (dataSourceInstitusi.rw.match(symbol.onlySpace)) {
             formIsValid = false;
-            temporaryError.rw='Format nomor RW harus berupa angka';
-        } if (dataSourceInstitusi.rt.length == 0 || dataSourceInstitusi.rt.match(space)) {
+            temporaryError.rw='Nomor RW tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.rw.match(symbol.number)) {
+            formIsValid = false;
+            temporaryError.rt = 'Format nomor RW diisi dengan angka';
+        } if (dataSourceInstitusi.rw.match(symbol.numberValid)) {
+            formIsValid = true;
+            temporaryError.rw = "";
+        } 
+
+        if (dataSourceInstitusi.rt.length == 0) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh kosong';
-        } if (dataSourceInstitusi.rt.match(alphabet)) {
+        } if (dataSourceInstitusi.rt.match(symbol.onlySpace)) {
             formIsValid = false;
-            temporaryError.rt='Format nomor RT harus berupa angka';
-        }
-    
+            temporaryError.rt='Nomor RT tidak boleh diisi spasi saja';
+        } if (dataSourceInstitusi.rt.match(symbol.number)) {
+            formIsValid = false;
+            temporaryError.rt = 'Format nomor RT diisi dengan angka';
+        } if (dataSourceInstitusi.rt.match(symbol.numberValid)) {
+            formIsValid = true;
+            temporaryError.rt = "";
+        }     
         setError(temporaryError);
         return formIsValid;
       }
     
-    
+    const router = useRouter();
+
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
             createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});
-            }
-        }
-        ,[createData]
+            
+        } if (createDataInstitusi && createDataInstitusi.dataSourceInstitusiMutation && createDataInstitusi.dataSourceInstitusiMutation.dataSourceInstitusi) {
+            router.push({
+              pathname: '/detail/sumber-data-mustahik',
+              query: {
+                id: createData.dataSourceMutation.dataSource.id
+              }
+            })
+          }
+          }
+      
+        ,[createData, createDataInstitusi]
     )
 
     if(errorCreateInstitusi) {
@@ -190,8 +310,15 @@ export default function FormTambahSDMInstitusi() {
                             required={ true }
                             onChange={institusi => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, name: institusi});
-                                var space = new RegExp(/\s/g);
-                                if (institusi.length == 0  || institusi.match(space)) {
+                                if (institusi.match(symbol.stringnumberValid)){
+                                    setError({ ...error, 
+                                        name: ""
+                                    })
+                                } else if (institusi.match(symbol.onlySpace)) {
+                                    setError({...error,
+                                        name: 'Nama institusi tidak boleh diisi dengan spasi saja'
+                                    });    
+                                } else if (institusi.length < 1) {
                                     setError({...error,
                                         name: 'Nama institusi tidak boleh kosong'
                                     });
@@ -211,8 +338,15 @@ export default function FormTambahSDMInstitusi() {
                             required={ true }
                             onChange={provinsi => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, province: provinsi});
-                                var space = new RegExp(/\s/g);
-                                if (provinsi.length < 1 || provinsi.match(space)){
+                                if (provinsi.match(symbol.stringnumberValid)){
+                                    setError({ ...error, 
+                                        province: ""
+                                    })
+                                } else if (provinsi.match(symbol.onlySpace)) {
+                                    setError({...error,
+                                        province: 'Nama provinsi tidak boleh diisi dengan spasi saja'
+                                    });    
+                                } else if (provinsi.length < 1) {
                                     setError({...error,
                                         province: 'Nama provinsi tidak boleh kosong'
                                     });
@@ -220,7 +354,7 @@ export default function FormTambahSDMInstitusi() {
                                     setError({...error,
                                         province:''
                                     });
-                                }
+                                }                            
                             }}
                             error={error.province}
                         />
@@ -234,8 +368,15 @@ export default function FormTambahSDMInstitusi() {
                                     required={ true }
                                     onChange={kota => {
                                         setDataSourceInstitusi({...dataSourceInstitusi, regency: kota});
-                                        var space = new RegExp(/\s/g);
-                                        if (kota.length < 1 || kota.match(space)){
+                                        if (kota.match(symbol.stringnumberValid)){
+                                            setError({ ...error, 
+                                                regency: ""
+                                            })
+                                        } else if (kota.match(symbol.onlySpace)) {
+                                            setError({...error,
+                                                regency: 'Nama kota tidak boleh diisi dengan spasi saja'
+                                            });    
+                                        } else if (kota.length < 1) {
                                             setError({...error,
                                                 regency: 'Nama kota tidak boleh kosong'
                                             });
@@ -243,7 +384,7 @@ export default function FormTambahSDMInstitusi() {
                                             setError({...error,
                                                 regency:''
                                             });
-                                        }
+                                        }                                    
                                     }}
                                     error={error.regency}
                                 />
@@ -255,8 +396,15 @@ export default function FormTambahSDMInstitusi() {
                                     required={ true }
                                     onChange={kecamatan => {
                                         setDataSourceInstitusi({...dataSourceInstitusi, subDistrict: kecamatan});
-                                        var space = new RegExp(/\s/g);
-                                        if (kecamatan.length < 1 || kecamatan.match(space)){
+                                        if (kecamatan.match(symbol.stringnumberValid)){
+                                            setError({ ...error, 
+                                                subDistrict: ""
+                                            })
+                                        } else if (kecamatan.match(symbol.onlySpace)) {
+                                            setError({...error,
+                                                subDistrict: 'Nama kecamatan tidak boleh diisi dengan spasi saja'
+                                            });    
+                                        } else if (kecamatan.length < 1) {
                                             setError({...error,
                                                 subDistrict: 'Nama kecamatan tidak boleh kosong'
                                             });
@@ -264,7 +412,7 @@ export default function FormTambahSDMInstitusi() {
                                             setError({...error,
                                                 subDistrict:''
                                             });
-                                        }
+                                        }                                    
                                     }}
                                     error={error.subDistrict}
                                 />
@@ -276,8 +424,15 @@ export default function FormTambahSDMInstitusi() {
                                     required={ true }
                                     onChange={kelurahan => {
                                         setDataSourceInstitusi({...dataSourceInstitusi, village: kelurahan});
-                                        var space = new RegExp(/\s/g);
-                                        if (kelurahan.length < 1 || kelurahan.match(space)){
+                                        if (kelurahan.match(symbol.stringnumberValid)){
+                                            setError({ ...error, 
+                                                village: ""
+                                            })
+                                        } else if (kelurahan.match(symbol.onlySpace)) {
+                                            setError({...error,
+                                                village: 'Nama kelurahan tidak boleh diisi dengan spasi saja'
+                                            });    
+                                        } else if (kelurahan.length < 1) {
                                             setError({...error,
                                                 village: 'Nama kelurahan tidak boleh kosong'
                                             });
@@ -285,7 +440,7 @@ export default function FormTambahSDMInstitusi() {
                                             setError({...error,
                                                 village:''
                                             });
-                                        }
+                                        }                                    
                                     }}
                                     error={error.village}
                                 />
@@ -295,53 +450,66 @@ export default function FormTambahSDMInstitusi() {
                     <div className="form" id="alamat-detail">
                         <div className="row">
                             <div className="col col-12 col-sm-4" id="rw">
-                                <NumberField
+                                <TextField
                                     label={ 'RW' }
                                     placeholder={ 'Nomor RW' }
                                     required={ true }
                                     onChange={rw => {
                                         setDataSourceInstitusi({...dataSourceInstitusi, rw: rw});
-                                        var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                                        var space = new RegExp(/\s/g);
-                                        if (rw < 1 || rw.match(space)){
+                                        if (rw.match(symbol.numberValid)){
+                                            setError({ ...error, 
+                                                rt: ""
+                                            })
+                                        } else if (rw.match(symbol.onlySpace)) {
+                                            setError({...error,
+                                                rw: 'Nomor RW tidak boleh diisi dengan spasi saja'
+                                            });    
+                                        } else if (rw.match(symbol.number)) {
+                                            setError({...error,
+                                                rw: 'Format nomor RW diisi dengan angka'
+                                            });    
+                                        } else if (rw.length < 1) {
                                             setError({...error,
                                                 rw: 'Nomor RW tidak boleh kosong'
-                                            });
-                                        } else if (rw.match(alphabet)){
-                                            setError({...error,
-                                                rw: 'Format nomor RW harus berupa angka'
                                             });
                                         } else {
                                             setError({...error,
                                                 rw:''
                                             });
-                                        }
+                                        }                                    
                                     }}
                                     error={error.rw}
                                 />
                             </div>
                             <div className="col col-12 col-sm-4" id="rt">
-                                <NumberField
+                                <TextField
                                     label={ 'RT' }
                                     placeholder={ 'Nomor RT' }
                                     required={ true }
                                     onChange={rt => {
                                         setDataSourceInstitusi({...dataSourceInstitusi, rt: rt});
-                                        var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                                        var space = new RegExp(/\s/g);
-                                        if (rt < 1 || rt.match(space)){
+                                        if (rt.match(symbol.numberValid)){
+                                            setError({ ...error, 
+                                                rt: ""
+                                            })
+                                        } else if (rt.match(symbol.onlySpace)) {
+                                            setError({...error,
+                                                rt: 'Nomor RT tidak boleh diisi dengan spasi saja'
+                                            });    
+                                        } else if (rt.match(symbol.number)) {
+                                            setError({...error,
+                                                rt: 'Format nomor RT diisi dengan angka'
+                                            });    
+                                        } else if (rt.length < 1) {
                                             setError({...error,
                                                 rt: 'Nomor RT tidak boleh kosong'
-                                            });
-                                        } else if (rt.match(alphabet)){
-                                            setError({...error,
-                                                rt: 'Format nomor RT harus berupa angka'
                                             });
                                         } else {
                                             setError({...error,
                                                 rt:''
                                             });
-                                        }                                    }}
+                                        }                                    
+                                    }}
                                     error={error.rt}
                                 />
                             </div>
@@ -364,8 +532,15 @@ export default function FormTambahSDMInstitusi() {
                             required={ true }
                             onChange={nama => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, picName: nama});
-                                var space = new RegExp(/\s/g);
-                                if (nama.length < 1 || nama.match(space)){
+                                if (nama.match(symbol.numberValid)){
+                                    setError({ ...error, 
+                                        picName: ""
+                                    })
+                                } else if (nama.match(symbol.onlySpace)) {
+                                    setError({...error,
+                                        picName: 'Nama penanggung jawab tidak boleh diisi dengan spasi saja'
+                                    });    
+                                } else if (nama.length < 1) {
                                     setError({...error,
                                         picName: 'Nama penanggung jawab tidak boleh kosong'
                                     });
@@ -373,33 +548,35 @@ export default function FormTambahSDMInstitusi() {
                                     setError({...error,
                                         picName:''
                                     });
-                                }
+                        }
                             }}
                             error={error.picName}
                         />
                     </div>
                     <div className="form" id="no-ktp">
-                        <NumberField
+                        <TextField
                             label={ 'No. KTP' }
                             placeholder={ 'Terdiri dari 14 karakter angka' }
                             required={ true }
                             onChange={noKTP => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, picKtp: noKTP});
-                                var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                                var space = new RegExp(/\s/g);
-                                if (noKTP.length < 14 || noKTP.length > 14 || picKtp.match(space)){
-                                    setError({...error,
-                                        picKtp: 'Format KTP harus berupa 14 karakter angka'
+                                if (noKTP.match(symbol.onlySpace)) {
+                                    setError({ ...error,
+                                        picKtp: "Nomor KTP tidak boleh diisi dengan spasi saja",
                                     });
-                                } else if (rw.match(alphabet)){
-                                    setError({...error,
-                                        picKtp: 'Format KTP harus berupa angka'
+                                } else if (noKTP.length < 14 || noKTP.length > 14) {
+                                    setError({ ...error,
+                                        picKtp: "Format KTP harus berupa 14 karakter angka",
                                     });
-                                } else {
-                                    setError({...error,
-                                        picKtp:''
+                                } else if (noKTP.match(symbol.alphabet)) {
+                                    setError({ ...error,
+                                        picKtp: "Nomor KTP harus diisi dengan 14 karakter angka",
                                     });
-                                }
+                                  } else {
+                                    setError({ ...error, 
+                                        picKtp: "" 
+                                    });
+                                  }
                             }}
                             error={error.picKtp}
                         />
@@ -413,38 +590,33 @@ export default function FormTambahSDMInstitusi() {
                         />
                     </div>
                     <div className="form" id="no-tlp">
-                        <NumberField
+                        <TextField
                             label={ 'No. Telepon' }
                             placeholder={ 'Terdiri dari angka' }
                             required={ true }
                             onChange={noHp => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, picPhone: noHp});
-                                var pattern = new RegExp(/^[0-9]+$/);
-                                var alphabet = new RegExp(/^[a-zA-Z]+$/);
-                                var plus = new RegExp(/^\+?[0-9]+$/);
-                                var space = new RegExp(/\s/g);
-                                if (noHp.match(alphabet)) {
-                                    setError ({...error,
-                                        picPhone:'Format nomor telepon harus berupa angka'
+                                if (noHp.match(symbol.alphabet)) {
+                                    setError({ ...error, 
+                                        picPhone: "Format nomor telepon harus berupa angka" 
                                     });
-                                } else if(noHp.match(pattern)) {
-                                    setError ({...error,
-                                        phone:''
+                                } else if (noHp.match(symbol.numberValid)) {
+                                    setError({ ...error, 
+                                        picPhone: "" 
                                     });
-                                } else if(noHp.match(plus)) {
-                                    setError ({...error,
-                                        picPhone:'Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)'
+                                } else if (noHp.match(symbol.phoneNumberWithSymbol) || noHp.match(symbol.onlySymbol)) {
+                                    setError({ ...error,
+                                        picPhone: "Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)",
                                     });
-                                } else if (noHp.match(space)) {
-                                    setError ({...error,
-                                        picPhone:'Nomor telepon tidak boleh kosong'
+                                } else if (noHp.match(symbol.onlySpace)) {
+                                    setError({ ...error,
+                                        picPhone: "Nomor telepon tidak boleh diisi dengan spasi saja",
                                     });
-                                }
-                                else {
-                                    setError ({...error,
-                                        phone:''
+                                } else {
+                                    setError({ ...error, 
+                                        picPhone: "" 
                                     });
-                                }
+                                }  
                             }} 
                             error={error.picPhone}                 
                         />

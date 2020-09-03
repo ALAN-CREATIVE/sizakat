@@ -134,9 +134,6 @@ export function ReceiptSummaryForm({transactionId, data}){
         submitUpdate()
         router.push('/buat/transaksi?page=2', undefined, { shallow: true })
     }
-
-    //console.log(updateError);
-    //console.log(updateTransaksi);
     
     return (
         <ReceiptSummary

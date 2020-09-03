@@ -131,7 +131,8 @@ export default function TambahMuzakki({ transactionId }) {
     useEffect(() => {
         if (isSubmited && isAddMuzakki ) {
             alert("Submit berhasil");
-            //router.push(`/buat/transaksi?page=0&transaction=${transactionId}`, undefined, { shallow: true })
+            setIsSubmited(false)
+            router.reload()
         }
     })
 

@@ -140,7 +140,7 @@ export default function TambahTransaksiForm() {
             console.log(zakatData)
             if(zakatData.zakatTransactionMutation.errors.length != 0){
                 alert("Submit gagal");
-                console.log(muzakkiData.muzakkiMutation.errors[0].messages[0]);
+                console.log(errorTransaksi);
             }  
             else{
                 setIsSubmited(true);
@@ -206,6 +206,7 @@ export default function TambahTransaksiForm() {
             transaksiData.transactionMutation.transaction){
                 console.log ("MASUK")
                 setTransactionId(transaksiData.transactionMutation.transaction.id)
+                console.log(transaksi);
                 transaksi.map((trans) => 
                     createZakat({
                         variables : {

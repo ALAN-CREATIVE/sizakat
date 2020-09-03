@@ -93,7 +93,7 @@ export default function FormTambahSDMInstitusi() {
     const symbol = {
         number: new RegExp(/^[0-9]+$/),
         alphabet: new RegExp(/[a-zA-Z]+/),
-        onlySpace: new RegExp(/\s^$/g),
+        onlySpace: new RegExp(/\s/g),
         namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
         stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),
@@ -538,7 +538,7 @@ export default function FormTambahSDMInstitusi() {
                                 }
                                 if (noKTP.match(symbol.onlySpace)) {
                                     setError({ ...error,
-                                        picKtp: "Nomor KTP tidak boleh diisi dengan spasi saja",
+                                        picKtp: "Nomor KTP tidak boleh diisi dengan spasi",
                                     });
                                 } else if (noKTP.length < 14 || noKTP.length > 14) {
                                     setError({ ...error,
@@ -586,7 +586,7 @@ export default function FormTambahSDMInstitusi() {
                                     });
                                 } else if (noHp.match(symbol.onlySpace)) {
                                     setError({ ...error,
-                                        picPhone: "Nomor telepon tidak boleh diisi dengan spasi saja",
+                                        picPhone: "Nomor telepon tidak boleh diisi dengan spasi",
                                     });
                                 } else {
                                     setError({ ...error, 

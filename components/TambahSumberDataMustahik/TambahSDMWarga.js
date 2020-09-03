@@ -90,7 +90,7 @@ export default function FormTambahSDMWarga() {
     const symbol = {
         number: new RegExp(/^[0-9]+$/),
         alphabet: new RegExp(/[a-zA-Z]+/),
-        onlySpace: new RegExp(/\s^$/g),
+        onlySpace: new RegExp(/\s/g),
         namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
         stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),
@@ -465,7 +465,7 @@ export default function FormTambahSDMWarga() {
                             required={ true }
                             onChange={penanggungjawab => {
                                 setDataSourceWarga({...dataSourceWarga, picName: penanggungjawab});
-                                if (penanggungjawab.match(symbol.numberValid)){
+                                if (penanggungjawab.match(symbol.namaLengkapValid)){
                                     setError({ ...error, 
                                         picName: ""
                                     })
@@ -493,9 +493,13 @@ export default function FormTambahSDMWarga() {
                             required={ true }
                             onChange={noKTP => {
                                 setDataSourceWarga({...dataSourceWarga, picKtp: noKTP});
-                                if (noKTP.match(symbol.onlySpace)) {
+                                if (noKTP.match(symbol.numberValid)){
+                                    setError({ ...error, 
+                                        picKtp: "",
+                                    })
+                                } else if (noKTP.match(symbol.onlySpace)) {
                                     setError({ ...error,
-                                        picKtp: "Nomor KTP tidak boleh diisi dengan spasi saja",
+                                        picKtp: "Nomor KTP tidak boleh diisi dengan spasi",
                                     });
                                 } else if (noKTP.length < 14 || noKTP.length > 14) {
                                     setError({ ...error,
@@ -521,7 +525,7 @@ export default function FormTambahSDMWarga() {
                             required={ true }
                             onChange={jabatan => {
                                 setDataSourceWarga({...dataSourceWarga, picPosition: jabatan});
-                                if (jabatan.match(symbol.numberValid)){
+                                if (jabatan.match(symbol.stringnumberValid)){
                                     setError({ ...error, 
                                         picPosition: ""
                                     })
@@ -563,7 +567,7 @@ export default function FormTambahSDMWarga() {
                                     });
                                 } else if (noHp.match(symbol.onlySpace)) {
                                     setError({ ...error,
-                                        picPhone: "Nomor telepon tidak boleh diisi dengan spasi saja",
+                                        picPhone: "Nomor telepon tidak boleh diisi dengan spasi",
                                     });
                                 } else {
                                     setError({ ...error, 

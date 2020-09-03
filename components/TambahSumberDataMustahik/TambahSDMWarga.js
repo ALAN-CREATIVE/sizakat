@@ -90,7 +90,7 @@ export default function FormTambahSDMWarga() {
     const symbol = {
         number: new RegExp(/^[0-9]+$/),
         alphabet: new RegExp(/[a-zA-Z]+/),
-        onlySpace: new RegExp(/\s/g),
+        onlySpace: new RegExp(/\s^$/g),
         namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
         stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),

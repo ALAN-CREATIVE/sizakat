@@ -93,7 +93,7 @@ export default function FormTambahSDMInstitusi() {
     const symbol = {
         number: new RegExp(/^[0-9]+$/),
         alphabet: new RegExp(/[a-zA-Z]+/),
-        onlySpace: new RegExp(/\s/g),
+        onlySpace: new RegExp(/\s^$/g),
         namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
         stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),
@@ -503,7 +503,7 @@ export default function FormTambahSDMInstitusi() {
                             required={ true }
                             onChange={nama => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, picName: nama});
-                                if (nama.match(symbol.numberValid)){
+                                if (nama.match(symbol.stringnumberValid)){
                                     setError({ ...error, 
                                         picName: ""
                                     })
@@ -531,6 +531,11 @@ export default function FormTambahSDMInstitusi() {
                             required={ true }
                             onChange={noKTP => {
                                 setDataSourceInstitusi({...dataSourceInstitusi, picKtp: noKTP});
+                                if (noKTP.match(symbol.numberValid)){
+                                    setError({ ...error,
+                                        picKtp: ""
+                                    });
+                                }
                                 if (noKTP.match(symbol.onlySpace)) {
                                     setError({ ...error,
                                         picKtp: "Nomor KTP tidak boleh diisi dengan spasi saja",

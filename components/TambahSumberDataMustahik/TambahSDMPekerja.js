@@ -84,6 +84,18 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     }
   }
 
+  const symbol = {
+    number: new RegExp(/^[0-9]+$/),
+    alphabet: new RegExp(/[a-zA-Z]+/),
+    onlySpace: new RegExp(/\s/g),
+    namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+    stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+    numberValid: new RegExp(/^[0][0-9]+$/),
+    onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+    phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/),
+  };
+
+
   const handleSubmit = () => {
     let formIsValid = true;
     let temporaryError = {};
@@ -91,22 +103,74 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     if (dataSourcePekerja.picName.length == 0) {
         formIsValid = false;
         temporaryError.picName='Nama penanggung jawab tidak boleh kosong';
-    } if (dataSourcePekerja.picKtp.length < 14 || dataSourcePekerja.picKtp.length > 14) {
+    } if (dataSourcePekerja.picName.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.picName='Nama penanggung jawab tidak boleh diisi spasi saja';
+    } if (dataSourcePekerja.picName.match(symbol.namaLengkapValid)) {
+        formIsValid = true;
+        temporaryError.picName = "";
+    } 
+  
+    if (dataSourcePekerja.picKtp.length < 14 || dataSourcePekerja.picKtp.length > 14) {
         formIsValid = false;
         temporaryError.picKtp='Format KTP harus berupa 14 karakter angka';
-    } if (dataSourcePekerja.picPhone.length == 0) {
+    } if (dataSourcePekerja.picKtp.match(symbol.onlySpace)) {
         formIsValid = false;
-        temporaryError.picPhone='Nomor telepon tidak boleh kosong';
-    } if (dataSourcePekerja.picPosition.length == 0) {
+        temporaryError.picKtp='Nomor KTP tidak boleh diisi dengan spasi saja';
+    } if (dataSourcePekerja.picKtp.match(symbol.alphabet)) {
+        formIsValid = false;
+        temporaryError.picKtp='Format KTP harus berupa angka';
+    } if (dataSourcePekerja.picKtp.match(symbol.number)) {
+        formIsValid = true;
+        temporaryError.picKtp='';
+    } 
+
+    if (dataSourcePekerja.picPhone.match(symbol.alphabet)) {
+      formIsValid = false;
+      temporaryError.picPhone='Format nomor telepon harus berupa angka';
+    } if (dataSourcePekerja.picPhone.match(symbol.phoneNumberWithSymbol) || dataSourcePekerja.picPhone.match(symbol.onlySymbol)) {
+        formIsValid = false;
+        temporaryError.picPhone = 'Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
+    } if (dataSourcePekerja.picPhone.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.phone = 'No HP tidak boleh diisi dengan spasi saja';
+    } if (dataSourcePekerja.picPhone.match(symbol.number)) {
+        formIsValid = true;
+        temporaryError.picPhone = "";
+    }
+    
+    if (dataSourcePekerja.picPosition.length == 0) {
         formIsValid = false;
         temporaryError.picPosition='Nama jabatan tidak boleh kosong';
-    } if (dataSourcePekerja.profession.length == 0) {
+    } if (dataSourcePekerja.picPosition.match(symbol.onlySpace)) {
         formIsValid = false;
-        temporaryError.province='Nama pekerjaan tidak boleh kosong';
-    } if (dataSourcePekerja.location.length == 0) {
+        temporaryError.picPosition='Jabatan penanggung jawab tidak boleh diisi spasi saja';
+    } if (dataSourcePekerja.picPosition.match(symbol.namaLengkapValid)) {
+        formIsValid = true;
+        temporaryError.picPosition = "";
+    } 
+
+    if (dataSourcePekerja.profession.length == 0) {
         formIsValid = false;
-        temporaryError.regency='Nama lokasi pekerjaan (kelurahan) tidak boleh kosong';
-    }
+        temporaryError.profession='Nama pekerjaan tidak boleh kosong';
+    } if (dataSourcePekerja.profession.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.profession='Nama pekerjaan tidak boleh diisi spasi saja';
+    } if (dataSourcePekerja.profession.match(symbol.namaLengkapValid)) {
+        formIsValid = true;
+        temporaryError.profession = "";
+    } 
+
+    if (dataSourcePekerja.location.length == 0) {
+        formIsValid = false;
+        temporaryError.location='Nama lokasi pekerjaan (kelurahan) tidak boleh kosong';
+    } if (dataSourcePekerja.location.match(symbol.onlySpace)) {
+        formIsValid = false;
+        temporaryError.location='Nama lokasi pekerjaan (kelurahan) tidak boleh diisi spasi saja';
+    } if (dataSourcePekerja.location.match(symbol.stringnumberValid)) {
+        formIsValid = true;
+        temporaryError.location = "";
+    } 
 
     setError(temporaryError);
     return formIsValid;
@@ -150,7 +214,7 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
               <TextField
                 label={ 'Nama Kategori' }
                 disabled={true}
-                initialValue={ 'Pekerja'}
+                defaultValue={ 'Pekerja'}
                 required={ false }
               />
             </div>
@@ -162,10 +226,25 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 required={ false }
                 onChange={pekerjaan => {
                   setDataSourcePekerja({...dataSourcePekerja, profession: pekerjaan});
-                  setError({...error,
-                    profession: pekerjaan = pekerjaan.length < 1 ? 'Nama pekerjaan tidak boleh kosong' : ''});
-              }}
-              error={error.profession}
+                  if (pekerjaan.match(symbol.namaLengkapValid)){
+                    setError({ ...error, 
+                      profession: ""
+                    })
+                  } else if (pekerjaan.match(symbol.onlySpace)) {
+                    setError({...error,
+                      profession: 'Nama pekerjaan tidak boleh diisi dengan spasi saja'
+                    });    
+                  } else if (pekerjaan.length < 1) {
+                    setError({...error,
+                      profession: 'Nama pekerjaan tidak boleh kosong'
+                    });
+                  } else {
+                      setError({...error,
+                        profession:''
+                    });
+                  }
+                }}
+                error={error.profession}
               />
             </div>
             <div className="form" id="lokasi-pekerjaan">
@@ -175,10 +254,25 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 required={ true }
                 onChange={lokasi => {
                   setDataSourcePekerja({...dataSourcePekerja, location: lokasi});
-                  setError({...error,
-                    location: lokasi = lokasi.length < 1 ? 'Nama lokasi pekerjaan (kelurahan) tidak boleh kosong' : ''});
-              }}
-              error={error.location}
+                  if (lokasi.match(symbol.stringnumberValid)){
+                    setError({ ...error, 
+                      location: ""
+                    })
+                  } else if (lokasi.match(symbol.onlySpace)) {
+                      setError({...error,
+                        location: 'Nama lokasi pekerjaan (kelurahan) tidak boleh diisi dengan spasi saja'
+                      });    
+                  } else if (lokasi.length < 1) {
+                      setError({...error,
+                        location: 'Nama lokasi pekerjaan (kelurahan) tidak boleh kosong'
+                      });
+                  } else {
+                      setError({...error,
+                        location:''
+                      });
+                  }     
+                }}
+                error={error.location}
               />
             </div>
             <h1 id="form-title">PENANGGUNG JAWAB</h1>
@@ -189,10 +283,25 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 required={ true }
                 onChange={penanggungjawab => {
                   setDataSourcePekerja({...dataSourcePekerja, picName: penanggungjawab});
-                  setError({...error,
-                      picName: penanggungjawab = penanggungjawab.length < 1 ? 'Nama penanggung jawab tidak boleh kosong' : ''});
-              }}
-              error={error.picName}
+                  if (penanggungjawab.match(symbol.numberValid)){
+                    setError({ ...error, 
+                        picName: ""
+                    })
+                  } else if (penanggungjawab.match(symbol.onlySpace)) {
+                      setError({...error,
+                          picName: 'Nama penanggung jawab tidak boleh diisi dengan spasi saja'
+                      });    
+                  } else if (penanggungjawab.length < 1) {
+                      setError({...error,
+                          picName: 'Nama penanggung jawab tidak boleh kosong'
+                      });
+                  } else {
+                      setError({...error,
+                          picName:''
+                      });
+                  }
+                }}
+                error={error.picName}
               />
             </div>
             <div className="form" id="no-ktp">
@@ -202,10 +311,25 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 required={ true }
                 onChange={noKTP => {
                   setDataSourcePekerja({...dataSourcePekerja, picKtp: noKTP});
-                  setError({...error,
-                      picKtp: noKTP = noKTP.length < 14 || noKTP.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''});
-              }}
-              error={error.picKtp}
+                  if (noKTP.match(symbol.onlySpace)) {
+                    setError({ ...error,
+                        picKtp: "Nomor KTP tidak boleh diisi dengan spasi saja",
+                    });
+                  } else if (noKTP.length < 14 || noKTP.length > 14) {
+                      setError({ ...error,
+                          picKtp: "Format KTP harus berupa 14 karakter angka",
+                      });
+                  } else if (noKTP.match(symbol.alphabet)) {
+                      setError({ ...error,
+                          picKtp: "Nomor KTP harus diisi dengan 14 karakter angka",
+                      });
+                  } else {
+                    setError({ ...error, 
+                        picKtp: "" 
+                    });
+                  }
+                }}
+                error={error.picKtp}
               />
             </div>
             <div className="form" id="jabatan">
@@ -215,10 +339,25 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 required={ true }
                 onChange={jabatan => {
                   setDataSourcePekerja({...dataSourcePekerja, picPosition: jabatan});
-                  setError({...error,
-                      picPosition: jabatan = jabatan.length < 1 ? 'Nama jabatan tidak boleh kosong' : ''});
-              }}
-              error={error.picPosition}
+                  if (jabatan.match(symbol.numberValid)){
+                    setError({ ...error, 
+                        picPosition: ""
+                    })
+                  } else if (jabatan.match(symbol.onlySpace)) {
+                      setError({...error,
+                          picPosition: 'Nama jabatan tidak boleh diisi dengan spasi saja'
+                      });    
+                  } else if (jabatan.length < 1) {
+                      setError({...error,
+                          picPosition: 'Nama jabatan tidak boleh kosong'
+                      });
+                  } else {
+                      setError({...error,
+                          picPosition:''
+                      });
+                  }
+                }}
+                error={error.picPosition}
               />
             </div>
             <div className="form" id="no-tlp">
@@ -228,14 +367,29 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 required={ true }
                 onChange={noHp => {
                   setDataSourcePekerja({...dataSourcePekerja, picPhone: noHp});
-                  try {
-                      parseInt(noHp,10);
-                    } catch(error) {
-                      setError ({...error,
-                        picPhone:'Format HP harus berupa angka'});
-                    }
-              }} 
-              error={error.picPhone}
+                  if (noHp.match(symbol.alphabet)) {
+                    setError({ ...error, 
+                        picPhone: "Format nomor telepon harus berupa angka" 
+                    });
+                  } else if (noHp.match(symbol.numberValid)) {
+                      setError({ ...error, 
+                          picPhone: "" 
+                      });
+                  } else if (noHp.match(symbol.phoneNumberWithSymbol) || noHp.match(symbol.onlySymbol)) {
+                      setError({ ...error,
+                          picPhone: "Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)",
+                      });
+                  } else if (noHp.match(symbol.onlySpace)) {
+                      setError({ ...error,
+                          picPhone: "Nomor telepon tidak boleh diisi dengan spasi saja",
+                      });
+                  } else {
+                      setError({ ...error, 
+                          picPhone: "" 
+                      });
+                  }  
+                }} 
+                error={error.picPhone}
               />
             </div>
             <div className="form button-lanjutkan">

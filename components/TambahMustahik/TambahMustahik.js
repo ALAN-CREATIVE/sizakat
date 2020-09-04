@@ -14,6 +14,8 @@ import { resolveDataSourceName } from "../../utils/parser-util";
 
 import { TambahMustahikContainer } from "./TambahMustahikStyle";
 
+import Success from "../Popups/Success";
+
 const ADD_MUSTAHIK = gql`
   mutation mustahikMutation($input: MustahikMutationInput!) {
     mustahikMutation(input: $input) {
@@ -54,6 +56,10 @@ const GET_DATA_SOURCE = gql`
 `;
 
 export default function FormTambahMustahik() {
+  const router = useRouter();
+
+  const [success, setSuccess] = useState(false);
+
   const [mustahik, setMustahik] = useState({
     name: "",
     noKtp: "",
@@ -80,26 +86,18 @@ export default function FormTambahMustahik() {
     photo: "",
   });
 
-  const router = useRouter();
-
   const [
     createMustahik,
     { data: createData, error: errorCreate },
   ] = useMutation(ADD_MUSTAHIK, {
     onCompleted: (createData) => {
       console.log(createData);
-      if (createData.mustahikMutation.errors.length != 0) {
+      if (createData.mustahikMutation.errors.length !== 0) {
         alert("Submit gagal");
         console.log(createData.mustahikMutation.errors[0].messages[0]);
       } else {
-        alert("Submit berhasil");
+        setSuccess(true);
         console.log(createData.mustahikMutation.mustahik);
-        router.push({
-          pathname: "/detail/mustahik",
-          query: {
-            id: createData.mustahikMutation.mustahik.id,
-          },
-        });
       }
     },
   });
@@ -248,6 +246,20 @@ export default function FormTambahMustahik() {
       <main>
         <div className="form-section">
           <h1 id="form-title">IDENTITAS DIRI MUSTAHIK</h1>
+          {success && (
+            <Success
+              message={`Mustahik dengan nama "${mustahik.name}" berhasil ditambahkan!`}
+              onConfirm={() => {
+                router.push({
+                  pathname: "/detail/mustahik",
+                  query: {
+                    id: createData.mustahikMutation.mustahik.id,
+                  },
+                });
+                setSuccess(false);
+              }}
+            />
+          )}
           <div className="form" id="sumber-data">
             <Dropdown
               label={"Sumber Data"}

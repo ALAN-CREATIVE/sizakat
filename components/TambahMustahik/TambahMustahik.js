@@ -61,6 +61,7 @@ export default function FormTambahMustahik() {
 
   const [success, setSuccess] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [failedNoKtp, setFailedNoKtp] = useState(false);
 
   const [mustahik, setMustahik] = useState({
     name: "",
@@ -95,7 +96,7 @@ export default function FormTambahMustahik() {
     onCompleted: (createData) => {
       console.log(createData);
       if (createData.mustahikMutation.errors.length !== 0) {
-        setFailed(true);
+        setFailedNoKtp(true);
         console.log(createData.mustahikMutation.errors[0].messages[0]);
       } else {
         setSuccess(true);
@@ -267,6 +268,14 @@ export default function FormTambahMustahik() {
               message={`Tidak berhasil menambahkan mustahik. Silahkan dicoba lagi.`}
               onConfirm={() => {
                 setFailed(false);
+              }}
+            />
+          )}
+          {failedNoKtp && (
+            <Failed
+              message={`No KTP sudah pernah didaftarkan sebelumnya. Silahkan dicoba lagi.`}
+              onConfirm={() => {
+                setFailedNoKtp(false);
               }}
             />
           )}

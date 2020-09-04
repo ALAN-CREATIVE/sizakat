@@ -3,6 +3,7 @@ import { gql, useMutation } from '@apollo/client';
 import TextField from '../Inputs/TextField';
 import Button from '../Buttons/Button';
 import Success from "../Popups/Success";
+import Failed from "../Popups/Success";
 import { useRouter } from 'next/router';
 import { TambahSDMContainer } from './TambahSDMStyle';
 
@@ -68,6 +69,8 @@ export default function FormTambahSDMWarga() {
 
     const router = useRouter();
     const [success, setSuccess] = useState(false);
+    const [failed, setFailed] = useState(false);
+
     
     const [createSDM, { 
         data: createData, error: errorCreate, loading: loading 
@@ -76,6 +79,7 @@ export default function FormTambahSDMWarga() {
         onCompleted: (createData) => {
           console.log(createData);
           if (createData.dataSourceMutation.errors.length !== 0) {
+              setFailed(true);
             // setFailedNoKtp(true);
             console.log(createData.dataSourceMutation.errors[0].messages[0]);
           } else {
@@ -92,6 +96,7 @@ export default function FormTambahSDMWarga() {
           if (createDataWarga.dataSourceWargaMutation.errors.length !== 0) {
             // setFailedNoKtp(true);
             // alert("Submit gagal!");
+            setFailed(true);
             console.log(createDataWarga.dataSourceWargaMutation.errors[0].messages[0]);
           } else {
             setSuccess(true);
@@ -110,12 +115,12 @@ export default function FormTambahSDMWarga() {
                     }
                 }
             });
-            success;
-            // setSuccess(true);
+            
+            setSuccess(true);
             console.log(dataSourceWarga); 
         } else {
             console.log(dataSourceWarga);
-            alert("Submit gagal");
+            setFailed(true);
         }
     }
 
@@ -304,6 +309,14 @@ export default function FormTambahSDMWarga() {
                                 },
                             });
                             setSuccess(false);
+                        }}
+                        />
+                    )}
+                    {failed && (
+                        <Failed
+                        message={`Tidak berhasil menambahkan sumber data mustahik. Silahkan dicoba lagi.`}
+                        onConfirm={() => {
+                            setFailed(false);
                         }}
                         />
                     )}

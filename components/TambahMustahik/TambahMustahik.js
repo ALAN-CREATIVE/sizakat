@@ -266,9 +266,6 @@ export default function FormTambahMustahik() {
             <Failed
               message={`Tidak berhasil menambahkan mustahik. Silahkan dicoba lagi.`}
               onConfirm={() => {
-                router.push({
-                  pathname: "/tambah/mustahik",
-                });
                 setFailed(false);
               }}
             />

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { gql, useMutation } from '@apollo/client';
 import TextField from '../Inputs/TextField';
 import Button from '../Buttons/Button';
+import Success from "../Popups/Success";
 import { useRouter } from 'next/router';
-
 import { TambahSDMContainer } from './TambahSDMStyle';
 
 const ADD_SDM=gql`
@@ -66,6 +66,9 @@ export default function FormTambahSDMWarga() {
         rw: '',
     });
 
+    const router = useRouter();
+    const [success, setSuccess] = useState(false);
+    
     const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
     const [createSDMWarga, { data: createDataWarga, error: errorCreateWarga, loading: loadingWarga }  ] = useMutation(ADD_SDM_WARGA);
 
@@ -79,11 +82,11 @@ export default function FormTambahSDMWarga() {
                     }
                 }
             });
-          console.log(dataSourceWarga);
-          alert("Submit berhasil");
+            setSuccess(true);
+            console.log(dataSourceWarga); 
         } else {
-          console.log(dataSourceWarga);
-          alert("Submit gagal");
+            console.log(dataSourceWarga);
+            alert("Submit gagal");
         }
     }
 
@@ -228,8 +231,6 @@ export default function FormTambahSDMWarga() {
         setError(temporaryError);
         return formIsValid;
       }
-
-    const router = useRouter();
     
     useEffect(() => {
         if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
@@ -263,6 +264,20 @@ export default function FormTambahSDMWarga() {
             <main>
                 <div className="form-section">
                     <h1 id="form-title">KATEGORI SUMBER DATA</h1>
+                    {success && (
+                        <Success
+                        message={`Sumber data mustahik dengan nama "${dataSourceWarga.picName}" berhasil ditambahkan!`}
+                        onConfirm={() => {
+                            router.push({
+                                pathname: '/detail/sumber-data-mustahik',
+                                query: {
+                                    id: createData.dataSourceMutation.dataSource.id
+                                },
+                            });
+                            setSuccess(false);
+                        }}
+                        />
+                    )}
                     <div className="form" id="sumber-data">
                         <TextField
                             label={ 'Nama Kategori' }

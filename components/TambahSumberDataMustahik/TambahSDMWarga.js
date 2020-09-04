@@ -69,8 +69,36 @@ export default function FormTambahSDMWarga() {
     const router = useRouter();
     const [success, setSuccess] = useState(false);
     
-    const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
-    const [createSDMWarga, { data: createDataWarga, error: errorCreateWarga, loading: loadingWarga }  ] = useMutation(ADD_SDM_WARGA);
+    const [createSDM, { 
+        data: createData, error: errorCreate, loading: loading 
+        }  
+    ] = useMutation(ADD_SDM, {
+        onCompleted: (createData) => {
+          console.log(createData);
+          if (createData.dataSourceMutation.errors.length !== 0) {
+            // setFailedNoKtp(true);
+            console.log(createData.dataSourceMutation.errors[0].messages[0]);
+          } else {
+            setSuccess(true);
+            console.log(createData.dataSourceMutation.dataSource);
+          }
+        },
+    });    
+    const [createSDMWarga, 
+        { data: createDataWarga, error: errorCreateWarga, loading: loadingWarga }  
+    ] = useMutation(ADD_SDM_WARGA, {
+        onCompleted: (createDataWarga) => {
+          console.log(createDataWarga);
+          if (createDataWarga.dataSourceWargaMutation.errors.length !== 0) {
+            // setFailedNoKtp(true);
+            // alert("Submit gagal!");
+            console.log(createDataWarga.dataSourceWargaMutation.errors[0].messages[0]);
+          } else {
+            setSuccess(true);
+            console.log(createDataWarga.dataSourceWargaMutation.dataSourceWarga);
+          }
+        },
+    });    
 
     const submitForm = () => {
         console.log(handleSubmit());
@@ -82,7 +110,8 @@ export default function FormTambahSDMWarga() {
                     }
                 }
             });
-            setSuccess(true);
+            success;
+            // setSuccess(true);
             console.log(dataSourceWarga); 
         } else {
             console.log(dataSourceWarga);

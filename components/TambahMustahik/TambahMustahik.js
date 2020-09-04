@@ -95,8 +95,13 @@ export default function FormTambahMustahik() {
   ] = useMutation(ADD_MUSTAHIK, {
     onCompleted: (createData) => {
       console.log(createData);
-      if (createData.mustahikMutation.errors.length !== 0) {
+      if (
+        createData.mustahikMutation.errors[0].messages[0] ===
+        "Mustahik with this No ktp already exists."
+      ) {
         setFailedNoKtp(true);
+      } else if (createData.mustahikMutation.errors.length !== 0) {
+        setFailed(true);
         console.log(createData.mustahikMutation.errors[0].messages[0]);
       } else {
         setSuccess(true);

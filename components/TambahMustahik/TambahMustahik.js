@@ -15,6 +15,7 @@ import { resolveDataSourceName } from "../../utils/parser-util";
 import { TambahMustahikContainer } from "./TambahMustahikStyle";
 
 import Success from "../Popups/Success";
+import Failed from "../Popups/Failed";
 
 const ADD_MUSTAHIK = gql`
   mutation mustahikMutation($input: MustahikMutationInput!) {
@@ -59,6 +60,7 @@ export default function FormTambahMustahik() {
   const router = useRouter();
 
   const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const [mustahik, setMustahik] = useState({
     name: "",
@@ -93,7 +95,7 @@ export default function FormTambahMustahik() {
     onCompleted: (createData) => {
       console.log(createData);
       if (createData.mustahikMutation.errors.length !== 0) {
-        alert("Submit gagal");
+        setFailed(true);
         console.log(createData.mustahikMutation.errors[0].messages[0]);
       } else {
         setSuccess(true);
@@ -119,7 +121,7 @@ export default function FormTambahMustahik() {
       });
     } else {
       console.log(mustahik);
-      alert("Submit gagal");
+      setFailed(true);
     }
   };
 
@@ -257,6 +259,17 @@ export default function FormTambahMustahik() {
                   },
                 });
                 setSuccess(false);
+              }}
+            />
+          )}
+          {failed && (
+            <Failed
+              message={`Tidak berhasil menambahkan mustahik. Silahkan dicoba lagi.`}
+              onConfirm={() => {
+                router.push({
+                  pathname: "/tambah/mustahik",
+                });
+                setFailed(false);
               }}
             />
           )}

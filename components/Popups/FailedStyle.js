@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SuccessContainer = styled.div`
+export const FailedContainer = styled.div`
   .box {
     width: 385px;
     height: 374px;
@@ -14,7 +14,7 @@ export const SuccessContainer = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  .successText {
+  .failedText {
     font-family: Muli;
     font-style: normal;
     font-weight: 800;
@@ -22,7 +22,7 @@ export const SuccessContainer = styled.div`
     line-height: 30px;
     text-align: center;
 
-    color: #00239d;
+    color: #000000;
   }
 
   .desc {
@@ -36,11 +36,11 @@ export const SuccessContainer = styled.div`
     color: #000000;
   }
 
-  div.blueButton {
+  div.redButton {
     width: 200px;
     height: 40px;
 
-    background: #00239d;
+    background: #eb4e2c;
     border-radius: 8px;
   }
 

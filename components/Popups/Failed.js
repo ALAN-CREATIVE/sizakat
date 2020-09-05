@@ -7,7 +7,7 @@ const Failed = ({ message, confirmButton = "OK", onConfirm }) => {
       <div className="box">
         <img
           src="/img/failed.png"
-          alt="success"
+          alt="failed"
           width="125px"
           style={{ display: "block", margin: "auto", paddingTop: "57px" }}
         ></img>

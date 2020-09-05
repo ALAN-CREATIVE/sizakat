@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Success Default 1`] = `
+exports[`Storyshots Failed Default 1`] = `
 .c0 .box {
   width: 385px;
   height: 374px;
@@ -16,14 +16,14 @@ exports[`Storyshots Success Default 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c0 .successText {
+.c0 .failedText {
   font-family: Muli;
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
   line-height: 30px;
   text-align: center;
-  color: #00239d;
+  color: #000000;
 }
 
 .c0 .desc {
@@ -36,10 +36,10 @@ exports[`Storyshots Success Default 1`] = `
   color: #000000;
 }
 
-.c0 div.blueButton {
+.c0 div.redButton {
   width: 200px;
   height: 40px;
-  background: #00239d;
+  background: #eb4e2c;
   border-radius: 8px;
 }
 
@@ -65,7 +65,7 @@ exports[`Storyshots Success Default 1`] = `
   >
     <img
       alt="success"
-      src="/img/success.png"
+      src="/img/failed.png"
       style={
         Object {
           "display": "block",
@@ -73,11 +73,12 @@ exports[`Storyshots Success Default 1`] = `
           "paddingTop": "57px",
         }
       }
+      width="125px"
     />
     <div
-      className="successText"
+      className="failedText"
     >
-      Sukses!
+      Gagal!
     </div>
     <div
       className="desc"
@@ -89,7 +90,7 @@ exports[`Storyshots Success Default 1`] = `
         }
       }
     >
-      RT 04 RW 016 Penggilingan berhasil ditambahkan
+      Tidak berhasil menambahkan sumber data mustahik. Silakan dicoba lagi
     </div>
     <div
       style={
@@ -101,7 +102,7 @@ exports[`Storyshots Success Default 1`] = `
       }
     >
       <div
-        className="blueButton"
+        className="redButton"
         onClick={[Function]}
         style={
           Object {

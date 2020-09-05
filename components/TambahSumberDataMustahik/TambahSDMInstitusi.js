@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { gql, useMutation } from '@apollo/client';
 import TextField from '../Inputs/TextField';
 import Button from '..//Buttons/Button';
+import Success from "../Popups/Success";
+import Failed from "../Popups/Failed";
 import { useRouter } from 'next/router';
 
 import { TambahSDMContainer } from './TambahSDMStyle';
@@ -133,6 +135,9 @@ export default function FormTambahSDMInstitusi() {
         if (dataSourceInstitusi.picPhone.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.picPhone='Format nomor telepon harus berupa angka';
+        } if (dataSourceInstitusi.picPhone.length == 0 ) {
+            formIsValid = false;
+            temporaryError.picPhone='Nomor telepon tidak boleh kosong';
         } if (dataSourceInstitusi.picPhone.match(symbol.phoneNumberWithSymbol) || dataSourceInstitusi.picPhone.match(symbol.onlySymbol)) {
             formIsValid = false;
             temporaryError.picPhone = 'Format nomor telepon harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
@@ -587,6 +592,10 @@ export default function FormTambahSDMInstitusi() {
                                 } else if (noHp.match(symbol.onlySpace)) {
                                     setError({ ...error,
                                         picPhone: "Nomor telepon tidak boleh diisi dengan spasi",
+                                    });
+                                } else if (noHp.length < 1) {
+                                    setError({...error,
+                                        picPhone: 'Nomor telepon tidak boleh kosong'
                                     });
                                 } else {
                                     setError({ ...error, 

@@ -94,8 +94,9 @@ export function DetailInfo() {
         <p>{message}</p>
       ));
   }
-  console.log(data.genderEnum.enumValues)
-  return [data.mustahik].map(({ name, noKtp, phone, address, gender, status, photo, age, dataSource }) =>(
+
+  const { name, noKtp, phone, address, gender, status, photo, age, dataSource } = data.mustahik;
+  return (
     <>
       <Head>
         <title>Mustahik: {name}</title>
@@ -187,7 +188,7 @@ export function DetailInfo() {
                   <DetailField title='Status Mustahik' description={statusMustahik.description} /><br></br>
                 </div>
               ))
-            }        
+            }
             <DetailField title='Nomor HP' description={phone} /><br></br>
           </div>
           <div className="col-md-7">
@@ -227,5 +228,5 @@ export function DetailInfo() {
         </div>
       </div>
     </>
-  ));
+  );
 }

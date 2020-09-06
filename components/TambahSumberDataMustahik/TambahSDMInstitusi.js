@@ -5,7 +5,6 @@ import Button from '..//Buttons/Button';
 import Success from "../Popups/Success";
 import Failed from "../Popups/Failed";
 import { useRouter } from 'next/router';
-
 import { TambahSDMContainer } from './TambahSDMStyle';
 
 const ADD_SDM=gql`
@@ -72,8 +71,45 @@ export default function FormTambahSDMInstitusi() {
         rw: '',
     }); 
 
-    const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
-    const [createSDMInstitusi, { data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  ] = useMutation(ADD_SDM_INSTITUSI);
+    const router = useRouter();
+    const [success, setSuccess] = useState(false);
+    const [failed, setFailed] = useState(false);
+
+    const [createSDM, 
+        { data: createData, error: errorCreate, loading: loading }  
+    ] = useMutation(ADD_SDM, {
+        onCompleted: (createData) => {
+          console.log(createData);
+          if (createData.dataSourceMutation.errors.length !== 0) {
+              setFailed(true);
+            console.log(createData.dataSourceMutation.errors[0].messages[0]);
+          } else {
+            createSDMInstitusi({
+                variables: {
+                  input: {
+                    ...dataSourceInstitusi,
+                    dataSource: createData.dataSourceMutation.dataSource.id,
+                  },
+                },
+              });
+              console.log(createData.dataSourceMutation.dataSource);
+            }
+          },
+        });
+    const [createSDMInstitusi, 
+        { data: createDataInstitusi, error: errorCreateInstitusi, loading: loadingInstitusi }  
+    ] = useMutation(ADD_SDM_INSTITUSI, {
+        onCompleted: (createDataInstitusi) => {
+          console.log(createDataInstitusi);
+          if (createDataInstitusi.dataSourceInstitusiMutation.errors.length !== 0) {
+            setFailed(true);
+            console.log(createDataInstitusi.dataSourceInstitusiMutation.errors[0].messages[0]);
+          } else {
+            setSuccess(true);
+            console.log(createDataInstitusi.dataSourceInstitusiMutation.dataSourceInstitusi);
+          }
+        },
+    });    
     
     const submitForm = () => {
         console.log(handleSubmit());
@@ -86,10 +122,9 @@ export default function FormTambahSDMInstitusi() {
                 }
             });
           console.log(dataSourceInstitusi);
-          alert("Submit berhasil");
         } else {
           console.log(dataSourceInstitusi);
-          alert("Submit gagal");
+          setFailed(true);
         }
     }
     const symbol = {
@@ -99,7 +134,7 @@ export default function FormTambahSDMInstitusi() {
         namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
         stringnumberValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),
-        onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+        onlySymbol: new RegExp(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/),
         phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/),
     };
     
@@ -124,7 +159,7 @@ export default function FormTambahSDMInstitusi() {
         } if (dataSourceInstitusi.picKtp.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.picKtp='Nomor KTP tidak boleh diisi dengan spasi saja';
-        } if (dataSourceInstitusi.picKtp.match(symbol.alphabet)) {
+        } if (dataSourceInstitusi.picKtp.match(symbol.alphabet) || dataSourceInstitusi.picKtp.match(symbol.onlySymbol)) {
             formIsValid = false;
             temporaryError.picKtp='Format KTP harus berupa angka';
         } if (dataSourceInstitusi.picKtp.match(symbol.number)) {
@@ -236,23 +271,6 @@ export default function FormTambahSDMInstitusi() {
         return formIsValid;
       }
     
-    const router = useRouter();
-
-    useEffect(() => {
-        if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
-            createSDMInstitusi({ variables: { input: { ...dataSourceInstitusi, dataSource: createData.dataSourceMutation.dataSource.id }}});    
-        } if (createDataInstitusi && createDataInstitusi.dataSourceInstitusiMutation && createDataInstitusi.dataSourceInstitusiMutation.dataSourceInstitusi) {
-            router.push({
-              pathname: '/detail/sumber-data-mustahik',
-              query: {
-                id: createData.dataSourceMutation.dataSource.id
-              }
-            })
-          }
-        }
-        ,[createData, createDataInstitusi]
-    )
-
     if(errorCreateInstitusi) {
         console.log(errorCreateInstitusi);
         console.log(errorCreateInstitusi.networkError.result.errors);
@@ -271,6 +289,28 @@ export default function FormTambahSDMInstitusi() {
                 <div className="form-section">
                     <h1 id="form-title">KATEGORI SUMBER DATA</h1>
                     <div className="form" id="sumber-data">
+                    {success && (
+                        <Success
+                        message={`Sumber data mustahik atas nama institusi "${dataSourceInstitusi.name}" berhasil ditambahkan!`}
+                        onConfirm={() => {
+                            router.push({
+                                pathname: '/detail/sumber-data-mustahik',
+                                query: {
+                                    id: createData.dataSourceMutation.dataSource.id
+                                },
+                            });
+                            setSuccess(false);
+                        }}
+                        />
+                    )}
+                    {failed && (
+                        <Failed
+                        message={`Tidak berhasil menambahkan sumber data mustahik. Silahkan dicoba lagi.`}
+                        onConfirm={() => {
+                            setFailed(false);
+                        }}
+                        />
+                    )}
                         <TextField
                             label={ 'Nama Kategori' }
                             defaultValue={ 'Institusi' }
@@ -549,9 +589,9 @@ export default function FormTambahSDMInstitusi() {
                                     setError({ ...error,
                                         picKtp: "Format KTP harus berupa 14 karakter angka",
                                     });
-                                } else if (noKTP.match(symbol.alphabet)) {
+                                } else if (noKTP.match(symbol.alphabet) || noKTP.match(symbol.onlySymbol)) {
                                     setError({ ...error,
-                                        picKtp: "Nomor KTP harus diisi dengan 14 karakter angka",
+                                        picKtp: "Format KTP harus diisi dengan angka",
                                     });
                                   } else {
                                     setError({ ...error, 

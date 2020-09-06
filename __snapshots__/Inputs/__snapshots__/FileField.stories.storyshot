@@ -2,7 +2,6 @@
 
 exports[`Storyshots Input/File Field Default 1`] = `
 .c0 label {
-  text-rendering: geometricPrecision;
   font-family: Muli;
   font-weight: 700;
   font-size: 16px;
@@ -51,7 +50,10 @@ exports[`Storyshots Input/File Field Default 1`] = `
   font-size: 12px;
   display: block;
   color: #EB4E2C;
-  text-rendering: optimizeLegibility;
+}
+
+.c0 .name {
+  color: #393F50;
 }
 
 <div
@@ -77,7 +79,6 @@ exports[`Storyshots Input/File Field Default 1`] = `
 
 exports[`Storyshots Input/File Field Error 1`] = `
 .c0 label {
-  text-rendering: geometricPrecision;
   font-family: Muli;
   font-weight: 700;
   font-size: 16px;
@@ -126,7 +127,10 @@ exports[`Storyshots Input/File Field Error 1`] = `
   font-size: 12px;
   display: block;
   color: #EB4E2C;
-  text-rendering: optimizeLegibility;
+}
+
+.c0 .name {
+  color: #393F50;
 }
 
 <div
@@ -157,7 +161,6 @@ exports[`Storyshots Input/File Field Error 1`] = `
 
 exports[`Storyshots Input/File Field Required 1`] = `
 .c0 label {
-  text-rendering: geometricPrecision;
   font-family: Muli;
   font-weight: 700;
   font-size: 16px;
@@ -206,7 +209,10 @@ exports[`Storyshots Input/File Field Required 1`] = `
   font-size: 12px;
   display: block;
   color: #EB4E2C;
-  text-rendering: optimizeLegibility;
+}
+
+.c0 .name {
+  color: #393F50;
 }
 
 <div

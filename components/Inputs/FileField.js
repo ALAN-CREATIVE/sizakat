@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const FileFieldContainer = styled.div`
     label {
-      text-rendering: geometricPrecision;
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
@@ -52,19 +51,29 @@ const FileFieldContainer = styled.div`
       font-size: 12px;
       display: block;
       color: #EB4E2C;
-      text-rendering: optimizeLegibility;
+    }
+
+    .name {
+      color: #393F50;
     }
   `;
 
 const FileField = ({ label, buttonLabel, description, required, error, onFileSelected }) => {
+  const [fileName, setFileName] = useState('');
+
   const handleChange = (event) => {
     onFileSelected(event.target.files);
+    setFileName(event.target.files[0].name);
   }
 
   return (
     <FileFieldContainer buttonLabel={buttonLabel}>
       <label className={required ? 'required' : ''}>{ label }</label>
-      <label className="desc">{ description }</label>
+      {fileName === '' ? (
+        <label className="desc">{description}</label>
+      ) : (
+        <label className="desc name">{fileName}</label>
+      )}
       <input className="file-input" type="file" onChange={handleChange} />
       { error && <span className="error">{ error }</span> }
     </FileFieldContainer>

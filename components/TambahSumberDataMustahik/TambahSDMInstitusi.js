@@ -242,6 +242,9 @@ export default function FormTambahSDMInstitusi() {
         if (dataSourceInstitusi.rw.length == 0) {
             formIsValid = false;
             temporaryError.rw='Nomor RW tidak boleh kosong';
+        } if (dataSourceInstitusi.rw.length > 3) {
+            formIsValid = false;
+            temporaryError.rw='Nomor RW tidak boleh lebih dari 3 digit';
         } if (dataSourceInstitusi.rw.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.rw='Nomor RW tidak boleh diisi spasi saja';
@@ -256,6 +259,9 @@ export default function FormTambahSDMInstitusi() {
         if (dataSourceInstitusi.rt.length == 0) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh kosong';
+        } if (dataSourceInstitusi.rt.length > 3) {
+            formIsValid = false;
+            temporaryError.rw='Nomor RT tidak boleh lebih dari 3 digit';
         } if (dataSourceInstitusi.rt.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh diisi spasi saja';
@@ -474,7 +480,7 @@ export default function FormTambahSDMInstitusi() {
                                         setDataSourceInstitusi({...dataSourceInstitusi, rw: rw});
                                         if (rw.match(symbol.numberValid)){
                                             setError({ ...error, 
-                                                rt: ""
+                                                rw: ""
                                             })
                                         } else if (rw.match(symbol.onlySpace)) {
                                             setError({...error,
@@ -487,6 +493,10 @@ export default function FormTambahSDMInstitusi() {
                                         } else if (rw.length < 1) {
                                             setError({...error,
                                                 rw: 'Nomor RW tidak boleh kosong'
+                                            });
+                                        } else if (rw.length > 3) {
+                                            setError({...error,
+                                                rw: 'Nomor RT tidak boleh lebih dari 3 digit'
                                             });
                                         } else {
                                             setError({...error,
@@ -519,6 +529,10 @@ export default function FormTambahSDMInstitusi() {
                                         } else if (rt.length < 1) {
                                             setError({...error,
                                                 rt: 'Nomor RT tidak boleh kosong'
+                                            });
+                                        } else if (rt.length > 3) {
+                                            setError({...error,
+                                                rt: 'Nomor RT tidak boleh lebih dari 3 digit'
                                             });
                                         } else {
                                             setError({...error,

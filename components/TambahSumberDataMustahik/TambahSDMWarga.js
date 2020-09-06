@@ -245,6 +245,9 @@ export default function FormTambahSDMWarga() {
         } if (dataSourceWarga.rw.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.rw='Nomor RW tidak boleh diisi spasi saja';
+        } if (dataSourceWarga.rw.length > 3) {
+            formIsValid = false;
+            temporaryError.rw='Nomor RW tidak boleh lebih dari 3 digit';
         } if (dataSourceWarga.rw.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.rw = 'Format nomor RW diisi dengan angka';
@@ -256,6 +259,9 @@ export default function FormTambahSDMWarga() {
         if (dataSourceWarga.rt.length == 0) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh kosong';
+        } if (dataSourceWarga.rt.length > 3) {
+            formIsValid = false;
+            temporaryError.rt='Nomor RT tidak boleh lebih dari 3 digit';
         } if (dataSourceWarga.rt.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.rt='Nomor RT tidak boleh diisi spasi saja';
@@ -424,6 +430,10 @@ export default function FormTambahSDMWarga() {
                                             setError({...error,
                                                 village: 'Nama kelurahan tidak boleh kosong'
                                             });
+                                        } else if (rt.length > 3) {
+                                            setError({...error,
+                                                rw: 'Nomor RT tidak boleh lebih dari 3 digit'
+                                            });
                                         } else {
                                             setError({...error,
                                                 village:''
@@ -446,7 +456,7 @@ export default function FormTambahSDMWarga() {
                                         setDataSourceWarga({...dataSourceWarga, rw: rw});
                                         if (rw.match(symbol.numberValid)){
                                             setError({ ...error, 
-                                                rt: ""
+                                                rw: ""
                                             })
                                         } else if (rw.match(symbol.onlySpace)) {
                                             setError({...error,
@@ -459,6 +469,10 @@ export default function FormTambahSDMWarga() {
                                         } else if (rw.length < 1) {
                                             setError({...error,
                                                 rw: 'Nomor RW tidak boleh kosong'
+                                            });
+                                        } else if (rw.length > 3) {
+                                            setError({...error,
+                                                rw: 'Nomor RW tidak boleh lebih dari 3 digit'
                                             });
                                         } else {
                                             setError({...error,
@@ -491,6 +505,10 @@ export default function FormTambahSDMWarga() {
                                         } else if (rt.length < 1) {
                                             setError({...error,
                                                 rt: 'Nomor RT tidak boleh kosong'
+                                            });
+                                        } else if (rt.length > 3) {
+                                            setError({...error,
+                                                rt: 'Nomor RT tidak boleh lebih dari 3 digit'
                                             });
                                         } else {
                                             setError({...error,

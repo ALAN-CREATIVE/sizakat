@@ -58,7 +58,6 @@ const FileFieldContainer = styled.div`
 
 const FileField = ({ label, buttonLabel, description, required, error, onFileSelected }) => {
   const handleChange = (event) => {
-    alert(`successfuly uploaded ${event.target.files[0].name}`);
     onFileSelected(event.target.files);
   }
 

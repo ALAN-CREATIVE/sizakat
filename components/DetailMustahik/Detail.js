@@ -146,7 +146,7 @@ export function DetailInfo() {
         <br></br>
         <div className="row">
           <div className="col-md-5">
-            <img id="photo" src={`http://localhost:8000/img/${photo}`}></img>
+            <img id="photo" src={photo}></img>
           </div>
           <div className="col-md-7">
             <DetailField title='Nama Mustahik' description={name} /><br></br>

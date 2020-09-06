@@ -247,7 +247,7 @@ export default function FormTambahSDMInstitusi() {
             temporaryError.rw='Nomor RW tidak boleh diisi spasi saja';
         } if (dataSourceInstitusi.rw.match(symbol.alphabet)) {
             formIsValid = false;
-            temporaryError.rt = 'Format nomor RW diisi dengan angka';
+            temporaryError.rw = 'Format nomor RW diisi dengan angka';
         } if (dataSourceInstitusi.rw.match(symbol.numberValid)) {
             formIsValid = true;
             temporaryError.rw = "";

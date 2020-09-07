@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { ApolloProvider, ApolloClient, InMemoryCache, useQuery, gql } from '@apollo/client';
@@ -71,19 +71,19 @@ const dataSourcesToCardItem = (dataSource) => {
 
 const MainContent = () => {
 
-  const { loading, error, data } = useQuery(INITIAL_DATA_SOURCES_QUERY);
-  const [ NotYetFetched, setNotYetFetched] = useState(true);
-  const [ dataDataSource, setDataDataSource] = useState()
+  const [NotYetFetched, setNotYetFetched] = useState(true);
+  const [dataSources, setDataSources] = useState()
+  const {loading, error} = useQuery(
+    INITIAL_DATA_SOURCES_QUERY,
+    {onCompleted: (data) => setDataSources(data.dataSources)}
+  );
+
   const router = useRouter();
 
   if (loading) return <p>Loading...</p>;
   if (error) {
     console.log(error);
     return <p>error</p>
-  }
-  if(data && data.dataSources && NotYetFetched){
-    setDataDataSource(data);
-    setNotYetFetched(false);
   }
   return (
     <Container>
@@ -104,17 +104,15 @@ const MainContent = () => {
           />
         </Title>
         <TableContainer>
-          {dataDataSource && dataDataSource.dataSources && <TableDataSource
-            title={'Sumber Data Mustahik'}
-            buttonCaption={'Tambah Sumber Data'}
-            searchPlaceholder={'Cari berdasarkan nama sumber data'}
-            filterCaption={'SEMUA KATEGORI DATA'}
-            filterOptions={['Semua Kategori Sumber Data', 'Warga', 'Pesantren', 'Pekerja']}
-            itemList={dataDataSource.dataSources.map(dataSourcesToCardItem)}
-            detailPath={'/detail/sumber-data-mustahik'}
-            setDataSourceData={(data)=> setDataDataSource(data)}
-
-          />}
+          {dataSources && (
+            <TableDataSource
+              title={'Sumber Data Mustahik'}
+              buttonCaption={'Tambah Sumber Data'}
+              itemList={dataSources.map(dataSourcesToCardItem)}
+              detailPath={'/detail/sumber-data-mustahik'}
+              setDataSourceData={(data) => setDataSources(data)}
+            />
+          )}
         </TableContainer>
       </Main>
     </Container>

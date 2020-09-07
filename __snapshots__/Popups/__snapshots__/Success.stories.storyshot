@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Success Default 1`] = `
+.c0 .box {
+  width: 385px;
+  height: 374px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c0 .successText {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #00239d;
+}
+
+.c0 .desc {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+.c0 div.blueButton {
+  width: 200px;
+  height: 40px;
+  background: #00239d;
+  border-radius: 8px;
+}
+
+.c0 p.text {
+  height: 20px;
+  display: block;
+  margin: auto;
+  padding-top: 10px;
+  font-family: Muli;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="box"
+  >
+    <img
+      alt="success"
+      src="/img/success.png"
+      style={
+        Object {
+          "display": "block",
+          "margin": "auto",
+          "paddingTop": "57px",
+        }
+      }
+    />
+    <div
+      className="successText"
+    >
+      Sukses!
+    </div>
+    <div
+      className="desc"
+      style={
+        Object {
+          "marginLeft": "46px",
+          "marginRight": "46px",
+          "marginTop": "20px",
+        }
+      }
+    >
+      RT 04 RW 016 Penggilingan berhasil ditambahkan
+    </div>
+    <div
+      style={
+        Object {
+          "cursor": "pointer",
+          "margin": "0 auto",
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="blueButton"
+        onClick={[Function]}
+        style={
+          Object {
+            "margin": "35px auto 0",
+          }
+        }
+      >
+        <p
+          className="text"
+        >
+          OK
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

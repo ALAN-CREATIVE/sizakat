@@ -93,8 +93,19 @@ export const SelectContainer = styled.div`
     text-align: center;
   }
 
+  .option > label {
+    display: block;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+  }
+
   .option:hover {
     background-color: #002398;
+    color: #FFFFFF;
+  }
+
+  .option:hover > label {
     color: #FFFFFF;
   }
 

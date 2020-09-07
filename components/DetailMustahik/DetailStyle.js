@@ -33,8 +33,7 @@ export const DetailContainer = styled.div`
       color: #00239D;
     }
     #photo {
-      width: 250px;
-      height: 250px;
+      width: 335px;
       background-color: #00239D;
       margin-right: 50px;
       margin-bottom: 50px;

@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import { UbahSDMStyle } from '../../../../components/UbahSumberDataMustahik/UbahSDMStyle';
 import FormUbahSDM from '../../../../components/UbahSumberDataMustahik/UbahSDMInstitusi';
-import NavigationBar from '../../../../components/NavigationBar/NavigationBar';
+import NavigationBar from '../../../../components/NavigationBar/NavBarWithRouter';
 import { TambahSDMContainer } from '../../../../components/TambahSumberDataMustahik/TambahSDMStyle';
 
 
@@ -29,12 +29,13 @@ function App({ backend_uri }) {
             <TambahSDMContainer className="EditSDMPage">
             <main>
                 <div class="row">
-                    <div class="col-3">
+                    <div className="col-3" />
+                    <div class="position-fixed col-3">
                         <NavigationBar
-                            name= { 'Annisaa Fitri Shabrina' }
-                            role= { 'Admin' }
-                            menu= { 'Mustahik' }
-                            submenu=  { ['Data Mustahik', 'Sumber Data Mustahik'] }
+                            user={{
+                              name: 'Annisaa Fitri Shabrina',
+                              role: 'Admin'
+                            }}
                         />
                     </div>
                     <div class="col-9">

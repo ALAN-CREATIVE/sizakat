@@ -28,12 +28,13 @@ function App({ backend_uri }) {
             <TambahSDMContainer className="EditSDMPage">
             <main>
                 <div class="row">
-                    <div class="col-3">
+                    <div className="col-3" />
+                    <div class="position-fixed col-3">
                         <NavigationBar
-                            name= { 'Annisaa Fitri Shabrina' }
-                            role= { 'Admin' }
-                            menu= { 'Mustahik' }
-                            submenu=  { ['Data Mustahik', 'Sumber Data Mustahik'] }
+                            user={{
+                              name: 'Annisaa Fitri Shabrina',
+                              role: 'Admin'
+                            }}
                         />
                     </div>
                     <div class="col-9">

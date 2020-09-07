@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Title, Header } from './TableStyle';
-import Button from '../Buttons/Button';
+import Link from 'next/link';
+import { Container, Title, Header, TambahButton } from './TableStyle';
 import {MustahikSearch} from '../Searches/MustahikSearch';
 import CardList from '../Cards/CardList';
 import Filter from '../Filters/Filter';
@@ -22,11 +22,11 @@ const Table = ({
     <Container>
       <Header>
         <Title>{ title }</Title>
-        <Button 
-          type={'primary'} 
-          label={`+ ${buttonCaption}`} 
-          onClick={onButtonClicked} 
-        />
+        <Link href="/tambah/mustahik" passHref>
+          <TambahButton>
+            + Tambah Mustahik
+          </TambahButton>
+        </Link>
       </Header>
       <div style={{ margin: '30px 0px' }}>
       <MustahikSearch 

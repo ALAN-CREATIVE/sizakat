@@ -130,6 +130,12 @@ export function DetailInfo() {
                 <Button
                   label='Ubah'
                   type='primary'
+                  onClick={() => router.push({
+                    pathname: '/ubah/mustahik',
+                    query: {
+                      id: id
+                    }
+                  })}
                 />
               </div>
             </div>

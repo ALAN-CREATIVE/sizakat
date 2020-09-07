@@ -159,7 +159,6 @@ exports[`Storyshots Table Default 1`] = `
   font-weight: 800;
   line-height: 35px;
   color: #393F50;
-  width: -webkit-fill-available;
 }
 
 .c1 {
@@ -167,12 +166,10 @@ exports[`Storyshots Table Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c1 button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 <div

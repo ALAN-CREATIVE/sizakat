@@ -50,7 +50,7 @@ export default function PilihKategori() {
       <main>
         <div>
           <h1>KATEGORI SUMBER DATA</h1>
-          <div class="col-3">
+          <div class="col-2">
             <RadioButton
               label={' '}
               options={ ['Warga', 'Institusi', 'Pekerja'] }
@@ -64,7 +64,7 @@ export default function PilihKategori() {
               
             />
           </div>
-          <div class='col-9'>
+          <div class='col-10'>
             <div className="button-lanjutkan">
               <Button
                   label={'Lanjutkan'}

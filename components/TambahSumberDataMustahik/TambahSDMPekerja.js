@@ -4,8 +4,8 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import NumberField from '../Inputs/NumberField';
 import TextField from '../Inputs/TextField';
 import Button from '../Buttons/Button';
-// import Success from '../Popups/Success';
-// import Failed from '../Popups/Failed';
+import Success from '../Popups/Success';
+import Failed from '../Popups/Failed';
 import { useRouter } from 'next/router';
 
 import { TambahSDMContainer } from './TambahSDMStyle';
@@ -17,6 +17,7 @@ const ADD_SDM = gql`
             category
             id
         }
+        errors { field, messages }
     }
 }
 `;
@@ -33,18 +34,13 @@ const ADD_SDM_PEKERJA = gql`
             location
             dataSource{id}
         }
-        errors { messages }
+        errors { field, messages }
     }
 }
 
 `;
 
 export default function FormTambahSDMPekerja({ backend_uri }) {
-  const client = new ApolloClient({
-    uri: backend_uri,
-    cache: new InMemoryCache()
-  });
-
   const [dataSourcePekerja, setDataSourcePekerja] = useState({
     picName: '',
     picKtp: '',
@@ -64,48 +60,45 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
   });
 
   const router = useRouter();
-  // const [success, setSuccess] = useState(false);
-  // const [failed, setFailed] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
 
-  // const [createSDM, 
-  //   { data: createData, error: errorCreate, loading: loading }  
-  // ] = useMutation(ADD_SDM, {
-  //     onCompleted: (createData) => {
-  //       console.log(createData);
-  //       if (createData.dataSourceMutation.errors.length !== 0) {
-  //           setFailed(true);
-  //         console.log(createData.dataSourceMutation.errors[0].messages[0]);
-  //       } else {
-  //         createSDMPekerja({
-  //             variables: {
-  //               input: {
-  //                 ...dataSourcePekerja,
-  //                 dataSource: createData.dataSourceMutation.dataSource.id,
-  //               },
-  //             },
-  //           });
-  //           console.log(createData.dataSourceMutation.dataSource);
-  //         }
-  //       },
-  //     });
+  const [createSDM, 
+    { data: createData, error: errorCreate, loading: loading }  
+  ] = useMutation(ADD_SDM, {
+      onCompleted: (createData) => {
+        console.log(createData);
+        if (createData.dataSourceMutation.errors.length !== 0) {
+            setFailed(true);
+          console.log(createData.dataSourceMutation.errors[0].messages[0]);
+        } else {
+          createSDMPekerja({
+              variables: {
+                input: {
+                  ...dataSourcePekerja,
+                  dataSource: createData.dataSourceMutation.dataSource.id,
+                },
+              },
+            });
+            console.log(createData.dataSourceMutation.dataSource);
+          }
+        },
+      });
 
-  // const [createSDMPekerja, 
-  //       { data: createDataPekerja, error: errorCreatePekerja, loading: loadingPekerja }  
-  //   ] = useMutation(ADD_SDM_PEKERJA, {
-  //       onCompleted: (createDataPekerja) => {
-  //         console.log(createDataPekerja);
-  //         if (createDataPekerja.dataSourcePekerjaMutation.errors.length !== 0) {
-  //           setFailed(true);
-  //           console.log(createDataPekerja.dataSourcePekerjaMutation.errors[0].messages[0]);
-  //         } else {
-  //           setSuccess(true);
-  //           console.log(createDataPekerja.dataSourcePekerjaMutation.dataSourcePekerja);
-  //         }
-  //       },
-  //   });    
-
-  const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
-  const [createSDMPekerja, { data: createDataPekerja, error: errorCreatePekerja, loading: loadingPekerja }  ] = useMutation(ADD_SDM_PEKERJA);
+  const [createSDMPekerja, 
+        { data: createDataPekerja, error: errorCreatePekerja, loading: loadingPekerja }  
+    ] = useMutation(ADD_SDM_PEKERJA, {
+        onCompleted: (createDataPekerja) => {
+          console.log(createDataPekerja);
+          if (createDataPekerja.dataSourcePekerjaMutation.errors.length !== 0) {
+            setFailed(true);
+            console.log(createDataPekerja.dataSourcePekerjaMutation.errors[0].messages[0]);
+          } else {
+            setSuccess(true);
+            console.log(createDataPekerja.dataSourcePekerjaMutation.dataSourcePekerja);
+          }
+        },
+    }); 
 
 
   const submitForm = () => {
@@ -217,22 +210,6 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     return formIsValid;
   }
 
-  useEffect(() => {
-    if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
-        createSDMPekerja({ variables: { input: { ...dataSourcePekerja, dataSource: createData.dataSourceMutation.dataSource.id }}});
-    } if (createDataPekerja && createDataPekerja.dataSourcePekerjaMutation && createDataPekerja.dataSourcePekerjaMutation.dataSourcePekerja) {
-      router.push({
-        pathname: '/detail/sumber-data-mustahik',
-        query: {
-          id: createData.dataSourceMutation.dataSource.id
-        }
-      })
-    }
-    }
-    ,[createData, createDataPekerja]
-  )
-
-
   if(errorCreatePekerja) {
     console.log(errorCreatePekerja);
     console.log(errorCreatePekerja.networkError.result.errors);
@@ -250,7 +227,7 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
       <main>
         <div className="form-section">
             <h1 id="form-title">KATEGORI SUMBER DATA</h1>
-            {/* {success && (
+            {success && (
                 <Success
                  message={`Sumber data mustahik atas nama "${dataSourcePekerja.picName}" berhasil ditambahkan!`}
                  onConfirm={() => {
@@ -271,7 +248,7 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                      setFailed(false);
                   }}
                   />
-              )} */}
+              )}
             <div className="form" id="sumber-data">
               <TextField
                 label={ 'Nama Kategori' }

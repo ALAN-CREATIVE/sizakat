@@ -67,23 +67,21 @@ const mustahikToCardItem = (mustahik) => {
 }
 
 const MainContent = () => {
-  const { loading, error, data } = useQuery(INITIAL_MUSTAHIK_QUERY);
   const [ NotYetFetched, setNotYetFetched] = useState(true);
   const [dataMustahik, setDataMustahik] = useState()
+  const { loading, error } = useQuery(
+    INITIAL_MUSTAHIK_QUERY,
+    {onCompleted: (data) => setDataMustahik(data)}
+    );
   const router = useRouter();
 
   if (loading) return <p>Loading...</p>;
-
   if (error) {
     console.log(error);
     return <p>error</p>
   }
 
-  if(data && data.mustahiks && NotYetFetched){
-    setDataMustahik(data);
-    setNotYetFetched(false);
-  }
-
+  console.log(dataMustahik);
   return (
     <Container>
       <Nav>
@@ -103,17 +101,16 @@ const MainContent = () => {
           />
         </Title>
         <TableContainer>
-          {dataMustahik && dataMustahik.mustahiks && <TableMustahik
-            title={'Data Mustahik'}
-            buttonCaption={'Tambah Mustahik'}
-            searchPlaceholder={'Cari berdasarkan nama, nomor KTP'}
-            filterCaption={'SEMUA SUMBER DATA'}
-            filterOptions={['Semua Sumber Data',]}
-            itemList={dataMustahik.mustahiks.map(mustahikToCardItem)}
-            detailPath={'/detail/mustahik'}
-            onButtonClicked={() => router.push('/tambah/mustahik')}
-            setMustahikData={(data) => setDataMustahik(data)}
-          />}
+          {dataMustahik && (
+            <TableMustahik
+              title={'Data Mustahik'}
+              buttonCaption={'Tambah Mustahik'}
+              itemList={dataMustahik.mustahiks.map(mustahikToCardItem)}
+              detailPath={'/detail/mustahik'}
+              onButtonClicked={() => router.push('/tambah/mustahik')}
+              setMustahikData={(data) => setDataMustahik(data)}
+            />
+            )}
         </TableContainer>
       </Main>
     </Container>

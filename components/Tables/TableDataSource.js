@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Container, Title, Header, TambahButton } from './TableStyle';
 import { gql, useLazyQuery } from '@apollo/client'
 import PropTypes from 'prop-types';
-import { Container, Title, Header } from './TableStyle';
-import Button from '../Buttons/Button';
 import {DataSourceSearch} from '../Searches/DataSourceSearch';
 import CardList from '../Cards/CardList';
 import Filter from '../Filters/Filter';
@@ -67,11 +67,11 @@ const Table = ({
     <Container>
       <Header>
         <Title>{ title }</Title>
-        <Button
-          type={'primary'}
-          label={`+ ${buttonCaption}`}
-          onClick={onButtonClicked}
-        />
+        <Link href="/tambah/sumber-data-mustahik/pilih-kategori" passHref>
+          <TambahButton>
+            + Tambah Sumber Data
+          </TambahButton>
+        </Link>
       </Header>
       <div
         style={{

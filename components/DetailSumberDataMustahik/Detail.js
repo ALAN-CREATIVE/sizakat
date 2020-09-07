@@ -51,7 +51,7 @@ query dataSource($id: ID!){
 }
 `;
 
-export function DetailInfo() {
+export function DetailInfo({setCategory}) {
   const router = useRouter()
   const {id} = router.query
   const { data, loading, error } = useQuery(QUERY_USERS, {variables: {id} });
@@ -66,7 +66,8 @@ export function DetailInfo() {
     ));
   }
 
-  const {idDataSource, category, dataSourceDetail: detail} = data.dataSource
+  const {category, dataSourceDetail: detail} = data.dataSource
+  setCategory(category);
   return (
     <>
     <Head>

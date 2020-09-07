@@ -1,36 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Button Danger 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-  </style>
+<div
+  className="sc-AxjAm eEVAA"
+>
   <button
     className="danger"
     onClick={[Function]}
@@ -41,36 +14,9 @@ exports[`Storyshots Button Danger 1`] = `
 `;
 
 exports[`Storyshots Button Primary 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-  </style>
+<div
+  className="sc-AxjAm eEVAA"
+>
   <button
     className="primary"
     onClick={[Function]}
@@ -80,37 +26,23 @@ exports[`Storyshots Button Primary 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Secondary 1`] = `
-<div>
-  <style
-    jsx={true}
+exports[`Storyshots Button Round 1`] = `
+<div
+  className="sc-AxjAm eEVAA"
+>
+  <button
+    className="round"
+    onClick={[Function]}
   >
-    
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-  </style>
+     + 
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+<div
+  className="sc-AxjAm eEVAA"
+>
   <button
     className="secondary"
     onClick={[Function]}
@@ -120,9 +52,22 @@ exports[`Storyshots Button Secondary 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button Tertiary 1`] = `
+<div
+  className="sc-AxjAm eEVAA"
+>
+  <button
+    className="tertiary"
+    onClick={[Function]}
+  >
+    Tertiary
+  </button>
+</div>
+`;
+
 exports[`Storyshots Card Default 1`] = `
 <div
-  className="sc-AxjAm ezwerM"
+  className="sc-AxirZ hiQgNr"
 >
   <div>
     <h1
@@ -151,7 +96,7 @@ exports[`Storyshots Card Default 1`] = `
     </p>
   </div>
   <div
-    className="sc-AxirZ eIgGJx"
+    className="sc-AxiKw kEsYLJ"
   >
     <a
       onClick={[Function]}
@@ -169,13 +114,13 @@ exports[`Storyshots Card Default 1`] = `
 
 exports[`Storyshots Card/Card List Default 1`] = `
 <div
-  className="sc-AxiKw bvMRsc"
+  className="sc-AxhCb jDfmgo"
 >
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-AxhUy coOsmi"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-AxirZ hiQgNr"
     >
       <div>
         <h1
@@ -204,7 +149,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-AxiKw kEsYLJ"
       >
         <a
           onClick={[Function]}
@@ -220,10 +165,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-AxhUy coOsmi"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-AxirZ hiQgNr"
     >
       <div>
         <h1
@@ -252,7 +197,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-AxiKw kEsYLJ"
       >
         <a
           onClick={[Function]}
@@ -268,10 +213,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-AxhUy coOsmi"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-AxirZ hiQgNr"
     >
       <div>
         <h1
@@ -300,7 +245,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-AxiKw kEsYLJ"
       >
         <a
           onClick={[Function]}
@@ -316,10 +261,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-AxhUy coOsmi"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-AxirZ hiQgNr"
     >
       <div>
         <h1
@@ -348,7 +293,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-AxiKw kEsYLJ"
       >
         <a
           onClick={[Function]}
@@ -364,10 +309,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-AxhUy coOsmi"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-AxirZ hiQgNr"
     >
       <div>
         <h1
@@ -396,7 +341,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-AxiKw kEsYLJ"
       >
         <a
           onClick={[Function]}
@@ -2707,245 +2652,6 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
 </div>
 `;
 
-exports[`Storyshots Input/File Field Default 1`] = `
-<div>
-  <label
-    className=""
-  >
-    Foto Mustahik
-  </label>
-  <label
-    className="desc"
-  >
-    Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg
-  </label>
-  <input
-    className="file-input"
-    onChange={[Function]}
-    type="file"
-  />
-  <style
-    jsx={true}
-  >
-    
-    label {
-      text-rendering: geometricPrecision;
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      display: block;
-      color: #393F50;
-    }
-
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
-
-    .desc {
-      display: inline;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      color: #6F6F6F;
-      margin-right: 50px;
-    }
-
-    .file-input {
-      color: transparent;
-    }
-
-    .file-input::-webkit-file-upload-button {
-      visibility: hidden;
-    }
-
-    .file-input::before {
-      content: "Pilih Foto";
-      font-family: Muli;
-      font-size: 16px;
-      font-weight: 700;
-      color: #00239D;
-      cursor: pointer;
-      padding: 10px 41px 11px 40px;
-      border: 1px solid #00239D;
-      border-radius: 50px;
-      display: inline-block;
-    }
-
-    .error {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 12px;
-      display: block;
-      color: #EB4E2C;
-      text-rendering: optimizeLegibility;
-    }
-  
-  </style>
-</div>
-`;
-
-exports[`Storyshots Input/File Field Error 1`] = `
-<div>
-  <label
-    className=""
-  >
-    Foto Mustahik
-  </label>
-  <label
-    className="desc"
-  >
-    Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg
-  </label>
-  <input
-    className="file-input"
-    onChange={[Function]}
-    type="file"
-  />
-  <style
-    jsx={true}
-  >
-    
-    label {
-      text-rendering: geometricPrecision;
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      display: block;
-      color: #393F50;
-    }
-
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
-
-    .desc {
-      display: inline;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      color: #6F6F6F;
-      margin-right: 50px;
-    }
-
-    .file-input {
-      color: transparent;
-    }
-
-    .file-input::-webkit-file-upload-button {
-      visibility: hidden;
-    }
-
-    .file-input::before {
-      content: "Pilih Foto";
-      font-family: Muli;
-      font-size: 16px;
-      font-weight: 700;
-      color: #00239D;
-      cursor: pointer;
-      padding: 10px 41px 11px 40px;
-      border: 1px solid #00239D;
-      border-radius: 50px;
-      display: inline-block;
-    }
-
-    .error {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 12px;
-      display: block;
-      color: #EB4E2C;
-      text-rendering: optimizeLegibility;
-    }
-  
-  </style>
-  <span
-    className="error"
-  >
-    Ukuran foto yang diunggah tidak sesuai
-  </span>
-</div>
-`;
-
-exports[`Storyshots Input/File Field Required 1`] = `
-<div>
-  <label
-    className="required"
-  >
-    Foto Mustahik
-  </label>
-  <label
-    className="desc"
-  >
-    Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg
-  </label>
-  <input
-    className="file-input"
-    onChange={[Function]}
-    type="file"
-  />
-  <style
-    jsx={true}
-  >
-    
-    label {
-      text-rendering: geometricPrecision;
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      display: block;
-      color: #393F50;
-    }
-
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
-
-    .desc {
-      display: inline;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 18px;
-      color: #6F6F6F;
-      margin-right: 50px;
-    }
-
-    .file-input {
-      color: transparent;
-    }
-
-    .file-input::-webkit-file-upload-button {
-      visibility: hidden;
-    }
-
-    .file-input::before {
-      content: "Pilih Foto";
-      font-family: Muli;
-      font-size: 16px;
-      font-weight: 700;
-      color: #00239D;
-      cursor: pointer;
-      padding: 10px 41px 11px 40px;
-      border: 1px solid #00239D;
-      border-radius: 50px;
-      display: inline-block;
-    }
-
-    .error {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 12px;
-      display: block;
-      color: #EB4E2C;
-      text-rendering: optimizeLegibility;
-    }
-  
-  </style>
-</div>
-`;
-
 exports[`Storyshots Input/Filter Default 1`] = `
 <div
   className="filter"
@@ -2983,466 +2689,6 @@ exports[`Storyshots Input/Filter Default 1`] = `
       SEMUA SUMBER DATA ⯆ 
     </p>
   </div>
-</div>
-`;
-
-exports[`Storyshots Input/Number Field Default 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
-
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
-
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
-
-    input::placeholder {
-      color: #C4C4C4;
-    }
-
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
-  <label
-    className={null}
-  >
-     
-    Nomor KTP
-     
-  </label>
-  <input
-    name="Nomor KTP"
-    onChange={[Function]}
-    placeholder="Terdiri dari 14 karakter angka"
-    required={false}
-    type="number"
-    value=""
-  />
-</div>
-`;
-
-exports[`Storyshots Input/Number Field Error 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
-
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
-
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
-
-    input::placeholder {
-      color: #C4C4C4;
-    }
-
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
-  <label
-    className={null}
-  >
-     
-    Nomor KTP
-     
-  </label>
-  <input
-    name="Nomor KTP"
-    onChange={[Function]}
-    placeholder="Terdiri dari 14 karakter angka"
-    required={false}
-    type="number"
-    value=""
-  />
-  <span
-    className="error"
-  >
-    Format KTP harus berupa 14 karakter angka
-  </span>
-</div>
-`;
-
-exports[`Storyshots Input/Number Field Required 1`] = `
-<div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      font-weight: 700;
-      font-size: 16px;
-      color: #393F50;
-      line-height: 20px;
-    }
-
-    .required:after {
-      color: #EB4E2C;
-      content: "*";
-    }
-
-    input, select {
-      border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
-      display: block;
-      width: 99%;
-      padding: 12px 5px 12px 5px;
-      font-size: 14px;
-      font-family: Muli;
-      line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
-    }
-
-    input::placeholder {
-      color: #C4C4C4;
-    }
-
-    .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
-    }
-  
-  </style>
-  <label
-    className="required"
-  >
-     
-    Nomor KTP
-     
-  </label>
-  <input
-    name="Nomor KTP"
-    onChange={[Function]}
-    placeholder="Terdiri dari 14 karakter angka"
-    required={true}
-    type="number"
-    value=""
-  />
-</div>
-`;
-
-exports[`Storyshots Input/Radio Button Default 1`] = `
-<div>
-  <label
-    className="main-label "
-  >
-    Jenis Kelamin
-  </label>
-  <div
-    className="radios"
-    onChange={[Function]}
-  >
-    <div
-      className="radio"
-    >
-      <input
-        name="Jenis Kelamin"
-        type="radio"
-        value="Laki-laki"
-      />
-      <label>
-        Laki-laki
-      </label>
-    </div>
-    <div
-      className="radio"
-    >
-      <input
-        name="Jenis Kelamin"
-        type="radio"
-        value="Perempuan"
-      />
-      <label>
-        Perempuan
-      </label>
-    </div>
-  </div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      color: #393F50;
-    }
-
-    .main-label {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .required:after {
-      content: "*";
-      color: #EB4E2C;
-    }
-
-    .radios {
-      margin: 10px 5px 5px 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .radio {
-      display: flex;
-      font-size: 14px;
-      font-weight: 600;
-      width: 150px;
-      align-items: center;
-    }
-
-    .radio label {
-      margin-left: 5px;
-    }
-
-    .error {
-      color: #EB4E2C;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Muli;
-    }
-  
-  </style>
-</div>
-`;
-
-exports[`Storyshots Input/Radio Button Error 1`] = `
-<div>
-  <label
-    className="main-label "
-  >
-    Jenis Kelamin
-  </label>
-  <div
-    className="radios"
-    onChange={[Function]}
-  >
-    <div
-      className="radio"
-    >
-      <input
-        name="Jenis Kelamin"
-        type="radio"
-        value="Laki-laki"
-      />
-      <label>
-        Laki-laki
-      </label>
-    </div>
-    <div
-      className="radio"
-    >
-      <input
-        name="Jenis Kelamin"
-        type="radio"
-        value="Perempuan"
-      />
-      <label>
-        Perempuan
-      </label>
-    </div>
-  </div>
-  <span
-    className="error"
-  >
-    Pilih salah satu jenis kelamin
-  </span>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      color: #393F50;
-    }
-
-    .main-label {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .required:after {
-      content: "*";
-      color: #EB4E2C;
-    }
-
-    .radios {
-      margin: 10px 5px 5px 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .radio {
-      display: flex;
-      font-size: 14px;
-      font-weight: 600;
-      width: 150px;
-      align-items: center;
-    }
-
-    .radio label {
-      margin-left: 5px;
-    }
-
-    .error {
-      color: #EB4E2C;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Muli;
-    }
-  
-  </style>
-</div>
-`;
-
-exports[`Storyshots Input/Radio Button Required 1`] = `
-<div>
-  <label
-    className="main-label required"
-  >
-    Jenis Kelamin
-  </label>
-  <div
-    className="radios"
-    onChange={[Function]}
-  >
-    <div
-      className="radio"
-    >
-      <input
-        name="Jenis Kelamin"
-        type="radio"
-        value="Laki-laki"
-      />
-      <label>
-        Laki-laki
-      </label>
-    </div>
-    <div
-      className="radio"
-    >
-      <input
-        name="Jenis Kelamin"
-        type="radio"
-        value="Perempuan"
-      />
-      <label>
-        Perempuan
-      </label>
-    </div>
-  </div>
-  <style
-    jsx={true}
-  >
-    
-    label {
-      font-family: Muli;
-      color: #393F50;
-    }
-
-    .main-label {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .required:after {
-      content: "*";
-      color: #EB4E2C;
-    }
-
-    .radios {
-      margin: 10px 5px 5px 5px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .radio {
-      display: flex;
-      font-size: 14px;
-      font-weight: 600;
-      width: 150px;
-      align-items: center;
-    }
-
-    .radio label {
-      margin-left: 5px;
-    }
-
-    .error {
-      color: #EB4E2C;
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Muli;
-    }
-  
-  </style>
 </div>
 `;
 
@@ -3786,7 +3032,7 @@ exports[`Storyshots Navigation Bar Default 1`] = `
 
 exports[`Storyshots Receipt/Cash Default 1`] = `
 <div
-  className="sc-Axmtr guLHom"
+  className="sc-AxmLO bIQikj"
 >
   <h1>
     Transaksi Uang
@@ -3795,7 +3041,7 @@ exports[`Storyshots Receipt/Cash Default 1`] = `
     className="container"
   >
     <div
-      className="sc-AxhUy chtuzW"
+      className="sc-AxgMl jdXTIo"
     >
       <ul
         className="name"
@@ -3831,7 +3077,7 @@ exports[`Storyshots Receipt/Cash Default 1`] = `
   </div>
   <div>
     <div
-      className="sc-AxgMl eDOKol"
+      className="sc-AxheI ktmeEj"
     >
       <h1>
         Pengiriman
@@ -3863,7 +3109,7 @@ exports[`Storyshots Receipt/Cash Default 1`] = `
             Tunai di Masjid Al-Jabbar
              
             <span
-              className="sc-AxheI cZEIln"
+              className="sc-Axmtr kQMEqM"
             >
               Jam Operasional Selasa - Sabtu 08.00 - 17.00
             </span>
@@ -3877,7 +3123,7 @@ exports[`Storyshots Receipt/Cash Default 1`] = `
 
 exports[`Storyshots Receipt/Parts/Payment List Default 1`] = `
 <div
-  className="sc-AxhUy chtuzW"
+  className="sc-AxgMl jdXTIo"
 >
   <ul
     className="name"
@@ -3914,7 +3160,7 @@ exports[`Storyshots Receipt/Parts/Payment List Default 1`] = `
 
 exports[`Storyshots Receipt/Parts/Payment Option Default 1`] = `
 <div
-  className="sc-AxgMl eDOKol"
+  className="sc-AxheI ktmeEj"
 >
   <h1>
     Pengiriman
@@ -3946,7 +3192,7 @@ exports[`Storyshots Receipt/Parts/Payment Option Default 1`] = `
         Tunai di Masjid Al-Jabbar
          
         <span
-          className="sc-AxheI cZEIln"
+          className="sc-Axmtr kQMEqM"
         >
           Jam Operasional Selasa - Sabtu 08:00 - 17:00
         </span>
@@ -3958,7 +3204,7 @@ exports[`Storyshots Receipt/Parts/Payment Option Default 1`] = `
 
 exports[`Storyshots Receipt/Rice Default 1`] = `
 <div
-  className="sc-Axmtr guLHom"
+  className="sc-AxmLO bIQikj"
 >
   <h1>
     Transaksi Beras
@@ -3967,7 +3213,7 @@ exports[`Storyshots Receipt/Rice Default 1`] = `
     className="container"
   >
     <div
-      className="sc-AxhUy chtuzW"
+      className="sc-AxgMl jdXTIo"
     >
       <ul
         className="name"
@@ -4003,7 +3249,7 @@ exports[`Storyshots Receipt/Rice Default 1`] = `
   </div>
   <div>
     <div
-      className="sc-AxgMl eDOKol"
+      className="sc-AxheI ktmeEj"
     >
       <h1>
         Pengiriman
@@ -4035,7 +3281,7 @@ exports[`Storyshots Receipt/Rice Default 1`] = `
             Diantar ke Masjid Al-Jabbar
              
             <span
-              className="sc-AxheI cZEIln"
+              className="sc-Axmtr kQMEqM"
             >
               Jam Opersaional Selasa - Sabtu 08.00 - 17.00
             </span>
@@ -4114,7 +3360,7 @@ exports[`Storyshots Receipt/Rice Default 1`] = `
 
 exports[`Storyshots Receipt/Summary Default 1`] = `
 <div
-  className="sc-AxmLO joHQou"
+  className="sc-fzozJi jTnntL"
 >
   <h1>
     Ringkasan Transaksi
@@ -4123,7 +3369,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
     className="margined"
   >
     <div
-      className="sc-Axmtr guLHom"
+      className="sc-AxmLO bIQikj"
     >
       <h1>
         Transaksi Uang
@@ -4132,7 +3378,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
         className="container"
       >
         <div
-          className="sc-AxhUy chtuzW"
+          className="sc-AxgMl jdXTIo"
         >
           <ul
             className="name"
@@ -4174,7 +3420,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
       </div>
       <div>
         <div
-          className="sc-AxgMl eDOKol"
+          className="sc-AxheI ktmeEj"
         >
           <h1>
             Pengiriman
@@ -4206,7 +3452,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
                 Tunai di Masjid Al-Jabbar
                  
                 <span
-                  className="sc-AxheI cZEIln"
+                  className="sc-Axmtr kQMEqM"
                 >
                   Jam Operasional Selasa - Sabtu 08.00 - 17.00
                 </span>
@@ -4221,7 +3467,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
     className="margined"
   >
     <div
-      className="sc-Axmtr guLHom"
+      className="sc-AxmLO bIQikj"
     >
       <h1>
         Transaksi Beras
@@ -4230,7 +3476,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
         className="container"
       >
         <div
-          className="sc-AxhUy chtuzW"
+          className="sc-AxgMl jdXTIo"
         >
           <ul
             className="name"
@@ -4266,7 +3512,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
       </div>
       <div>
         <div
-          className="sc-AxgMl eDOKol"
+          className="sc-AxheI ktmeEj"
         >
           <h1>
             Pengiriman
@@ -4298,7 +3544,7 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
                 Diantar ke Masjid Al-Jabbar
                  
                 <span
-                  className="sc-AxheI cZEIln"
+                  className="sc-Axmtr kQMEqM"
                 >
                   Jam Opersaional Selasa - Sabtu 08.00 - 17.00
                 </span>
@@ -4377,36 +3623,9 @@ exports[`Storyshots Receipt/Summary Default 1`] = `
   <div
     className="margined"
   >
-    <div>
-      <style
-        jsx={true}
-      >
-        
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
-      </style>
+    <div
+      className="sc-AxjAm eEVAA"
+    >
       <button
         className="primary"
         onClick={[Function]}
@@ -4466,11 +3685,11 @@ exports[`Storyshots Search Default 1`] = `
 
 exports[`Storyshots Title/Title Flow Default 1`] = `
 <div
-  className="sc-fzozJi jPfVfP"
+  className="sc-fzoLsD ekpzJZ"
   size={4}
 >
   <div
-    className="sc-fzoLsD beDTFL"
+    className="sc-fzpans XweAr"
   >
     <p
       className=""
@@ -4482,7 +3701,7 @@ exports[`Storyshots Title/Title Flow Default 1`] = `
     />
   </div>
   <div
-    className="sc-fzoLsD beDTFL"
+    className="sc-fzpans XweAr"
   >
     <p
       className="highlight"
@@ -4494,7 +3713,7 @@ exports[`Storyshots Title/Title Flow Default 1`] = `
     />
   </div>
   <div
-    className="sc-fzoLsD beDTFL"
+    className="sc-fzpans XweAr"
   >
     <p
       className=""
@@ -4506,7 +3725,7 @@ exports[`Storyshots Title/Title Flow Default 1`] = `
     />
   </div>
   <div
-    className="sc-fzoLsD beDTFL"
+    className="sc-fzpans XweAr"
   >
     <p
       className=""

@@ -223,41 +223,51 @@ export default function TambahTransaksiForm() {
         }
     })
 
+    const symbol = {
+        number: new RegExp(/^[0-9]+$/),
+        alphabet: new RegExp(/[a-zA-Z]+/),
+        onlySpace: new RegExp(/\s/g),
+        namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+        alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+        numberValid: new RegExp(/^[0][0-9]+$/),
+        onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+        phoneNumberWithSymbol: new RegExp(
+          /^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/
+        ),
+        plus = new RegExp(/^[\+][0-9]+$/),
+        onlyPlus = new RegExp(/^[\+]+$/),
+        phoneValid = new RegExp(/^[0][0-9]+$/g)
+      };
+    
+
     const submitCheck = () => {
         let formIsValid = true;
         let temporaryError = {};
-        var alphabet = new RegExp(/^[a-zA-Z]+$/);
-        var plus = new RegExp(/^[\+][0-9]+$/);
-        var onlyPlus = new RegExp(/^[\+]+$/);
-        var onlySpace = new RegExp(/\s/g);
-        var namaLengkapValid = new RegExp(/^[a-zA-Z]+?([\s]+)/);
-        var phoneValid = new RegExp(/^[0][0-9]+$/g)
-
 
         if (muzakki.name.length == 0) {
             formIsValid = false;
             temporaryError.name='Nama lengkap tidak boleh kosong';
-        } if (muzakki.name.match(onlySpace)) {
+        } if (muzakki.name.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.name='Nama lengkap tidak boleh diisi dengan spasi saja';
-        } if (muzakki.name.match(namaLengkapValid)) {
+        } if (muzakki.name.match(symbol.namaLengkapValid)) {
             formIsValid = true;
             temporaryError.name='';
+        } if (mustahik.noKtp.match(symbol.alphabet)) {
+            formIsValid = false;
+            temporaryError.noKtp = "No KTP harus diisi dengan 14 karakter angka";
         } if (muzakki.noKtp.length < 14 || muzakki.noKtp.length > 14) {
             formIsValid = false;
             temporaryError.noKtp='Format KTP harus berupa 14 karakter angka';
-        } if (muzakki.noKtp.match(onlySpace)) {
+        } if (muzakki.noKtp.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.noKtp='No KTP tidak boleh diisi dengan spasi';
-        } if (muzakki.phone.match(onlySpace)) {
+        } if (muzakki.phone.match(symbol.onlySpace)) {
             formIsValid = false;
             temporaryError.phone='No HP tidak boleh diisi dengan spasi';
-        } if (muzakki.phone.match(plus) || muzakki.phone.match(onlyPlus) || !(muzakki.phone.match(phoneValid))) {
+        } if (muzakki.phone.match(symbol.plus) || muzakki.phone.match(symbol.onlyPlus) || !(muzakki.phone.match(symbol.phoneValid))) {
             formIsValid = false;
             temporaryError.phone='Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)';
-        } if (muzakki.phone.match(onlySpace)) {
-            formIsValid = false;
-            temporaryError.phone='No HP tidak boleh diisi dengan spasi';
         } 
         setError(temporaryError);
         return formIsValid;
@@ -277,8 +287,25 @@ export default function TambahTransaksiForm() {
                         placeholder="Terdiri dari 14 karakter angka" 
                         required={true}
                         onChange={ktp => {
-                            setMuzakki({...muzakki, noKtp:ktp})
-                            setError({...error, noKtp:ktp = ktp.length < 14 || ktp.length > 14 ? 'Format KTP harus berupa 14 karakter angka' : ''})
+                            setMuzakki({...muzakki, noKtp:ktp});
+                            if(ktp.match(symbol.onlySpace)) {
+                                setError({
+                                    ...error,
+                                    noKtp: "Nomor KTP tidak boleh diisi dengan spasi saja"
+                                });
+                            } else if (ktp.length < 14 || ktp.length > 14) {
+                                setError({
+                                    ...error,
+                                    noKtp: "Format KTP harus berupa 14 karakter angka",
+                                });
+                            } else if (ktp.match(symbol.alphabet)) {
+                                setError({
+                                    ...error,
+                                    noKtp: "No KTP harus diisi dengan 14 karakter angka",
+                                });
+                            } else {
+                                setError({ ...error, noKtp: "" });
+                            }
                         }}
                         error={error.noKtp} 
                     /> <br></br>
@@ -287,8 +314,23 @@ export default function TambahTransaksiForm() {
                         placeholder="Nama sesuai dengan KTP" 
                         required={true} 
                         onChange={name => {
-                            setMuzakki({...muzakki, name:name})
-                            setError({...error, name: name = name.length === 0 ? 'Nama lengkap tidak boleh kosong' : ''})
+                            setMuzakki({...muzakki, name:name});
+                            if (name.match(symbol.namaLengkapValid)) {
+                                setError({ ...error, name: "" });
+                            } else if (name.match(symbol.onlySpace)) {
+                                setError({
+                                    ...error,
+                                    name: "Nama lengkap tidak boleh diisi dengan spasi saja",
+                                });
+                            } else if (name.length < 1) {
+                                setError({
+                                    ...error,
+                                    name: "Nama lengkap tidak boleh kosong",
+                                });
+                            } else {
+                                setError({ ...error, name: "" });
+                            }
+              
                         }} 
                         error={error.name}
                     /> <br></br>
@@ -298,7 +340,27 @@ export default function TambahTransaksiForm() {
                         required={true} 
                         onChange={phone => {
                             setMuzakki({...muzakki, phone:phone})
-                            setError({...error, phone: phone = phone.length === 0 ? 'Nomor Telepon tidak boleh kosong' : '' })
+                            if (phone.match(symbol.alphabet)) {
+                                setError({ ...error, phone: "Format HP harus berupa angka" });
+                            } else if (phone.match(symbol.numberValid)) {
+                                setError({ ...error, phone: "" });
+                            } else if (
+                                phone.match(symbol.phoneNumberWithSymbol) ||
+                                phone.match(symbol.onlySymbol)
+                            ) {
+                                setError({
+                                    ...error,
+                                    phone:
+                                        "Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)",
+                                });
+                            } else if (phone.match(symbol.onlySpace)) {
+                                setError({
+                                    ...error,
+                                    phone: "No HP tidak boleh diisi dengan spasi saja",
+                                });
+                            } else {
+                                setError({ ...error, phone: "" });
+                            }
                         }} 
                         error = {error.phone}
                     /> <br></br>

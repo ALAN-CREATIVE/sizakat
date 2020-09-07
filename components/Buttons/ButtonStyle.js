@@ -1,7 +1,6 @@
-import React from 'react';
+import styled from 'styled-components';
 
-const ButtonStyle = () => (
-    <style jsx>{`
+const ButtonContainer = styled.div`
         button{
             font-family: Muli;
             text-align: center;
@@ -37,7 +36,6 @@ const ButtonStyle = () => (
             border:1px solid #00239D;
             font-size: 20px;
         }
-    `}</style>
-)
+    `
 
-export default ButtonStyle;
+export default ButtonContainer;

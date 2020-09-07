@@ -11,7 +11,12 @@ export default {
 
 export const filterData = {
     label: 'SEMUA KATEGORI SUMBER',
-    options : ['Semua Kategori Sumber Data','Warga','Pesantren','Pekerja'],
+    options: [
+        {display: 'Semua Kategori Sumber Data', value: 'ALL'},
+        {display: 'Warga', value: 'WARGA'},
+        {display: 'Institusi', value: 'INSTITUSI'}, 
+        {display: 'Pekerja', value: 'PEKERJA'}
+    ],
     required : false,
     error : null
 }

@@ -8,6 +8,18 @@ import DeleteWarning from '../Popups/Warning';
 
 const QUERY_USERS = gql`
 query mustahikQuery($id: ID!) {
+  statusEnum: __type(name: "MustahikStatus") {
+    enumValues {
+      name
+      description
+    }
+  }
+  genderEnum: __type(name: "MustahikGender") {
+    enumValues {
+      name
+      description
+    }
+  }
   mustahik(id : $id) {
     id
     name
@@ -83,7 +95,8 @@ export function DetailInfo() {
       ));
   }
 
-  return [data.mustahik].map(({ name, noKtp, phone, address, gender, status, photo, age, dataSource }) =>(
+  const { name, noKtp, phone, address, gender, status, photo, age, dataSource } = data.mustahik;
+  return (
     <>
       <Head>
         <title>Mustahik: {name}</title>
@@ -133,10 +146,10 @@ export function DetailInfo() {
         </div>
         <br></br>
         <div className="row">
-          <div className="col-md-4">
-            <img id="photo" src="{photo}"></img>
+          <div className="col-md-5">
+            <img id="photo" src={photo}></img>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-7">
             <DetailField title='Nama Mustahik' description={name} /><br></br>
             <DetailField title='Kategori' description={dataSource.category} /><br></br>
             <p className="label">Sumber Data</p>
@@ -162,8 +175,20 @@ export function DetailInfo() {
           <div className="col-md-5">
             <DetailField title='Nomor KTP' description={noKtp} /><br></br>
             <DetailField title='Usia' description={age} /><br></br>
-            <DetailField title='Jenis Kelamin' description={gender} /><br></br>
-            <DetailField title='Status Mustahik' description={status} /><br></br>
+            {
+              data.genderEnum.enumValues.filter(gen => gen.name === gender).map(genderMustahik => (
+                <div>
+                  <DetailField title='Jenis Kelamin' description={genderMustahik.description} /><br></br>
+                  </div>
+              ))
+            }
+            {
+              data.statusEnum.enumValues.filter(stat => stat.name === status).map(statusMustahik => (
+                <div>
+                  <DetailField title='Status Mustahik' description={statusMustahik.description} /><br></br>
+                </div>
+              ))
+            }
             <DetailField title='Nomor HP' description={phone} /><br></br>
           </div>
           <div className="col-md-7">
@@ -203,5 +228,5 @@ export function DetailInfo() {
         </div>
       </div>
     </>
-  ));
+  );
 }

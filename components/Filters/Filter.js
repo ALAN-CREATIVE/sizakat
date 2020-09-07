@@ -10,18 +10,22 @@ const Filter = ({label, options, onRadioClicked}) => {
 
   return (
     <FilterContainer>
-      <div onClick={() => setIsOpen(isOpen ? false : true)}>
+      <div
+        onClick={() => setIsOpen(isOpen ? false : true)}
+        tabIndex={0}
+        onBlur={() => setIsOpen(false)}
+      >
         <div>
-          { label }
+          {label}
           <img style={{verticalAlign: 'baseline'}} src="/dropdown-arrow.svg" />
         </div>
         <div className={`kotakFilter ${isOpen ? '': 'hide'}`}>
           <div className="radios" onChange={handleOnChange}>
             {options.map(option => (
-              <div className="radio" key={option}>
+              <div className="radio" key={option.value}>
                 <label style={{display: 'block'}}>
-                  <input name="filter" type="radio" value={option} key={`input-${option}`} />
-                  { option }
+                  <input name="filter" type="radio" value={option.value} key={`input-${option}`} />
+                  {option.display}
                 </label>
               </div>
             ))}

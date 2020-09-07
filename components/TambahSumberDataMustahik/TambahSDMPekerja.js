@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { gql, useMutation, useQuery } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
 import NumberField from '../Inputs/NumberField';
 import TextField from '../Inputs/TextField';
 import Button from '../Buttons/Button';
+// import Success from '../Popups/Success';
+// import Failed from '../Popups/Failed';
 import { useRouter } from 'next/router';
 
 import { TambahSDMContainer } from './TambahSDMStyle';
@@ -62,9 +63,50 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     location: '',
   });
 
-    
+  const router = useRouter();
+  // const [success, setSuccess] = useState(false);
+  // const [failed, setFailed] = useState(false);
+
+  // const [createSDM, 
+  //   { data: createData, error: errorCreate, loading: loading }  
+  // ] = useMutation(ADD_SDM, {
+  //     onCompleted: (createData) => {
+  //       console.log(createData);
+  //       if (createData.dataSourceMutation.errors.length !== 0) {
+  //           setFailed(true);
+  //         console.log(createData.dataSourceMutation.errors[0].messages[0]);
+  //       } else {
+  //         createSDMPekerja({
+  //             variables: {
+  //               input: {
+  //                 ...dataSourcePekerja,
+  //                 dataSource: createData.dataSourceMutation.dataSource.id,
+  //               },
+  //             },
+  //           });
+  //           console.log(createData.dataSourceMutation.dataSource);
+  //         }
+  //       },
+  //     });
+
+  // const [createSDMPekerja, 
+  //       { data: createDataPekerja, error: errorCreatePekerja, loading: loadingPekerja }  
+  //   ] = useMutation(ADD_SDM_PEKERJA, {
+  //       onCompleted: (createDataPekerja) => {
+  //         console.log(createDataPekerja);
+  //         if (createDataPekerja.dataSourcePekerjaMutation.errors.length !== 0) {
+  //           setFailed(true);
+  //           console.log(createDataPekerja.dataSourcePekerjaMutation.errors[0].messages[0]);
+  //         } else {
+  //           setSuccess(true);
+  //           console.log(createDataPekerja.dataSourcePekerjaMutation.dataSourcePekerja);
+  //         }
+  //       },
+  //   });    
+
   const [createSDM, { data: createData, error: errorCreate, loading: loading }  ] = useMutation(ADD_SDM);
   const [createSDMPekerja, { data: createDataPekerja, error: errorCreatePekerja, loading: loadingPekerja }  ] = useMutation(ADD_SDM_PEKERJA);
+
 
   const submitForm = () => {
     console.log(handleSubmit());
@@ -76,11 +118,10 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                 }
             }
         });
-      console.log(dataSourcePekerja);
-      alert("Submit berhasil");
+        console.log(dataSourcePekerja); 
     } else {
-      console.log(dataSourcePekerja);
-      alert("Submit gagal");
+        console.log(dataSourcePekerja);
+        setFailed(true);
     }
   }
 
@@ -163,10 +204,10 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
 
     if (dataSourcePekerja.location.length == 0) {
         formIsValid = false;
-        temporaryError.location='Nama lokasi pekerjaan (kelurahan) tidak boleh kosong';
+        temporaryError.location='Lokasi pekerjaan (nama kelurahan) tidak boleh kosong';
     } if (dataSourcePekerja.location.match(symbol.onlySpace)) {
         formIsValid = false;
-        temporaryError.location='Nama lokasi pekerjaan (kelurahan) tidak boleh diisi spasi saja';
+        temporaryError.location='Lokasi pekerjaan (nama kelurahan) tidak boleh diisi spasi saja';
     } if (dataSourcePekerja.location.match(symbol.stringnumberValid)) {
         formIsValid = true;
         temporaryError.location = "";
@@ -175,8 +216,6 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     setError(temporaryError);
     return formIsValid;
   }
-
-  const router = useRouter();
 
   useEffect(() => {
     if (createData && createData.dataSourceMutation && createData.dataSourceMutation.dataSource) {
@@ -192,6 +231,7 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
     }
     ,[createData, createDataPekerja]
   )
+
 
   if(errorCreatePekerja) {
     console.log(errorCreatePekerja);
@@ -210,6 +250,28 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
       <main>
         <div className="form-section">
             <h1 id="form-title">KATEGORI SUMBER DATA</h1>
+            {/* {success && (
+                <Success
+                 message={`Sumber data mustahik atas nama "${dataSourcePekerja.picName}" berhasil ditambahkan!`}
+                 onConfirm={() => {
+                    router.push({
+                        pathname: '/detail/sumber-data-mustahik',
+                        query: {
+                          id: createData.dataSourceMutation.dataSource.id
+                        },
+                    });
+                    setSuccess(false);
+                  }}
+                  />
+              )}
+              {failed && (
+                  <Failed
+                  message={`Tidak berhasil menambahkan sumber data mustahik. Silahkan dicoba lagi.`}
+                  onConfirm={() => {
+                     setFailed(false);
+                  }}
+                  />
+              )} */}
             <div className="form" id="sumber-data">
               <TextField
                 label={ 'Nama Kategori' }
@@ -249,7 +311,7 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
             </div>
             <div className="form" id="lokasi-pekerjaan">
               <TextField
-                label={ 'Lokasi Pekerjaan (Kelurahan)' }
+                label={ 'Lokasi Pekerjaan (Nama Kelurahan)' }
                 placeholder={ 'Kelurahan' }
                 required={ true }
                 onChange={lokasi => {
@@ -260,11 +322,11 @@ export default function FormTambahSDMPekerja({ backend_uri }) {
                     })
                   } else if (lokasi.match(symbol.onlySpace)) {
                       setError({...error,
-                        location: 'Nama lokasi pekerjaan (kelurahan) tidak boleh diisi dengan spasi saja'
+                        location: 'Lokasi pekerjaan (nama kelurahan) tidak boleh diisi dengan spasi saja'
                       });    
                   } else if (lokasi.length < 1) {
                       setError({...error,
-                        location: 'Nama lokasi pekerjaan (kelurahan) tidak boleh kosong'
+                        location: 'Lokasi pekerjaan (nama kelurahan) tidak boleh kosong'
                       });
                   } else {
                       setError({...error,

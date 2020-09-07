@@ -231,12 +231,10 @@ export default function TambahTransaksiForm() {
         alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),
         onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
-        phoneNumberWithSymbol: new RegExp(
-          /^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/
-        ),
-        plus = new RegExp(/^[\+][0-9]+$/),
-        onlyPlus = new RegExp(/^[\+]+$/),
-        phoneValid = new RegExp(/^[0][0-9]+$/g)
+        phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/),
+        plus: new RegExp(/^[\+][0-9]+$/),
+        onlyPlus : new RegExp(/^[\+]+$/),
+        phoneValid : new RegExp(/^[0][0-9]+$/g)
       };
     
 
@@ -253,7 +251,7 @@ export default function TambahTransaksiForm() {
         } if (muzakki.name.match(symbol.namaLengkapValid)) {
             formIsValid = true;
             temporaryError.name='';
-        } if (mustahik.noKtp.match(symbol.alphabet)) {
+        } if (muzakki.noKtp.match(symbol.alphabet)) {
             formIsValid = false;
             temporaryError.noKtp = "No KTP harus diisi dengan 14 karakter angka";
         } if (muzakki.noKtp.length < 14 || muzakki.noKtp.length > 14) {

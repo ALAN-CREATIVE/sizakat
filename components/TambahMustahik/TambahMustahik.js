@@ -39,15 +39,18 @@ const GET_DATA_SOURCE = gql`
       category
       dataSourceDetail {
         ... on DataSourceWargaType {
+          picName
           rt
           rw
           village
         }
         ... on DataSourceInstitusiType {
+          picName
           name
           village
         }
         ... on DataSourcePekerjaType {
+          picName
           profession
           location
         }
@@ -288,15 +291,19 @@ export default function FormTambahMustahik() {
           )}
           <div className="form" id="sumber-data">
             <Dropdown
-              label={"Sumber Data"}
-              placeholder={"Pilih Sumber Data ex: Ketua RT, Pekerja, Pondok"}
-              options={dataSource.dataSources.map((dataSource) => ({
-                display: resolveDataSourceName(dataSource),
-                value: dataSource.id,
-              }))}
-              required={true}
-              onChange={(id) => {
-                setMustahik({ ...mustahik, dataSource: new Number(id) });
+              label={ 'Sumber Data' }
+              placeholder={ 'Pilih Sumber Data ex: Ketua RT, Pekerja, Pondok' }
+              options={
+                dataSource.dataSources.map(dataSource => ({
+                  display: dataSource.dataSourceDetail.picName,
+                  value: dataSource.id,
+                  note: resolveDataSourceName(dataSource)
+                }))
+              }
+              align="left"
+              required={ true }
+              onChange={id => {
+                setMustahik ( {...mustahik, dataSource: new Number(id)});
               }}
               error={error.dataSource}
             />

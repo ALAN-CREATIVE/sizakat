@@ -25,7 +25,7 @@ const DateField = ({
         <div class="col-12 col-sm-4">
           <Select
             placeholder={'Tanggal'}
-            options={DATE.map(date => ({ display: date, value: String(date).padStart(2, "0") }))}
+            options={DATE.map(date => ({ display: String(date), value: String(date).padStart(2, "0") }))}
             onSelect={onDatePicked}
             isOpen={isOpen}
             defaultValue={defaultValue ? defaultValue.toString().slice(8,10) : null}
@@ -45,7 +45,7 @@ const DateField = ({
         <div class="col-12 col-sm-4">
           <Select
             placeholder={'Tahun'}
-            options={YEARS.map(year => ({ display: year, value: String(year) }))}
+            options={YEARS.map(year => ({ display: String(year), value: String(year) }))}
             onSelect={onYearPicked}
             isOpen={isOpen}
             defaultValue={defaultValue ? defaultValue.toString().slice(0,4) : null}

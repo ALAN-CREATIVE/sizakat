@@ -4,8 +4,8 @@ import { gql, useLazyQuery } from '@apollo/client'
 
 export function DataSourceSearch({setDataSourceData}) {
     const SEARCH_QUERY = gql`
-    query dataSources($nameContains: String) {
-        dataSources(nameContains: $nameContains) {
+    query dataSources($picNameContains: String) {
+        dataSources(picNameContains: $picNameContains) {
           id
           category
           dataSourceDetail {
@@ -35,7 +35,7 @@ export function DataSourceSearch({setDataSourceData}) {
         console.log(event.key)
         if(event.key === "Enter"){
             console.log(event.target.value)
-            getData({variables:{nameContains: event.target.value}})
+            getData({variables:{picNameContains: event.target.value}})
         }
     }
 

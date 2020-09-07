@@ -37,7 +37,7 @@ export const SuccessContainer = styled.div`
   }
 
   div.blueButton {
-    width: 101px;
+    width: 200px;
     height: 40px;
 
     background: #00239d;

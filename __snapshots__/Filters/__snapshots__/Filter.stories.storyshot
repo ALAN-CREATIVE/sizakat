@@ -16,7 +16,7 @@ exports[`Storyshots Filter Default 1`] = `
   font-weight: 600;
   font-size: 16px;
   color: #393F50;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 500px;
@@ -46,7 +46,9 @@ exports[`Storyshots Filter Default 1`] = `
   className="c0"
 >
   <div
+    onBlur={[Function]}
     onClick={[Function]}
+    tabIndex={0}
   >
     <div>
       SEMUA KATEGORI SUMBER
@@ -79,7 +81,7 @@ exports[`Storyshots Filter Default 1`] = `
             <input
               name="filter"
               type="radio"
-              value="Semua Kategori Sumber Data"
+              value="ALL"
             />
             Semua Kategori Sumber Data
           </label>
@@ -97,7 +99,7 @@ exports[`Storyshots Filter Default 1`] = `
             <input
               name="filter"
               type="radio"
-              value="Warga"
+              value="WARGA"
             />
             Warga
           </label>
@@ -115,9 +117,9 @@ exports[`Storyshots Filter Default 1`] = `
             <input
               name="filter"
               type="radio"
-              value="Pesantren"
+              value="INSTITUSI"
             />
-            Pesantren
+            Institusi
           </label>
         </div>
         <div
@@ -133,7 +135,7 @@ exports[`Storyshots Filter Default 1`] = `
             <input
               name="filter"
               type="radio"
-              value="Pekerja"
+              value="PEKERJA"
             />
             Pekerja
           </label>

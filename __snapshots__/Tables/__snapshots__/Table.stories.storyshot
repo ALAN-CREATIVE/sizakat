@@ -84,7 +84,7 @@ exports[`Storyshots Table Default 1`] = `
   font-weight: 600;
   font-size: 16px;
   color: #393F50;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 500px;
@@ -159,7 +159,6 @@ exports[`Storyshots Table Default 1`] = `
   font-weight: 800;
   line-height: 35px;
   color: #393F50;
-  width: -webkit-fill-available;
 }
 
 .c1 {
@@ -167,12 +166,10 @@ exports[`Storyshots Table Default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.c1 button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 <div
@@ -224,7 +221,9 @@ exports[`Storyshots Table Default 1`] = `
         className="c5"
       >
         <div
+          onBlur={[Function]}
           onClick={[Function]}
+          tabIndex={0}
         >
           <div>
             SEMUA KATEGORI SUMBER
@@ -257,9 +256,7 @@ exports[`Storyshots Table Default 1`] = `
                   <input
                     name="filter"
                     type="radio"
-                    value="Semua Kategori Sumber Data"
                   />
-                  Semua Kategori Sumber Data
                 </label>
               </div>
               <div
@@ -275,9 +272,7 @@ exports[`Storyshots Table Default 1`] = `
                   <input
                     name="filter"
                     type="radio"
-                    value="Warga"
                   />
-                  Warga
                 </label>
               </div>
               <div
@@ -293,9 +288,7 @@ exports[`Storyshots Table Default 1`] = `
                   <input
                     name="filter"
                     type="radio"
-                    value="Pesantren"
                   />
-                  Pesantren
                 </label>
               </div>
               <div
@@ -311,9 +304,7 @@ exports[`Storyshots Table Default 1`] = `
                   <input
                     name="filter"
                     type="radio"
-                    value="Pekerja"
                   />
-                  Pekerja
                 </label>
               </div>
             </div>

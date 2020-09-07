@@ -1,5 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Input/Dropdown Align Left 1`] = `
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
+
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
+
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
+
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option > label {
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 .option:hover > label {
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
+  <label
+    className=""
+  >
+    Status Mustahik
+  </label>
+  <div
+    className="c1"
+    onBlur={[Function]}
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+    tabIndex={0}
+  >
+    <div
+      className="header "
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
+      >
+        Pilih Status Mustahik
+      </div>
+      <img
+        src="/dropdown-arrow.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Input/Dropdown Default 1`] = `
 .c0 label {
   font-family: Muli;
@@ -106,8 +276,19 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
   text-align: center;
 }
 
+.c1 .option > label {
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+}
+
 .c1 .option:hover {
   background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 .option:hover > label {
   color: #FFFFFF;
 }
 
@@ -130,11 +311,13 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
   </label>
   <div
     className="c1"
+    onBlur={[Function]}
     style={
       Object {
         "position": "relative",
       }
     }
+    tabIndex={0}
   >
     <div
       className="header "
@@ -263,8 +446,19 @@ exports[`Storyshots Input/Dropdown Default Value 1`] = `
   text-align: center;
 }
 
+.c1 .option > label {
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+}
+
 .c1 .option:hover {
   background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 .option:hover > label {
   color: #FFFFFF;
 }
 
@@ -287,11 +481,13 @@ exports[`Storyshots Input/Dropdown Default Value 1`] = `
   </label>
   <div
     className="c1"
+    onBlur={[Function]}
     style={
       Object {
         "position": "relative",
       }
     }
+    tabIndex={0}
   >
     <div
       className="header chosen"
@@ -420,8 +616,19 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
   text-align: center;
 }
 
+.c1 .option > label {
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+}
+
 .c1 .option:hover {
   background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 .option:hover > label {
   color: #FFFFFF;
 }
 
@@ -444,11 +651,13 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
   </label>
   <div
     className="c1"
+    onBlur={[Function]}
     style={
       Object {
         "position": "relative",
       }
     }
+    tabIndex={0}
   >
     <div
       className="header "
@@ -582,8 +791,19 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
   text-align: center;
 }
 
+.c1 .option > label {
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+}
+
 .c1 .option:hover {
   background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 .option:hover > label {
   color: #FFFFFF;
 }
 
@@ -606,11 +826,183 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
   </label>
   <div
     className="c1"
+    onBlur={[Function]}
     style={
       Object {
         "position": "relative",
       }
     }
+    tabIndex={0}
+  >
+    <div
+      className="header "
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
+      >
+        Pilih Status Mustahik
+      </div>
+      <img
+        src="/dropdown-arrow.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input/Dropdown With Note 1`] = `
+.c0 label {
+  font-family: Muli;
+  font-weight: 700;
+  font-size: 16px;
+  color: #393F50;
+  line-height: 20px;
+}
+
+.c0 .required:after {
+  color: #EB4E2C;
+  content: "*";
+}
+
+.c0 input,
+.c0 select {
+  border-width: 0px 0px 1px 0px;
+  border-color: #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #393F50;
+  background-color: #FFFFFF;
+}
+
+.c0 input::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+.c0 input::placeholder {
+  color: #C4C4C4;
+}
+
+.c0 .error {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #EB4E2C;
+}
+
+.c1 .header {
+  border-bottom: 1px solid #00239D;
+  display: block;
+  width: 99%;
+  padding: 12px 5px 12px 5px;
+  font-size: 14px;
+  font-family: Muli;
+  line-height: 16px;
+  color: #C4C4C4;
+}
+
+.c1 .chosen {
+  color: #393F50;
+}
+
+.c1 .options {
+  border-radius: 10px 10px 0px 0px;
+  list-style: none;
+  position: absolute;
+  width: -webkit-fill-available;
+  background-color: #F5F6F8;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+  color: #393F50;
+  padding: 20px 0px 0px 0px;
+  z-index: 2;
+}
+
+.c1 .options:before {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #E5E5E5;
+  width: 20%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  text-align: center;
+  content: "a";
+  overflow: hidden;
+}
+
+.c1 .option {
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.c1 .option > label {
+  display: block;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.c1 .option:hover {
+  background-color: #002398;
+  color: #FFFFFF;
+}
+
+.c1 .option:hover > label {
+  color: #FFFFFF;
+}
+
+.c1 img {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+<div
+  className="c0"
+>
+  <label
+    className=""
+  >
+    Status Mustahik
+  </label>
+  <div
+    className="c1"
+    onBlur={[Function]}
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="header "

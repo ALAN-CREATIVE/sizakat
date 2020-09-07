@@ -37,7 +37,7 @@ exports[`Storyshots Success Default 1`] = `
 }
 
 .c0 div.blueButton {
-  width: 101px;
+  width: 200px;
   height: 40px;
   background: #00239d;
   border-radius: 8px;

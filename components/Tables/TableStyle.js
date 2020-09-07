@@ -14,13 +14,19 @@ export const Title = styled.h1`
   font-weight: 800;
   line-height: 35px;
   color: #393F50;
-  width: -webkit-fill-available;
 `
 
 export const Header = styled.div`
   display: flex;
+  justify-content: space-between;
+`
 
-  button {
-    width: max-content;
-  }
+export const TambahButton = styled.a`
+  padding: 10px 15px;
+  background: #00239D;
+  color: #fff;
+  font-family: Muli, sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
 `

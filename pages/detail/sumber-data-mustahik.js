@@ -21,6 +21,7 @@ export default function SumberDataMustahik({ backend_uri }) {
   const router = useRouter();
   const { id } = router.query;
   const [warning, setWarning] = useState(false);
+  const [category, setCategory] = useState('');
   const deleteDataSource = () => {
     client.mutate({
       mutation: gql`
@@ -56,7 +57,8 @@ export default function SumberDataMustahik({ backend_uri }) {
             />
           )}
           <div className="row">
-            <div className="position-fixed col-3" style={{zIndex: -1}}>
+            <div className="col-3"></div>
+            <div className="position-fixed col-3">
               <Navbar
                 user={{
                   name: 'Annisaa Fitri Shabrina',
@@ -64,7 +66,6 @@ export default function SumberDataMustahik({ backend_uri }) {
                 }}
               />
             </div>
-            <div className="col-3"></div>
             <div className="col-9" style={{marginTop: '20px'}}>
               <div className="row justify-content-between">
                 <div className="col-5">
@@ -84,13 +85,34 @@ export default function SumberDataMustahik({ backend_uri }) {
                       />
                     </div>
                     <div className="col-2">
-                      <Button label='Ubah' type='primary' />
+                      <Button
+                        label='Ubah'
+                        type='primary'
+                        onClick={() => {
+                          let link = '/ubah/sumber-data-mustahik/';
+                          switch(category) {
+                            case 'PEKERJA':
+                              link += 'pekerja';
+                              break;
+                            case 'INSTITUSI':
+                              link += 'institusi';
+                              break;
+                            case 'WARGA':
+                              link += 'warga';
+                              break;
+                          }
+                          router.push({
+                            pathname: link,
+                            query: {id}
+                          })
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
               </div>
               <br></br>
-              <DetailInfo/>
+              <DetailInfo setCategory={setCategory}/>
             </div>
           </div>
         </Container>

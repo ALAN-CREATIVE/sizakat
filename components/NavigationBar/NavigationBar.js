@@ -9,7 +9,7 @@ export const Menu = ({ menu, submenu, options, onMenuClicked }) => {
         <div>
             <div
             onClick={() => setIsOpen( isOpen ? false : true )}>
-                <div style={{cursor: 'pointer'}} className="menu-option">{ menu }</div>
+                <div style={{cursor: 'pointer', marginTop: '30px' , marginLeft: '30px'}} className="menu-option">{ menu } <span className={`triangle-menu ${isOpen ? 'triangle-open' : ' '}`}></span></div>
             </div>
             {isOpen && <div>
                 {options.map(submenu => (
@@ -26,17 +26,23 @@ export const Menu = ({ menu, submenu, options, onMenuClicked }) => {
     );
 }
 
-const NavigationBar = ({ name, role, menu, submenu, isOpen, onMenuClicked }) => {
+const NavigationBar = ({ name, role, menuPenyaluranZakat, submenuPenyaluranZakat, menuTransaksiZakat, submenuTransaksiZakat, isOpen, onMenuClicked }) => {
 
     return (
       <NavigationBarContainer>
         <div className="navigation-bar">
+        <input type="checkbox" />
+            <span className="hamburger" id="hamburger-1"></span>
+            <span className="hamburger" id="hamburger-2"></span>
+            <span className="hamburger" id="hamburger-3"></span>
+            <ul id="container">
                 <div className="profile-picture"></div>
                 <h1 className="user-name">{ name }</h1>
                 <p className="user-role">{ role }</p>
-                <h1 className="menu-title">DATA</h1>
-                <Menu menu={ menu } options = { submenu } onMenuClicked={onMenuClicked} isOpen={isOpen} />
-            </div>
+                <Menu menu={ menuPenyaluranZakat } options = { submenuPenyaluranZakat } onMenuClicked={onMenuClicked} isOpen={isOpen} />
+                <Menu menu={ menuTransaksiZakat } options = { submenuTransaksiZakat } onMenuClicked={onMenuClicked} isOpen={isOpen} />
+            </ul>
+        </div>
       </NavigationBarContainer>
     )
   }

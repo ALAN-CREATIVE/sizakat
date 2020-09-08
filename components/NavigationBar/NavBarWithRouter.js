@@ -9,15 +9,27 @@ export default function({ user }){
     <NavigationBar
       name={user.name}
       role={user.role}
-      menu={'Mustahik'}
-      submenu={[
+      menuPenyaluranZakat={'Penyaluran Zakat'}
+      submenuPenyaluranZakat={[
         'Data Mustahik',
         'Sumber Data Mustahik'
       ]}
-      onMenuClicked={(submenu) => {
-        if (submenu === 'Data Mustahik') {
+      menuTransaksiZakat={'Transaksi Zakat'}
+      submenuTransaksiZakat={[
+        'Data Transaksi', 
+        'Data Muzaki'
+      ]}
+      onMenuClicked={(submenuPenyaluranZakat) => {
+        if (submenuPenyaluranZakat === 'Data Mustahik') {
           router.push('/daftar/mustahik');
-        } else if (submenu === 'Sumber Data Mustahik') {
+        } else if (submenuPenyaluranZakat === 'Sumber Data Mustahik') {
+          router.push('/daftar/sumber-data-mustahik');
+        }
+      }}
+      onMenuClicked={(submenuTransaksiZakat) => {
+        if (submenuTransaksiZakat === 'Data Transaksi') {
+          router.push('/tambah/sumber-data-mustahik/pekerja');
+        } else if (submenuTransaksiZakat === 'Data Muzaki') {
           router.push('/daftar/sumber-data-mustahik');
         }
       }}

@@ -14,11 +14,6 @@ export default function({ user }){
         'Data Mustahik',
         'Sumber Data Mustahik'
       ]}
-      menuTransaksiZakat={'Transaksi Zakat'}
-      submenuTransaksiZakat={[
-        'Data Transaksi', 
-        'Data Muzaki'
-      ]}
       onMenuClicked={(submenuPenyaluranZakat) => {
         if (submenuPenyaluranZakat === 'Data Mustahik') {
           router.push('/daftar/mustahik');
@@ -26,13 +21,18 @@ export default function({ user }){
           router.push('/daftar/sumber-data-mustahik');
         }
       }}
-      onMenuClicked={(submenuTransaksiZakat) => {
-        if (submenuTransaksiZakat === 'Data Transaksi') {
-          router.push('/tambah/sumber-data-mustahik/pekerja');
-        } else if (submenuTransaksiZakat === 'Data Muzaki') {
-          router.push('/daftar/sumber-data-mustahik');
-        }
-      }}
+      menuTransaksiZakat={'Transaksi Zakat'}
+      submenuTransaksiZakat={[
+        'Data Transaksi', 
+        'Data Muzaki'
+      ]}
+      // onMenuClicked={(submenuTransaksiZakat) => {
+      //   if (submenuTransaksiZakat === 'Data Transaksi') {
+      //     router.push('/tambah/sumber-data-mustahik/pekerja');
+      //   } else if (submenuTransaksiZakat === 'Data Muzaki') {
+      //     router.push('/daftar/sumber-data-mustahik');
+      //   }
+      // }}
     />
   )
 }

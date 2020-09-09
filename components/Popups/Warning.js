@@ -10,12 +10,12 @@ const Warning = ({ message, confirmButton='Ya', rejectButton='Batal', onConfirm,
           <div className="warningText">Perhatian!</div>
           <div className="desc" style={{ marginLeft: "46px", marginRight: "46px", marginTop: "20px" }}>{ message }</div>
           <div style={{ width:"50%", float:"left"}}>
-            <div className="redButton" style={{ marginLeft: "59px", marginTop: "49px" }} onClick={onConfirm} >
+            <div className="redButton" style={{ marginLeft: "59px", marginTop: "49px", cursor: "pointer" }} onClick={onConfirm} >
               <p className="text">{ confirmButton }</p>
             </div>
           </div>
           <div style={{ width:"50%", float:"right"}}>
-            <div className="greyButton" style={{ marginLeft: "45px", marginTop: "49px" }} onClick={onReject} >
+            <div className="greyButton" style={{ marginLeft: "45px", marginTop: "49px", cursor: "pointer" }} onClick={onReject} >
               <p className="text">{ rejectButton }</p>
             </div>
           </div>

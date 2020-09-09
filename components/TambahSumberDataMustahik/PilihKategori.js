@@ -67,7 +67,7 @@ export default function PilihKategori() {
           <div class='col-9'>
             <div className="button-lanjutkan">
               <Button
-                  label={'SIMPAN DATA'}
+                  label={'Simpan Data'}
                   type={'primary'}
                   onClick={() =>
                     submitForm()

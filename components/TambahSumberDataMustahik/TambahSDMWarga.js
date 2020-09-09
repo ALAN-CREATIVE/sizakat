@@ -649,7 +649,7 @@ export default function FormTambahSDMWarga() {
                     </div>
                     <div className="form button-lanjutkan">
                         <Button
-                            label= { 'SIMPAN DATA' }
+                            label= { 'Simpan Data' }
                             type= { 'primary' }
                             onClick={() =>
                                 submitForm()

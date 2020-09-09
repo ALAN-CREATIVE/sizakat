@@ -6,7 +6,7 @@ export default function({ user }){
   const router = useRouter();
 
   return (
-    <NavigationBar
+    <NavigationBar class="menu menu-open navbar-expand-md" 
       name={user.name}
       role={user.role}
       menuPenyaluranZakat={'Penyaluran Zakat'}

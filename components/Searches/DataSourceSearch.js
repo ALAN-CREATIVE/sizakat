@@ -12,7 +12,7 @@ export function DataSourceSearch({setPicNameContains}) {
     <SearchContainer>
       <input
         type="text"
-        placeholder="Cari berdasarkan nama"
+        placeholder="Cari berdasarkan nama penanggung jawab"
         name="search"
         onKeyPress={onKeyPressed}
       />

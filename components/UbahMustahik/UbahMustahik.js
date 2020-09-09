@@ -9,6 +9,8 @@ import RadioButton from "../Inputs/RadioButton";
 import TextField from "../Inputs/TextField";
 import DateField from "../Inputs/DateField";
 import Button from "../Buttons/Button";
+import Success from "../Popups/Success";
+import Failed from "../Popups/Failed";
 
 const QUERY_USERS = gql`
   query mustahikQuery($id: ID!) {
@@ -53,13 +55,40 @@ const UPDATE_MUSTAHIK = gql`
         id
         name
       }
+      errors {
+        messages
+      }
     }
   }
 `;
 
 function UpdateForm({ data }) {
+  const router = useRouter();
+
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [failedNoKtp, setFailedNoKtp] = useState(false);
   const [mustahik, setMustahik] = useState(data.mustahik);
-  const [updateMustahik] = useMutation(UPDATE_MUSTAHIK);
+  const [updateMustahik, { data: updateData }] = useMutation(UPDATE_MUSTAHIK, {
+    onCompleted: (updateData) => {
+      console.log(updateData);
+      if (updateData.mustahikMutation.errors.length !== 0) {
+        if (
+          updateData.mustahikMutation.errors[0].messages[0] ===
+          "Mustahik with this No ktp already exists."
+        ) {
+          setFailedNoKtp(true);
+        } else {
+          setFailed(true);
+          console.log(updateData.mustahikMutation.errors[0].messages[0]);
+        }
+      } else {
+        setSuccess(true);
+        console.log(updateData.mustahikMutation.mustahik);
+      }
+    },
+  });
+
   const [error, setError] = useState({
     name: "",
     noKtp: "",
@@ -77,7 +106,6 @@ function UpdateForm({ data }) {
   const submitForm = () => {
     console.log(handleSubmit());
     if (handleSubmit()) {
-      console.log(mustahikData);
       const { __typename, age, dataSource, ...mustahikData } = mustahik;
       updateMustahik({
         variables: {
@@ -88,10 +116,8 @@ function UpdateForm({ data }) {
         },
       });
       console.log(mustahik);
-      alert("Submit berhasil");
     } else {
-      console.log(mustahik);
-      alert("Submit gagal");
+      setFailed(true);
     }
   };
 
@@ -239,6 +265,36 @@ function UpdateForm({ data }) {
 
   return (
     <form onSubmit={(e) => handleOnSubmit(e)}>
+      {success && (
+        <Success
+          message={`Mustahik dengan nama "${mustahik.name}" berhasil diubah!`}
+          onConfirm={() => {
+            router.push({
+              pathname: "/detail/mustahik",
+              query: {
+                id: data.mustahik.id,
+              },
+            });
+            setSuccess(false);
+          }}
+        />
+      )}
+      {failed && (
+        <Failed
+          message={`Tidak berhasil mengubah mustahik. Silahkan dicoba lagi.`}
+          onConfirm={() => {
+            setFailed(false);
+          }}
+        />
+      )}
+      {failedNoKtp && (
+        <Failed
+          message={`No KTP sudah pernah didaftarkan sebelumnya. Silahkan dicoba lagi.`}
+          onConfirm={() => {
+            setFailedNoKtp(false);
+          }}
+        />
+      )}
       <div className="form" id="nomor-ktp">
         <NumberField
           label={"Nomor KTP"}

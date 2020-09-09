@@ -503,7 +503,7 @@ export default function FormTambahMustahik({ backend_uri }) {
           <div className="form button-lanjutkan">
             <Button
               type={"primary"}
-              label={"Simpan"}
+              label={"Simpan Data"}
               onClick={() => submitForm()}
             />
           </div>

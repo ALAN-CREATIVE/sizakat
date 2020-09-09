@@ -328,7 +328,7 @@ function UpdateForm({ data }) {
         />
       </div>
       <div className="form button-lanjutkan">
-        <Button type={"primary"} label={"Simpan"} />
+        <Button type={"primary"} label={"Simpan Data"} />
       </div>
     </form>
   );

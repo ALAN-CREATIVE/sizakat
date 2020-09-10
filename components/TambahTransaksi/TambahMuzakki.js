@@ -55,18 +55,30 @@ const ADD_TRANSAKSI_ZAKAT = gql`
 export default function TambahMuzakki({ transactionId }) {
     const router = useRouter();
     const [transaksi, setTransaksi] = useState([{jenis:"", nominal:0, satuan:""}])
+    const [errorTrans, setErrorTrans] = useState([{jenis:"", nominal:"", satuan:""}])
+    const [isTransaksiValid, setIsTransaksiValid] = useState(true);
 
     const addTransaksi = () => {
         setTransaksi([...transaksi, {jenis:"", nominal:0, satuan:""}])
+        setErrorTrans([...errorTrans, {jenis:"", nominal:"", satuan:""}])
     }
 
     const setTransaksiOnIndex = (value, idx, attribute) => {
         const changeTransaksi = transaksi[idx];
+        const changeErrorTransaksi = errorTrans[idx];
         if (attribute === "jenis") {
             setTransaksi([...transaksi.slice(0, idx), {...changeTransaksi, jenis:value}, ...transaksi.slice(idx+1)])
         }
         else if (attribute === "nominal") {
-            setTransaksi([...transaksi.slice(0, idx), {...changeTransaksi, nominal:value}, ...transaksi.slice(idx+1)])
+            if (value.match(symbol.alphabet)){
+                setIsTransaksiValid(false);
+                setErrorTrans([...errorTrans.slice(0, idx), {...changeErrorTransaksi, nominal:"Nominal harus berupa angka"}, ...errorTrans.slice(idx+1)])
+            }
+            else {
+                setIsTransaksiValid(true);
+                setErrorTrans([...errorTrans.slice(0, idx), {...changeErrorTransaksi, nominal:""}, ...errorTrans.slice(idx+1)])
+                setTransaksi([...transaksi.slice(0, idx), {...changeTransaksi, nominal:value}, ...transaksi.slice(idx+1)])
+            }
         }
         else if (attribute === "satuan") {
             setTransaksi([...transaksi.slice(0, idx), {...changeTransaksi, satuan:value}, ...transaksi.slice(idx+1)])
@@ -151,7 +163,7 @@ export default function TambahMuzakki({ transactionId }) {
     })
 
     const submitForm= ()=> {
-        if (submitCheck()){
+        if (submitCheck() && isTransaksiValid){
             createMuzakki({
                 variables: {
                     input: {
@@ -161,6 +173,8 @@ export default function TambahMuzakki({ transactionId }) {
             })
         } else {
             alert("Submit gagal");
+            console.log(errorTrans)
+            setIsTransaksiValid(true);
         }
     }
     const [isExecuted, setIsExecuted] = useState(true)
@@ -184,6 +198,21 @@ export default function TambahMuzakki({ transactionId }) {
             setIsExecuted(false);
         }
     })
+
+    const symbol = {
+        empty: new RegExp(/^$/),
+        number: new RegExp(/^[0-9]+$/),
+        alphabet: new RegExp(/[a-zA-Z]+/),
+        onlySpace: new RegExp(/\s/g),
+        namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+        alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+        numberValid: new RegExp(/^[0][0-9]+$/),
+        onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+        phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/),
+        plus: new RegExp(/^[\+][0-9]+$/),
+        onlyPlus : new RegExp(/^[\+]+$/),
+        phoneValid : new RegExp(/^[0][0-9]+$/g)
+      };
 
     const submitCheck = () => {
         let formIsValid = true;
@@ -269,7 +298,7 @@ export default function TambahMuzakki({ transactionId }) {
                 </div><br></br>
 
                 <h2 className="subtitle">Transaksi Zakat</h2><br></br>
-                <TransaksiInput transaksi={transaksi} onTransaksiChanges={setTransaksiOnIndex} onDeleteTransaksi={deleteTransaksi}/>
+                <TransaksiInput transaksi={transaksi} onTransaksiChanges={setTransaksiOnIndex} onDeleteTransaksi={deleteTransaksi} errorTrans={errorTrans} />
                 <br></br>
                 <div className="row">
                     <div className="col-11">

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Dropdown from '../Inputs/Dropdown'
 import Button from '../Buttons/Button'
 import NumberField from '../Inputs/NumberField'
@@ -30,13 +30,14 @@ const TransaksiInput = (props) => {
                       onChange = {(option) => {
                         props.onTransaksiChanges(option, idx, "nominal")
                       }}
+                      error = {props.errorTrans[idx].nominal}
                     />
                     </div>
                     <div className="col-3">
                         <Dropdown 
                           label="Satuan" 
                           placeholder="satuan" 
-                          options={["Rp", "Kg", "Liter"]} 
+                          options={["Rp", "Kg"]} 
                           required={true} 
                           onChange = {(option) => props.onTransaksiChanges(option, idx, "satuan")}
                         />

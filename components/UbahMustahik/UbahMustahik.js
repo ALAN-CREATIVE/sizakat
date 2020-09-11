@@ -121,6 +121,19 @@ function UpdateForm({ data }) {
     }
   };
 
+  const symbol = {
+    number: new RegExp(/^[0-9]+$/),
+    alphabet: new RegExp(/[a-zA-Z]+/),
+    onlySpace: new RegExp(/\s/g),
+    namaLengkapValid: new RegExp(/^[a-zA-Z]+?([\s]+)/),
+    alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
+    numberValid: new RegExp(/^[0][0-9]+$/),
+    onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
+    phoneNumberWithSymbol: new RegExp(
+      /^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/
+    ),
+  };
+
   const handleSubmit = () => {
     let formIsValid = true;
     let temporaryError = {};
@@ -129,13 +142,41 @@ function UpdateForm({ data }) {
       formIsValid = false;
       temporaryError.name = "Nama lengkap tidak boleh kosong";
     }
+    if (mustahik.name.match(symbol.onlySpace)) {
+      formIsValid = false;
+      temporaryError.name = "Nama lengkap tidak boleh diisi dengan spasi saja";
+    }
+    if (mustahik.name.match(symbol.namaLengkapValid)) {
+      formIsValid = true;
+      temporaryError.name = "";
+    }
     if (mustahik.noKtp.length < 14 || mustahik.noKtp.length > 14) {
       formIsValid = false;
       temporaryError.noKtp = "Format KTP harus berupa 14 karakter angka";
     }
+    if (mustahik.noKtp.match(symbol.onlySpace)) {
+      formIsValid = false;
+      temporaryError.noKtp = "No KTP tidak boleh diisi dengan spasi saja";
+    }
+    if (mustahik.noKtp.match(symbol.alphabet)) {
+      formIsValid = false;
+      temporaryError.noKtp = "No KTP harus diisi dengan 14 karakter angka";
+    }
+    if (mustahik.noKtp.match(symbol.number)) {
+      formIsValid = true;
+      temporaryError.noKtp = ""; 
+    }
     if (mustahik.address.length == 0) {
       formIsValid = false;
       temporaryError.address = "Alamat tidak boleh kosong";
+    }
+    if (mustahik.address.match(symbol.onlySpace)){
+      formIsValid = false;
+      temporaryError.address = "Alamat tidak boleh diisi dengan spasi saja";
+    }
+    if (mustahik.address.match(symbol.alamatValid)) {
+      formIsValid = true;
+      temporaryError.address = "";
     }
     if (mustahik.birthdate.slice(8) == "xx") {
       formIsValid = false;
@@ -160,6 +201,26 @@ function UpdateForm({ data }) {
     if (mustahik.dataSource === null || mustahik.dataSource === undefined) {
       formIsValid = false;
       temporaryError.dataSource = "Pilihan sumber data tidak boleh kosong";
+    }
+    if (mustahik.phone.match(symbol.alphabet)) {
+      formIsValid = false;
+      temporaryError.phone = "Format HP harus berupa angka";
+    }
+    if (
+      mustahik.phone.match(symbol.phoneNumberWithSymbol) ||
+      mustahik.phone.match(symbol.onlySymbol)
+    ) {
+      formIsValid = false;
+      temporaryError.phone =
+        "Format HP harus berupa angka yang diawali dengan 0 (Contoh: 0811111111)";
+    }
+    if (mustahik.phone.match(symbol.onlySpace)) {
+      formIsValid = false;
+      temporaryError.phone = "No HP tidak boleh diisi dengan spasi saja";
+    }
+    if (mustahik.phone.match(symbol.number)) {
+      formIsValid = true;
+      temporaryError.phone = "";
     }
 
     setError(temporaryError);

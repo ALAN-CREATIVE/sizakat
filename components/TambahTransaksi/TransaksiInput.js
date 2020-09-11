@@ -20,6 +20,7 @@ const TransaksiInput = (props) => {
                           onChange = {(option) => {
                             props.onTransaksiChanges(option, idx, "jenis")
                           }}
+                          error = {props.errorTrans[idx].jenis}
                         />
                     </div>
                     <div className="col-4">

@@ -88,6 +88,7 @@ export default function TambahTransaksiForm() {
         const changeErrorTransaksi = errorTrans[idx];
         if (attribute === "jenis") {
             setTransaksi([...transaksi.slice(0, idx), {...changeTransaksi, jenis:value}, ...transaksi.slice(idx+1)])
+            setErrorTrans([...errorTrans.slice(0, idx), {...changeErrorTransaksi, jenis:""}, ...errorTrans.slice(idx+1)])
         }
         else if (attribute === "nominal") {
             if (value.match(symbol.alphabet)){
@@ -105,8 +106,20 @@ export default function TambahTransaksiForm() {
         }
     } 
 
-    const setErrorOnIndex = (value, idx, attribute) => {
-        const changeTransaksi = transaksi[idx];
+    const transaksiNotEmpty = () => {
+        var isValid = true;
+        transaksi.map((value, index) => {
+            if(value.nominal === 0){
+                isValid = false;
+                setErrorTrans([...errorTrans.slice(0, index), {...errorTrans[index], nominal:"Nominal tidak boleh kosong"}, ...errorTrans.slice(index+1)])
+            }
+            if(value.jenis == ""){
+                isValid = false;
+                setErrorTrans([...errorTrans.slice(0, index), {...errorTrans[index], jenis:"Pilihan zakat tidak boleh kosong"}, ...errorTrans.slice(index+1)])
+            }
+        })
+
+        return isValid;
     }
     
 
@@ -188,15 +201,14 @@ export default function TambahTransaksiForm() {
     }
 
     useEffect(() => {
-        console.log(isSubmited)
         if (isSubmited && isNextPage ) {
             alert("Submit berhasil");
             router.push(`/buat/transaksi?page=1&transaction=${transactionId}`, undefined, { shallow: true })
         }
     })
 
-    const submitForm= ()=> {
-        if (muzakkiCheck() && isTransaksiValid){
+    const submitForm = ()=> {
+        if (muzakkiCheck() && isTransaksiValid && transaksiNotEmpty()){
             createMuzakki({
                 variables: {
                     input: {
@@ -293,10 +305,6 @@ export default function TambahTransaksiForm() {
         return formIsValid;
     }
 
-
-    console.log(transaksi)
-    console.log(muzakkiData)
-    //console.log(zakatData)
     return(
         <main>
             <div className="formContainer">

@@ -76,7 +76,31 @@ export default function TambahTransaksiForm() {
     const router = useRouter();
     const [transaksi, setTransaksi] = useState([{jenis:"", nominal:0, satuan:""}])
     const [errorTrans, setErrorTrans] = useState([{jenis:"", nominal:"", satuan:""}])
-    const [isTransaksiValid, setIsTransaksiValid] = useState(true);
+    const [transactionId, setTransactionId] = useState()
+    const [isAddMuzakki, setIsAddMuzakki] = useState(false)
+    const [isTransaksiValid, setIsTransaksiValid] = useState(true)
+    const [isSubmited, setIsSubmited] = useState(false)
+    const [isExecuted, setIsExecuted] = useState(true)
+    const [isNextPage, setIsNextPage] = useState(false)
+    const [error, setError] = useState({
+        noKtp: '',
+        name: '',
+        phone: '',
+    });
+    const [muzakki, setMuzakki] = useState({
+        noKtp: '',
+        name: '',
+        phone: '',
+    });
+
+    function zakatTypeId(jenis)
+    {
+        switch(jenis){
+            case "Zakat Fitrah-Uang": return 1;
+            case "Zakat Mal": return 2;
+            case "Zakat Fitrah-Beras": return 3;
+        }
+    }
 
     const addTransaksi = () => {
         setTransaksi([...transaksi, {jenis:"", nominal:0, satuan:""}])
@@ -122,38 +146,13 @@ export default function TambahTransaksiForm() {
         return isValid;
     }
     
-
     const deleteTransaksi = (idx) => {
         setTransaksi([...transaksi.slice(0, idx), ...transaksi.slice(idx+1)])
         setErrorTrans([...errorTrans.slice(0, idx), ...errorTrans.slice(idx+1)])
     }
 
-    const [error, setError] = useState({
-        noKtp: '',
-        name: '',
-        phone: '',
-    });
-
-
-    const [muzakki, setMuzakki] = useState({
-        noKtp: '',
-        name: '',
-        phone: '',
-    });
-
-    function zakatTypeId(jenis)
-    {
-        switch(jenis){
-            case "Zakat Fitrah-Uang": return 1;
-            case "Zakat Mal": return 2;
-            case "Zakat Fitrah-Beras": return 3;
-        }
-    };
-
-    const [isSubmited, setIsSubmited] = useState(false);
     const [createMuzakki, {data: muzakkiData, error: errorMuzakki}] = useMutation(ADD_MUZAKKI, {
         onCompleted: (muzakkiData) => {
-            console.log(muzakkiData)
             if(muzakkiData.muzakkiMutation.errors.length != 0){
                 alert("Submit gagal");
                 console.log(muzakkiData.muzakkiMutation.errors[0].messages[0]);
@@ -161,27 +160,19 @@ export default function TambahTransaksiForm() {
         }
     });
 
-    const [createTransaksi, {data: transaksiData, error: errorTransaksi}] = useMutation(ADD_TRANSAKSI, {
-        onCompleted: (transaksiData) => {
-            console.log(transaksiData)
-        }
-    });
+    const [createTransaksi, {data: transaksiData, error: errorTransaksi}] = useMutation(ADD_TRANSAKSI);
 
     const [createZakat, {data: zakatData, error: errorZakat}] = useMutation(ADD_TRANSAKSI_ZAKAT, {
         onCompleted: (zakatData) => {
-            console.log(zakatData)
             if(zakatData.zakatTransactionMutation.errors.length != 0){
                 alert("Submit gagal");
-                console.log(errorTransaksi);
             }  
             else{
                 setIsSubmited(true);
             }
         }
     });
-    const [transactionId, setTransactionId] = useState()
 
-    const [isAddMuzakki, setIsAddMuzakki] = useState(false)
     const addMuzakki = () => {
         submitForm()
         setIsAddMuzakki(true)
@@ -194,7 +185,6 @@ export default function TambahTransaksiForm() {
         }
     })
 
-    const [isNextPage, setIsNextPage] = useState(false)
     const nextPage= () => {
         submitForm()
         setIsNextPage(true);
@@ -225,11 +215,9 @@ export default function TambahTransaksiForm() {
             })
         } else {
             alert("Submit gagal");
-            console.log(errorTrans)
             setIsTransaksiValid(true);
         }
     }
-    const [isExecuted, setIsExecuted] = useState(true)
     useEffect(() => {
         if (isExecuted && muzakkiData && 
             muzakkiData.muzakkiMutation && 
@@ -237,9 +225,7 @@ export default function TambahTransaksiForm() {
             transaksiData && 
             transaksiData.transactionMutation && 
             transaksiData.transactionMutation.transaction){
-                console.log ("MASUK")
                 setTransactionId(transaksiData.transactionMutation.transaction.id)
-                console.log(transaksi);
                 transaksi.map((trans) => 
                     createZakat({
                         variables : {
@@ -265,7 +251,6 @@ export default function TambahTransaksiForm() {
         alamatValid: new RegExp(/^[a-zA-Z0-9]+?([\s]+)/),
         numberValid: new RegExp(/^[0][0-9]+$/),
         onlySymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]+$/),
-        phoneNumberWithSymbol: new RegExp(/^[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]?[0-9]+$/),
         plus: new RegExp(/^[\+][0-9]+$/),
         onlyPlus : new RegExp(/^[\+]+$/),
         phoneValid : new RegExp(/^[0][0-9]+$/g)

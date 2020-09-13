@@ -79,9 +79,8 @@ export function ReceiptSummaryForm({transactionId, data}){
     const { data: dataTransaksi, loading, error } = useQuery(QUERY_TRANSAKSI, {variables: {transactionId}})
     const [ updateTransaksiData, setUpdateTransaksiData] = useState(data.transaction)
     const [updateTransaksi, {error: updateError}] = useMutation(UPDATE_TRANSAKSI)
+    
     var zakatTransactions = []
-
-
     useEffect(() => {
         console.log(transaction);
         setUpdateTransaksiData({

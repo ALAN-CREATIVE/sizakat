@@ -13,7 +13,7 @@ export const FilterContainer = styled.div`
       font-weight: 600;
       font-size: 16px;
       color: #393F50;
-      position : absolute;
+      position : fixed;
       top: 50%;
       left: 50%;
       width: 500px;

@@ -61,7 +61,9 @@ function App({ backend_uri }) {
                             path={'Mustahik // Tambah Sumber //'}
                             current={'Warga'}
                         />
-                        <FormTambahSDMWarga />
+                        <div style={{paddingLeft: "5%", paddingRight:"5%", margin:0}}>
+                            <FormTambahSDMWarga />
+                        </div>
                     </div>
                 </div>
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>

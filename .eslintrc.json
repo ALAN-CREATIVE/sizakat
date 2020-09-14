@@ -1,13 +1,12 @@
 {
   "env": {
     "browser": true,
-    "es2020": true,
+    "es6": true,
     "node": true
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,8 +16,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react",
-    "react-hooks"
+    "react"
   ],
   "rules": {
     "indent": [1, 2]

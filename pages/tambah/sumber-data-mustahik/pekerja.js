@@ -57,12 +57,14 @@ function App({ backend_uri }) {
                                 <Logout>Keluar</Logout>
                             </div>
                         </div>
+                        <div style={{paddingLeft: "5%", paddingRight:"5%", margin:0}}>
                         <TitleBar
                             title={'Tambah Sumber Data Mustahik'}
                             path={'Mustahik // Tambah Sumber //'}
                             current={'Pekerja'}
                         />
                         <FormTambahSDMPekerja />
+                        </div>
                     </div>
                 </div>
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>

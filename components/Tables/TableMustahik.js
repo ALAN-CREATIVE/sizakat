@@ -121,12 +121,22 @@ const Table = ({
           </TambahButton>
         </Link>
       </Header>
-      <div style={{ margin: '30px 0px' }}>
-      <MustahikSearch 
-        setMustahikData={
-          setMustahikData
-        }/>
-        <div>
+        <div
+          style={{
+            margin: '30px 0px',
+            position: 'relative'
+          }}
+        >
+          <MustahikSearch 
+            setMustahikData={setMustahikData}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              top: '15px',
+              right: '10px'
+            }}
+          >
           <Filter
             label={'SEMUA SUMBER DATA'}
             onRadioClicked={(dataSources) => {

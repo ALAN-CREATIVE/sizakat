@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { gql, useQuery } from '@apollo/client';
-import axios from 'axios';
+import React, { useState } from "react";
+import { gql, useQuery } from "@apollo/client";
+import axios from "axios";
 
 import Dropdown from "../Inputs/Dropdown";
 import FileField from "../Inputs/FileField";
@@ -105,44 +105,44 @@ export default function FormTambahMustahik({ backend_uri }) {
   const submitForm = () => {
     if (handleSubmit()) {
       const data = new FormData();
-      data.append('photo', photo);
-      data.append('query', ADD_MUSTAHIK);
-      data.append('variables', JSON.stringify({input: mustahik}));
+      data.append("photo", photo);
+      data.append("query", ADD_MUSTAHIK);
+      data.append("variables", JSON.stringify({ input: mustahik }));
       axios({
-        method: 'post',
+        method: "post",
         url: backend_uri,
         data: data,
         config: {
           headers: {
-            'Content-Tranfer-Encoding': 'multipart/form-data',
-            'Content-type': 'application/grapql',
-            'Access-Control-Allow-Credentials': 'true'
-          }
-        }
+            "Content-Tranfer-Encoding": "multipart/form-data",
+            "Content-type": "application/grapql",
+            "Access-Control-Allow-Credentials": "true",
+          },
+        },
       })
-      .then(({data: {data: createData}}) => {
-        console.log(createData);
-        if (createData.mustahikMutation.errors.length !== 0) {
-          if (
-            createData.mustahikMutation.errors[0].messages[0] ===
-            "Mustahik with this No ktp already exists."
-          ) {
-            setFailedNoKtp(true);
+        .then(({ data: { data: createData } }) => {
+          console.log(createData);
+          if (createData.mustahikMutation.errors.length !== 0) {
+            if (
+              createData.mustahikMutation.errors[0].messages[0] ===
+              "Mustahik with this No ktp already exists."
+            ) {
+              setFailedNoKtp(true);
+            } else {
+              setFailed(true);
+              console.log(createData.mustahikMutation.errors[0].messages[0]);
+            }
           } else {
-            setFailed(true);
-            console.log(createData.mustahikMutation.errors[0].messages[0]);
+            setSuccess(true);
+            console.log(createData.mustahikMutation.mustahik);
+            setCreateData(createData);
           }
-        } else {
-          setSuccess(true);
-          console.log(createData.mustahikMutation.mustahik);
-          setCreateData(createData);
-        }
-      })
-      .catch((response) => {
-        console.log(response);
-        console.log(response.networkErrors);
-        console.log(response.grapQLErrors)
-      })
+        })
+        .catch((response) => {
+          console.log(response);
+          console.log(response.networkErrors);
+          console.log(response.grapQLErrors);
+        });
     } else {
       console.log(mustahik);
       setFailed(true);
@@ -255,13 +255,12 @@ export default function FormTambahMustahik({ backend_uri }) {
     return formIsValid;
   };
 
-  if(errorDataSource) {
+  if (errorDataSource) {
     console.log(errorDataSource);
-    return <p>error</p>
+    return <p>error</p>;
   }
 
   if (loadingDataSource) return <p>loading ...</p>;
-
 
   return (
     <TambahMustahikContainer className="TambahMustahikPage">
@@ -300,19 +299,17 @@ export default function FormTambahMustahik({ backend_uri }) {
           )}
           <div className="form" id="sumber-data">
             <Dropdown
-              label={ 'Sumber Data' }
-              placeholder={ 'Pilih Sumber Data ex: Ketua RT, Pekerja, Pondok' }
-              options={
-                dataSource.dataSources.map(dataSource => ({
-                  display: dataSource.dataSourceDetail.picName,
-                  value: dataSource.id,
-                  note: resolveDataSourceName(dataSource)
-                }))
-              }
+              label={"Sumber Data"}
+              placeholder={"Pilih Sumber Data ex: Ketua RT, Pekerja, Pondok"}
+              options={dataSource.dataSources.map((dataSource) => ({
+                display: dataSource.dataSourceDetail.picName,
+                value: dataSource.id,
+                note: resolveDataSourceName(dataSource),
+              }))}
               align="left"
-              required={ true }
-              onChange={id => {
-                setMustahik ( {...mustahik, dataSource: new Number(id)});
+              required={true}
+              onChange={(id) => {
+                setMustahik({ ...mustahik, dataSource: new Number(id) });
               }}
               error={error.dataSource}
             />
@@ -493,9 +490,11 @@ export default function FormTambahMustahik({ backend_uri }) {
           </div>
           <div className="form" id="foto-mustahik">
             <FileField
-              label={ 'Foto Mustahik' }
-              buttonLabel={ 'Pilih Foto' }
-              description={ 'Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg atau .png' }
+              label={"Foto KTP Mustahik"}
+              buttonLabel={"Pilih Foto"}
+              description={
+                "Unggah foto ukuran 300 x 300 milik mustahik dengan format .jpg atau .png"
+              }
               onFileSelected={(files) => {
                 setPhoto(files[0]);
               }}
@@ -504,7 +503,7 @@ export default function FormTambahMustahik({ backend_uri }) {
           <div className="form button-lanjutkan">
             <Button
               type={"primary"}
-              label={"Simpan"}
+              label={"Simpan Data"}
               onClick={() => submitForm()}
             />
           </div>

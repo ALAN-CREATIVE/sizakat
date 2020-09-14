@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 
 const client = new ApolloClient({
-    uri: 'http://localhost:8000/graphql/',
+    uri: backend_uri,
     cache: new InMemoryCache()
   });
 
@@ -81,4 +81,12 @@ function App () {
     );
 }
 
+export async function getStaticProps() {
+    return {
+      props: {
+        backend_uri: `http://${process.env.GRAPHQL_URL}`
+      }
+    }
+  }
+  
 export default App;

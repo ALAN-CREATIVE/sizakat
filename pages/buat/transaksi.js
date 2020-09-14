@@ -48,14 +48,13 @@ const Main = styled.main`
     margin-left: 40px;
 }
 `
-const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql/',
-  cache: new InMemoryCache()
-});
 
-
-export default function() {
-
+export default function({ backend_uri }) {
+  const client = new ApolloClient({
+    uri: backend_uri,
+    cache: new InMemoryCache()
+  });
+  
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -109,4 +108,12 @@ export default function() {
     </ApolloProvider>
     </>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      backend_uri: `http://${process.env.GRAPHQL_URL}`
+    }
+  }
 }

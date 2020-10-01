@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TransferUangContainer = styled.div`
+const UlasanContainer = styled.div`
     background: white;
     margin: 20px; 
     font-family: Muli, sans-serif;
@@ -17,5 +17,8 @@ const TransferUangContainer = styled.div`
         display: flex;
         justify-content: space-between;
     }
+    .info{
+        color : red;
+    }
 `
-export default TransferUangContainer;
+export default UlasanContainer;

@@ -1,16 +1,15 @@
 import React from 'react';
-import TransaksiUangContainer from './TrasferUangStyle';
+import UlasanContainer from './UlasanStyle';
+import Uang from './Uang'
 import Button from '../Buttons/Button'
+import { formatMoney } from '../../utils/parser-util';
 
-export default function TransferUang({location, accountName, bankName, accountNumber, nominal}){
+export default function TransferUang({location, accountName, bankName, accountNumber, amount}){
     return (
-        <TransaksiUangContainer>
+        <UlasanContainer>
             <p><b>Pengiriman Uang</b><br></br>Transfer</p>
-            <br></br>
             <p>Silakan transfer ke {location}</p>
-
             <p>{bankName} <br></br> {accountName}</p> 
-
             <div className="highlight">
                 <b>Nomor Rekening</b>
                 <div className="flex-container">
@@ -27,13 +26,13 @@ export default function TransferUang({location, accountName, bankName, accountNu
                 <b>Nominal</b>
                 <div className="flex-container">
                     <div className="num">
-                        Rp {nominal}
+                        <Uang amount= {formatMoney(amount)}/>
                     </div>
                     <div>
                         <Button type="tertiary" label="salin" />
                     </div>
                 </div>
             </div>
-        </TransaksiUangContainer>
+        </UlasanContainer>
     )
 }

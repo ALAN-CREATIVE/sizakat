@@ -1,6 +1,7 @@
 import React, {useState, useReducer, useEffect} from 'react';
 import { gql, useMutation, useQuery } from '@apollo/client';
 import ReceiptSummary from './ReceiptSummary';
+import IdTransaksi from './IdTransaksi'
 import { useRouter } from 'next/router';
 
 const QUERY_TRANSAKSI = gql`
@@ -198,6 +199,8 @@ function UpdatePage({transactionId}) {
 export default function ReceiptSummaryWithData({transactionId}){
     return(
         <div>
+            <IdTransaksi id={transactionId} />
+            <br></br>
             <UpdatePage transactionId={transactionId} />
         </div>
     )

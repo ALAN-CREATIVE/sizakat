@@ -20,5 +20,12 @@ const UlasanContainer = styled.div`
     .info{
         color : red;
     }
+    .title{
+        font-weight: bold;
+        color: #00239D;
+    }
+    .content{
+        margin : 25px;
+    }
 `
 export default UlasanContainer;

@@ -5,6 +5,7 @@ import { useReducer } from 'react';
 import TitleFlow from '../../components/Titles/TitleFlow';
 import {useState, useEffect} from 'react';
 import ReceiptSummaryWithData from '../../components/Receipts/ReceiptSummaryWithData';
+import UlasanWithData from '../../components/Ulasan/UlasanWithData';
 import styled from 'styled-components';
 import TambahTransaksiForm from '../../components/TambahTransaksi/TambahTransaksiForm';
 import TambahMuzakki from '../../components/TambahTransaksi/TambahMuzakki';
@@ -99,6 +100,12 @@ export default function({ backend_uri }) {
         {currentPage == 1 && (
           <section>
             <ReceiptSummaryWithData transactionId={router.query.transaction}/>
+          </section>
+        )}
+
+        {currentPage == 2 && (
+          <section>
+            <UlasanWithData transactionId={router.query.transaction}/>
           </section>
         )}
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

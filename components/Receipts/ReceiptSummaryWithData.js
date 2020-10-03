@@ -132,7 +132,7 @@ export function ReceiptSummaryForm({transactionId, data}){
 
     const nextPage = () => {
         submitUpdate()
-        router.push('/buat/transaksi?page=2', undefined, { shallow: true })
+        router.push(`/buat/transaksi?page=2&transaction=${transactionId}`, undefined, { shallow: true })
     }
     
     return (

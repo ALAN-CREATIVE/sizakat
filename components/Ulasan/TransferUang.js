@@ -5,6 +5,7 @@ import Button from '../Buttons/Button'
 import { formatMoney } from '../../utils/parser-util';
 
 export default function TransferUang({location, accountName, bankName, accountNumber, amount}){
+
     return (
         <UlasanContainer>
             <p><b>Pengiriman Uang</b><br></br>Transfer</p>
@@ -13,11 +14,11 @@ export default function TransferUang({location, accountName, bankName, accountNu
             <div className="highlight">
                 <b>Nomor Rekening</b>
                 <div className="flex-container">
-                    <div className="num">
+                    <div className="num" id="accNum">
                         {accountNumber}
                     </div>
                     <div>
-                        <Button type="tertiary" label="salin" />
+                        <Button type="tertiary" label="salin"/>
                     </div>
                 </div>
             </div>

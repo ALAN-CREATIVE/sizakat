@@ -4,6 +4,7 @@ import BerasJemput from './BerasJemput';
 import UangTunai from './UangTunai';
 import TransferUang from './TransferUang';
 import UlasanContainer from './UlasanStyle';
+import Button from '../Buttons/Button';
 
 export default function Ulasan({
     moneyAmount, 
@@ -48,7 +49,7 @@ export default function Ulasan({
                         address = {address}
                         />
                     )}
-                    {goodsDeliveryType === 'DELIVERY' && (
+                    {goodsDeliveryType === 'DELIVER' && (
                         <BerasAntar 
                         amount = {riceAmount}
                         location = {location}
@@ -57,6 +58,7 @@ export default function Ulasan({
                     )}
                 </div>
             </div>
+            <Button label="LANJUTKAN KE KWITANSI >>" type="primary" /> <br></br>
         </UlasanContainer>
     )
 }

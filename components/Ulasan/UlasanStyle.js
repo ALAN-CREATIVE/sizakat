@@ -4,6 +4,7 @@ const UlasanContainer = styled.div`
     background: white;
     margin: 20px; 
     font-family: Muli, sans-serif;
+    padding: 20px 35px;
     .highlight{
         background-color: #F2EDE7;
         padding : 15px

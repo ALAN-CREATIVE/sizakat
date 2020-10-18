@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #FFF;
-  border-left: 6px solid #00239D;
+  background: #fff;
+  border-left: 6px solid #00239d;
   font-family: Muli;
   border-radius: 6px;
   display: flex;
@@ -13,4 +13,4 @@ export const Container = styled.div`
 export const DetailButton = styled.div`
   align-self: center;
   color: #002398;
-`
+`;

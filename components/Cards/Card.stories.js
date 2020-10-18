@@ -1,22 +1,22 @@
-import React from 'react';
 import { action } from '@storybook/addon-actions';
+import React from 'react';
 
 import Card from './Card';
 
 export default {
-    component: Card,
-    title: 'Card',
-    excludeStories: /.*Data$/,
-}
+  component: Card,
+  title: 'Card',
+  excludeStories: /.*Data$/,
+};
 
 const cardData = {
   id: '1',
   label: 'Lorem Ipsum Sit Dolor Amet',
   desc: 'warga',
-}
+};
 
 const actionsData = {
-  onDetailClicked: action('onDetailClicked')
-}
+  onDetailClicked: action('onDetailClicked'),
+};
 
-export const Default = () => <Card { ...cardData } { ...actionsData } />
+export const Default = () => <Card {...cardData} {...actionsData} />;

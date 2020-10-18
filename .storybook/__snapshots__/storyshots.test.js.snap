@@ -6,30 +6,37 @@ exports[`Storyshots Button Danger 1`] = `
     jsx={true}
   >
     
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
+    button {
+      font-family: Muli;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px 10px;
+      color: white;
+    }
+    .primary {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+    }
+    .secondary {
+      border-radius: 4px;
+      background: #c2c2c2;
+      border: 1px solid #c2c2c2;
+    }
+    .danger {
+      background: #eb4e2c;
+      border-radius: 4px;
+      border: 1px solid #eb4e2c;
+    }
+
+    .login {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+      width: 100%;
+    }
+  
   </style>
   <button
     className="danger"
@@ -46,30 +53,37 @@ exports[`Storyshots Button Primary 1`] = `
     jsx={true}
   >
     
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
+    button {
+      font-family: Muli;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px 10px;
+      color: white;
+    }
+    .primary {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+    }
+    .secondary {
+      border-radius: 4px;
+      background: #c2c2c2;
+      border: 1px solid #c2c2c2;
+    }
+    .danger {
+      background: #eb4e2c;
+      border-radius: 4px;
+      border: 1px solid #eb4e2c;
+    }
+
+    .login {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+      width: 100%;
+    }
+  
   </style>
   <button
     className="primary"
@@ -80,36 +94,90 @@ exports[`Storyshots Button Primary 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button Primary Login 1`] = `
+<div>
+  <style
+    jsx={true}
+  >
+    
+    button {
+      font-family: Muli;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px 10px;
+      color: white;
+    }
+    .primary {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+    }
+    .secondary {
+      border-radius: 4px;
+      background: #c2c2c2;
+      border: 1px solid #c2c2c2;
+    }
+    .danger {
+      background: #eb4e2c;
+      border-radius: 4px;
+      border: 1px solid #eb4e2c;
+    }
+
+    .login {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+      width: 100%;
+    }
+  
+  </style>
+  <button
+    className="login"
+    onClick={[Function]}
+  >
+    Login
+  </button>
+</div>
+`;
+
 exports[`Storyshots Button Secondary 1`] = `
 <div>
   <style
     jsx={true}
   >
     
-        button{
-            font-family: Muli;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            padding: 5px 10px;
-            color : white;
-        }
-        .primary{
-            background: #00239D;
-            border-radius: 4px;
-            border:1px solid #00239D;
-        }
-        .secondary{
-            border-radius: 4px;
-            background: #C2C2C2;
-            border:1px solid #C2C2C2;
-        }
-        .danger{
-            background: #EB4E2C;
-            border-radius: 4px;
-            border:1px solid #EB4E2C;
-        }
-    
+    button {
+      font-family: Muli;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px 10px;
+      color: white;
+    }
+    .primary {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+    }
+    .secondary {
+      border-radius: 4px;
+      background: #c2c2c2;
+      border: 1px solid #c2c2c2;
+    }
+    .danger {
+      background: #eb4e2c;
+      border-radius: 4px;
+      border: 1px solid #eb4e2c;
+    }
+
+    .login {
+      background: #00239d;
+      border-radius: 4px;
+      border: 1px solid #00239d;
+      width: 100%;
+    }
+  
   </style>
   <button
     className="secondary"
@@ -122,7 +190,7 @@ exports[`Storyshots Button Secondary 1`] = `
 
 exports[`Storyshots Card Default 1`] = `
 <div
-  className="sc-AxjAm ezwerM"
+  className="sc-bdnylx eWnmQV"
 >
   <div>
     <h1
@@ -151,7 +219,7 @@ exports[`Storyshots Card Default 1`] = `
     </p>
   </div>
   <div
-    className="sc-AxirZ eIgGJx"
+    className="sc-gtssRu ePtCPu"
   >
     <a
       onClick={[Function]}
@@ -169,13 +237,13 @@ exports[`Storyshots Card Default 1`] = `
 
 exports[`Storyshots Card/Card List Default 1`] = `
 <div
-  className="sc-AxiKw bvMRsc"
+  className="sc-dlnjPT zikMr"
 >
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-hKFyIo iNpqaO"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-bdnylx eWnmQV"
     >
       <div>
         <h1
@@ -204,7 +272,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-gtssRu ePtCPu"
       >
         <a
           onClick={[Function]}
@@ -220,10 +288,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-hKFyIo iNpqaO"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-bdnylx eWnmQV"
     >
       <div>
         <h1
@@ -252,7 +320,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-gtssRu ePtCPu"
       >
         <a
           onClick={[Function]}
@@ -268,10 +336,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-hKFyIo iNpqaO"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-bdnylx eWnmQV"
     >
       <div>
         <h1
@@ -300,7 +368,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-gtssRu ePtCPu"
       >
         <a
           onClick={[Function]}
@@ -316,10 +384,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-hKFyIo iNpqaO"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-bdnylx eWnmQV"
     >
       <div>
         <h1
@@ -348,7 +416,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-gtssRu ePtCPu"
       >
         <a
           onClick={[Function]}
@@ -364,10 +432,10 @@ exports[`Storyshots Card/Card List Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb jWJnBP"
+    className="sc-hKFyIo iNpqaO"
   >
     <div
-      className="sc-AxjAm ezwerM"
+      className="sc-bdnylx eWnmQV"
     >
       <div>
         <h1
@@ -396,7 +464,7 @@ exports[`Storyshots Card/Card List Default 1`] = `
         </p>
       </div>
       <div
-        className="sc-AxirZ eIgGJx"
+        className="sc-gtssRu ePtCPu"
       >
         <a
           onClick={[Function]}
@@ -427,9 +495,8 @@ exports[`Storyshots Details/Detail Field Default 1`] = `
       font-size: 16px;
       line-height: 20px;
       /* identical to box height */
-      
-      
-      color: #00239D;
+
+      color: #00239d;
     }
 
     h2 {
@@ -440,17 +507,14 @@ exports[`Storyshots Details/Detail Field Default 1`] = `
       line-height: 18px;
       /* identical to box height */
 
-
-      color: #393F50;
-
+      color: #393f50;
     }
 
     .profpic {
       width: 241px;
       height: 226px;
 
-
-      background: #00239D;
+      background: #00239d;
     }
 
     .background {
@@ -459,7 +523,7 @@ exports[`Storyshots Details/Detail Field Default 1`] = `
       left: 288px;
       top: 394px;
 
-      background: #F5F6F8;
+      background: #f5f6f8;
     }
 
     .identity {
@@ -468,8 +532,9 @@ exports[`Storyshots Details/Detail Field Default 1`] = `
       font-weight: 800;
       font-size: 18px;
       text-align: center;
-      top: 44.44%; bottom: 51.11%;
-      padding-top:8px;
+      top: 44.44%;
+      bottom: 51.11%;
+      padding-top: 8px;
     }
 
     p {
@@ -477,18 +542,15 @@ exports[`Storyshots Details/Detail Field Default 1`] = `
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
-     
+
       /* identical to box height */
 
-
-      color: #393F50;
+      color: #393f50;
       margin-top: -2px;
-
     }
 
     .spilt {
       column-count: 2;
-      
     }
   
   </style>
@@ -511,39 +573,40 @@ exports[`Storyshots Input/Date Field Default 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -553,10 +616,10 @@ exports[`Storyshots Input/Date Field Default 1`] = `
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -586,74 +649,74 @@ exports[`Storyshots Input/Date Field Default 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -683,74 +746,74 @@ exports[`Storyshots Input/Date Field Default 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -780,69 +843,69 @@ exports[`Storyshots Input/Date Field Default 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
@@ -860,39 +923,40 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -902,10 +966,10 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -935,69 +999,69 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
       <span
@@ -1007,7 +1071,7 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
       </span>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1037,74 +1101,74 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1134,69 +1198,69 @@ exports[`Storyshots Input/Date Field Error Date 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
@@ -1214,39 +1278,40 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -1256,10 +1321,10 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1289,74 +1354,74 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1386,69 +1451,69 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
       <span
@@ -1458,7 +1523,7 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
       </span>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1488,69 +1553,69 @@ exports[`Storyshots Input/Date Field Error Month 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
@@ -1568,39 +1633,40 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -1610,10 +1676,10 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1643,74 +1709,74 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1740,74 +1806,74 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1837,69 +1903,69 @@ exports[`Storyshots Input/Date Field Error Year 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
       <span
@@ -1922,39 +1988,40 @@ exports[`Storyshots Input/Date Field Required 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -1964,10 +2031,10 @@ exports[`Storyshots Input/Date Field Required 1`] = `
     Tanggal Lahir
   </label>
   <div
-    class="row"
+    className="row"
   >
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -1997,74 +2064,74 @@ exports[`Storyshots Input/Date Field Required 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -2094,74 +2161,74 @@ exports[`Storyshots Input/Date Field Required 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
     <div
-      class="col s4"
+      className="col s4"
     >
       <div
         style={
@@ -2191,69 +2258,69 @@ exports[`Storyshots Input/Date Field Required 1`] = `
           jsx={true}
         >
           
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
         </style>
       </div>
     </div>
@@ -2271,39 +2338,40 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -2340,69 +2408,69 @@ exports[`Storyshots Input/Dropdown Default 1`] = `
       jsx={true}
     >
       
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
     </style>
   </div>
 </div>
@@ -2418,39 +2486,40 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -2487,69 +2556,69 @@ exports[`Storyshots Input/Dropdown Error 1`] = `
       jsx={true}
     >
       
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
     </style>
   </div>
   <span
@@ -2570,39 +2639,40 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -2639,69 +2709,69 @@ exports[`Storyshots Input/Dropdown Required 1`] = `
       jsx={true}
     >
       
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
     </style>
   </div>
 </div>
@@ -2734,12 +2804,12 @@ exports[`Storyshots Input/File Field Default 1`] = `
       font-weight: 700;
       font-size: 16px;
       display: block;
-      color: #393F50;
+      color: #393f50;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
     .desc {
@@ -2747,7 +2817,7 @@ exports[`Storyshots Input/File Field Default 1`] = `
       font-weight: normal;
       font-size: 14px;
       line-height: 18px;
-      color: #6F6F6F;
+      color: #6f6f6f;
       margin-right: 50px;
     }
 
@@ -2760,14 +2830,14 @@ exports[`Storyshots Input/File Field Default 1`] = `
     }
 
     .file-input::before {
-      content: "Pilih Foto";
+      content: 'Pilih Foto';
       font-family: Muli;
       font-size: 16px;
       font-weight: 700;
-      color: #00239D;
+      color: #00239d;
       cursor: pointer;
       padding: 10px 41px 11px 40px;
-      border: 1px solid #00239D;
+      border: 1px solid #00239d;
       border-radius: 50px;
       display: inline-block;
     }
@@ -2777,7 +2847,7 @@ exports[`Storyshots Input/File Field Default 1`] = `
       font-weight: 700;
       font-size: 12px;
       display: block;
-      color: #EB4E2C;
+      color: #eb4e2c;
       text-rendering: optimizeLegibility;
     }
   
@@ -2812,12 +2882,12 @@ exports[`Storyshots Input/File Field Error 1`] = `
       font-weight: 700;
       font-size: 16px;
       display: block;
-      color: #393F50;
+      color: #393f50;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
     .desc {
@@ -2825,7 +2895,7 @@ exports[`Storyshots Input/File Field Error 1`] = `
       font-weight: normal;
       font-size: 14px;
       line-height: 18px;
-      color: #6F6F6F;
+      color: #6f6f6f;
       margin-right: 50px;
     }
 
@@ -2838,14 +2908,14 @@ exports[`Storyshots Input/File Field Error 1`] = `
     }
 
     .file-input::before {
-      content: "Pilih Foto";
+      content: 'Pilih Foto';
       font-family: Muli;
       font-size: 16px;
       font-weight: 700;
-      color: #00239D;
+      color: #00239d;
       cursor: pointer;
       padding: 10px 41px 11px 40px;
-      border: 1px solid #00239D;
+      border: 1px solid #00239d;
       border-radius: 50px;
       display: inline-block;
     }
@@ -2855,7 +2925,7 @@ exports[`Storyshots Input/File Field Error 1`] = `
       font-weight: 700;
       font-size: 12px;
       display: block;
-      color: #EB4E2C;
+      color: #eb4e2c;
       text-rendering: optimizeLegibility;
     }
   
@@ -2895,12 +2965,12 @@ exports[`Storyshots Input/File Field Required 1`] = `
       font-weight: 700;
       font-size: 16px;
       display: block;
-      color: #393F50;
+      color: #393f50;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
     .desc {
@@ -2908,7 +2978,7 @@ exports[`Storyshots Input/File Field Required 1`] = `
       font-weight: normal;
       font-size: 14px;
       line-height: 18px;
-      color: #6F6F6F;
+      color: #6f6f6f;
       margin-right: 50px;
     }
 
@@ -2921,14 +2991,14 @@ exports[`Storyshots Input/File Field Required 1`] = `
     }
 
     .file-input::before {
-      content: "Pilih Foto";
+      content: 'Pilih Foto';
       font-family: Muli;
       font-size: 16px;
       font-weight: 700;
-      color: #00239D;
+      color: #00239d;
       cursor: pointer;
       padding: 10px 41px 11px 40px;
-      border: 1px solid #00239D;
+      border: 1px solid #00239d;
       border-radius: 50px;
       display: inline-block;
     }
@@ -2938,7 +3008,7 @@ exports[`Storyshots Input/File Field Required 1`] = `
       font-weight: 700;
       font-size: 12px;
       display: block;
-      color: #EB4E2C;
+      color: #eb4e2c;
       text-rendering: optimizeLegibility;
     }
   
@@ -2954,27 +3024,26 @@ exports[`Storyshots Input/Filter Default 1`] = `
     jsx={true}
   >
     
-      .filter p{
-        font-family: Muli;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 18px;
-        color: #00239D;
-        text-decoration : none;
-        }
+    .filter p {
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: #00239d;
+      text-decoration: none;
+    }
 
-      .kotakFilter{
-        position : absolute;
-        width : 55%;
-        height : 55%;
-        padding : 3%;
-        background:  #E5E5E5;
-        border: 1px solid #393F50;
-        box-sizing: border-box;
-      }
-      
-    
+    .kotakFilter {
+      position: absolute;
+      width: 55%;
+      height: 55%;
+      padding: 3%;
+      background: #e5e5e5;
+      border: 1px solid #393f50;
+      box-sizing: border-box;
+    }
+  
   </style>
   <div
     onClick={[Function]}
@@ -2996,39 +3065,40 @@ exports[`Storyshots Input/Number Field Default 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -3060,39 +3130,40 @@ exports[`Storyshots Input/Number Field Error 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -3129,39 +3200,40 @@ exports[`Storyshots Input/Number Field Required 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -3225,7 +3297,7 @@ exports[`Storyshots Input/Radio Button Default 1`] = `
     
     label {
       font-family: Muli;
-      color: #393F50;
+      color: #393f50;
     }
 
     .main-label {
@@ -3235,8 +3307,8 @@ exports[`Storyshots Input/Radio Button Default 1`] = `
     }
 
     .required:after {
-      content: "*";
-      color: #EB4E2C;
+      content: '*';
+      color: #eb4e2c;
     }
 
     .radios {
@@ -3259,7 +3331,7 @@ exports[`Storyshots Input/Radio Button Default 1`] = `
     }
 
     .error {
-      color: #EB4E2C;
+      color: #eb4e2c;
       font-size: 12px;
       font-weight: 700;
       font-family: Muli;
@@ -3316,7 +3388,7 @@ exports[`Storyshots Input/Radio Button Error 1`] = `
     
     label {
       font-family: Muli;
-      color: #393F50;
+      color: #393f50;
     }
 
     .main-label {
@@ -3326,8 +3398,8 @@ exports[`Storyshots Input/Radio Button Error 1`] = `
     }
 
     .required:after {
-      content: "*";
-      color: #EB4E2C;
+      content: '*';
+      color: #eb4e2c;
     }
 
     .radios {
@@ -3350,7 +3422,7 @@ exports[`Storyshots Input/Radio Button Error 1`] = `
     }
 
     .error {
-      color: #EB4E2C;
+      color: #eb4e2c;
       font-size: 12px;
       font-weight: 700;
       font-family: Muli;
@@ -3402,7 +3474,7 @@ exports[`Storyshots Input/Radio Button Required 1`] = `
     
     label {
       font-family: Muli;
-      color: #393F50;
+      color: #393f50;
     }
 
     .main-label {
@@ -3412,8 +3484,8 @@ exports[`Storyshots Input/Radio Button Required 1`] = `
     }
 
     .required:after {
-      content: "*";
-      color: #EB4E2C;
+      content: '*';
+      color: #eb4e2c;
     }
 
     .radios {
@@ -3436,7 +3508,7 @@ exports[`Storyshots Input/Radio Button Required 1`] = `
     }
 
     .error {
-      color: #EB4E2C;
+      color: #eb4e2c;
       font-size: 12px;
       font-weight: 700;
       font-family: Muli;
@@ -3456,39 +3528,40 @@ exports[`Storyshots Input/Text Field Default 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -3520,39 +3593,40 @@ exports[`Storyshots Input/Text Field Error 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -3589,39 +3663,40 @@ exports[`Storyshots Input/Text Field Required 1`] = `
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   
   </style>
@@ -3650,97 +3725,101 @@ exports[`Storyshots Navigation Bar Default 1`] = `
   >
     
     .navigation-bar {
-        background: #FFFFFF;
-        border: 1px solid #DEDEDE;
-        box-sizing: border-box;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      background: #ffffff;
+      border: 1px solid #dedede;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        width: 250px;
-        height: 100vh;
-
+      width: 250px;
+      height: 100vh;
     }
 
     .profile-picture {
-        width: 100px;
-        height: 100px;
-        background-color: #00239D;
-        border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: #00239d;
+      border-radius: 50%;
 
-        margin: 50px auto;
+      margin: 50px auto;
     }
 
     .user-name {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        font-family: Muli;
-        line-height: 25px;
-        text-align: center;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      font-family: Muli;
+      line-height: 25px;
+      text-align: center;
 
-        color: #393F50;
+      color: #393f50;
     }
 
     .user-role {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      font-family: Muli;
 
-        color: #898686;
+      color: #898686;
 
-        text-transform: uppercase;
+      text-transform: uppercase;
     }
 
     .menu-title {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 10px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 10px;
 
-        letter-spacing: 0.1em;
+      letter-spacing: 0.1em;
 
-        color: #898686;
+      color: #898686;
 
-        margin: 15% 7.5%;
+      margin: 15% 7.5%;
 
-        font-family: Muli;
+      font-family: Muli;
     }
 
     div.menu-option {
-        font-family: Muli;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 23px;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
 
-        /* Black */
+      /* Black */
 
-        color: #454545;
+      color: #454545;
 
-        margin: 0 0 10% 20%;
+      margin: 0 0 10% 20%;
     }
 
     .submenu-option {
-        font-family: Muli;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 18px;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
 
-        /* Black */
+      /* Black */
 
-        color: #454545;
+      color: #454545;
 
-        margin: 2.5% 0 2.5% 15%;
-        padding: 20px;
+      margin: 2.5% 0 2.5% 15%;
+      padding: 20px;
     }
 
     .menu:hover {
-        background: linear-gradient(to right, #00239D 0%, #00239D 5%, #F5F6F8 5%, #F5F6F8 100%);
+      background: linear-gradient(
+        to right,
+        #00239d 0%,
+        #00239d 5%,
+        #f5f6f8 5%,
+        #f5f6f8 100%
+      );
     }
-
   
   </style>
   <div
@@ -3790,8 +3869,7 @@ exports[`Storyshots Search Default 1`] = `
     jsx={true}
   >
     
-    
-    form.example input[type=text] {
+    form.example input[type='text'] {
       position: absolute;
       width: 982px;
       height: 48px;
@@ -3801,8 +3879,8 @@ exports[`Storyshots Search Default 1`] = `
       background-position: 14px 12px;
       background-repeat: no-repeat;
 
-      background-color: #FFFFFF;
-      border: 1px solid #393F50;
+      background-color: #ffffff;
+      border: 1px solid #393f50;
       box-sizing: border-box;
       border-radius: 8px;
 
@@ -3812,14 +3890,13 @@ exports[`Storyshots Search Default 1`] = `
       font-size: 14px;
       padding: 0px 0px 4px 45px;
 
-      color: #C2C2C2;
+      color: #c2c2c2;
     }
-    
   
   </style>
   <form
     action="#"
-    class="example"
+    className="example"
   >
     <input
       name="search"
@@ -3837,69 +3914,68 @@ exports[`Storyshots Warning Default 1`] = `
   >
     
     .box {
-        width: 385px;
-        height: 374px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
+      width: 385px;
+      height: 374px;
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
     }
 
     .warningText {
-        font-family: Muli;
-        font-style: normal;
-        font-weight: 800;
-        font-size: 24px;
-        line-height: 30px;
-        text-align: center;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
 
-        color: #EB4E2C;
+      color: #eb4e2c;
     }
 
     .desc {
-        font-family: Muli;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
 
-        color: #000000;
+      color: #000000;
     }
 
     div.redButton {
-        width: 101px;
-        height: 40px;
+      width: 101px;
+      height: 40px;
 
-        background: #EB4E2C;
-        border-radius: 8px;
+      background: #eb4e2c;
+      border-radius: 8px;
     }
 
     .greyButton {
-        width: 101px;
-        height: 40px;
+      width: 101px;
+      height: 40px;
 
-        background: #C2C2C2;
-        border-radius: 8px;
+      background: #c2c2c2;
+      border-radius: 8px;
     }
 
     p.text {
-        
-        height: 20px;
-       
-        display: block;
-        margin: auto;
-        padding-top: 10px;
+      height: 20px;
 
-        font-family: Muli;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 20px;
-        /* identical to box height */
+      display: block;
+      margin: auto;
+      padding-top: 10px;
 
-        text-align: center;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
 
-        color: #FFFFFF
+      text-align: center;
+
+      color: #ffffff;
     }
   
   </style>

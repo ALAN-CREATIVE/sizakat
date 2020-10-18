@@ -1,0 +1,54 @@
+.loginPage {
+  margin: 3% 0% 3% 3%;
+}
+
+.title {
+  font-family: Muli;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 63px;
+  color: #000000;
+}
+
+.subtitle {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 30px;
+  line-height: 45px;
+  color: #949494;
+}
+
+.sectionSpace {
+  margin-top: 20px;
+}
+
+.leftContainer {
+  float: left;
+  background: #eb4e2c;
+  width: 35%;
+  margin: 0 3%;
+}
+
+.rightContainer {
+  float: right;
+  width: 45%;
+  margin: 0 5%;
+}
+
+.signUp {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  justify-content: center;
+}
+
+.errorText {
+  color: red;
+}
+
+.centerText {
+  text-align: center;
+}

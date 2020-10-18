@@ -6,113 +6,116 @@ export const InputStyle = () => (
       font-family: Muli;
       font-weight: 700;
       font-size: 16px;
-      color: #393F50;
+      color: #393f50;
       line-height: 20px;
     }
 
     .required:after {
-      color: #EB4E2C;
-      content: "*";
+      color: #eb4e2c;
+      content: '*';
     }
 
-    input, select {
+    input,
+    select {
       border-width: 0px 0px 1px 0px;
-      border-color: #00239D;
+      border-color: #00239d;
       display: block;
       width: 99%;
       padding: 12px 5px 12px 5px;
       font-size: 14px;
       font-family: Muli;
       line-height: 16px;
-      color: #393F50;
-      background-color: #FFFFFF;
+      color: #393f50;
+      background-color: #ffffff;
     }
 
     input::placeholder {
-      color: #C4C4C4;
+      color: #c4c4c4;
     }
 
     .error {
-     font-family: Muli;
-     font-style: normal;
-     font-weight: 700;
-     font-size: 12px;
-     line-height: 15px;
-     color: #EB4E2C;
+      font-family: Muli;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: #eb4e2c;
     }
   `}</style>
 );
 
-export const SelectStyle = () => <style jsx>{`
-  .header {
-    border-bottom: 1px solid #00239D;
-    display: block;
-    width: 99%;
-    padding: 12px 5px 12px 5px;
-    font-size: 14px;
-    font-family: Muli;
-    line-height: 16px;
-    color: #C4C4C4;
-  }
+export const SelectStyle = () => (
+  <style jsx>{`
+    .header {
+      border-bottom: 1px solid #00239d;
+      display: block;
+      width: 99%;
+      padding: 12px 5px 12px 5px;
+      font-size: 14px;
+      font-family: Muli;
+      line-height: 16px;
+      color: #c4c4c4;
+    }
 
-  .chosen {
-    color: #393F50;
-  }
+    .chosen {
+      color: #393f50;
+    }
 
-  .options {
-    border-radius: 10px 10px 0px 0px;
-    list-style: none;
-    position: absolute;
-    width: -webkit-fill-available;
-    background-color: #F5F6F8;
-    font-family: Muli;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    max-height: 400px;
-    overflow-y: overlay;
-    color: #393F50;
-    padding: 20px 0px 0px 0px;
-  }
+    .options {
+      border-radius: 10px 10px 0px 0px;
+      list-style: none;
+      position: absolute;
+      width: -webkit-fill-available;
+      background-color: #f5f6f8;
+      font-family: Muli;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      max-height: 400px;
+      overflow-y: overlay;
+      color: #393f50;
+      padding: 20px 0px 0px 0px;
+    }
 
-  .options:before {
-    height: 4px;
-    border-radius: 4px;
-    background-color: #E5E5E5;
-    width: 20%;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
-    text-align: center;
-    content: "a";
-    overflow: hidden;
-  }
+    .options:before {
+      height: 4px;
+      border-radius: 4px;
+      background-color: #e5e5e5;
+      width: 20%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      text-align: center;
+      content: 'a';
+      overflow: hidden;
+    }
 
-  .option {
-    padding: 15px 20px;
-    text-align: center;
-  }
+    .option {
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-  .option:hover {
-    background-color: #002398;
-    color: #FFFFFF;
-  }
+    .option:hover {
+      background-color: #002398;
+      color: #ffffff;
+    }
 
-  img {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-`}</style>;
+    img {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  `}</style>
+);
 
 export const RadioButtonStyle = () => (
   <style jsx>{`
     label {
       font-family: Muli;
-      color: #393F50;
+      color: #393f50;
     }
 
     .main-label {
@@ -122,8 +125,8 @@ export const RadioButtonStyle = () => (
     }
 
     .required:after {
-      content: "*";
-      color: #EB4E2C;
+      content: '*';
+      color: #eb4e2c;
     }
 
     .radios {
@@ -146,7 +149,7 @@ export const RadioButtonStyle = () => (
     }
 
     .error {
-      color: #EB4E2C;
+      color: #eb4e2c;
       font-size: 12px;
       font-weight: 700;
       font-family: Muli;

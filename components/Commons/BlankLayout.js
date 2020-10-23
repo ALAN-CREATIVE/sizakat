@@ -1,7 +1,13 @@
+import styled from "styled-components";
+
+const ChildrenContainer = styled.main`
+  margin-top: 3%
+`
+
 const BlankLayout = ({ children }) => {
   return (
     <>
-      <main>{children}</main>
+      <ChildrenContainer>{children}</ChildrenContainer>
     </>
   );
 };

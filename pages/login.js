@@ -67,7 +67,7 @@ export default function LoginPage() {
               <b>
                 Don't have an account?{' '}
                 <span>
-                  <a href="#">Sign Up</a>
+                  <a href="/sign_up">Sign Up</a>
                 </span>
               </b>
             </div>

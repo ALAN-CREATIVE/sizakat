@@ -26,8 +26,8 @@ export default function LoginForm({ onLoginSuccess }) {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const username = e.target.elements['Username'].value;
-    const password = e.target.elements['Password'].value;
+    const username = e.target.elements[usernameFieldData.label].value;
+    const password = e.target.elements[passwordFieldData.label].value;
 
     try {
       const { data } = await tokenAuth({ variables: { password, username } });
